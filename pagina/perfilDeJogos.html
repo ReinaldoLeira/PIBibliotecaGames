@@ -4,20 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil do Jogo</title>
     <style>
         @font-face {
     font-family: PressStart2P;
     src: url(resouces/PressStart2P-regular.ttf);
-}
-    #teste{
-        font-family: PressStart2P;
+    }
+    body {
+        font-family: PressStart2P;        
+    }
+    .pai {
+        display: flex;
+    }
+    .w-70{
+        width: 70%;
+    }
+    .w-30{
+        width: 30%;
+    }
+    #painelLateral{
+        height: 300px;   
+        background-color: #0e9aa7;   
+        border-radius: 50px;  
+        text-align: center;
+    }
+    #titulo{
+        text-align: center;
+        border: 1px solid black;
     }
     </style>
 </head>
 <body>
-    <p>teste</p>
-    <p id="teste">teste</p>
+    <section class="pai">
+        
+        <section class="w-70">
+
+            <section id="titulo">
+                Nome do Jogo
+            </section>
+
+            <section class="pai">
+                <section class="w-30">
+                    avatar
+                </section>
+
+                <section class="w-70">
+                    <section>
+                        Informações Gerais
+                    </section>
+                    <section>
+                        Sinopse
+                    </section>
+                </section>
+            </section>
+
+            <section>
+                Analises
+            </section>
+
+            <section>
+                Avaliações
+            </section>
+            
+        </section>
+        
+        <aside class="w-30" id="painelLateral">
+            teste
+        </aside>
+        
+    </section>
     
 </body>
 </html>
