@@ -22,15 +22,29 @@
     .w-30{
         width: 30%;
     }
-    #painelLateral{
-        height: 300px;   
+    .fundoVerde{
         background-color: #0e9aa7;   
-        border-radius: 50px;  
-        text-align: center;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid black;
+    }
+    .fundoBranco{
+        background-color: white;   
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid black;
+    }
+    #painelLateral{
+        height: 700px;   
+        border-radius: 50px;          
+        text-align: center;        
     }
     #titulo{
+        text-align: center;     
+    }
+    #imagemJogo{
         text-align: center;
-        border: 1px solid black;
+        padding: 5px;
     }
     </style>
 </head>
@@ -39,37 +53,40 @@
         
         <section class="w-70">
 
-            <section id="titulo">
+            <section class="fundoBranco" id="titulo">
                 Nome do Jogo
             </section>
 
             <section class="pai">
-                <section class="w-30">
-                    avatar
+                <section class="w-30" id="imagemJogo">
+                    <img src="resouces/avatar.png" />
                 </section>
 
                 <section class="w-70">
-                    <section>
-                        Informações Gerais
+                    <section class="fundoVerde">
+                        <p>Oficial:</p>
+                        <p>Publisher: </p>
+                        <p>Data de Lançamento:</p>
+                        <p>Plataformas:</p>
                     </section>
-                    <section>
+                    <section class="fundoBranco">
                         Sinopse
                     </section>
                 </section>
             </section>
 
-            <section>
+            <section class="fundoBranco">
                 Analises
             </section>
 
-            <section>
+            <section class="fundoBranco">
                 Avaliações
             </section>
             
         </section>
         
-        <aside class="w-30" id="painelLateral">
-            teste
+        <aside class="w-30 fundoVerde" id="painelLateral">
+            
         </aside>
         
     </section>
