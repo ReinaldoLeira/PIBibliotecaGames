@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,82 +10,104 @@
     font-family: PressStart2P;
     src: url(resouces/PressStart2P-regular.ttf);
     }
+        *{
+         box-sizing: border-box
+        }
     body {
         font-family: PressStart2P;        
     }
+    html{
+    font-size: 6.25%;
+}    
     .pai {
         display: flex;
     }
-    .w-70{
-        width: 70%;
+    .w-80{
+        width: 80vw;
     }
-    .w-30{
-        width: 30%;
+    .w-20{
+        width: 20vw;
+    }
+    .h-35{
+        height: 35vh;
+    }
+    .h-20{
+        height: 20vh;
+    }
+    .h-07{
+        height: 7vh;
+        line-height: 7vh;
+    }
+    .h-16{
+        height: 16vh;               
     }
     .fundoVerde{
-        background-color: #0e9aa7;   
-        padding: 5px;
-        margin: 5px;
+        background-color: #0e9aa7;           
+        margin: 0.5vh 0.5vw;
         border: 1px solid black;
     }
     .fundoBranco{
-        background-color: white;   
-        padding: 5px;
-        margin: 5px;
+        background-color: white;           
+        margin: 0.5vh 0.5vw;
         border: 1px solid black;
     }
     #painelLateral{
-        height: 700px;   
-        border-radius: 50px;          
-        text-align: center;        
+        height: 100vh;   
+        border-radius: 25px;                         
     }
     #titulo{
-        text-align: center;     
+        text-align: center; 
+        font-size: 14rem;        
     }
     #imagemJogo{
         text-align: center;
-        padding: 5px;
+        
+    }
+    #informacoes{
+        font-size: 10rem;
+        padding: 2vh 0.5vw;
+        border-radius: 25px;  
     }
     </style>
 </head>
 <body>
     <section class="pai">
         
-        <section class="w-70">
+        <section class="w-80">
 
-            <section class="fundoBranco" id="titulo">
+            <section class="fundoBranco h-07" id="titulo">
                 Nome do Jogo
             </section>
 
-            <section class="pai">
-                <section class="w-30" id="imagemJogo">
+            <section class="pai h-35">
+                <figure class="w-20" id="imagemJogo">
                     <img src="resouces/avatar.png" />
-                </section>
+                </figure>
 
-                <section class="w-70">
-                    <section class="fundoVerde">
+                <section class="w-80">
+                    <article class="fundoVerde h-16" id="informacoes">
                         <p>Oficial:</p>
                         <p>Publisher: </p>
                         <p>Data de Lançamento:</p>
                         <p>Plataformas:</p>
-                    </section>
-                    <section class="fundoBranco">
+                    </article>
+                    <article class="fundoBranco h-16">
                         Sinopse
-                    </section>
+                    </article>
                 </section>
             </section>
 
-            <section class="fundoBranco">
+            <section class="fundoBranco h-35">
                 Analises
             </section>
 
-            <section class="fundoBranco">
+            <section class="fundoBranco h-20">
                 Avaliações
             </section>
             
         </section>
         
-        <aside class="w-30 fundoVerde" id="painelLateral">
+        <aside class="w-20 fundoVerde" id="painelLateral">
             
         </aside>
         
