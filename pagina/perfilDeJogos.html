@@ -17,7 +17,7 @@
             font-family: PressStart2P;  
             background: #ccc;  
             display: flex;  
-            flex-direction: column;       
+            flex-direction: column;                
         }
         html{
         font-size: 6.25%;
@@ -44,7 +44,16 @@
         }
         aside{
             height: 100vh;   
-            border-radius: 25px;                         
+            border-radius: 25px;  
+            font-size: 10rem; 
+            text-align: center;                                                  
+        }
+        aside li{
+            height: 10%; 
+            list-style: none;                                         
+        }
+        aside ul{
+            padding-inline-start: 0px;              
         }
         .pai{
             display: flex;
@@ -57,7 +66,10 @@
         }
         .h-33{
             height: 33vh;
-        }      
+        } 
+        .h-50{
+            height: 50vh;
+        }     
         .fundoVerde{
             background-color: #0e9aa7;           
             margin: 0.5vh 0.5vw;
@@ -70,13 +82,13 @@
             padding: 2vh 0.5vw;
             border: 1px solid black;            
         }  
+        .compreAgora{            
+            height: 50%;            
+        }
         #titulo{
             text-align: center; 
             font-size: 14rem;                       
-        }
-        #imagemJogo{            
-            
-        }
+        }     
         #imagemJogo img{
             height: 34vh;
             width: 20vw;
@@ -95,7 +107,7 @@
     <main>
         <container class="w-80">
             <section class="fundoBranco" id="titulo">
-                Nome do Jogo
+                <h1>Nome do Jogo</h1>
             </section>
             <section class="pai  h-33">
                 <figure class="fundoBranco">
@@ -121,7 +133,22 @@
             </section> 
         </container>               
             <aside class="fundoVerde w-20">
-            
+                <ul class="fundoBranco compreAgora">
+                    <h3>Compre Agora</h3>
+
+                    <li>Loja 01 - R$ xx,xx</li>                    
+                    <li>Loja 02 - R$ xx,xx</li>
+                    <li>Loja 03 - R$ xx,xx</li>
+                    <li>Loja 04 - R$ xx,xx</li>
+                    <li>Loja 05 - R$ xx,xx</li>
+                </ul>
+                <ul>                    
+                   <li class="fundoBranco">Histórico de Preços</li>
+                   <li class="fundoBranco">Análises</li>
+                   <li class="fundoBranco">Midias</li>
+                   <li class="fundoBranco">Adicionar à Biblioteca</li>
+                   <li class="fundoBranco">Adicionar à Lista de Desejos</li>
+                </ul>
             </aside>
     </main>  
 
