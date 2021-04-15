@@ -7,115 +7,126 @@
     <title>Perfil do Jogo</title>
     <style>
         @font-face {
-    font-family: PressStart2P;
-    src: url(resouces/PressStart2P-regular.ttf);
-    }
+            font-family: PressStart2P;
+            src: url(resouces/PressStart2P-regular.ttf);
+        }
         *{
          box-sizing: border-box
         }
-    body {
-        font-family: PressStart2P;        
-    }
-    html{
-    font-size: 6.25%;
-}    
-    .pai {
-        display: flex;
-    }
-    .w-80{
-        width: 80vw;
-    }
-    .w-20{
-        width: 20vw;
-    }
-    .h-35{
-        height: 35vh;
-    }
-    .h-20{
-        height: 20vh;
-    }
-    .h-07{
-        height: 7vh;
-        line-height: 7vh;
-    }
-    .h-16{
-        height: 16vh;               
-    }
-    .fundoVerde{
-        background-color: #0e9aa7;           
-        margin: 0.5vh 0.5vw;
-        border: 1px solid black;
-    }
-    .fundoBranco{
-        background-color: white;           
-        margin: 0.5vh 0.5vw;
-        border: 1px solid black;
-    }
-    #painelLateral{
-        height: 100vh;   
-        border-radius: 25px;                         
-    }
-    #titulo{
-        text-align: center; 
-        font-size: 14rem;        
-    }
-    #imagemJogo{
-        text-align: center;
-        
-    }
-    #imagemJogo img{
-        height: 34vh;
-        width: 20vw;
-    }
-    #informacoes{
-        font-size: 10rem;
-        padding: 2vh 0.5vw;
-        border-radius: 25px;  
-    }
+        body {
+            font-family: PressStart2P;  
+            background: #ccc;  
+            display: flex;  
+            flex-direction: column;       
+        }
+        html{
+        font-size: 6.25%;
+        }    
+        header{
+            height: 200px;
+            width: 100%;
+            background: white;
+        } 
+        footer{
+            height: 150px;
+            width: 100%;
+            background: white;
+        } 
+        main{            
+            flex-grow: 1;
+            display: flex;
+            min-height: 100vh;            
+        }
+        container{
+            display: flex;                      
+            flex-direction: column;
+            min-height: auto;            
+        }
+        aside{
+            height: 100vh;   
+            border-radius: 25px;                         
+        }
+        .pai{
+            display: flex;
+        }
+        .w-80{
+            width: 80%;
+        }
+        .w-20{
+            width: 20%;
+        }
+        .h-33{
+            height: 33vh;
+        }      
+        .fundoVerde{
+            background-color: #0e9aa7;           
+            margin: 0.5vh 0.5vw;
+            padding: 2vh 0.5vw;
+            border: 1px solid black;
+        }
+        .fundoBranco{
+            background-color: white;           
+            margin: 0.5vh 0.5vw;
+            padding: 2vh 0.5vw;
+            border: 1px solid black;            
+        }  
+        #titulo{
+            text-align: center; 
+            font-size: 14rem;                       
+        }
+        #imagemJogo{            
+            
+        }
+        #imagemJogo img{
+            height: 34vh;
+            width: 20vw;
+        }
+        #informacoes{
+            font-size: 10rem;            
+            border-radius: 25px;  
+        }
     </style>
 </head>
 <body>
-    <section class="pai">
-        
-        <section class="w-80">
+    <header>
 
-            <section class="fundoBranco h-07" id="titulo">
+    </header>
+    
+    <main>
+        <container class="w-80">
+            <section class="fundoBranco" id="titulo">
                 Nome do Jogo
             </section>
-
-            <section class="pai h-35">
-                <figure class="w-20" id="imagemJogo">
+            <section class="pai  h-33">
+                <figure class="fundoBranco">
                     <img src="resouces/avatar.png" />
                 </figure>
-
                 <section class="w-80">
-                    <article class="fundoVerde h-16" id="informacoes">
+                    <article class="fundoVerde" id="informacoes">
                         <p>Oficial:</p>
                         <p>Publisher: </p>
                         <p>Data de Lançamento:</p>
                         <p>Plataformas:</p>
                     </article>
-                    <article class="fundoBranco h-16">
+                    <article class="fundoBranco">
                         Sinopse
                     </article>
                 </section>
             </section>
-
-            <section class="fundoBranco h-35">
+            <section class="fundoBranco h-33">
                 Analises
             </section>
-
-            <section class="fundoBranco h-20">
+            <section class="fundoBranco h-33">
                 Avaliações
-            </section>
+            </section> 
+        </container>               
+            <aside class="fundoVerde w-20">
             
-        </section>
-        
-        <aside class="w-20 fundoVerde" id="painelLateral">
-            
-        </aside>
-        
-    </section>
-    
+            </aside>
+    </main>  
+
+    <footer>
+
+    </footer>
 </body>
 </html>
