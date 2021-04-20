@@ -9,12 +9,68 @@
     <link rel="stylesheet" href="css/procurarJogos.css">
 </head>
 <body>
-    <Header>
-        teste
-    </Header>
-    <main>
+    <header>
+        
+    </header>
 
-    </main>
+    <container>
+        <main class="fundoBranco">
+
+        </main>
+        <aside class="fundoVerde">
+            <div class="pesquisar">
+                <label>Pesquisar</label>
+                <p><input type="text" placeholder="Buscar"></p>
+            </div>
+            <div id="plataforma">
+                <label>Plataforma</label>
+                <p>
+                    <select name="plataforma" id="plataformaId">
+                        <option value="ps4">Playstation 4</option>
+                        <option value="ps5">Playstation 5</option>
+                        <option value="3ds">Nintendo 3DS</option>
+                        <option value="nswitch">Nintendo Switch</option>
+                        <option value="xone">Xbox One</option>
+                        <option value="xseries">Xbox Series X/S</option>
+                        <option value="pc">PC</option>
+                        <option value="ios">IOS</option>
+                        <option value="android">Android</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </p>
+            </div>
+            <div id="publisher">
+                <label>Publisher</label>
+                <p>
+                    <select name="publisher" id="publisherId">
+                        <option value="nintendo">Nintendo</option>
+                        <option value="ubisoft">Ubisoft</option>
+                        <option value="sega">Sega</option>
+                        <option value="capcom">Capcom</option>
+                        <option value="konami">Konami</option>
+                    </select>
+                </p>
+            </div>
+            <div id="categoria">
+                <p><label>Categoria</label></p>
+                <p><label for="acao">Ação</label>
+                <input type="checkbox" id="acaoId" name="categoria" value="Ação"/></p>
+                <p><label for="aventuraId">Aventura</label>
+                <input type="checkbox" id="aventuraId" name="categoria" value="Aventura"/></p>
+                <p><label for="estrategiaId">Estratégia</label>
+                <input type="checkbox" id="estrategiaId" name="categoria" value="Estratégia"/></p>
+                <p><label for="rpgId">RPG</label>
+                <input type="checkbox" id="rpgId" name="categoria" value="RPG"/></p>
+                <p><label for="esporteId">Esporte</label>
+                <input type="checkbox" id="esporteId" name="categoria" value="Esporte"/></p>
+                <p><label for="corridaId">Corrida</label>
+                <input type="checkbox" id="corridaId" name="categoria" value="Corrida"/></p>
+                <p><label for="simulacaoId">Simulação</label>
+                <input type="checkbox" id="simulacaoId" name="categoria" value="Simulação"/></p>
+            </div>
+        </aside>
+    </container>
+
     <footer>
 
     </footer>
