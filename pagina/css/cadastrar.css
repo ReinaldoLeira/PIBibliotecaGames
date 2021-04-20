@@ -1,0 +1,93 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(../resouces/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.aside{
+
+    height: 100vh;
+    width: 100%;
+
+}
+
+.containerRegistrar{
+    margin: auto auto;
+    width: 767px;
+    height: 900px;
+    max-height: 930px;
+    background: #FFFFFF;
+    border: 1px solid #0E9AA7;
+    box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
+
+}
+
+.fonteTopo{
+    
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25em;
+    color: #0E9AA7;
+}
+
+.caixaRegistro{
+
+  padding-left: 10%;
+  padding-top: 1vh;
+
+}
+
+
+.inputRegistrar{
+
+    display:block;
+    width: 85%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.fonteGeral{
+    
+    font-size: 15em;
+
+}
+
+
+.inputData{
+
+    display: block;
+    height: 50px;
+    width: 10vw;
+    min-width: 150px;
+    max-width: 200px;
+
+}
+.inputCheck{
+    
+    font-size: 10em;
+    margin-top: 15px;
+
+}
+
+.caixaRegistro form p {
+
+    padding-left: 40%;
+    padding-top: 10px;
+}
+
+
