@@ -2,10 +2,8 @@
     font-family: PressStart2P;
     src: url(../resouces/PressStart2P-regular.ttf);
 }
-
-
 main{
-	width: 70%;
+	width: 80%;
 	}
 footer{
 	height: 234px;
@@ -14,7 +12,7 @@ header{
 	height: 100px;
 	}
 aside{
-	width:30%;
+	width:20%;
 	}
  *{
          box-sizing: border-box
@@ -24,7 +22,8 @@ aside{
         }   
    body {
             font-family: PressStart2P;  
-            background: #ccc;                             
+            background: #ccc;    
+            margin: 0px;                         
         }		
      .fundoVerde{
             background-color: #0e9aa7;           
