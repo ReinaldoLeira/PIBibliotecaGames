@@ -1,0 +1,12 @@
+container{
+    display: flex;   
+}
+aside{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+aside p, label{
+    font-size: 10rem;
+}
