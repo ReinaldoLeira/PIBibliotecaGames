@@ -12,25 +12,28 @@ html{
 
 
 body{
+
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
+    border: 0;
     box-sizing: border-box;
 }
+header{
+    height: 20vh;
+}
 
-.aside{
+aside{
 
-    height: 100vh;
-    width: 100%;
 
 }
 
 .containerRegistrar{
-    margin: auto auto;
-    width: 767px;
-    height: 900px;
-    max-height: 930px;
+
+ 
+    margin: 0 auto;
+    width: 70vh;
+    min-width: 300px;
+    height: 90vh;
+    min-height: 800px;
     background: #FFFFFF;
     border: 1px solid #0E9AA7;
     box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
@@ -90,4 +93,39 @@ body{
     padding-top: 10px;
 }
 
+.redes{
+    margin-top: 4vh;
+    margin-left: 22%;
+}
+
+.inputImagem{
+    margin-left: 9%;
+    height: 50px;
+    width: 50px;
+    
+}
+
+.criar{
+    margin-top: 4vh;
+    margin-left: 10vh;
+}
+
+input[type=submit] {
+
+    font-family: "PressStart2P";
+    font-size: 25px;
+    color: #FFFFFF;
+
+    width: 50vh;
+    height: 80px;
+
+    background-color: #0E9AA7;
+    border: 0;
+    box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
+
+}
+
+footer{
+    height: 20vh;
+}
 
