@@ -14,7 +14,7 @@ body {
     border-radius: 25px;
     padding: 20px;
     height: 60px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 nav{
@@ -162,4 +162,5 @@ footer{
 }
 html{
     height: fit-content;
+    box-sizing: border-box;
 }
