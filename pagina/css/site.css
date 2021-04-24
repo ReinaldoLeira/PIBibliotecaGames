@@ -17,8 +17,9 @@ body {
     align-items: center;
     border-radius: 25px;
     padding: 20px;
-    height: 60px;
+    height: 100px;
     margin-bottom: 5px;
+    box-sizing: border-box;
 }
 
 nav{
