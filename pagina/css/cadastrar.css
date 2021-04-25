@@ -45,7 +45,7 @@ aside{
     margin: 0 auto;
     width: 30vw;
     min-width: 360px;
-    height: 80vh;
+    height: 70vh;
     min-height: 670px;
     border: 1px solid #0E9AA7;
     box-sizing: border-box;
@@ -72,7 +72,7 @@ aside{
 
 .fonteGeral{
     
-    font-size: 10em;
+    font-size: 15em;
 
 }
 
@@ -84,6 +84,7 @@ aside{
     height: 5vh;
     margin-bottom: 20px;
 }
+
 .inputData{
 
     display: block;
@@ -91,25 +92,32 @@ aside{
     width: 10vw;
     min-width: 150px;
     max-width: 200px;
+    margin-bottom: 10px;
 
 }
+
 .inputCheck{
     
-    font-size: 8em;
-    margin-top: 15px;
-
-}
-
-.inputCheck:hover {
-
-    height: 2.5em;
-    width: 2.5em;
+    font-size: 12em;
+    
 }
 
 .inputCheck a:hover{
-
+    
     font-size: 1.3em;
 }
+
+
+.checkBox{
+    
+    transform: scale(2);
+}
+
+.checkBox:hover {
+
+   transform: scale(3);
+}
+
 
 .caixaRegistro form p {
 
@@ -138,18 +146,21 @@ aside{
     min-height: 40px;
     width: 3.5%;
     min-width: 40px;
+    max
 
    }
 
-.inputImagem:hover{
+.inputImagem:hover {
 
-    height: 65px;
-    width: 65px;
+    height: 100px;
+    width: 100px;
     box-shadow: 0.3vw 0.5vh 1vh grey;
+    
 }
 
 .criar{
     
+    font-size: 1.2em;
     width: 50vw;
     margin-top: 3vh;
     
@@ -163,7 +174,7 @@ input[type=submit] {
     color: #FFFFFF;
     margin-left: 3vw;
     width: 90vw;
-    max-width: 450px;
+    max-width: 650px;
     height: 13vh;
     max-height: 83px;
 
@@ -174,8 +185,7 @@ input[type=submit] {
 }
 
 footer{
-
-    
+  
     height: 15vh;
 }
 
