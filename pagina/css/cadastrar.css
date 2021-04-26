@@ -45,8 +45,9 @@ aside{
     margin: 0 auto;
     width: 30vw;
     min-width: 360px;
-    height: 70vh;
-    min-height: 670px;
+    height: 80vh;
+    min-height: 650px;
+
     border: 1px solid #0E9AA7;
     box-sizing: border-box;
     box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
@@ -98,7 +99,7 @@ aside{
 
 .inputCheck{
     
-    font-size: 12em;
+    font-size: 10em;
     
 }
 
@@ -146,14 +147,13 @@ aside{
     min-height: 40px;
     width: 3.5%;
     min-width: 40px;
-    max
-
-   }
+    
+}
 
 .inputImagem:hover {
 
-    height: 100px;
-    width: 100px;
+    height: 4%;
+    width: 4%;
     box-shadow: 0.3vw 0.5vh 1vh grey;
     
 }
@@ -172,9 +172,9 @@ input[type=submit] {
     font-family: "PressStart2P";
     font-size: 22em;
     color: #FFFFFF;
-    margin-left: 3vw;
-    width: 90vw;
-    max-width: 650px;
+    margin-left: 2vw;
+    width: 26vw;
+    min-width: 340px;
     height: 13vh;
     max-height: 83px;
 
