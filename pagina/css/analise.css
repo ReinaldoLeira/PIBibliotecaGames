@@ -1,3 +1,6 @@
+body{
+    background: #d5d5d5;  
+}
 .pai{
     display: flex;
 }

@@ -8,6 +8,7 @@ body {
     padding: 0px;    
     height: fit-content;
     font-family: 'Press Start 2P', cursive;
+    background: #d5d5d5;  
 }
 .cabecalho{
     background-color: #0E9AA7;
