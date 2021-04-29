@@ -3,12 +3,7 @@ body {
     flex-direction: column;                
 }   
 
-header{  
-    width: 100%;
-    background: white;
-} 
-
-footer{  
+header, footer{  
     width: 100%;
     background: white;
 } 
@@ -17,7 +12,7 @@ main{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;                
+    min-height: 100vh;             
 }
 
 container{                  
@@ -48,7 +43,7 @@ aside a{
 h3{
     font-size: 14rem;
 }
-
+ 
 .pai{
     display: flex;
 }
@@ -70,19 +65,10 @@ h3{
     font-size: 14rem;                       
 }    
 
-#imagemJogo img{
-    height: 34vh;
-    width: 20vw;
+#exemplo{    
+    width: 65%;
 }
-
-#informacoes{
-    font-size: 10rem;            
-    border-radius: 25px;  
-} 
-
-#descricao{
-    width: 100%;
-}
-#sinopse{
-    height: 17vh;
+#quadro{
+    text-align: center;
+    flex-grow: 1;
 }
