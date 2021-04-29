@@ -70,8 +70,18 @@ aside ul{
 #informacoes{
     font-size: 10rem;            
     border-radius: 25px;  
-}
+} 
 
 #descricao{
     width: 100%;
+}
+#sinopse{
+    height: 17vh;
+}
+aside a{
+    text-decoration: none;
+    color: black;
+}
+h3{
+    font-size: 14rem;
 }
