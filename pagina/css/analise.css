@@ -25,7 +25,7 @@ body{
     height: 170px;
 }
 
-.iframe-anlise{
+.iframe-analise{
     width: 30%;
     padding-left: 3%;
 }
@@ -51,8 +51,8 @@ label {
 }
 
 .iFrameUsuario{
-    height: 966px;
-    width: 400px;
+    height: 900px;
+    width: 350px;
     border-radius: 30px;
 }
 a{
@@ -70,6 +70,7 @@ button{
 /**     formulario em construcao para o botao de adicionar **/
 .form{
     box-sizing: border-box;
+    background-color: #0E9AA7;
     position: fixed;
     top: 0;bottom: 0;
     left: 0;right: 0;

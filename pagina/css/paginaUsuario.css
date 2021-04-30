@@ -14,7 +14,7 @@ body {
     font-size: 6.25%;
     background: #d5d5d5;  
 
-    height: 110vh;
+    height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ body {
 
 .marginzero{
 
-    margin: 0 auto;
+    margin: 0px;
 
 }
 

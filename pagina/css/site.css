@@ -3,13 +3,18 @@
     src: url(../resouces/PressStart2P-regular.ttf);
 }
 body {
-    background-color: white;
+    background: #d5d5d5; 
     margin: 0px;
     padding: 0px;    
     height: fit-content;
     font-family: 'Press Start 2P', cursive;
-    background: #d5d5d5;  
 }
+
+html{
+    height: fit-content;
+    box-sizing: border-box;
+}
+
 .cabecalho{
     background-color: #0E9AA7;
     justify-content: space-between;
@@ -19,7 +24,7 @@ body {
     border-radius: 25px;
     padding: 20px;
     height: 100px;
-    margin-bottom: 5px;
+    margin: 6px;
     box-sizing: border-box;
 }
 
@@ -34,6 +39,10 @@ nav{
 .cabecalho ul li{
     display: inline-block;
     padding: 10px;
+}
+.cabecalho-logo{ 
+    display: block; 
+    margin-left: 5%;
 }
 
 .div-pesquisa{
@@ -150,14 +159,22 @@ footer{
     justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
+    border-top: 1px solid #666;
 }
-.rodape-coluna img{
+.img-sociais{
     width: 50px;
     height: 50px;
 }
+.rodape-coluna-1{
+    align-self: center;
+}
+.rodape-logo{
+    display: block;
+    margin: 0 auto;
+}
 
 .copy{
-    background-color: #666666;
+    background-color: #666;
     text-align: center;
 }
 .copy h6{
@@ -165,8 +182,4 @@ footer{
     padding-bottom: 5px;
     margin-block-start: 0em;
     margin-block-end: 0em;
-}
-html{
-    height: fit-content;
-    box-sizing: border-box;
 }
