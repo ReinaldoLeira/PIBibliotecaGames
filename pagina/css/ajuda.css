@@ -1,0 +1,71 @@
+.bloco-1{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.div-pesquisa{
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    line-height: 80px;
+    width: 600px;
+    border-radius: 30px;
+    margin-top: 5px;
+}
+h2{
+    background-color: #0e9aa7;      
+    border-radius: 30px;    
+    width: 900px;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid black;
+	box-shadow: 0.7vw 0.5vh 1vh grey;   
+}
+
+.txt-pesquisa{
+    padding-left:5px;
+    height:40px;
+    width: 600px;
+    border-radius: 30px;
+}
+
+.bloco-2{
+    text-align: center;
+    font-size: 14px;
+}
+
+.populares{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    width: 940px;
+    justify-content: space-between;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.populares-div{
+    border-radius: 50px;
+    background: white; 
+    width: 250px;
+    height: 350px;
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid black; 
+	box-shadow: 0.7vw 0.5vh 1vh grey;
+    color: black;
+}
+
+.populares-div ul{
+    padding: 0px;
+}
+
+.populares-div ul li{
+    list-style: none;
+    align-items: center;
+}
