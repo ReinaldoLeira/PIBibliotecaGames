@@ -1,0 +1,22 @@
+body{
+    flex-direction: column;  
+}
+h1{
+    font-size: 16rem;
+    font-weight: 700;
+    text-align: center;
+}
+h3{
+    font-size: 10rem;
+    font-weight: 100;
+}
+article{
+    text-align: justify;
+    padding: 1%;
+}
+container{
+    justify-content: center;
+}
+.pai{
+    display: flex;
+}
