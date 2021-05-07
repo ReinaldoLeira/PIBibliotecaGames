@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url(../resouces/PressStart2P-regular.ttf);
+}
+
+body {
+    background: #d5d5d5; 
+    margin: 0px;
+    padding: 0px;    
+    height: fit-content;
+    font-family: 'Press Start 2P', cursive;
+}
+
+html{
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.bloco-geral{
+    display: flex;
+}
+
+.bloco-1{
+    width: 80%;
+    margin-right: 30px;
+    padding-left:10px;
+    border-radius: 25px;
+}
+
+.promocao{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.destaque{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.noticia{
+    border: 1px solid black;
+    width: 100%;
+    height: 200px;
+}
+
+.bloco-2{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    width: 20%;
+    margin-top: 45px;
+}
+
+.bloco-2 h3{
+    background-color: white;
+    text-align: center;
+    border: 1px solid #0E9AA7;
+    border-radius: 50px;
+    line-height: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}    
+
+.bloco-2 article{
+    padding-left:10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    padding-top: 10px;
+}
+
+.top-num{
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+.top-10{
+    background-color: white;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 5px;
+}
