@@ -1,0 +1,46 @@
+container{
+    display: flex;   
+}
+
+aside{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+
+aside p, label{
+    font-size: 10rem;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.paginas{
+    display: flex;     
+    align-self: flex-end;     
+} 
+
+.paginas li{    
+    list-style: none;   
+}
+
+.paginas li a{
+    color: black;
+    font-size: 10rem;
+    padding: 8px 16px;
+    text-decoration: none; 
+}
+
+.paginas a.ativo {
+    background-color: #0e9aa7;
+    color: #e3e3e3;
+    border-radius: 5px;
+}
+
+.paginas a:hover:not(.ativo) {
+    background-color: #9ee1e8;
+    border-radius: 5px;
+}

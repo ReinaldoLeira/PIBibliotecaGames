@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url(../resouces/PressStart2P-regular.ttf);
+}
+body {
+    background: #d5d5d5; 
+    margin: 0px;
+    padding: 0px;    
+    height: fit-content;
+    font-family: 'Press Start 2P', cursive;
+}
+
+html{
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.cabecalho{
+    background-color: #0E9AA7;
+    justify-content: space-between;
+    box-shadow: 10px 5px 5px grey;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding: 20px;
+    height: 100px;
+    margin: 6px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+}
+
+.cabecalho ul{
+    padding: 0px;
+}
+
+.cabecalho ul li{
+    display: inline-block;
+    padding: 10px;
+}
+.cabecalho-logo{ 
+    display: block; 
+    margin-left: 5%;
+}
+
+.div-pesquisa{
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
+    line-height: 30px;
+}
+
+.txt-pesquisa{
+    float:left;
+    text-align: center;
+    border:none;
+    padding-left:5px;
+    height:32px;
+    width: 200px
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+button{
+    background-color: #0E9AA7;
+    color: white;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.cabecalho-final{
+    display: flex;
+    margin-right: 5%;
+}
+
+.bloco-geral{
+    display: flex;
+}
+
+.bloco-1{
+    width: 80%;
+    margin-right: 30px;
+    padding-left:10px;
+    border-radius: 25px;
+}
+
+.promocao{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.destaque{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    height: 200px;
+}
+
+.noticia{
+    border: 1px solid black;
+    width: 100%;
+    height: 200px;
+}
+
+.bloco-2{
+    background-color: #0E9AA7;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 25px;
+    width: 20%;
+    margin-top: 45px;
+}
+
+.bloco-2 h3{
+    background-color: white;
+    text-align: center;
+    border: 1px solid #0E9AA7;
+    border-radius: 50px;
+    line-height: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}    
+
+.bloco-2 article{
+    padding-left:10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    padding-top: 10px;
+}
+
+.top-num{
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+.top-10{
+    background-color: white;
+    border-radius: 30px;
+    margin: 10px;
+    padding: 5px;
+}
+
+footer{
+    background-color: #d5d5d5; 
+}
+
+.rodape{
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    padding: 16px 40px 10px 40px;
+    border-top: 1px solid #666;
+}
+.img-sociais{
+    width: 50px;
+    height: 50px;
+}
+.rodape-coluna-1{
+    align-self: center;
+}
+.rodape-logo{
+    display: block;
+    margin: 0 auto;
+}
+
+.copy{
+    background-color: #666;
+    text-align: center;
+}
+.copy h6{
+    padding-top: 6px;
+    padding-bottom: 5px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}

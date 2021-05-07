@@ -1,0 +1,75 @@
+body{
+    background: #d5d5d5;  
+    font-size: 13px;
+}
+.pai{
+    display: flex;
+}
+
+.analiseJogo-div{
+    width: 80%;
+}
+
+.analiseJogo-div ul{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.analise{
+    background: white;
+}
+
+.analise ul{
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.analise ul li{
+    display: flex;
+}
+.center{
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.center img{
+    margin-right: 20px;
+}
+
+.flex{
+    display: flex;
+    padding-top: 5px;
+}
+
+.w-70{
+    width: 70%;
+}
+
+.w-30{
+    width: 30%;
+}
+
+.jogo ul{
+    list-style: none;
+    padding-right: 10px;
+}
+
+.jogo ul li{
+    list-style: none;
+    border-bottom: 1px solid gray;
+}
+
+.jogo p{
+    width: 400px;
+}
+.flex{
+    display: flex;
+    line-break: auto;
+}
+.media{
+    display: flex;
+}
+header, footer{  
+    width: 100%;
+    background: white;
+} 

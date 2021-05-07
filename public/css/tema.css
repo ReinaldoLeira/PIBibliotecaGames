@@ -1,0 +1,62 @@
+@font-face {
+    font-family: PressStart2P;
+    src: url(../resouces/PressStart2P-regular.ttf);
+}
+
+main{
+	width: 80%;
+	}
+
+footer{
+	height: 186px;
+	}	
+
+header{
+	height: 113px;
+	}
+
+aside{
+	width:20%;
+	}
+
+*{
+    box-sizing: border-box
+}
+
+html{
+    font-size: 6.25%;
+} 
+
+body {
+    font-family: PressStart2P;  
+    background: #d5d5d5;    
+    margin: 0px;                         
+}	
+
+.fundoVerde{
+    background-color: #0e9aa7;           
+    margin: 0.5vh 0.5vw;
+    padding: 2vh 0.5vw;
+    border: 1px solid black;
+	box-shadow: 0.7vw 0.5vh 1vh grey;   
+}
+
+.fundoBranco{
+    background-color: white;           
+    margin: 0.5vh 0.5vw;
+    padding: 2vh 0.5vw;
+    border: 1px solid black; 
+	box-shadow: 0.7vw 0.5vh 1vh grey;   
+} 
+
+.iframeCabecalho{
+    height:113px;
+    width:100%;
+    border:none;
+}
+
+.iframeRodape{
+    height:186px;
+    width:100%;
+    border:none;
+}
