@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url(../resouces/PressStart2P-regular.ttf);
+}
+
+body {
+    background: #d5d5d5; 
+    margin: 0px;
+    padding: 0px;    
+    height: fit-content;
+    font-family: 'Press Start 2P', cursive;
+}
+
+html{
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+footer{
+    background-color: #d5d5d5; 
+}
+
+.rodape{
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    padding: 16px 40px 10px 40px;
+    border-top: 1px solid #666;
+}
+.img-sociais{
+    width: 50px;
+    height: 50px;
+}
+.rodape-coluna-1{
+    align-self: center;
+}
+.rodape-logo{
+    display: block;
+    margin: 0 auto;
+}
+
+.copy{
+    background-color: #666;
+    text-align: center;
+}
+.copy h6{
+    padding-top: 6px;
+    padding-bottom: 5px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
