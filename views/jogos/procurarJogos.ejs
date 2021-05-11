@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Jogo</title>
+    <link rel="stylesheet" href="../../public/css/tema.css">
+    <link rel="stylesheet" href="../../public/css/jogos/procurarJogos.css">
+</head>
+
+<body>
+    <header>
+        <iframe src="../home/header.ejs" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
+    </header>
+
+    <container>
+        <main class="fundoBranco">
+            <ul class="paginas">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#" class="ativo">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">></a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </main>
+        <aside class="fundoVerde">
+            <div id="pesquisar">
+                <label>Pesquisar</label>
+                <p><input type="text" placeholder="Buscar"></p>
+            </div>
+            <div id="plataforma">
+                <label>Plataforma</label>
+                <p>
+                    <select name="plataforma" id="plataformaId">
+                        <option value="ps4">Playstation 4</option>
+                        <option value="ps5">Playstation 5</option>
+                        <option value="3ds">Nintendo 3DS</option>
+                        <option value="nswitch">Nintendo Switch</option>
+                        <option value="xone">Xbox One</option>
+                        <option value="xseries">Xbox Series X/S</option>
+                        <option value="pc">PC</option>
+                        <option value="ios">IOS</option>
+                        <option value="android">Android</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </p>
+            </div>
+            <div id="publisher">
+                <label>Publisher</label>
+                <p>
+                    <select name="publisher" id="publisherId">
+                        <option value="nintendo">Nintendo</option>
+                        <option value="ubisoft">Ubisoft</option>
+                        <option value="sega">Sega</option>
+                        <option value="capcom">Capcom</option>
+                        <option value="konami">Konami</option>
+                    </select>
+                </p>
+            </div>
+            <div id="categoria">
+                <p><label>Categoria</label></p>
+                <p>
+                    <input type="checkbox" id="acaoId" name="categoria" value="Ação" />
+                    <label for="acaoId">Ação</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="aventuraId" name="categoria" value="Aventura" />
+                    <label for="aventuraId">Aventura</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="estrategiaId" name="categoria" value="Estratégia" />
+                    <label for="estrategiaId">Estratégia</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="rpgId" name="categoria" value="RPG" />
+                    <label for="rpgId">RPG</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="esporteId" name="categoria" value="Esporte" />
+                    <label for="esporteId">Esporte</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="corridaId" name="categoria" value="Corrida" />
+                    <label for="corridaId">Corrida</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="simulacaoId" name="categoria" value="Simulação" />
+                    <label for="simulacaoId">Simulação</label>
+                </p>
+            </div>
+        </aside>
+    </container>
+
+    <footer>
+        <iframe src="../home/footer.ejs" title="IframeRodape" class="iframeRodape"></iframe>
+    </footer>
+</body>
+
+</html>

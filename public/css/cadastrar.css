@@ -1,0 +1,193 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(../resouces/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+}
+
+
+body{
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100vw;
+    min-width: 350px;
+    height: 110vh;
+    min-height: 800px;
+    background: #d5d5d5;  
+}
+
+header{
+
+    height: 15vh;
+    width: 100vw;
+
+}
+
+aside{
+
+    
+    height: 80vh;
+    min-height: 650px;
+    width: 100vw;
+    min-width: 360px;
+
+}
+
+.containerRegistrar{
+
+ 
+    margin: 0 auto;
+    width: 30vw;
+    min-width: 360px;
+    height: 80vh;
+    min-height: 650px;
+
+    border: 1px solid #0E9AA7;
+    box-sizing: border-box;
+    box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
+
+}
+
+.fonteTopo{
+    
+    text-align: center;
+    margin-top: 1%;
+    font-size: 25em;
+    color: #0E9AA7;
+
+}
+
+.caixaRegistro{
+
+    
+    width: 45vh;
+    margin-left: 10%;
+  
+}
+
+.fonteGeral{
+    
+    font-size: 15em;
+
+}
+
+.inputRegistrar{
+
+    display:block;
+    width: 23vw;
+    min-width: 250px;
+    height: 5vh;
+    margin-bottom: 20px;
+}
+
+.inputData{
+
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    min-width: 150px;
+    max-width: 200px;
+    margin-bottom: 10px;
+
+}
+
+.inputCheck{
+    
+    font-size: 10em;
+    
+}
+
+.inputCheck a:hover{
+    
+    font-size: 1.3em;
+}
+
+
+.checkBox{
+    
+    transform: scale(2);
+}
+
+.checkBox:hover {
+
+   transform: scale(3);
+}
+
+
+.caixaRegistro form p {
+
+    margin-left: 45%;
+    margin-top: 10px;
+}
+
+.redes{
+
+    width: 50vh;
+    margin-top: 4%;
+
+}
+
+.redes form{
+
+    width: 90vw;
+    box-sizing: border-box;
+   
+}
+
+.inputImagem{
+
+    margin-left: 9vh;
+    height: 3.5%;
+    min-height: 40px;
+    width: 3.5%;
+    min-width: 40px;
+    
+}
+
+.inputImagem:hover {
+
+    height: 4%;
+    width: 4%;
+    box-shadow: 0.3vw 0.5vh 1vh grey;
+    
+}
+
+.criar{
+    
+    font-size: 1.2em;
+    width: 50vw;
+    margin-top: 3vh;
+    
+
+}
+
+input[type=submit] {
+
+    font-family: "PressStart2P";
+    font-size: 22em;
+    color: #FFFFFF;
+    margin-left: 2vw;
+    width: 26vw;
+    min-width: 340px;
+    height: 13vh;
+    max-height: 83px;
+
+    background-color: #0E9AA7;
+    border: 0;
+    box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
+
+}
+
+footer{
+  
+    height: 15vh;
+}
+

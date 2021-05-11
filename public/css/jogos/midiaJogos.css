@@ -1,0 +1,85 @@
+body {
+    display: flex;  
+    flex-direction: column;                
+}   
+
+header, footer{  
+    width: 100%;
+    background: white;
+} 
+
+main{            
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;             
+}
+
+container{                  
+    display: flex;
+    min-height: 100vh;          
+}
+
+aside{
+    height: 100vh;   
+    border-radius: 25px;  
+    font-size: 10rem; 
+    text-align: center;                                                  
+}
+
+aside li{
+    height: 10%; 
+    list-style: none;                                         
+}
+
+aside ul{
+    padding-inline-start: 0px;              
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+}
+h3{
+    font-size: 14rem;
+}
+ 
+.pai{
+    display: flex;
+}
+
+.h-33{
+    height: 33vh;
+} 
+
+.h-50{
+    height: 50vh;
+}    
+
+.compreAgora{            
+    height: 50%;            
+}
+
+#titulo{
+    text-align: center; 
+    font-size: 14rem;                       
+}    
+
+#galeriaImagens{
+    flex-grow: 1;  
+    flex-wrap: wrap;  
+    overflow: auto;
+}
+.imagemGaleria{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       
+}
+#galeriaImagens a{
+    width: 30%;
+    min-width: 15%;
+    height: 30%;
+    min-height: 15%;
+    margin: 1%;
+    border: 1px solid #0e9aa7;;
+}

@@ -1,0 +1,194 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(../resouces/PressStart2P-Regular.ttf);
+}
+
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+
+}
+
+header {
+    
+    width: 100vw;
+    height: 15vh;
+    max-height: 20vh;
+    min-height: 10vh;
+    
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    background: #d5d5d5;    
+
+}
+
+aside {
+
+    height: 70vh;
+    min-height: 40vh;
+    width: 100vw;
+
+}
+
+.loginContainer {
+
+   
+    margin: 0 auto;
+    width: 30vw;
+    min-width: 360px;
+    height: 70vh;
+    min-height: 40vh;
+    background: #fff;    
+    border: 1px solid #0E9AA7;
+    box-sizing: border-box;
+    box-shadow: 0.2vw 1vh 1vh grey;
+
+}
+
+.loginText{
+
+    color: #0E9AA7;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 25em;
+    box-sizing: border-box;
+
+}
+
+.caixaForm{
+
+    
+    width: 70%;
+    box-sizing: border-box;
+    
+    position: relative;
+    left: 15%;
+
+}
+.textInput{
+
+    
+    font-size: 10em;
+}
+
+.caixaInput{
+
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    height: 4.5vh;
+    width: 20vw;
+    min-width: 240px;
+    display: block;
+
+}
+
+.caixaForm p {
+
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 15em;
+}
+
+
+.inputImagem {
+
+    margin-left: 13%;
+    height: 15%;
+    width: 15%;
+
+}
+
+.inputImagem:hover{
+
+    height: 18%;
+    min-height: 25px;
+    width: 18%;
+    box-shadow: 0.3vw 0.5vh 1vh grey;
+}
+
+.inputSubmit{
+    
+    display: block;
+    position: relative;
+    left: 10%;
+    width: 24vw;
+    min-width: 285px;
+    height: 8vh;
+
+    margin-top: 20px;
+
+    text-align: center;
+    color: white;
+    font-family: "PressStart2P";
+    font-size: 25em;
+
+    background: #0E9AA7;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+}
+
+
+.aLink {
+
+    margin-top: 2vh;
+
+}
+
+.aLink a {
+    
+    margin-top: 1vh;
+    text-decoration: none;
+    font-size: 10em;
+    color: black;
+    text-shadow: 0.1vw 0.2vh 0.2vh grey;
+    display: block;
+    text-align: center;
+    
+}
+
+.aLink a:hover{
+
+    font-size: 15em;
+}
+
+.aText {
+    
+    
+
+    margin-top: 7%;
+    margin-bottom: 10%;
+
+}
+
+.aText a {
+
+    text-decoration: none;
+    font-size: 25em;
+    color: #0E9AA7;
+    text-shadow: 0.1vw 0.2vh 0.2vh grey;
+    display: block;
+    text-align: center;
+
+}
+
+.aText a:hover{
+
+    font-size: 30em;
+}
+
+footer {
+
+    
+    width: 100vw;
+    height: 15vh;
+    min-height: 10vh;
+
+}

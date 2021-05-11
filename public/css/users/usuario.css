@@ -1,0 +1,266 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../resouces/PressStart2P-Regular.ttf');
+}
+
+body {
+    
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #d5d5d5;  
+
+}
+
+.marginzero{
+
+    margin: 0 auto;
+}
+ /* MEUS JOGOS */
+.containerJogos{
+   
+    display: flex;
+    height: 70vh;
+}
+
+.titulo{
+
+    display: table;
+    font-size: 15px;
+    color: black;
+}
+
+.caixaJogos{
+
+    padding-left: 30px;
+    width: 75%;
+
+}
+.meusJogos{
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+
+}
+.meusJogos a {
+
+    margin-bottom: 20px;
+    margin-right: 50px;
+    width: 170px;
+    height: 250px;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+
+}
+.jogosDesejados{
+    
+    display: flex;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.jogosDesejados a {
+    margin-bottom: 20px;
+    margin-right: 50px;
+    width: 170px;
+    height: 250px;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.asidePerfil{
+
+     width: 20%;
+}
+
+.caixaPerfil2 {
+
+    width: 400px;
+    height: 966px;
+    background: #0E9AA7;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+
+}
+
+
+
+/* parte usuario*/
+
+.containerPerfil {
+
+    display: flex;
+  
+}
+
+
+.caixaPerfil {
+
+    width: 400px;
+    height: 966px;
+    background: #0E9AA7;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0.7vw 0.5vh 1vh rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+}
+
+.caixaFoto {
+
+    margin-top: 20px;
+    margin-left: 75px;
+    width: 250px;
+    height: 250px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.caixaNick{
+
+    text-align: center;
+    font-size: 30px;
+}
+
+.caixaSobre{
+
+    margin-left: 25px;
+    width: 350px;
+    height: 149px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 10px;
+
+}
+.listaPerfil a:hover{
+
+    background-color: rgb(235, 231, 0);
+}
+
+.listaPerfil a{
+
+    text-decoration: none;
+    color: black;
+    
+}
+
+
+.listaPerfil a {
+
+    display: table;
+    margin-left: 25px;
+    margin-top: 15px;
+    width: 350px;
+    height: 74px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding-top: 25px;
+    font-size: 25px;
+    text-decoration: none;
+    
+
+}
+.sociais{
+
+    display: flex;
+    list-style:none;
+}
+.sociais a{
+    
+    margin-top: 25px;
+    margin-left: 60px;
+}
+
+.sociais img:hover{
+
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 60px;
+    width: 60px;
+}
+
+.sociais img{
+
+    height: 50px;
+    width: 50px;
+    
+
+}
+/* PAGINA POSTS */
+
+.asidePosts{
+    padding-left: 12%;
+    width: 25%;
+}
+
+.containerPosts{
+    
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.caixaPosts{
+    
+    box-sizing: border-box;
+    height: 100%;
+    width: 70%;
+    padding-left: 13%
+}
+
+.posts {
+
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 888px;
+    height: 170px;
+    background: #0E9AA7;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.posts p {
+
+    font-size: 50px;
+}
+
+.caixaComentario{
+
+    width: 930px;
+    height: 230px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+
+}
+
+.dataPost {
+    font-size: 10px;
+    padding-left: 50%;
+}
