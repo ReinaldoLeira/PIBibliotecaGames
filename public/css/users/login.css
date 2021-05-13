@@ -1,7 +1,7 @@
 @font-face {
 
     font-family:"PressStart2P";
-    src: url(../resouces/PressStart2P-Regular.ttf);
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 
@@ -186,7 +186,7 @@ aside {
 
 footer {
 
-    
+    margin-top: 5vh;
     width: 100vw;
     height: 15vh;
     min-height: 10vh;

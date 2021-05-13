@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../public/css/users/cadastrar.css">
+        <link rel="stylesheet" href="/css/users/cadastrar.css">
         <title>Registre-se</title>
 
     </head>
 
     <body>
         <header>
-
+            <%- include('../home/header.ejs'); %>
         </header>
 
         <aside>
@@ -35,10 +35,6 @@
                         
                         <label for="fregistrar" class="fonteGeral">Re-senha </label>
                         <input type="password" name="fregistrar" id="" class="inputRegistrar">
-
-                        <label for="fregistrar" class="fonteGeral">Data de Nascimento: </label>
-                        <input type="date" name="fregistrar" id="" class="inputData ">
-
                         
                         <input type="checkbox" name="fregistrar" id="" class="checkBox">
                         <label for="fregistrar" class="inputCheck">“Eu li e concordo com os <a href=""> termos de uso </a>"</label>
@@ -53,9 +49,9 @@
                     
                     <form action="">
 
-                        <input type="image" src="../../public/img/facebookIcon.png" alt="" class="inputImagem">
-                        <input type="image" src="../../public/img/gmailIcon.png" alt="" class="inputImagem">
-                        <input type="image" src="../../public/img/twitterIcon.png" alt="" class="inputImagem">
+                        <input type="image" src="/img/facebookIcon.png" alt="" class="inputImagem">
+                        <input type="image" src="/img/gmailIcon.png" alt="" class="inputImagem">
+                        <input type="image" src="/img/twitterIcon.png" alt="" class="inputImagem">
 
                     </form>
                     
@@ -75,7 +71,7 @@
         </aside>
 
         <footer>
-
+            <%- include('../home/footer.ejs'); %>
         </footer>
         
     </body>

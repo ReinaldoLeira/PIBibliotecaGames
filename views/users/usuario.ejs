@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../public/css/users/paginaUsuario.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/users/paginaUsuario.css">
+
         <title>Usuario</title>
     </head>
 
     <body>
+        <header>
+            <%- include('../home/header.ejs'); %>
+        </header>
 
         <aside class="containerPerfil">
 
@@ -42,9 +44,9 @@
 
                 <div class="sociais">
 
-                    <a href="http://instagram.com"><img src="../../public/img/instagramIcon.png" alt=""></a>
-                    <a href="http://www.twitter.com"><img src="../../public/img/twitterIcon.png" alt=""></a>
-                    <a href="http://www.facebook.com"><img src="../../public/img/facebookIcon.png" alt=""></a>
+                    <a href="http://instagram.com"><img src="/img/instagramIcon.png" alt=""></a>
+                    <a href="http://www.twitter.com"><img src="/img/twitterIcon.png" alt=""></a>
+                    <a href="http://www.facebook.com"><img src="/img/facebookIcon.png" alt=""></a>
                 
                 </div>
 
@@ -52,6 +54,10 @@
             </div>
 
         </aside>
+
+        <footer>
+            <%- include('../home/footer.ejs'); %>
+        </footer>
         
     </body>
 

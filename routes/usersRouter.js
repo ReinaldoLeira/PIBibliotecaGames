@@ -16,6 +16,6 @@ router.get ('/meusjogos', usersController.meusJogos);
 
 router.get ('/posts', usersController.posts);
 
-router.get ('/usuario', usersController.usuario)
+router.get ('/', usersController.usuario)
 
 module.exports = router

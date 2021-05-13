@@ -1,7 +1,7 @@
 @font-face {
 
     font-family:"PressStart2P";
-    src: url(../resouces/PressStart2P-Regular.ttf);
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 html{
@@ -187,7 +187,8 @@ input[type=submit] {
 }
 
 footer{
-  
+    
+    margin-top: 5vh;
     height: 15vh;
 }
 

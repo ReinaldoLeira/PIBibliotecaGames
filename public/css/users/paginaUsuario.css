@@ -6,7 +6,7 @@
 @font-face {
 
     font-family: 'Press Start 2P';
-    src: url('../resouces/PressStart2P-Regular.ttf');
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 body {
@@ -40,13 +40,14 @@ header{
 
 footer{
 
-    
+    margin-top: 5vh;
     width: 100vw;
     height: 20vh;
 }
 
 .containerPerfil {
 
+   
    width: 100vw;
    height: 93vh;
    min-height: 770px;
@@ -55,7 +56,7 @@ footer{
 
 
 .caixaPerfil {
-
+    margin: 0 auto;
     width: 43vw;
     min-width: 350px;
     max-width: 400px;
