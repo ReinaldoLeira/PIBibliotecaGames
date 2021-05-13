@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/analise', (req, res) => {
-    res.render('analiseJogos')
+    res.render('./jogos/analiseJogos')
 })
 
 
