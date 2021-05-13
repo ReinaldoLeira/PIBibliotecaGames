@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analise de Jogos</title>
-    <link rel="stylesheet" href="css/analiseJogos.css">
+    <link rel="stylesheet" href="css/jogos/analiseJogos.css">
+    <link rel="stylesheet" href="css/home/header.css">
+    <link rel="stylesheet" href="css/home/footer.css">
     <link rel="stylesheet" href="css/tema.css">
 </head>
 <header>
-    <iframe src="header.html" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
+    <%- include home/header.ejs %> 
 </header>
 <body>
     <div class="pai">
@@ -20,7 +22,7 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="../../public/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
                                 <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
@@ -33,7 +35,7 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="../../public/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
                                 <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
@@ -49,7 +51,7 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="../../public/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
                                 <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
@@ -62,7 +64,7 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/dislike.png" alt="" width="40px" height="40px">
+                                <img src="../../public/img/dislike.png" alt="" width="40px" height="40px">
                                 <h3>Não Recomendado</h3></li>
                             <li class="flex">
                                 <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
@@ -83,6 +85,6 @@
     </div>
 </body>
 <footer>
-    <iframe src="footer.html" title="IframeRodape" class="iframeRodape"></iframe>
+    <%- include home/footer.ejs %> 
 </footer>
 </html>
