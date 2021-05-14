@@ -29,6 +29,7 @@ body {
 
 header{
 
+    font-size: 4em;
     box-sizing: border-box;
     
     width: 100vw;
@@ -37,6 +38,7 @@ header{
 
 footer{
 
+    font-size: 4em;
     box-sizing: border-box;
     
     width: 100vw;
