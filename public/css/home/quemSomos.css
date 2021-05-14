@@ -1,6 +1,10 @@
 body{
     flex-direction: column;  
 }
+
+header{
+    font-size: 4em;
+}
 h1{
     font-size: 16rem;
     font-weight: 700;
@@ -19,4 +23,8 @@ container{
 }
 .pai{
     display: flex;
+}
+
+footer{
+    font-size: 4em;
 }
