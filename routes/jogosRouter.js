@@ -10,4 +10,6 @@ router.get('/historico/:id',jogosController.historico)
 
 router.get('/midiaJogo/:id',jogosController.midia)
 
+router.get('/perfil/:id',jogosController.perfil)
+
 module.exports = router;

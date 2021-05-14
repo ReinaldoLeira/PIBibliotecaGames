@@ -9,3 +9,7 @@ module.exports.historico = (req, res) => {
 module.exports.midia = (req, res) => {
     res.render('./jogos/midiaJogo')
 }
+
+module.exports.perfil = (req, res) => {
+    res.render('./jogos/perfilDeJogos')
+}
