@@ -6,11 +6,11 @@ const jogosController = require('../controller/jogosController')
 
 router.get('/analise', jogosController.analise)
 
-router.get('/historico/:id',jogosController.historico)
+router.get('/historico/',jogosController.historico)
 
-router.get('/midiaJogo/:id',jogosController.midia)
+router.get('/midia/',jogosController.midia)
 
-router.get('/perfil/:id',jogosController.perfil)
+router.get('/perfil/',jogosController.perfil)
 
 router.get('/listar',jogosController.listar)
 
