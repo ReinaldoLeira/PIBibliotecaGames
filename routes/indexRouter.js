@@ -5,7 +5,7 @@ const usersController = require('../controller/usersController');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('./home/index');
+  res.render('index');
 });
 
 router.get ('/login', usersController.login);
