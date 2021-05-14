@@ -13,3 +13,7 @@ module.exports.midia = (req, res) => {
 module.exports.perfil = (req, res) => {
     res.render('./jogos/perfilDeJogos')
 }
+
+module.exports.listar = (req, res) => {
+    res.render('./jogos/procurarJogos')
+}
