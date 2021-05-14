@@ -12,6 +12,6 @@ router.get('/midia/',jogosController.midia)
 
 router.get('/perfil/',jogosController.perfil)
 
-router.get('/listar',jogosController.listar)
+router.get('/',jogosController.listar)
 
 module.exports = router;
