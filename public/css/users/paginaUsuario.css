@@ -33,13 +33,14 @@ body {
 
 header{
 
-    
+    font-size: 4em;
     width: 100vw;
     height: 15vh;
 }
 
 footer{
 
+    font-size: 4em;
     margin-top: 5vh;
     width: 100vw;
     height: 20vh;
@@ -56,6 +57,7 @@ footer{
 
 
 .caixaPerfil {
+    
     margin: 0 auto;
     width: 43vw;
     min-width: 350px;

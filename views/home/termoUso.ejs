@@ -10,7 +10,7 @@
 </head>
 <body class="pai coluna">
     <header>
-        <iframe src="header.ejs" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
+        <%- include('../home/header.ejs') %>
     </header>
     <container class="pai">
         <main>
@@ -34,7 +34,7 @@
         </main>
     </container>    
     <footer>
-        <iframe src="footer.ejs" title="IframeRodape" class="iframeRodape"></iframe>
+        <%- include('../home/footer.ejs') %>
     </footer>
 </body>
 </html>

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/tema.css">
-    <link rel="stylesheet" href="../../public/css/jogos/histDePreco.css">
+    <link rel="stylesheet" href="/css/tema.css">
+    <link rel="stylesheet" href="/css/jogos/histDePreco.css">
     <title>Histórico de Preços</title>
 </head>
 
 <body>
     <header>
-        <iframe src="../home/header.ejs" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
+        <%- include('../home/header.ejs') %>
     </header>
     <container>
         <main>
@@ -63,7 +63,7 @@
     </container>
 
     <footer>
-        <iframe src="../home/footer.ejs" title="IframeRodape" class="iframeRodape"></iframe>
+        <%- include('../home/footer.ejs') %>
     </footer>
 </body>
 
