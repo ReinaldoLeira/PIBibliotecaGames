@@ -69,11 +69,13 @@ a{
 
 button{
     background-color: #0E9AA7;
-    color: white;
     border: none;
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
     margin-left: 20px;
+}
+.btw{
+    color: white;
 }
 
 .cabecalho-final{
