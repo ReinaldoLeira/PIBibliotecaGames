@@ -5,3 +5,7 @@ module.exports.analise = (req, res) => {
 module.exports.historico = (req, res) => {
     res.render('./jogos/histDePreco')
 }
+
+module.exports.midia = (req, res) => {
+    res.render('./jogos/midiaJogo')
+}

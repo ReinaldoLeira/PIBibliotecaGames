@@ -6,6 +6,8 @@ const jogosController = require('../controller/jogosController')
 
 router.get('/analise', jogosController.analise)
 
-router.get('/historico/:id'),jogosController
+router.get('/historico/:id',jogosController.historico)
+
+router.get('/midiaJogo/:id',jogosController.midia)
 
 module.exports = router;
