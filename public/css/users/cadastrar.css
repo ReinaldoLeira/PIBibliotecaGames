@@ -24,7 +24,7 @@ body{
     box-sizing: border-box;
 }
 
-header{
+.cad-header{
     
     font-size: 4em;
     height: 15vh;
@@ -32,7 +32,7 @@ header{
 
 }
 
-aside{
+.cad-aside{
 
     display: inline;
     height: 80vh;
@@ -171,7 +171,7 @@ aside{
 
 }
 
-input[type=submit] {
+.cad-submit {
 
     font-family: "PressStart2P";
     font-size: 22em;
@@ -188,7 +188,7 @@ input[type=submit] {
 
 }
 
-footer{
+.cad-footer {
     
     font-size: 4em;
     margin-top: 5vh;

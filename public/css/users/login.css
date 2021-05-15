@@ -12,7 +12,7 @@ html{
 
 }
 
-header {
+.login-header{
     
     font-size: 4em;
     width: 100vw;
@@ -30,8 +30,8 @@ body {
 
 }
 
-aside {
-    
+.login-aside {
+
     display: inline;
     height: 70vh;
     min-height: 40vh;
@@ -186,7 +186,8 @@ aside {
     font-size: 30em;
 }
 
-footer {
+.login-footer {
+    
     font-size: 4em;
     margin-top: 5vh;
     width: 100vw;
