@@ -6,12 +6,10 @@ body {
     background: #d5d5d5; 
     margin: 0px;
     padding: 0px;    
-    height: fit-content;
     font-family: 'Press Start 2P', cursive;
 }
 
 html{
-    height: fit-content;
     box-sizing: border-box;
 }
 
@@ -49,7 +47,6 @@ nav{
     background-color: white;
     border: 1px solid black;
     margin: auto;
-    line-height: 30px;
 }
 
 .txt-pesquisa{
@@ -124,7 +121,6 @@ button{
     text-align: center;
     border: 1px solid #0E9AA7;
     border-radius: 50px;
-    line-height: 25px;
     margin-left: 5px;
     margin-right: 5px;
 }    

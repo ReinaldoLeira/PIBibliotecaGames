@@ -7,17 +7,16 @@ body {
     background: #d5d5d5; 
     margin: 0px;
     padding: 0px;    
-    height: fit-content;
     font-family: 'Press Start 2P', cursive;
 }
 
 html{
-    height: fit-content;
     box-sizing: border-box;
 }
 
 footer{
     background-color: #d5d5d5; 
+    margin-top: 20px;
 }
 
 .rodape{
