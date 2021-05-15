@@ -31,7 +31,7 @@ nav{
 .cabecalho ul li{
     display: inline-block;
     padding: 10px;
-    font-size:  15px;
+    font-size:  15em;
 }
 .cabecalho-logo{ 
     display: block; 

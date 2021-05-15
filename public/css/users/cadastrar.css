@@ -26,7 +26,6 @@ body{
 
 header{
     
-    font-size: 4em;
     height: 15vh;
     width: 100vw;
 
@@ -190,7 +189,6 @@ input[type=submit] {
 
 footer{
     
-    font-size: 4em;
     margin-top: 5vh;
     height: 15vh;
 }

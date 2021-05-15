@@ -9,7 +9,7 @@ html{
 
 .bloco-geral{
     display: flex;
-    font-size:  13px;
+    font-size:  13em;
     margin-right: 10px;
     margin-left: 10px;
 }

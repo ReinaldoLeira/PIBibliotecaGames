@@ -1,20 +1,11 @@
 .bloco-1{
     text-align: center;
-    font-size: 14px;
+    font-size: 14em;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.div-pesquisa{
-    background-color: white;
-    border: 1px solid black;
-    margin: auto;
-    
-    width: 600px;
-    border-radius: 30px;
-    margin-top: 5px;
-}
-h2{
+.bloco-1 h2,.bloco-2 h2{
     background-color: #0e9aa7;      
     border-radius: 30px;    
     width: 900px;
@@ -24,16 +15,26 @@ h2{
 	box-shadow: 0.7vw 0.5vh 1vh grey;   
 }
 
-.txt-pesquisa{
-    padding-left:5px;
-    height:40px;
+.pesquisa-ajuda{
+    background-color: white;
+    border: 1px solid black;
+    margin: auto;
     width: 600px;
     border-radius: 30px;
+    margin-top: 15px;
+}
+
+.txt-pesquisas{
+    text-align: center;
+    border-radius: 30px;
+    border: none;
+    height: 32px;
+    width: 600px;
 }
 
 .bloco-2{
     text-align: center;
-    font-size: 14px;
+    font-size: 13em;
 }
 
 .populares{

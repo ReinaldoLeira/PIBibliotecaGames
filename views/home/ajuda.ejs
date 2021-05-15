@@ -1,15 +1,21 @@
-<link rel="stylesheet" href="css/ajuda.css">
-<link rel="stylesheet" href="css/tema.css">
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home/ajuda.css">
+    <link rel="stylesheet" href="/css/tema.css">
+    <title>Ajuda</title>
+</head>
 <body>
-<header>
-    <iframe src="header.html" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
-</header>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>
     <div class="bloco-1">
         <h2>Como podemos ajudar você?</h2>
-        <div class="div-pesquisa">
-            <input type="search" class="txt-pesquisa" placeholder="Pesquisar">
+        <div class="pesquisa-ajuda">
+            <input type="search" class="txt-pesquisas" placeholder="Pesquisar">
         </div>
     </div>
     <div class="bloco-2">
@@ -18,7 +24,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/config.png"></li>
+                        <li><img src="/img/ajuda-icon/config.png"></li>
                         <li><h3>Configurações da conta</h3></li>
                         <li>Ajuste as configurações, gerencie as notificações, saiba mais sobre mudanças de nome e muito mais.</li>
                     </ul>
@@ -27,7 +33,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/key.png"></li>
+                        <li><img src="/img/ajuda-icon/key.png"></li>
                         <li><h3>Login e senha</h3></li>
                         <li>Resolva problemas de login e saiba como alterar ou redefinir sua senha.</li>
                     </ul>
@@ -36,7 +42,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/shield.png"></li>
+                        <li><img src="/img/ajuda-icon/shield.png"></li>
                         <li><h3>Privacidade e segurança</h3></li>
                         <li>Controle quem pode ver o que você compartilha e adicione proteção extra à sua conta.</li>
                     </ul>
@@ -45,7 +51,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/question.png" alt=""></li>
+                        <li><img src="/img/ajuda-icon/config.png" alt=""></li>
                         <li><h3>Duvidas frequentes</h3></li>
                         <li>Nesta seção, são divulgadas as perguntas frequentes pelos usuários.</li>
                     </ul>
@@ -54,7 +60,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/acessibilidade.png" alt=""></li>
+                        <li><img src="/img/ajuda-icon/acessibilidade.png" alt=""></li>
                         <li><h3>Acessibilidade</h3></li>
                         <li></li>
                     </ul>
@@ -63,7 +69,7 @@
             <a href="#">
                 <div class="populares-div">
                     <ul>
-                        <li><img src="./resouces/ajuda-icon/games.png" alt=""></li>
+                        <li><img src="/img/ajuda-icon/games.png" alt=""></li>
                         <li><h3>Ajuda com jogos ou anuncios</h3></li>
                         <li>Dificuldade em achar um jogo ou adicionar um produto?</li>
                     </ul>
@@ -72,6 +78,7 @@
         </div>
     </div>
     <footer>
-        <iframe src="footer.html" title="IframeRodape" class="iframeRodape"></iframe>
+        <%- include('../home/footer.ejs') %> 
     </footer>
 </body>
+</html>
