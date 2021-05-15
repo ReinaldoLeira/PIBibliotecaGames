@@ -6,7 +6,7 @@
 @font-face {
 
     font-family: 'Press Start 2P';
-    src: url('../resouces/PressStart2P-Regular.ttf');
+    src: url(/PressStart2P-Regular.ttf);
 }
 
 html{
@@ -29,6 +29,7 @@ body {
 
 header{
 
+    font-size: 4em;
     box-sizing: border-box;
     
     width: 100vw;
@@ -37,6 +38,7 @@ header{
 
 footer{
 
+    font-size: 4em;
     box-sizing: border-box;
     
     width: 100vw;

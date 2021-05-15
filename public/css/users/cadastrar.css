@@ -1,17 +1,18 @@
 @font-face {
 
     font-family:"PressStart2P";
-    src: url(../resouces/PressStart2P-Regular.ttf);
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 html{
-
+    box-sizing: border-box;
     font-family: "PressStart2P";
     font-size: 6.25%;
 }
 
 
 body{
+    box-sizing: border-box;
 
     margin: 0;
     padding: 0;
@@ -24,7 +25,8 @@ body{
 }
 
 header{
-
+    
+    font-size: 4em;
     height: 15vh;
     width: 100vw;
 
@@ -136,15 +138,15 @@ aside{
 }
 
 .redes form{
-
-    width: 90vw;
+    
+    width: 60vw;
     box-sizing: border-box;
    
 }
 
 .inputImagem{
 
-    margin-left: 9vh;
+    margin-left: 11vh;
     height: 3.5%;
     min-height: 40px;
     width: 3.5%;
@@ -187,7 +189,9 @@ input[type=submit] {
 }
 
 footer{
-  
+    
+    font-size: 4em;
+    margin-top: 5vh;
     height: 15vh;
 }
 

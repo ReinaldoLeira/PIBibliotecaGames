@@ -1,7 +1,7 @@
 @font-face {
 
     font-family:"PressStart2P";
-    src: url(../resouces/PressStart2P-Regular.ttf);
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 
@@ -14,6 +14,7 @@ html{
 
 header {
     
+    font-size: 4em;
     width: 100vw;
     height: 15vh;
     max-height: 20vh;
@@ -185,8 +186,8 @@ aside {
 }
 
 footer {
-
-    
+    font-size: 4em;
+    margin-top: 5vh;
     width: 100vw;
     height: 15vh;
     min-height: 10vh;

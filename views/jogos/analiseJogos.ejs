@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analise de Jogos</title>
-    <link rel="stylesheet" href="css/analiseJogos.css">
-    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="/css/jogos/analiseJogos.css">
+    <link rel="stylesheet" href="/css/home/header.css">
+    <link rel="stylesheet" href="/css/home/footer.css">
+    <link rel="stylesheet" href="/css/tema.css">
 </head>
-<header>
-    <iframe src="header.html" title="iFrameCabecalho" class="iframeCabecalho"></iframe>
-</header>
 <body>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>
     <div class="pai">
         <div class="analiseJogo-div">
             <ul>
@@ -20,10 +22,10 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
-                                <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
+                                <div class="w-30"><img src="/img/avatar.png"  width="100px" height="100px"></div>
                                 <div class="w-70"><p>Muito bom!!!</p></div>
                             </li>
                         </ul>
@@ -33,10 +35,10 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
-                                <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
+                                <div class="w-30"><img src="/img/avatar.png"  width="100px" height="100px"></div>
                                 <div class="w-70"><p>Saudações jogadores de Counter Strike CSGO!..
                                     Primeiro quero deixar claro aqui que o que faz este jogo ser ruim, são os cheaters.
                                     Fora isso este jogo é maravilhoso e para que você jogue um jogo maravilhoso sem se estressar
@@ -49,10 +51,10 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/like.png" alt="" width="40px" height="40px">
+                                <img src="/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Recomendado</h3></li>
                             <li class="flex">
-                                <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
+                                <div class="w-30"><img src="/img/avatar.png"  width="100px" height="100px"></div>
                                 <div class="w-70"><p>Ótimo jogo, excelentes gráficos e jogabilidade ótima!</p></div>
                             </li>
                         </ul>
@@ -62,10 +64,10 @@
                     <div class="analise">
                         <ul>
                             <li class="center">
-                                <img src="./resouces/dislike.png" alt="" width="40px" height="40px">
+                                <img src="/img/like.png" alt="" width="40px" height="40px">
                                 <h3>Não Recomendado</h3></li>
                             <li class="flex">
-                                <div class="w-30"><img src="./resouces/avatar.png"  width="100px" height="100px"></div>
+                                <div class="w-30"><img src="/img/avatar.png"  width="100px" height="100px"></div>
                                 <div class="w-70"><p>só tem doente, se você não quer perder sua sanidade mental não jogue por favor!</p></div>
                             </li>
                         </ul>
@@ -75,14 +77,14 @@
         </div>
         <div class="jogo">
             <ul>
-                <li><img src="./resouces/img jogos/Counter-Strike_ Global Offensive.jpg" width="400px" height="500px"></li>
+                <li><img src="/public/img/img jogos/Counter-Strike_ Global Offensive.jpg" width="400px" height="500px"></li>
                 <li><h4>Sobre o jogo:</h4><p width="450px">Counter-Strike: Global Offensive (CS: GO) expandirá na jogabilidade de ação baseada em equipes na qual foi pioneiro quando foi lançado há 12 anos. CS: GO contém novos mapas, personagens e armas, além de conter versões atualizadas de conteúdos do CS clássico (como de_dust2).</p></li>
-                <li class="media"><h4>Avaliação Média:</h4><img src="./resouces/rating-amarelo.png" width="70px" height="70px"></li>
+                <li class="media"><h4>Avaliação Média:</h4><img src="/public/img/rating-amarelo.png" width="70px" height="70px"></li>
             </ul>
         </div>
     </div>
+    <footer>
+        <%- include('../home/footer.ejs') %> 
+    </footer>
 </body>
-<footer>
-    <iframe src="footer.html" title="IframeRodape" class="iframeRodape"></iframe>
-</footer>
 </html>

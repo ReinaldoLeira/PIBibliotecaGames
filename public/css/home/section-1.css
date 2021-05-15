@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Press Start 2P';
-    src: url(../resouces/PressStart2P-regular.ttf);
+    src: url(/font/PressStart2P-Regular.ttf);
 }
 
 body {
@@ -60,7 +60,7 @@ html{
     text-align: center;
     border: 1px solid #0E9AA7;
     border-radius: 50px;
-    line-height: 25px;
+    
     margin-left: 5px;
     margin-right: 5px;
 }    
