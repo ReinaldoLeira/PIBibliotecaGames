@@ -31,7 +31,8 @@ body {
 }
 
 aside {
-
+    
+    display: inline;
     height: 70vh;
     min-height: 40vh;
     width: 100vw;
