@@ -12,9 +12,8 @@ html{
 
 
 body{
-    box-sizing: border-box;
-
-    margin: 0;
+    
+    
     padding: 0;
     border: 0;
     width: 100vw;
@@ -22,18 +21,19 @@ body{
     height: 110vh;
     min-height: 800px;
     background: #d5d5d5;  
+    box-sizing: border-box;
 }
 
-header{
+.cad-header{
     
     height: 15vh;
     width: 100vw;
 
 }
 
-aside{
+.cad-aside{
 
-    
+    display: inline;
     height: 80vh;
     min-height: 650px;
     width: 100vw;
@@ -170,7 +170,7 @@ aside{
 
 }
 
-input[type=submit] {
+.cad-submit {
 
     font-family: "PressStart2P";
     font-size: 22em;
@@ -187,7 +187,7 @@ input[type=submit] {
 
 }
 
-footer{
+.cad-footer {
     
     margin-top: 5vh;
     height: 15vh;

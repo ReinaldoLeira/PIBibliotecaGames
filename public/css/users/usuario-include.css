@@ -33,20 +33,9 @@ body {
 
 /* parte usuario '''''''*/
 
-.user-header{
 
-    font-size: 4em;
-    width: 100vw;
-    height: 15vh;
-}
 
-.user-footer{
 
-    font-size: 4em;
-    margin-top: 5vh;
-    width: 100vw;
-    height: 20vh;
-}
 
 .containerPerfil {
 
@@ -60,13 +49,13 @@ body {
 
 .caixaPerfil {
     
-    margin: 0 auto;
+ 
     width: 43vw;
     min-width: 350px;
     max-width: 400px;
     height: 120vh;
     min-height: 640px;
-    max-height: 900px;
+    max-height: 950px;
 
     background: #0E9AA7;
     border: 1px solid #000000;
@@ -82,7 +71,7 @@ body {
     width: 13.5vw;
     min-width: 200px;
     height: 26vh;
-    min-height: 200px;
+    min-height: 180px;
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
