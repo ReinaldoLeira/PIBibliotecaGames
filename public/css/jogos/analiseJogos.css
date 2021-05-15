@@ -1,13 +1,10 @@
-body{
-    background: #d5d5d5;  
-    font-size: 13px;
-}
 .geral{
     display: flex;
 }
 .pai{
     display: flex;
     width: 80%;
+    font-size:  13px;
 }
 
 .analiseJogo-div{
@@ -71,7 +68,3 @@ body{
 .media{
     display: flex;
 }
-header, footer{  
-    width: 100%;
-    background: white;
-} 

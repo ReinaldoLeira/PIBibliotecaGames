@@ -3,19 +3,11 @@
     src: url(/font/PressStart2P-Regular.ttf);
 }
 
-body {
-    background: #d5d5d5; 
-    margin: 0px;
-    padding: 0px;    
-    font-family: 'Press Start 2P', cursive;
-}
-
 html{
     box-sizing: border-box;
 }
 
 footer{
-    background-color: #d5d5d5; 
     margin-top: 20px;
 }
 
@@ -25,6 +17,7 @@ footer{
     justify-content: space-between;
     padding: 16px 40px 10px 40px;
     border-top: 1px solid #666;
+    font-size:  13px;
 }
 .img-sociais{
     width: 50px;
@@ -41,6 +34,7 @@ footer{
 .copy{
     background-color: #666;
     text-align: center;
+    font-size:  13px;
 }
 .copy h6{
     padding-top: 6px;

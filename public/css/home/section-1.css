@@ -3,25 +3,20 @@
     src: url(/font/PressStart2P-Regular.ttf);
 }
 
-body {
-    background: #d5d5d5; 
-    margin: 0px;
-    padding: 0px;    
-    font-family: 'Press Start 2P', cursive;
-}
-
 html{
     box-sizing: border-box;
 }
 
 .bloco-geral{
     display: flex;
+    font-size:  13px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .bloco-1{
     width: 80%;
     margin-right: 30px;
-    padding-left:10px;
     border-radius: 25px;
 }
 

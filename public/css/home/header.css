@@ -3,13 +3,6 @@
     src: url(/font/PressStart2P-Regular.ttf);
 }
 
-body {
-    background: #d5d5d5; 
-    margin: 0px;
-    padding: 0px;    
-    font-family: 'Press Start 2P', cursive;
-}
-
 html{
     box-sizing: border-box;
 }
@@ -23,7 +16,7 @@ html{
     border-radius: 25px;
     padding: 20px;
     height: 100px;
-    margin: 6px;
+    margin: 8px;
     box-sizing: border-box;
 }
 
@@ -38,6 +31,7 @@ nav{
 .cabecalho ul li{
     display: inline-block;
     padding: 10px;
+    font-size:  15px;
 }
 .cabecalho-logo{ 
     display: block; 
@@ -70,7 +64,7 @@ button{
     cursor: pointer;
     margin-left: 20px;
 }
-.btw{
+.btn-w{
     color: white;
 }
 
