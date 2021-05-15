@@ -2,8 +2,12 @@ body{
     background: #d5d5d5;  
     font-size: 13px;
 }
+.geral{
+    display: flex;
+}
 .pai{
     display: flex;
+    width: 80%;
 }
 
 .analiseJogo-div{
@@ -39,6 +43,7 @@ body{
 .flex{
     display: flex;
     padding-top: 5px;
+    line-break: auto;
 }
 
 .w-70{
@@ -62,10 +67,7 @@ body{
 .jogo p{
     width: 400px;
 }
-.flex{
-    display: flex;
-    line-break: auto;
-}
+
 .media{
     display: flex;
 }

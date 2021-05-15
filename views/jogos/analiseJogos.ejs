@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analise de Jogos</title>
     <link rel="stylesheet" href="/css/jogos/analiseJogos.css">
-    <link rel="stylesheet" href="/css/home/header.css">
-    <link rel="stylesheet" href="/css/home/footer.css">
     <link rel="stylesheet" href="/css/tema.css">
 </head>
 <body>
     <header>
         <%- include('../home/header.ejs') %> 
     </header>
+    <div class="geral">
     <div class="pai">
         <div class="analiseJogo-div">
             <ul>
@@ -77,11 +76,15 @@
         </div>
         <div class="jogo">
             <ul>
-                <li><img src="/public/img/img jogos/Counter-Strike_ Global Offensive.jpg" width="400px" height="500px"></li>
+                <li><img src="/img/img jogos/Counter-Strike_ Global Offensive.jpg" width="400px" height="500px"></li>
                 <li><h4>Sobre o jogo:</h4><p width="450px">Counter-Strike: Global Offensive (CS: GO) expandirá na jogabilidade de ação baseada em equipes na qual foi pioneiro quando foi lançado há 12 anos. CS: GO contém novos mapas, personagens e armas, além de conter versões atualizadas de conteúdos do CS clássico (como de_dust2).</p></li>
-                <li class="media"><h4>Avaliação Média:</h4><img src="/public/img/rating-amarelo.png" width="70px" height="70px"></li>
+                <li class="media"><h4>Avaliação Média:</h4><img src="/img/rating-amarelo.png" width="70px" height="70px"></li>
             </ul>
         </div>
+    </div>
+    <aside class="fundoVerde">
+        <%- include('../jogos/menuJogos.ejs') %>
+    </aside>
     </div>
     <footer>
         <%- include('../home/footer.ejs') %> 
