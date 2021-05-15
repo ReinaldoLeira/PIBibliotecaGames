@@ -1,0 +1,23 @@
+aside{
+    height: 100vh;   
+    border-radius: 25px;  
+    font-size: 10rem; 
+    text-align: center;                                                  
+}
+
+aside li{
+    height: 10%; 
+    list-style: none;                                         
+}
+
+aside ul{
+    padding-inline-start: 0px;              
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+}
+    .compreAgora{            
+        height: 50%;            
+    }

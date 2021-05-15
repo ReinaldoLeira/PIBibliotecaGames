@@ -44,3 +44,30 @@ main{
     background-color: #9ee1e8;
     border-radius: 5px;
 }
+
+.meusJogos{
+
+    
+    box-sizing: border-box;
+    width: 70vw;
+    height: 55vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3%;
+    padding-top: 1%;
+
+}
+
+.meusJogos a {
+
+    
+    width: 10vw;
+    height: 25vh;
+    margin-right: 5%;
+
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+    
+}

@@ -1,106 +1,104 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina de login</title>
-    <style>
-        body{
-            background-color: white;
-            margin: 0;
-            padding: 0;
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login</title>
+ </head>
+ <style>
+     body{
+         background-color: rgb(226, 220, 220);
+         margin: 0;
+         padding: 0;
+     }
+     .card{
+         box-shadow: 1px 1px 5px #ccc;
+         background-color: white;
+         padding: 30px;
+         height: 500px;
+         
+         
+         
+     }
 
-        }
+     .form{
+         width: 400px;
+         margin: auto;
+         display: flex 50px;
+         margin-right: 100px;
+         display: block;
+         margin: 10px auto;
+         
+         
+     }
+     .login{
+         text-align: center;
+         color: black;
+         font-size: 40px;
+         
+         
+     }
+     .usuario{
+         color: black;
+         font-size: 20px;
+         display: block;
+         margin-left: 50px;
+         
+     }
+     .senha{
+         color: black;
+         font-size: 20px;
+         display: block;
+         margin-left: 50px;
+         margin-top: 10%;
+         
+     }
+     .entrar{
+         display: block;
+         width: 250px;
+         margin-bottom:350px;
+         margin-top: 150px;
+         margin-left: 55px;
+         padding: 5px;
+         background-color: #0E9AA7;
+         color: white;
+         font-size: 20px;
+         
+     }
+     .cabecalho{
+         height: 70px;
+         background-color: #0E9AA7;
 
-        .form{
-            width: 430px;
-            margin: auto;
-            padding-top: 170px;
-        }
-        .card{
-            box-shadow: 1px 1px 5px #ccc;
-            background-color: white;
-            padding: 30px;
+     }
+     .password{
+         margin-left: 50px;
+         margin-top: 3px;
+         font-size: 20px;
+         
+     }
+     .texto{
+         margin-left: 50px;
+         font-size: 20px;
+         
+     }
 
-        }
-        .card-group{
-            margin-bottom: 10px;
-        }
-        .card-top > 
-            text-align: center;
-            
-            
-            
-        .login{
-            text-align: center;
-            color: black;
-        }    
+ </style>
+ <body>
+     <header class="cabecalho"></header>
 
-        .card-group > label{
-            font-size: 20px;
-            width: 100%;
-            color: black;
-            display: block;
-        
-        }
-        .card-group > input{
-            width: 97%;
-            font-size: 140%;
-            
-
-        }
-        .card-group > button{
-            background-color: rgb(34, 214, 175);
-            width: 50%;
-            font-size: large;
-            margin-left: 25%;
-            margin-top: 8%;
-        }
-        .card-top{
-            color: black;
-            text-align: center;
-        }
-        
-        .cabecalho{
-            height: 70px;
-            background-color: green;
-            width: 100%;
-
-        }
-        
-    </style>
-    
-
-
-</head>
-<body>
-    <header class="cabecalho"></header>
     <form class="form" action="form">
-    <div class="card">
-        <div class="card-top">
-            <h1 class="login">LOGIN</h1>    
-        </div>
-        <div class="card-group">
-            <label>Usuario</label>
-            <input type="text" name="usuario">
-
-        </div>
-        <div class="card-group">
-            <label>Senha</label>
-            <input type="password" name="usuario">
-
-        </div>
-        <div class="card-group">
-            <button type="submit">entrar</button>
-
-        </div>
         
+    <div class="card">
+    <h1 class="login">LOGIN</h1>
+    <label class="usuario"> Usuario</label>
+    <input class="texto" type="text">
+    <label class="senha">Senha</label>
+    <input class="password" type="password">
+    <button class="entrar">entrar</button>   
     </div>
     </form>
-
     
 
-    
-</body>
-</html>
+ </body>
+ </html>
