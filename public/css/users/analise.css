@@ -1,6 +1,20 @@
+@font-face {
+
+    font-family: 'Press Start 2P';
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+    font-size: 6.25%;
+}
+
 body{
     background: #d5d5d5;  
 }
+
 .pai{
     display: flex;
 }
@@ -55,10 +69,10 @@ label {
     width: 350px;
     border-radius: 30px;
 }
-a{
+.azinho-partedebaixo{
     color: black;
     text-decoration: none;
-    font-size: 60px;
+    font-size: 3em;
 }
 button{
     border-radius: 50px;
