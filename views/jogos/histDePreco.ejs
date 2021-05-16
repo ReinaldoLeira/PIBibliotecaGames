@@ -14,20 +14,19 @@
     <header>
         <%- include('../home/header.ejs') %>
     </header>
-    <container>
-        <main>
-            <section class="fundoBranco" id="titulo">
+    <container class="containerHistDePreco pai">
+        <main class="mainHistDePreco pai coluna">
+            <section class="fundoBranco" id="tituloHistDePreco">
                 <h1>Nome do Jogo</h1>
             </section>
-            <section class="fundoBranco" id="quadro">
-                <img src="/img/img jogos/exemploHistDePreco.PNG" id="exemplo">
+            <section class="fundoBranco" id="quadroHistDePreco">
+                <img src="/img/img jogos/exemploHistDePreco.PNG" id="exemploHistDePreco">
             </section>
         </main>
         <aside class="fundoVerde">
             <%- include('../jogos/menuJogos.ejs') %>
         </aside>
     </container>
-
     <footer>
         <%- include('../home/footer.ejs') %>
     </footer>
