@@ -1,73 +1,68 @@
-container{
-    display: flex;   
-}
-
-aside{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;    
+.mainProcurarJogos{
+    flex-grow: 1;
     align-items: center;
-}
-
-aside p, label{
-    font-size: 10rem;
-}
-
-main{
-    display: flex;
     justify-content: center;
 }
 
-.paginas{
-    display: flex;     
+.asideProcurarJogos{
+    height: 100vh;          
+    align-items: center;
+}
+
+.asideProcurarJogos label{
+    font-size: 10rem;
+}
+
+.pai{
+    display: flex;
+}
+
+.coluna{
+    flex-direction: column;
+}
+
+.paginasProcurarJogos{   
+    width: 100%;    
     align-self: flex-end;     
 } 
 
-.paginas li{    
+.paginasProcurarJogos li{    
     list-style: none;   
 }
 
-.paginas li a{
+.paginasProcurarJogos li a{
     color: black;
     font-size: 10rem;
     padding: 8px 16px;
     text-decoration: none; 
 }
 
-.paginas a.ativo {
+.paginasProcurarJogos a.ativo {
     background-color: #0e9aa7;
     color: #e3e3e3;
     border-radius: 5px;
 }
 
-.paginas a:hover:not(.ativo) {
+.paginasProcurarJogos a:hover:not(.ativo) {
     background-color: #9ee1e8;
     border-radius: 5px;
 }
 
-.meusJogos{
-
-    
-    box-sizing: border-box;
-    width: 70vw;
-    height: 55vh;
-    display: flex;
+.jogosProcuraJogos{    
+    width: 100%;      
     flex-wrap: wrap;
+    justify-content: center;
     padding-left: 3%;
     padding-top: 1%;
-
+    flex-grow: 1;
 }
 
-.meusJogos a {
-
-    
+.jogosProcuraJogos a {    
     width: 10vw;
     height: 25vh;
     margin-right: 5%;
-
     background: #C4C4C4;
     border: 1px solid #000000;
     box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
-    
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);    
 }
