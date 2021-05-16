@@ -1,3 +1,13 @@
+const fs = require('fs');
+let arrayJogos = require('../model/jogos.json')
+
+function salvarJogos(arrayJogos) {
+    fs.writeFileSync(
+      './model/jogos.json',
+      JSON.stringify(arrayJogos)
+    );
+  }
+
 module.exports.analise = (req, res) => {
     res.render('./jogos/analiseJogos')
 }
@@ -23,5 +33,13 @@ module.exports.cadastra = (req, res) => {
 }
 
 module.exports.cadastrar = (req, res) => {
-    res.render('./jogos/perfilDeJogos')
+    const jogoNovo = {
+        id: ++arrayJogos[0],
+        ...req.body
+    }
+    arrayJogos[0] = jogoNovo.id
+    arrayJogos.push(jogoNovo)    
+    salvarJogos(arrayJogos)
+    res.redirect('/jogos/perfil')    
 }
+
