@@ -1,20 +1,20 @@
-aside{
+.asideMenuJogos{
     height: 100vh;   
     border-radius: 25px;  
     font-size: 10rem; 
     text-align: center;                                                  
 }
 
-aside li{
+.asideMenuJogos li{
     height: 10%; 
     list-style: none;                                         
 }
 
-aside ul{
+.asideMenuJogos ul{
     padding-inline-start: 0px;              
 }
 
-aside a{
+.asideMenuJogos a{
     text-decoration: none;
     color: black;
 }
