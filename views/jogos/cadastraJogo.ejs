@@ -21,20 +21,20 @@
             </section>
 
             <section class="fundoBranco" id="cadastroJogo">
-             <form action="/jogos/cadastrar" method="POST">
+             <form class="pai coluna formCadastraJogo" action="/jogos/cadastrar" method="POST">
                 <label for="nomeJogo">Nome do Jogo:</label>
-                <input type="text" id="nomeJogo"name="nomeJogo" autocomplete="off" required/>
+                <input class="camposCadastraJogo" type="text" id="nomeJogo"name="nomeJogo" autocomplete="off" required/>
                 <label for="siteJogo">Site Oficial:</label>
-                <input type="text" id="siteJogo"name="siteJogo" autocomplete="off" required/>
+                <input class="camposCadastraJogo" type="text" id="siteJogo"name="siteJogo" autocomplete="off" required/>
                 <label for="publisherJogo">Publisher:</label>
-                <input type="text" id="publisherJogo"name="publisherJogo" autocomplete="off" required/>
+                <input class="camposCadastraJogo" type="text" id="publisherJogo"name="publisherJogo" autocomplete="off" required/>
                 <label for="dataJogo">Data de Lançamento:</label>
-                <input type="text" id="dataJogo"name="dataJogo" autocomplete="off"/>
+                <input class="camposCadastraJogo" type="text" id="dataJogo"name="dataJogo" autocomplete="off"/>
                 <label for="plataformaJogo">Plataformas:</label>
-                <input type="text" id="plataformaJogo"name="plataformaJogo" autocomplete="off"/>
+                <input class="camposCadastraJogo" type="text" id="plataformaJogo"name="plataformaJogo" autocomplete="off"/>
                 <label for="sinopseJogo">Sinopse:</label>
-                <textarea id="sinopseJogo" name="sinopseJogo" autocomplete="off"></textarea>
-                <input type="submit" value="Cadastrar"/>
+                <textarea class="camposCadastraJogo" id="sinopseJogo" name="sinopseJogo" autocomplete="off">Sinopse</textarea>
+                <input class="camposCadastraJogo submitCadastraJogo" type="submit" value="Cadastrar"/>
             </form>   
             </section>
         </main>

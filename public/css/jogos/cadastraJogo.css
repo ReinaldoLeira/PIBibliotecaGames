@@ -8,10 +8,47 @@
     flex-direction: column;
 }
 
+.formCadastraJogo{
+    align-items: center;
+    justify-content: space-around;
+    height: 100%; 
+}
+
+.formCadastraJogo label{
+    font-size: 12rem;
+}
+
+.formCadastraJogo textarea{
+    height: 10vh;
+    max-height: 10vh;
+}
+
 .containerCadastraJogo{
     min-height: 70vh; 
     justify-content: center; 
 }
+
+.camposCadastraJogo{
+    font-family: PressStart2P;
+    font-size: 10rem;
+    max-width: 40%;
+    width: 40%;    
+}
+
+.camposCadastraJogo:focus-visible{
+    outline-color: #0e9aa7;    
+}
+
+.submitCadastraJogo{
+    text-align: center;
+    font-size: 10rem;
+    color: white;
+    height: 6vh;
+    background: #0E9AA7;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
 #tituloCadastraJogo{
     text-align: center; 
     font-size: 14rem;                       
