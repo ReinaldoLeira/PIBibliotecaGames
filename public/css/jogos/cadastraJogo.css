@@ -1,0 +1,24 @@
+
+
+.pai{
+    display: flex;
+}
+
+.coluna{
+    flex-direction: column;
+}
+
+.containerCadastraJogo{
+    min-height: 100vh; 
+    justify-content: center; 
+}
+#tituloCadastraJogo{
+    text-align: center; 
+    font-size: 14rem;                       
+}    
+
+#cadastroJogo{
+    flex-grow: 1;  
+    
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tema.css">
+    <link rel="stylesheet" href="/css/jogos/cadastraJogo.css">
+    <title>Cadastrar Novo Jogo</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../home/header.ejs') %>
+    </header>
+    <container class="pai containerCadastraJogo">
+        <main class="pai coluna">
+            <section class="fundoBranco" id="tituloCadastraJogo">
+                <h1>Cadastrar Novo Jogo</h1>
+            </section>
+
+            <section class="fundoBranco" id="cadastroJogo">
+             <form action="/jogos/cadastrar" method="POST">
+                <label for="nomeJogo">Nome do Jogo:</label>
+                <input type="text" id="nomeJogo"name="nomeJogo" autocomplete="off" required/>
+                <label for="siteJogo">Site Oficial:</label>
+                <input type="text" id="siteJogo"name="siteJogo" autocomplete="off" required/>
+                <label for="publisherJogo">Publisher:</label>
+                <input type="text" id="publisherJogo"name="publisherJogo" autocomplete="off" required/>
+                <label for="dataJogo">Data de Lançamento:</label>
+                <input type="text" id="dataJogo"name="dataJogo" autocomplete="off"/>
+                <label for="plataformaJogo">Plataformas:</label>
+                <input type="text" id="plataformaJogo"name="plataformaJogo" autocomplete="off"/>
+                <label for="sinopseJogo">Sinopse:</label>
+                <textarea id="sinopseJogo" name="sinopseJogo" autocomplete="off"></textarea>
+                <input type="submit" value="Cadastrar"/>
+            </form>   
+            </section>
+        </main>
+       
+    </container>
+
+    <footer>
+        <%- include('../home/footer.ejs') %>
+    </footer>
+</body>
+
+</html>

@@ -49,14 +49,3 @@ body {
 	box-shadow: 0.7vw 0.5vh 1vh grey;   
 } 
 
-.iframeCabecalho{
-    height:113px;
-    width:100%;
-    border:none;
-}
-
-.iframeRodape{
-    height:186px;
-    width:100%;
-    border:none;
-}

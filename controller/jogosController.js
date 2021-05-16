@@ -17,3 +17,11 @@ module.exports.perfil = (req, res) => {
 module.exports.listar = (req, res) => {
     res.render('./jogos/procurarJogos')
 }
+
+module.exports.cadastra = (req, res) => {
+    res.render('./jogos/cadastraJogo')
+}
+
+module.exports.cadastrar = (req, res) => {
+    res.render('./jogos/perfilDeJogos')
+}

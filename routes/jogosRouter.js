@@ -14,4 +14,8 @@ router.get('/perfil/',jogosController.perfil)
 
 router.get('/',jogosController.listar)
 
+router.get('/cadastra', jogosController.cadastra)
+
+router.post('/cadastrar', jogosController.cadastrar)
+
 module.exports = router;
