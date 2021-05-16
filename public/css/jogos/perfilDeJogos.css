@@ -38,5 +38,11 @@
     width: 100%;
 }
 #sinopsePerfilDeJogos{
-    height: 17vh;
+    height: 15vh;
+    font-size: 10rem;  
+    padding-top: 3vh; 
+}
+#imgJogo img{
+    height: 200px;
+    width: 170px;
 }

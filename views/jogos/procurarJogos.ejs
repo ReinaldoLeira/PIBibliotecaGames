@@ -18,21 +18,11 @@
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
             <div class="pai jogosProcuraJogos">
+                <% for(let i=1; i<jogos.length; i++){ %>
+                <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].imgJogo%>"/></a>
+                <% }%>
                 <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
-                <a href="/jogos/perfil">.</a>
+                
             </div>
             <div><ul class="pai paginasProcurarJogos">
                 <li><a href="#">&laquo;</a></li>

@@ -12,6 +12,8 @@ router.get('/midia/',jogosController.midia)
 
 router.get('/perfil/',jogosController.perfil)
 
+router.get('/perfil/:id',jogosController.perfil2)
+
 router.get('/',jogosController.listar)
 
 router.get('/cadastra', jogosController.cadastra)

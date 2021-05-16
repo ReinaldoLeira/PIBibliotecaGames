@@ -24,8 +24,14 @@ module.exports.perfil = (req, res) => {
     res.render('./jogos/perfilDeJogos')
 }
 
+module.exports.perfil2 = (req, res) => {
+    const id = parseInt(req.params.id);
+    const jogoSelecionado = arrayJogos.filter((arrayJogos) => {return arrayJogos.id === id});
+    res.render('./jogos/perfilDeJogos2',{jogo:jogoSelecionado[0]})
+}
+
 module.exports.listar = (req, res) => {
-    res.render('./jogos/procurarJogos')
+    res.render('./jogos/procurarJogos', {jogos:arrayJogos})
 }
 
 module.exports.cadastra = (req, res) => {
