@@ -4,3 +4,6 @@ module.exports.quemSomos = (req,res) => {
 module.exports.ajuda = (req,res) => {
     res.render('./home/ajuda')
 }
+module.exports.termo = (req,res) => {
+    res.render('./home/termoUso')
+}
