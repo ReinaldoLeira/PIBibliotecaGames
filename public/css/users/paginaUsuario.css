@@ -35,14 +35,14 @@ body {
 
 .user-header{
 
-    font-size: 4em;
+    
     width: 100vw;
     height: 15vh;
 }
 
 .user-footer{
 
-    font-size: 4em;
+   
     margin-top: 5vh;
     width: 100vw;
     height: 20vh;
@@ -64,9 +64,9 @@ body {
     width: 43vw;
     min-width: 350px;
     max-width: 400px;
-    height: 120vh;
+    height: 100vh;
     min-height: 640px;
-    max-height: 900px;
+    max-height: 930px;
 
     background: #0E9AA7;
     border: 1px solid #000000;

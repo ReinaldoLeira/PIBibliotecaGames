@@ -10,14 +10,12 @@
 }
 
 html{
-
+    font-size: 6.25%;
     box-sizing: border-box;
 }
 
 body {
-    
-    font-size: 6.25%;
-    
+       
     background: #d5d5d5;
     height: 110vh;
     width: 100vw;       
@@ -29,7 +27,7 @@ body {
 
 header{
 
-    font-size: 4em;
+    
     box-sizing: border-box;
     
     width: 100vw;
@@ -38,7 +36,7 @@ header{
 
 footer{
 
-    font-size: 4em;
+   
     box-sizing: border-box;
     
     width: 100vw;
