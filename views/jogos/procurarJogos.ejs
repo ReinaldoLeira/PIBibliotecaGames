@@ -17,6 +17,7 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
+            <div id="cadastradosProcurarJogos"><%=jogos.length -1%> Jogos Cadastrados</div>
             <div class="pai jogosProcuraJogos">
                 <% for(let i=1; i<jogos.length; i++){ %>
                 <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].imgJogo%>"/></a>
