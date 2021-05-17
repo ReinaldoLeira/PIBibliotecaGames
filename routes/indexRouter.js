@@ -10,5 +10,10 @@ router.get('/', (req, res, next) => {
 
 router.get ('/login', usersController.login);
 router.get ('/registrar',usersController.registrar);
+router.post ('/registrar', (req, res) => {
+  console.log(req.body);
+  res.redirect('/')
+
+});
 
 module.exports = router;
