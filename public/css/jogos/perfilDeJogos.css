@@ -24,25 +24,29 @@
     font-size: 14rem;                       
 }    
 
-#imagemJogoPerfilDeJogos img{
+#imagemJogoPerfilDeJogos{
     height: 34vh;
     width: 20vw;
+    object-fit: scale-down;  
 }
 
 #informacoesPerfilDeJogos{
     font-size: 10rem;            
     border-radius: 25px;  
+    max-height: 17vh;
 } 
 
 #descricaoPerfilDeJogos{
-    width: 100%;
+    width: 100%;    
 }
 #sinopsePerfilDeJogos{
     height: 15vh;
+    max-height: 15vh ;
     font-size: 10rem;  
     padding-top: 3vh; 
 }
 #imgJogo img{
     height: 200px;
     width: 170px;
+    object-fit: scale-down;  
 }

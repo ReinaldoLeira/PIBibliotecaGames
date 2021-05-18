@@ -54,29 +54,32 @@
     justify-content: center;
     padding-left: 3%;
     padding-top: 1%;
-    flex-grow: 1;
+    flex-grow: 1;     
 }
 
-.jogosProcuraJogos a{    
-    width:  10vw;
-    height: 25vh;
-    margin-right: 5%;
-    background: #C4C4C4;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);    
+.jogosProcuraJogos a{ 
+    width:  fit-content;
+    height: fit-content;      
+    margin-right: 5%;   
 }
 .jogosProcuraJogos img{    
     width:  10vw;
     height: 25vh;
-    margin-right: 5%;
-    background: #C4C4C4;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);    
+    object-fit: scale-down;  
 }
 
 #cadastradosProcurarJogos{
-    text-align: right;
+    justify-content: space-between;
     width: 100%;
+}
+
+#cadastraProcurarJogos{
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #0e9aa7;
+    padding: 2px;
+}
+
+#cadastraProcurarJogos:hover{
+    box-shadow: 0vw 0vh 2vh #0e9aa7;      
 }

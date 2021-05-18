@@ -17,13 +17,11 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div id="cadastradosProcurarJogos"><%=jogos.length -1%> Jogos Cadastrados</div>
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div><%=jogos.length -1%> Jogos Cadastrados</div></div> 
             <div class="pai jogosProcuraJogos">
-                <% for(let i=1; i<jogos.length; i++){ %>
+                <% for(let i=1; i<jogos.length && i < 16; i++){ %>
                 <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].imgJogo%>"/></a>
-                <% }%>
-                <a href="/jogos/perfil">.</a>
-                
+                <% }%>                
             </div>
             <div><ul class="pai paginasProcurarJogos">
                 <li><a href="#">&laquo;</a></li>
