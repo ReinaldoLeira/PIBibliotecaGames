@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tema.css">
     <link rel="stylesheet" href="/css/jogos/midiaJogos.css">
-    <title>Midias</title>
+    <title><%= jogo.nomeJogo %></title>
 </head>
 
 <body class="pai coluna">
@@ -17,7 +17,7 @@
     <container class="pai containerMidiaJogos">
         <main class="mainMidiaJogos pai coluna"> 
             <section class="fundoBranco" id="tituloMidiaJogos">
-                <h1>Nome do Jogo</h1>
+                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nomeJogo %></a></h1>
             </section>
 
             <section class="fundoBranco pai" id="galeriaImagensMidiaJogos">

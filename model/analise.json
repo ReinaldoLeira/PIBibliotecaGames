@@ -1,0 +1,50 @@
+[
+    {
+    "idJogo": 1,
+    "idUser": 1,
+    "tituloAnalise": "Lorem Ipsum1",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 1,
+    "nota": 5
+    },
+    {
+    "idJogo": 1,
+    "idUser": 2,
+    "tituloAnalise": "Lorem Ipsum2",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 2,
+    "nota": 1
+    },
+    {
+    "idJogo": 1,
+    "idUser": 4,
+    "tituloAnalise": "Lorem Ipsum3",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 3,
+    "nota": 3
+    },
+    {
+    "idJogo": 2,
+    "idUser": 1,
+    "tituloAnalise": "Lorem Ipsum4",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 4,
+    "nota": 5
+    },
+    {
+    "idJogo": 2,
+    "idUser": 1,
+    "tituloAnalise": "Lorem Ipsum5",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 5,
+    "nota": 2
+    },
+    {
+    "idJogo": 3,
+    "idUser": 1,
+    "tituloAnalise": "Lorem Ipsum6",
+    "analise": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a quam pellentesque, maximus lectus vitae, ultricies felis. Cras vitae pellentesque magna. Proin sed nibh eros. Aenean porttitor lorem id venenatis faucibus.",
+    "id": 5,
+    "nota": 3
+    }
+]
