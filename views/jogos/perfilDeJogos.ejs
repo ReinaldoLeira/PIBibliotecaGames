@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tema.css">
     <link rel="stylesheet" href="/css/jogos/perfilDeJogos.css">
-    <title>Perfil do Jogo</title>
+    <title><%= jogo.nomeJogo %></title>
 </head>
 
 <body class="pai coluna">
@@ -17,22 +17,22 @@
     <container class="pai containerPerfilDeJogos">
         <main class="pai coluna mainPerfilDeJogos">
             <section class="fundoBranco" id="tituloPerfilDeJogos">
-                <h1>Nome do Jogo</h1>
+                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nomeJogo %></a></h1>
             </section>
             <section class="pai  h-33PerfilDeJogos">
-                <figure class="fundoBranco">
-                    <img src="/img/avatar.png" />
+                <figure class="fundoBranco" id="imgJogo">
+                    <img src="<%=jogo.imgJogo%>" />
                 </figure>
                 <section id="descricaoPerfilDeJogos">
                     <article class="fundoVerde" id="informacoesPerfilDeJogos">
-                        <p>Site Oficial:</p>
-                        <p>Publisher: </p>
-                        <p>Data de Lançamento:</p>
-                        <p>Plataformas:</p> 
+                        <p>Site Oficial: <%= jogo.siteJogo%></p>
+                        <p>Publisher: <%= jogo.publisherJogo%></p>
+                        <p>Data de Lançamento: <%= jogo.dataJogo%></p>
+                        <p>Plataformas: <%= jogo.plataformaJogo%></p> 
                     </article>
-                    <article class="fundoBranco" id="sinopsePerfilDeJogos">
-                        Sinopse
-                    </article>
+                    <article class="fundoBranco pai" id="sinopsePerfilDeJogos">
+                        <p><%= jogo.sinopseJogo %></p>
+                    </article> 
                 </section>
             </section>
             <section class="fundoBranco h-33PerfilDeJogos">

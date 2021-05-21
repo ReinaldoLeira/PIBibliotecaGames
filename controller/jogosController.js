@@ -21,9 +21,9 @@ function selecionarAnalise(array, id){
     return selecionado
 }
 
-module.exports.analise = (req, res) => {
+/*module.exports.analise = (req, res) => {
     res.render('./jogos/analiseJogos')
-}
+}*/
 
 module.exports.analise2 = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
@@ -42,12 +42,8 @@ module.exports.midia = (req, res) => {
 }
 
 module.exports.perfil = (req, res) => {
-    res.render('./jogos/perfilDeJogos')
-}
-
-module.exports.perfil2 = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/perfilDeJogos2',{jogo:jogoSelecionado})
+    res.render('./jogos/perfilDeJogos',{jogo:jogoSelecionado})
 }
 
 module.exports.listar = (req, res) => {
