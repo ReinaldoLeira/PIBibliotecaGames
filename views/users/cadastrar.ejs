@@ -26,28 +26,28 @@
 
                         <div>
 
-                            <label name="email" class="fonteGeral">E-mail: </label>
+                            <label for="email" class="fonteGeral">E-mail: </label>
                             <input type="email" name="email" id="" class="inputRegistrar" required>
 
                         </div>
 
                         <div>
 
-                            <label name="usuario" class="fonteGeral">Usuário: </label>
-                            <input type="text" name="usuario" id="" class="inputRegistrar" required>
+                            <label for="nick" class="fonteGeral">Usuário: </label>
+                            <input type="text" name="nick" id="" class="inputRegistrar" required>
 
                         </div>
 
                         <div>
 
-                            <label name="Senha" class="fonteGeral">Senha: </label>
-                            <input type="password" name="Senha" id="" class="inputRegistrar" required> 
+                            <label for="senha" class="fonteGeral">Senha: </label>
+                            <input type="password" name="senha" id="" class="inputRegistrar" required> 
 
                         </div>
-
+                        <p><%= error.resenha ? error.resenha: '' %></p>
                         <div>
 
-                            <label name="resenha" class="fonteGeral">Re-senha </label>
+                            <label for="resenha" class="fonteGeral">Re-senha </label>
                             <input type="password" name="resenha" id="" class="inputRegistrar" required>
 
                         </div>

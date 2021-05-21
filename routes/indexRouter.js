@@ -1,19 +1,16 @@
 const express = require('express');
-const app = require('../app');
 const router = express.Router();
-const usersController = require('../controller/usersController');
+const {login, logar, registrar, registrado, index} = require ('../controller/usersController');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+router.get('/', index);
 
-router.get ('/login', usersController.login);
-router.get ('/registrar',usersController.registrar);
-router.post ('/registrar', (req, res) => {
-  console.log(req.body);
-  res.redirect('/')
+//rotas de login GET>>POST
+router.get ('/login', login);
+router.post ('/login', logar);
 
-});
+//ROtas de regristrar usuario GET >> POST
+router.get ('/registrar', registrar);
+router.post ('/registrar', registrado);
 
 module.exports = router;

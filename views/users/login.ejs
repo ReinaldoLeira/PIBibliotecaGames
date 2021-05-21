@@ -21,25 +21,17 @@
                 <p class="loginText">LOGIN</p>
 
                 <div class="caixaForm">
-                    <form action="">
+                    <form action="/login" method="POST">
 
-                        <label for="" class="textInput">Usuario:</label>
-                        <input type="text" name="flogin" class="caixaInput">
+                        <label for="email" class="textInput">Usuario:</label>
+                        <input type="email" name="email" class="caixaInput" autocomplete="off" required>
+                            <p><%= error.email ? error.email: '' %></p>
 
-                        <label for="" class="textInput">Senha:</label>
-                        <input type="password" name="flogin" class="caixaInput">
+                        <label for="senha" class="textInput">Senha:</label>
+                        <input type="password" name="senha" class="caixaInput" autocomplete="off" required>
+                            <p><%= error.senha ? error.senha: '' %></p>
 
-                        <p>Ou</p>
-
-                        <input type="image" src="/img/facebookIcon.png" alt="" class="inputImagem">
-                        <input type="image" src="/img/gmailIcon.png" alt="" class="inputImagem">
-                        <input type="image" src="/img/twitterIcon.png" alt="" class="inputImagem">
-                    
-                    </form>
-                </div>
-
-                <div>
-                        <input type="submit" value="ENTRAR" class="inputSubmit">
+                    <input type="submit" value="ENTRAR" class="inputSubmit">/form>
                 </div>
 
                 <div class="aLink">
@@ -50,7 +42,7 @@
                 </div>
 
                 <div class="aText"> 
-                  <a href="">inscrever-se</a>
+                  <a href="/registrar">inscrever-se</a>
                 </div>
                    
                 
