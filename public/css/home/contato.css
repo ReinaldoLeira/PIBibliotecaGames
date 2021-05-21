@@ -1,0 +1,39 @@
+.container{
+    margin-top: 20px;
+}
+.introducao{
+    background-color: #0e9aa7;     
+    padding: 40px;
+    border: 1px solid black;
+    text-align: center;
+}
+.introducao h1{
+    font-size: 20em;
+}
+.colunas{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8%;
+    margin-right: 8%;
+    font-size: 13em;
+    text-align: center;
+}
+.colunas ul li{
+    align-items: center;
+    list-style: none;
+    padding-top: 5px;
+}
+.colunas ul{
+    padding: 0px;
+}
+.contatos{
+    border-radius: 50px;
+    background: white; 
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid black; 
+	box-shadow: 0.7vw 0.5vh 1vh grey;
+    color: black;
+}

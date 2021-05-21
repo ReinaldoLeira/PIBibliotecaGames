@@ -7,3 +7,6 @@ module.exports.ajuda = (req,res) => {
 module.exports.termo = (req,res) => {
     res.render('./home/termoUso')
 }
+module.exports.contato = (req,res) => {
+    res.render('./home/contato')
+}
