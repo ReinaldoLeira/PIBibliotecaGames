@@ -44,12 +44,12 @@
                             <input type="password" name="senha" id="" class="inputRegistrar" required> 
 
                         </div>
-                        <p><%= error.resenha ? error.resenha: '' %></p>
+                        
                         <div>
 
                             <label for="resenha" class="fonteGeral">Re-senha </label>
                             <input type="password" name="resenha" id="" class="inputRegistrar" required>
-
+                                <p class="colorVermelha"><%= error.resenha ? error.resenha: '' %></p>
                         </div>
 
                         <div>

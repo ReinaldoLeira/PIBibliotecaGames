@@ -22,16 +22,16 @@
 
                 <div class="caixaForm">
                     <form action="/login" method="POST">
-
+                        <div class="caixainput">
                         <label for="email" class="textInput">Usuario:</label>
                         <input type="email" name="email" class="caixaInput" autocomplete="off" required>
-                            <p><%= error.email ? error.email: '' %></p>
+                            <p class="colorVermelha"><%= error.email ? error.email: '' %></p>
 
                         <label for="senha" class="textInput">Senha:</label>
                         <input type="password" name="senha" class="caixaInput" autocomplete="off" required>
-                            <p><%= error.senha ? error.senha: '' %></p>
-
-                    <input type="submit" value="ENTRAR" class="inputSubmit">/form>
+                            <p class="colorVermelha"><%= error.senha ? error.senha: '' %></p>
+                        </div>
+                    <input type="submit" value="ENTRAR" class="inputSubmit"/>
                 </div>
 
                 <div class="aLink">
