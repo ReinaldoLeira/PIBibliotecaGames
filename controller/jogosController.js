@@ -1,23 +1,37 @@
 const fs = require('fs');
 let arrayJogos = require('../model/jogos.json')
 
+//Salva o Array no  jogos.json
 function salvarJogos(arrayJogos) {
     fs.writeFileSync(
       './model/jogos.json',
       JSON.stringify(arrayJogos)
     );
-  }
+}
+
+//Recebe o id da pagina e o array e retorna o jogo selecionado
+function selecionarJogo(array, id){      
+    const selecionado = array.filter((array) => {return array.id === parseInt(id)});    
+    return selecionado[0]
+}
 
 module.exports.analise = (req, res) => {
     res.render('./jogos/analiseJogos')
 }
 
+module.exports.analise2 = (req, res) => {
+    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
+    res.render('./jogos/analiseJogos2',{jogo:jogoSelecionado})
+}
+
 module.exports.historico = (req, res) => {
-    res.render('./jogos/histDePreco')
+    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+    res.render('./jogos/histDePreco',{jogo:jogoSelecionado})
 }
 
 module.exports.midia = (req, res) => {
-    res.render('./jogos/midiaJogo')
+    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+    res.render('./jogos/midiaJogo',{jogo:jogoSelecionado})
 }
 
 module.exports.perfil = (req, res) => {
@@ -25,9 +39,8 @@ module.exports.perfil = (req, res) => {
 }
 
 module.exports.perfil2 = (req, res) => {
-    const id = parseInt(req.params.id);
-    const jogoSelecionado = arrayJogos.filter((arrayJogos) => {return arrayJogos.id === id});
-    res.render('./jogos/perfilDeJogos2',{jogo:jogoSelecionado[0]})
+    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+    res.render('./jogos/perfilDeJogos2',{jogo:jogoSelecionado})
 }
 
 module.exports.listar = (req, res) => {

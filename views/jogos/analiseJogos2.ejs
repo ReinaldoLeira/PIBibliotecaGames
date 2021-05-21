@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= jogo.nomeJogo %></title>
+    <link rel="stylesheet" href="/css/jogos/analiseJogos.css">
+    <link rel="stylesheet" href="/css/tema.css">
+</head>
+<body>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>
+    <div class="geral">
+    <div class="pai">
+        <div class="analiseJogo-div">
+            <ul>
+                <h2>Análises de Usuários</h2>
+                <li>
+                    <div class="analise">
+                        <ul>
+                            <li class="center">
+                                <img src="/img/like.png" alt="" width="40px" height="40px">
+                                <h3>Recomendado</h3></li>
+                            <li class="flex">
+                                <div class="w-30"><img src="/img/avatar.png"  width="100px" height="100px"></div>
+                                <div class="w-70"><p>Muito bom!!!</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>                
+            </ul>
+        </div>
+        <div class="jogo">
+            <ul>
+                <li><img src="<%=jogo.imgJogo%>" width="400px" height="500px"></li>
+                <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.sinopseJogo%></p></li>
+                <li class="media"><h4>Avaliação Média:</h4><img src="/img/rating-amarelo.png" width="70px" height="70px"></li>
+            </ul>
+        </div>
+    </div>
+    <aside class="fundoVerde">
+        <%- include('../jogos/menuJogos.ejs') %>
+    </aside>
+    </div>
+    <footer>
+        <%- include('../home/footer.ejs') %> 
+    </footer>
+</body>
+</html>
