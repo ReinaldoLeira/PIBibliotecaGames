@@ -35,8 +35,36 @@
                     </article> 
                 </section>
             </section>
-            <section class="fundoBranco h-33PerfilDeJogos">
-                Analises
+            <section class="fundoBranco h-33PerfilDeJogos pai">
+                <%if(analises.nota){%>
+                <div class="analise"  id="<%=analises.length<=0 ? 'analise' : '' %>">
+                    <ul>
+                        <li class="center">
+                            <% const analise1 = Math.floor(Math.random()*analises.length)%>
+                            <img src="<%=analises[analise1].nota>=3?'/img/like.png':'/img/dislike.png'%>" alt="<%=analises[analise1].nota>=3?'like':'dislike'%>" width="40px" height="40px">
+                            <h3><%=analises[analise1].tituloAnalise%></h3></li>
+                        <li class="flex">
+                            <div class="w-30"><img src="/img/avatar.png" width="100px" height="100px"></div>
+                            <div class="w-70"><p><%=analises[analise1].analise%></p></div>
+                        </li>
+                    </ul>
+                </div>
+                <% if(analises.length > 1){%>
+                <div class="analise">
+                    <ul>
+                        <li class="center">
+                            <% const analise2 = Math.floor(Math.random()*analises.length)%>                            
+                            <img src="<%=analises[analise2].nota>=3?'/img/like.png':'/img/dislike.png'%>" alt="<%=analises[analise2].nota>=3?'like':'dislike'%>" width="40px" height="40px">
+                            <h3><%=analises[analise2].tituloAnalise%></h3></li>
+                        <li class="flex">
+                            <div class="w-30"><img src="/img/avatar.png" width="100px" height="100px"></div>
+                            <div class="w-70"><p><%=analises[analise2].analise%></p></div>
+                        </li>
+                    </ul>
+                </div>
+                <%}}else{%>
+                <div id="analise0PerfilDeJogos">Nenhuma Análise Cadastrada</div>
+                <%}%>
             </section>
             <section class="fundoBranco h-33PerfilDeJogos">
                 Avaliações

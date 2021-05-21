@@ -43,7 +43,8 @@ module.exports.midia = (req, res) => {
 
 module.exports.perfil = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/perfilDeJogos',{jogo:jogoSelecionado})
+    const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
+    res.render('./jogos/perfilDeJogos',{jogo:jogoSelecionado, analises: analiseSelecionada})
 }
 
 module.exports.listar = (req, res) => {

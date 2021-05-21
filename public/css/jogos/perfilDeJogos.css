@@ -31,7 +31,7 @@
 }
 
 #informacoesPerfilDeJogos{
-    font-size: 10rem;            
+    font-size: 10rem;             
     border-radius: 25px;  
     max-height: 17vh;
 } 
@@ -49,4 +49,50 @@
     height: 200px;
     width: 170px;
     object-fit: scale-down;  
+}
+
+
+
+
+.analise{
+    background: white;
+    width: 50%;
+}
+
+.analise ul{
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.analise ul li{
+    display: flex;
+}
+.center{
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.center img{
+    margin-right: 20px; 
+}
+
+.flex{
+    display: flex;
+    padding-top: 5px;
+    line-break: auto;
+}
+
+.w-70{
+    width: 70%;
+}
+
+.w-30{
+    width: 30%;
+}
+
+#analise0PerfilDeJogos{
+    font-size: 13rem;
+    width: 100%;
+    text-align: center;
+    padding-top: 13vh;
 }
