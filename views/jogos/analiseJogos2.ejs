@@ -39,7 +39,10 @@
             <ul>
                 <li><img src="<%=jogo.imgJogo%>" width="400px" height="500px"></li>
                 <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.sinopseJogo%></p></li>
-                <li class="media"><h4>Avaliação Média:</h4><img src="/img/rating-amarelo.png" width="70px" height="70px"></li>
+                <% let aux = 0;for(let analise of analises){%>
+                    <%aux+=analise.nota%> 
+                <%}%>
+                <li class="media"><h4>Avaliação Média:</h4><img src="/img/nota<%=Math.round(aux/analises.length) %>.png" width="70px" height="70px"></li>
             </ul>
         </div>
     </div>
