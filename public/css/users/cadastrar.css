@@ -31,6 +31,12 @@ body{
 
 }
 
+.colorVermelha{
+    margin-left: 2vw;
+    font-size: 10px;
+    color: red;
+}
+
 .cad-aside{
 
     display: inline;

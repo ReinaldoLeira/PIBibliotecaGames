@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controller/usersController');
+const auth = require('../middlewares/auth');
 
-router.get ('/analise', usersController.analise);
+router.get ('/analise', auth, usersController.analise);
 
-router.get ('/form-analise', usersController.formAnalise);
+router.get ('/form-analise', auth, usersController.formAnalise);
 
-router.get ('/meusjogos', usersController.meusJogos);
+router.get ('/meusjogos', auth, usersController.meusJogos);
 
-router.get ('/posts', usersController.posts);
+router.get ('/posts', auth, usersController.posts);
 
-router.get ('/', usersController.usuario)
+router.get ('/', auth, usersController.usuario)
 
 module.exports = router

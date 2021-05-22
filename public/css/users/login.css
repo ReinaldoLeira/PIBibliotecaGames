@@ -20,6 +20,11 @@ html{
     min-height: 10vh;
     
 }
+.colorVermelha{
+    margin-left: 1vw;
+    
+    color: red;
+}
 
 body {
 
@@ -68,10 +73,14 @@ body {
     
     width: 70%;
     box-sizing: border-box;
+    margin-left: 3vw;
     
-    position: relative;
-    left: 15%;
 
+}
+
+.caixainput {
+    
+    margin-left: 2vw;
 }
 .textInput{
 
@@ -117,13 +126,13 @@ body {
 .inputSubmit{
     
     display: block;
-    position: relative;
-    left: 10%;
+  
+    
     width: 24vw;
     min-width: 285px;
     height: 8vh;
-
-    margin-top: 20px;
+    
+    margin-top: 7vh;
 
     text-align: center;
     color: white;

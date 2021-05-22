@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tema.css">
     <link rel="stylesheet" href="/css/jogos/histDePreco.css">
-    <title>Histórico de Preços</title>
+    <title><%= jogo.nomeJogo %></title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <container class="containerHistDePreco pai">
         <main class="mainHistDePreco pai coluna">
             <section class="fundoBranco" id="tituloHistDePreco">
-                <h1>Nome do Jogo</h1>
+                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nomeJogo %></a></h1>
             </section>
             <section class="fundoBranco" id="quadroHistDePreco">
                 <img src="/img/img jogos/exemploHistDePreco.PNG" id="exemploHistDePreco">
