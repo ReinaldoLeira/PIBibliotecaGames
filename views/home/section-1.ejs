@@ -27,56 +27,14 @@
     <section class="bloco-2">
         <div class="top-10">
             <h3>Top 10 da semana</h3>
-                <article>
-                    <p class="top-num">1</p>
-                    <p>#nome do jogo#</p>
-
+            <% for(let jogo of jogos) { %> 
+                <article class="article">
+                    <a class="link" href="/jogos/perfil/<%= jogo.id %> ">
+                    <p class="top-num"><%= jogo.id %></p>
+                    <p><%= jogo.nomeJogo %></p>
+                    </a>
                 </article>
-                <article>
-                    <p class="top-num">2</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">3</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">4</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">5</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">6</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">7</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">8</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">9</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
-                <article>
-                    <p class="top-num">10</p>
-                    <p>#nome do jogo#</p>
-
-                </article>
+            <% } %> 
     </section>
     </div>
 </div>

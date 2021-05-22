@@ -55,22 +55,21 @@ html{
     margin-right: 5px;
 }    
 
-.bloco-2 article{
+.top-num{
+    margin-right: 10px;
+}
+.article{
     padding-left:10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: flex;
     padding-top: 10px;
 }
-
-.top-num{
-    padding-right: 10px;
-    font-weight: bolder;
-}
-
 .top-10{
     background-color: white;
     border-radius: 30px;
     margin: 10px;
     padding: 5px;
+}
+.link{
+    color: black;
+    display: flex;
+    text-decoration: none;
 }

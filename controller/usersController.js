@@ -1,10 +1,16 @@
-    const fs = require('fs');
-    const path =require('path');
-    let usersJson = path.join('model/users.json')
-    const bcrypt = require('bcrypt');
+const fs = require('fs');
+const path =require('path');
+let usersJson = path.join('model/users.json')
+const bcrypt = require('bcrypt');
+const jogos = require('../model/jogos.json')
 
 //Controller para index
-module.exports.index = (req, res) => { res.render ('index')};
+module.exports.index = (req, res) => { 
+
+    let top = jogos
+    res.render ('index', {
+        jogos: top
+    })};
 
 //Controle das rota GET >> POST
 module.exports.login = (req, res) => { res.render('./users/login', {
