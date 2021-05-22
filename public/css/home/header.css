@@ -2,7 +2,6 @@
     font-family: 'Press Start 2P';
     src: url(/font/PressStart2P-Regular.ttf);
 }
-
 html{
     box-sizing: border-box;
 }
@@ -34,9 +33,9 @@ nav{
     font-size:  15em;
 }
 .cabecalho-logo{ 
-
+    width: 300px;
     display: block; 
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .div-pesquisa{
@@ -55,23 +54,46 @@ nav{
     width: 200px
 }
 
-a{
+.nav-list li a{
     color: black;
     text-decoration: none;
 }
 
-button{
+.cabecalho-final button{
     background-color: #0E9AA7;
-    border: none;
-    font-family: 'Press Start 2P', cursive;
+    border: none;;
     cursor: pointer;
     margin-left: 20px;
 }
 .btn-w{
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
     color: white;
 }
 
 .cabecalho-final{
     display: flex;
-    margin-right: 5%;
+    margin-right: 4%;
+}
+
+@media (max-width: 1400px){
+    .cabecalho ul li a{
+        font-size:  0.9em;
+    }
+    .cabecalho-logo{
+        width: 240px;
+        height: 90px;
+        margin-left: 2%;
+
+    }
+    .cabecalho-final{
+        margin-right: 2%;
+    }
+    .cabecalho ul li{
+        padding: 5px;
+    }
+    .txt-pesquisa{
+        height:32px;
+        width: 180px
+    }
 }
