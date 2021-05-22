@@ -18,6 +18,10 @@
     font-size: 13em;
     text-align: center;
 }
+.colunas a{
+    color: black;
+    text-decoration: none;
+}
 .colunas ul li{
     align-items: center;
     list-style: none;
