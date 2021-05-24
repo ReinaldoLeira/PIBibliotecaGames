@@ -15,9 +15,9 @@ module.exports.index = (req, res) => {
 //Controle das rota GET >> POST
 module.exports.login = (req, res) => { res.render('./users/login', {
 
-    error:{},
+    error:{
     content:{email: ''}
-
+    }
     })
 };
 
