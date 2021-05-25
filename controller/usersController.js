@@ -3,13 +3,15 @@ const path =require('path');
 let usersJson = path.join('model/users.json')
 const bcrypt = require('bcrypt');
 const jogos = require('../model/jogos.json')
+const noticias = require('../model/noticias.json')
 
 //Controller para index
 module.exports.index = (req, res) => { 
-
-    let top = jogos
+    const top = jogos
+    const noticia = noticias
     res.render ('index', {
-        jogos: top
+        jogos: top,
+        noticias: noticia
     })};
 
 //Controle das rota GET >> POST
