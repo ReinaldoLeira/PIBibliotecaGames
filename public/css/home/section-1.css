@@ -10,31 +10,44 @@ html{
     margin-right: 10px;
     margin-left: 10px;
 }
-
 .bloco-1{
     width: 80%;
     margin-right: 30px;
     border-radius: 25px;
 }
-
 .promocao{
     background-color: #0E9AA7;
     box-shadow: 10px 5px 5px grey;
     border-radius: 25px;
-    height: 200px;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.img{
+    width: 100px;
+    height: 170px;
+    margin: 10px;
 }
 
+/* height: auto; sera colocado no lugar do 200px quando tiver conteudo no destaque */
 .destaque{
     background-color: #0E9AA7;
     box-shadow: 10px 5px 5px grey;
     border-radius: 25px;
-    height: 200px;
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .noticia{
     border: 1px solid black;
     width: 100%;
-    height: 200px;
+    height: auto;
+    padding-left: 10px;
 }
 
 .bloco-2{

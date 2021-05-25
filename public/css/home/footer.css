@@ -2,9 +2,11 @@ html{
     box-sizing: border-box;
 }
 .footer{
+    position: relative;/* absolute */
     margin-top: 20px;
+    bottom: 0;
+    width: 100%;
 }
-
 .rodape{
     display: flex;
     text-align: left;

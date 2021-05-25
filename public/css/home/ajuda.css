@@ -45,7 +45,9 @@
     justify-content: space-between;
     margin: auto;
 }
-
+.populares-div:hover{
+    background: #0e9aa7
+}
 a{
     text-decoration: none;
 }

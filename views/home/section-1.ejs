@@ -1,40 +1,59 @@
-<link rel="stylesheet" href="css/tema.css">
-<link rel="stylesheet" href="/css/home/section-1.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="bloco-geral">
-    <section class="bloco-1">
-        <h3>Jogos em promoção</h3>
-            <div class="promocao">
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-            </div>    
-        <h3>Jogos em destaque</h3>
-            <div class="destaque">
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
-                <article><img src="" alt=""></article>
+<head>
+    <link rel="stylesheet" href="/css/home/section-1.css">
+</head>
+
+<body>
+    <div class="bloco-geral">
+        <section class="bloco-1">
+            <div>
+                <h3>Jogos em promoção</h3>
+                <div class="promocao">
+                    <% for(let i=1; i<jogos.length && i <=10; i++){ %>
+                        <a href="/jogos/perfil/<%= jogos[i].id %>">
+                            <article><img class="img" src="<%= jogos[i].imgJogo %> "></article>
+                        </a>
+                        <% } %>
+                </div>
             </div>
-        <h3>Noticias</h3>
-            <div class="noticia">
-                <p></p>
-            </div>
-    </section>
-    <section class="bloco-2">
-        <div class="top-10">
-            <h3>Top 10 da semana</h3>
-            <% for(let jogo of jogos) { %> 
-                <article class="article">
-                    <a class="link" href="/jogos/perfil/<%= jogo.id %> ">
-                    <p class="top-num"><%= jogo.id %></p>
-                    <p><%= jogo.nomeJogo %></p>
+            <div>
+                <h3>Jogos em destaque</h3>
+                <div class="destaque">
+                    <a href="">
+                        <article><img src=""></article>
                     </a>
-                </article>
-            <% } %> 
-    </section>
+                </div>
+            </div>
+            <div>
+                <h3>Noticias</h3>
+                <% for (const noticia of noticias) { %> 
+                <div class="noticia">
+                    <h4><%= noticia.titulo %> </h4>
+                    <p><%= noticia.texto %> </p>
+                </div>
+                <% } %>
+            </div>
+
+        </section>
+        <section class="bloco-2">
+            <div class="top-10">
+                <h3>Top 10 da semana</h3>
+                <% for(let i=1; i<jogos.length && i<=10; i++){ %>
+                    <article class="article">
+                        <a class="link" href="/jogos/perfil/<%= jogos[i].id %> ">
+                            <p class="top-num">
+                                <%= jogos[i].id %>
+                            </p>
+                            <p>
+                                <%= jogos[i].nomeJogo %>
+                            </p>
+                        </a>
+                    </article>
+                    <% } %>
+        </section>
     </div>
-</div>
+</body>
+
+</html>
