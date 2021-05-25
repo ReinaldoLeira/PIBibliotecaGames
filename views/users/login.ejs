@@ -24,8 +24,8 @@
                     <form action="/login" method="POST">
                         <div class="caixainput">
                         <label for="email" class="textInput">Usuario:</label>
-                        <input type="email" name="email" class="caixaInput" autocomplete="off" required>
-                            <p class="colorVermelha"><%= error.email ? error.email: '' %></p>
+                        <input type="email" name="email" class="caixaInput" autocomplete="off" value="<%= error.content.email ? error.content.email : ' ' %>"required>
+                        <p class="colorVermelha"><%= error.email ? error.email: '' %></p>
 
                         <label for="senha" class="textInput">Senha:</label>
                         <input type="password" name="senha" class="caixaInput" autocomplete="off" required>

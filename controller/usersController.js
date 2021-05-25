@@ -17,9 +17,9 @@ module.exports.index = (req, res) => {
 //Controle das rota GET >> POST
 module.exports.login = (req, res) => { res.render('./users/login', {
 
-    error:{},
-    content:{}
-
+    error:{
+    content:{email: ''}
+    }
     })
 };
 
@@ -82,6 +82,7 @@ module.exports.registrado = (req, res) => {
     let novoUsuario = JSON.parse(rawData);
     let senhaC = bcrypt.hashSync (senha, 10);
     let usuario = {email, nick, senha:senhaC};
+    
     novoUsuario.push(usuario);     
 
     fs.writeFileSync(usersJson, JSON.stringify(novoUsuario));
