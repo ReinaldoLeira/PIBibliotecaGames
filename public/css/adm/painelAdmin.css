@@ -28,18 +28,23 @@
     width: 30%;  
     height: 3vh;
 }
+.navPainelAdm p{
+    text-decoration: none;
+    color: black;  
+    font-size: 7rem;
+}
 .pai{
     display: flex
 }
 
-.acessos{
+.acessosPainelAdmin{
     height: 80vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.acessos img{
+.acessosPainelAdmin img{
     width: 30%;
     height: 30%;   
     vertical-align: middle;     

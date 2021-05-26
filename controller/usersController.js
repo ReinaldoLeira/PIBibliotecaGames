@@ -81,7 +81,9 @@ module.exports.registrado = (req, res) => {
     let rawData = fs.readFileSync(usersJson); 
     let novoUsuario = JSON.parse(rawData);
     let senhaC = bcrypt.hashSync (senha, 10);
-    let usuario = {email, nick, senha:senhaC};
+    let id = ++novoUsuario[0]
+    novoUsuario[0] = id
+    let usuario = {email, nick, senha:senhaC, id:id};
     
     novoUsuario.push(usuario);     
 

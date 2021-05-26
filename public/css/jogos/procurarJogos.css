@@ -61,6 +61,9 @@
     width:  fit-content;
     height: fit-content;      
     margin-right: 5%;   
+    text-decoration: none;
+    text-align: center;
+    color: black;
 }
 .jogosProcuraJogos img{    
     width:  10vw;
