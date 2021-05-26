@@ -13,17 +13,17 @@
     <div id="conteudoPainelAdmin">
         <header id="headerPainelAdmin">Painel de Administração</header>
         <nav class="navPainelAdm" ><ul class="pai">
-        <a href="#"><li id="ativoPainelAdmin">Usuários</li></a>
-        <a href="#"><li>Jogos</li></a>
-        <a href="#"><li>Análises</li></a>
+        <a href="/gamepadm/painel"><li id="<%if(aba==='user'){%>ativoPainelAdmin<%}%>">Usuários</li></a>
+        <a href="/gamepadm/painel/jogo"><li id="<%if(aba==='jogo'){%>ativoPainelAdmin<%}%>">Jogos</li></a>
+        <a href="/gamepadm/painel/analise"><li id="<%if(aba==='analise'){%>ativoPainelAdmin<%}%>">Análises</li></a>
         </ul></nav>
         <div class="pai">        
             <aside class="fundoVerde" id="asidePainelAdmin">               
                     <ul class="acessos">
-                        <a href="#"><li>Cadastrar</li></a>
-                        <a href="#"><li>Editar</li></a>
-                       <a href="#"><li><img src="/img/adm/selecionado.png"/>Bloquear</li></a>
-                        <a href="#"><li>Apagar</li></a>                        
+                        <a href="/gamepadm/painel/<%=aba%>/cadastrar"><li><li><%if(selecionado === 'Cadastrar'){%> <img src="/img/adm/selecionado.png"/><%}%>Cadastrar</li></a>
+                        <a href="/gamepadm/painel/<%=aba%>/editar"><li><li><%if(selecionado === 'Editar'){%> <img src="/img/adm/selecionado.png"/><%}%>Editar</li></a>
+                       <a href="/gamepadm/painel/<%=aba%>/bloquear"><li><%if(selecionado === 'Bloquear'){%> <img src="/img/adm/selecionado.png"/><%}%>Bloquear</li></a>
+                        <a href="/gamepadm/painel/<%=aba%>/apagar"><li><li><%if(selecionado === 'Apagar'){%> <img src="/img/adm/selecionado.png"/><%}%>Apagar</li></a>                        
                     </ul>                    
             </aside>
             <main class="fundoVerde" id="mainPainelAdmin">
