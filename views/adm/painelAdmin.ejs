@@ -27,15 +27,10 @@
                     </ul>                    
             </aside>
             <main class="fundoVerde" id="mainPainelAdmin">
-                <p><label>Pesquisar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
-                <section class="fundoBranco h-50">
+                <%if(selecionado!==''){%>
+                <%- include('partial/'+aba+selecionado+'.ejs') %>
+                <%}%>
                 
-                
-                </section>
-                <p><label>Usuários Bloqueados</label></p>
-                <section class="fundoBranco h-30">
-
-                </section>
             </main>
         </div>
     </div>
