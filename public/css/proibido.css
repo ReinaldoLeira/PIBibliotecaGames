@@ -1,0 +1,53 @@
+@font-face {
+
+    font-family: 'Press Start 2P';
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+    font-size: 6.25%;
+}
+
+.proibido-b{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.a-proibido{
+    
+    width: 100vw;
+    height: 70vh;
+    box-sizing: border-box;
+    
+}
+
+.imagem {
+
+    margin:0 auto;
+    width: 28vw;
+    height: 50vh;
+    
+
+    text-align: center;
+    text-decoration: none;
+    
+
+}
+.span{
+
+    font-size: 50em;
+}
+
+.plogue {
+
+    font-size: 20em;
+}
+
+.plogue a{
+    font-size:1.5em;
+    text-decoration: none;
+}
