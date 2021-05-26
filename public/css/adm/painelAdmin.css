@@ -1,0 +1,101 @@
+.bodyPerfilAdmin{
+    min-height: 100vh;
+    justify-content: center;
+}
+.inputPainelAdmin{
+    margin: 0 1%;
+}
+.navPainelAdm{
+    width: 100%;
+}
+.navPainelAdm ul{
+    padding: 0;
+    justify-content: space-around;
+}
+.navPainelAdm li{
+    list-style: none;
+    background: #9ee1e8;
+    border-radius: 15px 15px 0px 0px;    
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 10rem;
+    padding-top: 1vh;
+}
+.navPainelAdm a{
+    text-decoration: none;
+    color: black;  
+    width: 30%;  
+    height: 3vh;
+}
+.pai{
+    display: flex
+}
+
+.acessos{
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.acessos img{
+    width: 30%;
+    height: 30%;   
+    vertical-align: middle;     
+}
+.h-50{
+    height: 45vh;
+}
+.h-30{
+    height: 25vh;
+}
+#headerPainelAdmin{
+    height: 10vh;
+    font-size: 15rem;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 15px;
+}
+#conteudoPainelAdmin{
+    width: 95%;
+    margin: 0;
+}
+#pesquisaUser{
+    width: 50%;
+}
+#asidePainelAdmin{
+    margin-top: -2px;
+    margin-right: 0;
+    margin-left: 0;
+    border: none;
+    height: 85vh;
+    font-size: 14rem;
+    font-weight: 300;    
+}
+#asidePainelAdmin a{
+    text-decoration: none;
+    color: black;
+}
+#asidePainelAdmin li{
+    list-style: none;           
+}
+
+#mainPainelAdmin{
+    margin-top: -2px;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    width: 80%;
+    height: 85vh;
+    padding: 1%;    
+}
+#mainPainelAdmin label{
+    font-size: 10rem;
+}
+#mainPainelAdmin p{
+    text-align: center;
+}
+#ativoPainelAdmin{
+    background: #0e9aa7;      
+}
