@@ -39,7 +39,6 @@ nav{
 }
 
 .div-pesquisa{
-
     background-color: white;
     border: 1px solid black;
     margin: auto;
@@ -47,7 +46,6 @@ nav{
 }
 
 .txt-pesquisa{
-
     border:none;
     padding-left:5px;
     height:32px;

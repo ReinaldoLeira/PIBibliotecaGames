@@ -1,5 +1,6 @@
 .container{
     margin-top: 20px;
+    flex-grow: 1;
 }
 .introducao{
     background-color: #0e9aa7;     
@@ -17,6 +18,7 @@
     margin-right: 8%;
     font-size: 13em;
     text-align: center;
+    flex-wrap: wrap;
 }
 .colunas a{
     color: black;

@@ -63,7 +63,6 @@ html{
     text-align: center;
     border: 1px solid #0E9AA7;
     border-radius: 50px;
-    
     margin-left: 5px;
     margin-right: 5px;
 }    
@@ -71,7 +70,7 @@ html{
 .top-num{
     margin-right: 10px;
 }
-.article{
+.lista{
     padding-left:10px;
     padding-top: 10px;
 }
@@ -79,8 +78,14 @@ html{
     background-color: white;
     border-radius: 30px;
     margin: 10px;
+    height: 97%;
     padding: 5px;
 }
+.top-10 ul{
+    list-style-type: none;
+    padding: 0;
+}
+
 .link{
     color: black;
     display: flex;

@@ -2,9 +2,7 @@ html{
     box-sizing: border-box;
 }
 .footer{
-    position: relative;/* absolute */
     margin-top: 20px;
-    bottom: 0;
     width: 100%;
 }
 .rodape{
@@ -14,6 +12,7 @@ html{
     padding: 16px 40px 10px 40px;
     border-top: 1px solid #666;
     font-size:  15em;
+    flex-wrap: wrap;
 }
 .rodape li{
     padding-top: 5px;
@@ -27,6 +26,7 @@ html{
 }
 .none{
     list-style-type: none;
+    padding: 0px;
 }
 .none li a{
     color: black;

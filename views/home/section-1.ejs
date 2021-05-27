@@ -40,8 +40,9 @@
         <section class="bloco-2">
             <div class="top-10">
                 <h3>Top 10 da semana</h3>
+                <ul>
                 <% for(let i=1; i<jogos.length && i<=10; i++){ %>
-                    <article class="article">
+                    <li class="lista">
                         <a class="link" href="/jogos/perfil/<%= jogos[i].id %> ">
                             <p class="top-num">
                                 <%= jogos[i].id %>
@@ -50,8 +51,9 @@
                                 <%= jogos[i].nomeJogo %>
                             </p>
                         </a>
-                    </article>
+                    </li>
                     <% } %>
+                </ul>
         </section>
     </div>
 </body>

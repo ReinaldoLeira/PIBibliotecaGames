@@ -3,18 +3,6 @@
     src: url(/font/PressStart2P-Regular.ttf);
 }
 
-main{
-	width: 80%;
-	}	
-
-header{
-	height: 113px;
-	}
-
-aside{
-	width:20%;
-	}
-
 *{
     box-sizing: border-box
 }
@@ -26,8 +14,27 @@ html{
 body {
     font-family: PressStart2P;  
     background: #d5d5d5;    
-    margin: 0px;                         
+    margin: 0px;             
+    flex-direction: column; 
+    min-height: 100vh;     
+    display: flex;     
 }	
+
+header{
+    height: 113px;
+}
+
+main{
+	width: 80%;
+}
+
+aside{
+    width:20%;
+}
+
+footer{
+    height: 157px;
+}
 
 .fundoVerde{
     background-color: #0e9aa7;           
