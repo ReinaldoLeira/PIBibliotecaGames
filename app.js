@@ -22,6 +22,7 @@ app.use('/', require('./routes/indexRouter'));
 app.use('/home', require('./routes/homeRouter'));
 app.use('/jogos', require('./routes/jogosRouter'));
 app.use('/users', require('./routes/usersRouter'));
+app.use('/gamepadm', require('./routes/admRouter'));
 
 
 // catch 404 and forward to error handler

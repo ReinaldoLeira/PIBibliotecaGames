@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/tema.css">
+    <link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
+    <title>Administração</title>
+</head>
+<body class="fundoCinzaClaro bodyPerfilAdmin pai">    
+    
+    <div id="conteudoPainelAdmin">
+        <header id="headerPainelAdmin">Painel de Administração</header>
+        <nav class="navPainelAdm" ><ul class="pai">
+        <p>L</p>
+        <a href="/gamepadm/painel"><li id="<%if(aba==='user'){%>ativoPainelAdmin<%}%>">Usuários</li></a>
+        <a href="/gamepadm/painel/jogo"><li id="<%if(aba==='jogo'){%>ativoPainelAdmin<%}%>">Jogos</li></a>
+        <a href="/gamepadm/painel/analise"><li id="<%if(aba==='analise'){%>ativoPainelAdmin<%}%>">Análises</li></a>
+        <p>R</p>
+        </ul></nav>
+        <div class="pai">        
+            <aside class="fundoVerde" id="asidePainelAdmin">               
+                    <ul class="acessosPainelAdmin">
+                        <a href="/gamepadm/painel/<%=aba%>/cadastrar"><li><li><%if(selecionado === 'Cadastrar'){%> <img src="/img/adm/selecionado.png"/><%}%>Cadastrar</li></a>
+                        <a href="/gamepadm/painel/<%=aba%>/editar"><li><li><%if(selecionado === 'Editar'){%> <img src="/img/adm/selecionado.png"/><%}%>Editar</li></a>
+                       <a href="/gamepadm/painel/<%=aba%>/bloquear"><li><%if(selecionado === 'Bloquear'){%> <img src="/img/adm/selecionado.png"/><%}%>Bloquear</li></a>
+                        <a href="/gamepadm/painel/<%=aba%>/apagar"><li><li><%if(selecionado === 'Apagar'){%> <img src="/img/adm/selecionado.png"/><%}%>Apagar</li></a>                        
+                    </ul>                    
+            </aside>
+            <main class="fundoVerde" id="mainPainelAdmin">
+                <%if(selecionado!==''){%>
+                <%- include('partial/'+aba+selecionado+'.ejs') %>
+                <%}%>
+                
+            </main>
+        </div>
+    </div>
+</body>
+</html>
