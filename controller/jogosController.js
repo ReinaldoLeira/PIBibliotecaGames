@@ -28,27 +28,27 @@ function selecionarAnalise(array, id){
 module.exports.analise2 = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
-    res.render('./jogos/analiseJogos2',{jogo:jogoSelecionado, analises: analiseSelecionada})
+    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo:jogoSelecionado, analises: analiseSelecionada})
 }
 
 module.exports.historico = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/histDePreco',{jogo:jogoSelecionado})
+    res.render('./jogos/histDePreco',{usuario: req.session.usuario,jogo:jogoSelecionado})
 }
 
 module.exports.midia = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/midiaJogo',{jogo:jogoSelecionado})
+    res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo:jogoSelecionado})
 }
 
 module.exports.perfil = (req, res) => {
     const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
-    res.render('./jogos/perfilDeJogos',{jogo:jogoSelecionado, analises: analiseSelecionada})
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario,jogo:jogoSelecionado, analises: analiseSelecionada})
 }
 
 module.exports.listar = (req, res) => {
-    res.render('./jogos/procurarJogos', {jogos:arrayJogos})
+    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos:arrayJogos})
 }
 
 module.exports.cadastra = (req, res) => {
@@ -63,6 +63,6 @@ module.exports.cadastrar = (req, res) => {
     arrayJogos[0] = jogoNovo.id
     arrayJogos.push(jogoNovo)    
     salvarJogos(arrayJogos)
-    res.redirect('/jogos/perfil/'+jogoNovo.id)    
+    res.redirect('/jogos/perfil/'+jogoNovo.id ,{usuario: req.session.usuario})    
 }
 

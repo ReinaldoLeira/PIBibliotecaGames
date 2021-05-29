@@ -20,8 +20,16 @@
         <div class="div-pesquisa">
             <input type="search" class="txt-pesquisa" placeholder="Pesquisar">
         </div>
-        <button><a class="btn-w" href="/login">Entrar</a></button>
-        <button><a class="btn-w" href="/registrar">Registrar</a></button>
-    </div>
+    <% if (usuario) {%>
+
+        <img class="img-usuarioLogado" src="https://i.pinimg.com/originals/08/e9/0c/08e90c026242fbee0c7704b078219359.png" alt=""/>
+        <a class="nome-usuario-logado" href="/users">painel</a>
+
+    <%}else { %>
+    
+    <button><a class="btn-w" href="/login">Entrar</a></button>
+    <button><a class="btn-w" href="/registrar">Registrar</a></button>
+        
+    <%}%>
 </header>
 </html>

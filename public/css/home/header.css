@@ -74,6 +74,26 @@ nav{
     margin-right: 4%;
 }
 
+.img-usuarioLogado {
+
+    border: 2px solid gray;
+    margin-left: 1vw;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+}
+
+
+.nome-usuario-logado {
+
+    text-decoration: none;
+    margin-left: 1vw;
+    margin-top: 3vh;
+    font-size: 15rem;
+    padding-bottom: 2vh;
+    
+}
+
 @media (max-width: 1400px){
     .cabecalho ul li a{
         font-size:  0.9em;
