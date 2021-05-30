@@ -52,7 +52,7 @@ module.exports.listar = (req, res) => {
 }
 
 module.exports.cadastra = (req, res) => {
-    res.render('./jogos/cadastraJogo')
+    res.render('./jogos/cadastraJogo', {usuario: req.session.usuario})
 }
 
 module.exports.cadastrar = (req, res) => {

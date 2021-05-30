@@ -52,44 +52,8 @@
 
             <aside class="containerPerfil">
 
-                <div class="caixaPerfil">
-    
-                    <div class="caixaFoto">
-    
-                    </div>
-    
-                    <div class="caixaNick">
-    
-                        <p>@<%=usuario.nick %></p>
-    
-                    </div>
-    
-                    <div class="caixaSobre">
-    
-                        <p>sobre mim</p>
-    
-                    </div>
-    
-                    <div class="listaPerfil">
-                        
-                        <a href='/users/posts'>Post</a>
-                        <a href='/users/analise'>Análise</a></a>
-                        <a href='/users/midias'>Midias</a>
-                        <a href="/users/meusjogos">Jogos</a>
-                        
-                    </div>
-    
-                    <div class="sociais">
-    
-                        <a href="http://instagram.com"><img src="/img/instagramIcon.png" alt=""></a>
-                        <a href="http://www.twitter.com"><img src="/img/twitterIcon.png" alt=""></a>
-                        <a href="http://www.facebook.com"><img src="/img/facebookIcon.png" alt=""></a>
-                    
-                    </div>
-    
-    
-                </div>
-    
+                <%- include('../users/usuario-include.ejs'); %>
+                
             </aside>
 
         </div>

@@ -1,29 +1,3 @@
-
-@font-face {
-
-    font-family: 'Press Start 2P';
-    src: url(/font/PressStart2P-Regular.ttf);
-}
-
-html{
-    font-family: 'Press Start 2P', cursive;
-        font-size: 6.25%;
-
-}
-
-body {
-
-    
-    background: #d5d5d5;  
-
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    
-
-}
-
 .marginzero{
 
     margin: 0px;
@@ -31,25 +5,17 @@ body {
 }
 
 
-/* parte usuario '''''''*/
-
-
-
-
-
+/* parte usuario */
 .containerPerfil {
 
    
-   width: 100vw;
-   height: 93vh;
-   min-height: 770px;
-  
+    height: 100vh;
+    min-height: 770px;
+   
 }
-
-
 .caixaPerfil {
     
- 
+    margin: 0 auto;
     width: 43vw;
     min-width: 350px;
     max-width: 400px;
