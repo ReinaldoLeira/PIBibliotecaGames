@@ -13,4 +13,6 @@ router.get ('/posts', auth, usersController.posts);
 
 router.get ('/', auth, usersController.usuario)
 
+router.get ('/midias', auth, usersController.userMidias)
+
 module.exports = router

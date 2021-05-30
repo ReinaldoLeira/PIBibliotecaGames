@@ -126,3 +126,4 @@ module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {
 module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
 module.exports.posts = (req, res) => {res.render('./users/posts', {usuario: req.session.usuario}) };
 module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario})};
+module.exports.userMidias =  (req, res) => {res.render('./users/userMidia', {usuario: req.session.usuario})};

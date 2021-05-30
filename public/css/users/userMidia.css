@@ -1,0 +1,82 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #d5d5d5;    
+
+}
+
+.paiFlex {
+    display: flex;
+}
+
+.caixaMain {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 75vw;
+    height: 100vh;
+    
+    
+}
+.caixaAside {
+    
+    width: 25vw;
+    height: 100vh;
+}
+
+.caixaMidias{
+
+    background-color: white;
+    width: 70vw;
+    height: 100vh;
+    
+    margin: 0 auto;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+   
+}
+.Mtitulo {
+
+    background: #0E9AA7;
+    height: 6vh;
+    text-align: center;
+    font-size: 40em;
+    padding-top: 2vh;
+   
+    
+}
+
+.imgVideos{
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cxVideo{
+
+    width: 10vw;
+    height: 25vh;
+    margin-left: 5%;
+    margin-top: 5vh ;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+}
