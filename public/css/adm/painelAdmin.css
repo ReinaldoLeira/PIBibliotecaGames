@@ -1,6 +1,7 @@
 .bodyPerfilAdmin{
     min-height: 100vh;
     justify-content: center;
+    align-items: center
 }
 .inputPainelAdmin{
     margin: 0 1%;
@@ -64,7 +65,7 @@
 }
 #conteudoPainelAdmin{
     width: 95%;
-    margin: 0;
+    margin: 0;    
 }
 #pesquisaUser{
     width: 50%;
@@ -103,4 +104,32 @@
 }
 #ativoPainelAdmin{
     background: #0e9aa7;      
+}
+.preencherPainelAdmin{
+    flex-grow: 1;       
+}
+.centralizarPainelAdmin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tablePainelAdmin{
+    width: 100%;
+    
+}
+.tablePainelAdmin th{
+    font-size: 10rem;
+    font-weight: 900;
+    width: 33%;
+    border-bottom: 1px solid black;
+}
+.tablePainelAdmin td{
+    text-align: center;
+    font-size: 8rem;
+    padding: 5px;
+}
+.tablePainelAdmin td a img{
+    width: 17rem;
+    vertical-align: middle;  
 }

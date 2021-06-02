@@ -1,1 +1,25 @@
-jogoEditar
+<p><label>Procurar Jogos</label> <input class="inputPainelAdmin" type="text" name="pesquisarJogo" id="pesquisaJogo"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
+                <section class="fundoBranco h-50">
+                    <table class="tablePainelAdmin">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Desenvolvedora</th>
+                        <th>Ações</th>
+                    </tr>
+                    
+                    <%for(let i = 1; i < listaJogos.length; i++){%>
+                    <tr>
+                        <td><%=listaJogos[i].id%></td>
+                        <td><%=listaJogos[i].nomeJogo%></td>
+                        <td><%=listaJogos[i].publisherJogo%></td>
+                        <td><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                    </tr>
+                    <%}%>
+                
+                </table>
+                </section>
+                <p><label>Jogos Bloqueados</label></p>
+                <section class="fundoBranco h-30">
+
+                </section>
