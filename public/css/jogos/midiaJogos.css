@@ -22,6 +22,11 @@
     font-size: 14rem;                       
 }    
 
+#tituloMidiaJogos a{
+    text-decoration: none;
+    color: black;                      
+}  
+
 #galeriaImagensMidiaJogos{
     flex-grow: 1;  
     flex-wrap: wrap;  

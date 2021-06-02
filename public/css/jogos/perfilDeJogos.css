@@ -21,8 +21,12 @@
    
 #tituloPerfilDeJogos{
     text-align: center; 
-    font-size: 14rem;                       
-}    
+    font-size: 14rem;                      
+}   
+#tituloPerfilDeJogos a{
+    text-decoration: none;
+    color: black;
+} 
 
 #imagemJogoPerfilDeJogos{
     height: 34vh;
