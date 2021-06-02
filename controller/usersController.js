@@ -30,9 +30,9 @@ module.exports.login = (req, res) => { res.render('./users/login', {
 module.exports.logar = (req, res) => {
 
     let {email, senha} =req.body;
-    for (let usuario of usersJson) {
+    const fuser = usersJson.find((user) => user.email === email)
 
-    if (email != usuario.email) {
+    if (!fuser) {
         return res.render('./users/login', {
             usuario: req.session.usuario,
             error: {
@@ -41,7 +41,7 @@ module.exports.logar = (req, res) => {
             },   
         });
     }
-    if (!bcrypt.compareSync(senha, usuario.senha)){
+    if (!bcrypt.compareSync(senha, fuser.senha)){
         return res.render('./users/login', {
             usuario: req.session.usuario,
             error: {
@@ -49,11 +49,11 @@ module.exports.logar = (req, res) => {
                 content: req.body
             },
         });
-    }  
-
-    req.session.usuario = usuario
+      
+    }
+    req.session.usuario = fuser
     res.redirect ('/users')       
-}
+
 };
 //Controle das rotas GET >> POST
 module.exports.registrar = (req, res) => { res.render('./users/cadastrar', {
