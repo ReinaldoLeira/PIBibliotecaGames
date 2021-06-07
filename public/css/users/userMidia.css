@@ -80,3 +80,26 @@ body {
     box-sizing: border-box;
     box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 956px) and (max-height: 890px) {
+    
+    .paiFlex{
+
+        display: flex;
+        height: 200vh;
+        /* width: 100vw; */
+        
+        flex-direction: column-reverse;
+        
+    }
+
+    .caixaMain {
+
+        width: 100vw;
+    }
+
+    .caixaMidias {
+        
+        margin: 0 auto;
+    }
+}
