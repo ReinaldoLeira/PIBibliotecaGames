@@ -2,7 +2,7 @@ const db = require('./models')
 const { Op } = require('sequelize')
 
 
-db.user.create({
+db.User.create({
 
     usuario: 'juliout',
     senha: '1234',

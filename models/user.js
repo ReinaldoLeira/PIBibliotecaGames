@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     perfis_id: DataTypes.BIGINT
   }, {
     sequelize,
-    modelName: 'user',
+    modelName: 'User',
   });
   return User;
 };
