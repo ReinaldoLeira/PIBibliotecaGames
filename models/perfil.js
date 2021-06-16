@@ -4,24 +4,32 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Perfil extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Perfil, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      })
+
+
     }
   };
   Perfil.init({
     id: {
       type:DataTypes.BIGINT,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement: true
     },
     nick: DataTypes.STRING(50),
-    sobre: DataTypes.STRING(100),
+    sobre: DataTypes.STRING(1000),
     foto: DataTypes.STRING(100),
-    blocked: DataTypes.BOOLEAN(1)
+    blocked: DataTypes.BOOLEAN(1),
+    perfis_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'User'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Perfil',
