@@ -38,7 +38,13 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Perfil'
       }
     },
-    blocked: DataTypes.BOOLEAN(1)
+    blocked: DataTypes.BOOLEAN(1),
+    perfis_users_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'User'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Analise',

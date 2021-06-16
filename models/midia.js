@@ -33,6 +33,12 @@ module.exports = (sequelize, DataTypes) => {
     jogos_id: {
       type: DataTypes.BIGINT,
       references: 'Jogo'
+    },
+    perfis_users_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'User'
+      }
     }
   }, {
     sequelize,
