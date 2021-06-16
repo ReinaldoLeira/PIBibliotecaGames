@@ -4,23 +4,29 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Post extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+
     static associate(models) {
-      // define association here
+      this.belongsTo (models.Perfil, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      })
     }
   };
   Post.init({
     id: {
       type:DataTypes.BIGINT,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     descricao: DataTypes.STRING(100),
-    users_id: DataTypes.BIGINT,
-    titulo: DataTypes.STRING(100)
+    titulo: DataTypes.STRING(100),
+    perfis_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'Perfil'
+      }
+    },
+    
   }, {
     sequelize,
     modelName: 'Post',

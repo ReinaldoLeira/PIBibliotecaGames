@@ -4,23 +4,31 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Biblioteca extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Perfil, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      }),
+      this.hasMany(models.bibliotecaJogo, {
+        foreignKey: 'biblioteca_id',
+        targetKey: 'id'
+      })
     }
   };
   Biblioteca.init({
 
     id: {
     type: DataTypes.BIGINT,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-    jogos_id: DataTypes.BIGINT,
-    users_id: DataTypes.BIGINT
+    perfis_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'Perfil'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Biblioteca',

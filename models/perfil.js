@@ -6,10 +6,27 @@ module.exports = (sequelize, DataTypes) => {
   class Perfil extends Model {
 
     static associate(models) {
-      this.belongsTo(models.Perfil, {
+      this.belongsTo(models.User, {
+        foreignKey: 'users_id',
+        targetKey: 'id'
+      }),
+      this.hasMany(models.Posts, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      }),
+      this.hasMany(models.Analise,{
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      }),
+      this.hasMany(models.Midia, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      }),
+      this.hasOne(models.Biblioteca,{
         foreignKey: 'perfis_id',
         targetKey: 'id'
       })
+
 
 
     }
@@ -24,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     sobre: DataTypes.STRING(1000),
     foto: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
-    perfis_id: {
+    users_id: {
       type: DataTypes.BIGINT,
       references: {
         model: 'User'

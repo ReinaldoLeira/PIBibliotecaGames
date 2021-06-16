@@ -4,24 +4,36 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Midia extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+ 
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Jogo, {
+        foreignKey: 'jogos_id',
+        targetKey: 'id'
+      }),
+      this.belongsTo(models.Perfil, {
+        foreignKey: 'perfis_id',
+        targetKey: 'id'
+      })
     }
   };
   Midia.init({
     id: {
       type:DataTypes.BIGINT,
-      primaryKey:true
+      primaryKey:true,
+      autoIncrement: true
     },
     tipo: DataTypes.ENUM('IMAGEM','VIDEO'),
     path: DataTypes.STRING(150),
-    users_id: DataTypes.BIGINT,
-    jogos_id: DataTypes.BIGINT
+    perfis_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'Perfil'
+      }
+    },
+    jogos_id: {
+      type: DataTypes.BIGINT,
+      references: 'Jogo'
+    }
   }, {
     sequelize,
     modelName: 'Midia',

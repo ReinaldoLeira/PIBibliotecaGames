@@ -4,25 +4,40 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Jogogenero extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+
     static associate(models) {
-      // define association here
+      this.belongsTo(models.Jogo, {
+        foreignKey: 'jogos_id',
+        targetKey: 'id'
+      }),
+      this.belongsTo(models.Genero, {
+        foreignKey: 'generos_id',
+        targetKey: 'id'
+      })
     }
   };
   Jogogenero.init({
     id: {
     type:DataTypes.BIGINT,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
-    generos_id: DataTypes.BIGINT,
-    jogos_id: DataTypes.BIGINT
+    generos_id: {
+      type:  DataTypes.BIGINT,
+      references: {
+        model: 'Genero'
+      }
+    },
+    jogos_id: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'Jogo'
+      }
+    }
   }, {
     sequelize,
-    modelName: 'Jogogenero',
+    modelName: 'jogoGenero',
+    tableName: 'jogosGeneros'
   });
   return Jogogenero;
 };
