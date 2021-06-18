@@ -27,17 +27,19 @@ module.exports = (sequelize, DataTypes) => {
     perfis_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Perfil'
+        model: 'perfis'
       }
     },
     jogos_id: {
       type: DataTypes.BIGINT,
-      references: 'Jogo'
+      references: {
+        model: 'jogos'
+      }
     },
     perfis_users_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'User'
+        model: 'users'
       }
     }
   }, {

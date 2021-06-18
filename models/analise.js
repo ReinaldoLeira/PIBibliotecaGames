@@ -29,20 +29,20 @@ module.exports = (sequelize, DataTypes) => {
     jogos_id: {
       type: DataTypes.BIGINT,
       references : {
-        model: 'Jogo'
+        model: 'jogos'
       }
     },
     perfis_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Perfil'
+        model: 'perfis'
       }
     },
     blocked: DataTypes.BOOLEAN(1),
     perfis_users_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'User'
+        model: 'users'
       }
     }
   }, {

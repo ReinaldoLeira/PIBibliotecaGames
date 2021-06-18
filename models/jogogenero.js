@@ -25,13 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     generos_id: {
       type:  DataTypes.BIGINT,
       references: {
-        model: 'Genero'
+        model: 'generos'
       }
     },
     jogos_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Jogo'
+        model: 'jogos'
       }
     }
   }, {

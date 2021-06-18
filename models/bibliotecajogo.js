@@ -27,13 +27,13 @@ module.exports = (sequelize, DataTypes) => {
     biblioteca_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Biblioteca'      
+        model: 'bibliotecas'      
       }
     },
     jogos_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Jogo'
+        model: 'jogos'
       }
     }
     

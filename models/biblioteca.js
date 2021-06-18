@@ -26,13 +26,13 @@ module.exports = (sequelize, DataTypes) => {
     perfis_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'Perfil'
+        model: 'perfis'
       }
   },
     perfis_users_id: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'User'
+        model: 'users'
       }
     }
   }, {
