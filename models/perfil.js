@@ -37,7 +37,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement: true
     },
-    nick: DataTypes.STRING(50),
     sobre: DataTypes.STRING(1000),
     foto: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
