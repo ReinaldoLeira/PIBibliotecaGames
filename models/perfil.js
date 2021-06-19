@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'users_id',
         targetKey: 'id'
       }),
-      this.hasMany(models.Posts, {
+      this.hasMany(models.Post, {
         foreignKey: 'perfis_id',
         targetKey: 'id'
       }),

@@ -24,15 +24,15 @@
                         <div>
 
                             <label for="email" class="fonteGeral">E-mail: </label>
-                            <input type="email" name="email" id="" class="inputRegistrar" required value="<%= error.content.email ? error.content.email : ' ' %>" >
-                            <p class="colorVermelha"> <%= error.email ? error.email: '' %></p>
+                            <input type="email" name="email" id="" class="inputRegistrar" required>
+                            
                         </div>
 
                         <div>
 
-                            <label for="nick" class="fonteGeral">Usuário: </label>
-                            <input type="text" name="nick" id="" class="inputRegistrar" required value="<%= error.content.nick ? error.content.nick : ' ' %>" >
-                            <p class="colorVermelha"><%= error.nick ? error.nick: '' %></p>
+                            <label for="usuario" class="fonteGeral">Usuário: </label>
+                            <input type="text" name="usuario" id="" class="inputRegistrar" required>
+                            
 
                         </div>
 
@@ -47,7 +47,7 @@
 
                             <label for="resenha" class="fonteGeral">Re-senha </label>
                             <input type="password" name="resenha" id="" class="inputRegistrar" required>
-                            <p class="colorVermelha"><%= error.resenha ? error.resenha: '' %></p>
+                            
                         </div>
 
                         <div>

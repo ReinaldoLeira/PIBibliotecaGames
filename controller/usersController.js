@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path =require('path');
-const {v4: uuidv4} = require('uuid');
-const usersJson = require('../model/users.json');
 const bcrypt = require('bcrypt');
 const jogos = require('../model/jogos.json')
 const noticias = require('../model/noticias.json')
-const street = path.join(__dirname, '..', 'model', 'users.json' );
+const models = require('../models')
+const { Op } = require('sequelize')
+
 
 
 //Controller para index
@@ -27,98 +27,65 @@ module.exports.login = (req, res) => { res.render('./users/login', {
     })
 };
 
-module.exports.logar = (req, res) => {
+module.exports.logar = (async(req, res) => {
 
-    let {email, senha} =req.body;
-    const fuser = usersJson.find((user) => user.email === email)
+    const formBody =req.body; //requisição do corpo do formulario front end
+    console.log(formBody)
+    const fUser = await models.User.findOne({ where: { email: formBody.email } }) //const para achar o email
+    console.log(fUser)
 
-    if (!fuser) {
-        return res.render('./users/login', {
-            usuario: req.session.usuario,
-            error: {
-                email : 'email errado',
-                content: req.body
-            },   
-        });
+    if(formBody.email || formBody.senha) // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
+    if (!fUser) {
+        return res.send('email errado')
     }
-    if (!bcrypt.compareSync(senha, fuser.senha)){
-        return res.render('./users/login', {
-            usuario: req.session.usuario,
-            error: {
-                senha : 'senha errada',
-                content: req.body
-            },
-        });
-      
+    if (!bcrypt.compareSync(formBody.senha, fUser.senha)){ // compara a senha hash
+        return res.send('senha errada');      
     }
-    req.session.usuario = fuser
+    req.session.usuario = fUser // cria a sessão Usuario
     res.redirect ('/users')       
 
-};
+});
 //Controle das rotas GET >> POST
-module.exports.registrar = (req, res) => { res.render('./users/cadastrar', {
-    usuario: req.session.usuario,    
-    error:{
-        content:{email: '', senha:''}
-        }
-})
-};
-module.exports.registrado = (req, res) => { 
+module.exports.registrar = (req, res) => { res.render('./users/cadastrar', { usuario: ''})};
 
-   const { email, nick, senha, resenha} = req.body;
-    const fUser = usersJson.find ( (user) =>  user.email === email )
-    const fNick = usersJson.find ( (user) =>  user.nick === nick )
+module.exports.registrado = (async (req, res) => { 
+
+    const formBody = req.body; //requisição do corpo do formulario front end
+    console.log(formBody)
+
+    if (formBody.senha !== formBody.resenha) {     //aqui, se a senha ea resenha do body estiverem errados, ele retorna um erro.
+        return res.send('senha e resenha diferentes')
+    }
+    const comparacaoUsuario = await models.User.findOne({ where: { usuario: formBody.usuario } }); //
+                                                                                                    // acha o usuario e a senha no banco de dados com as
+    const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } }) //          informações vinda do body
+    
+    if (!formBody.email || !formBody.senha  || !formBody.resenha || !formBody.usuario ){
+        return res.send ('todos os campos são obrigatorios')
+    }  
+    
+    if (comparacaoUsuario) {
+        return res.send ('usuario ja existe')        //
+    }                                                   // aqui, ele executa a funcação de procuar, e se tiver ele retorna um erro e para a função
+    if (comparacaoEmail) {                           //
+        return res.send ('email já existe')        
+    }
 
     
-    if (fUser) {
-        return res.render('./users/cadastrar', {
-            usuario: req.session.usuario,
-            error: {
-                email: 'Esse email já existe',
-                content: req.body
-            },
-            
-        })
-    }
-    if (fNick) {
-        
-        return res.render('./users/cadastrar',{
-            usuario: req.session.usuario,
-            error: {
-                nick: 'Usuario já existente',
-                content: req.body
-            },
-            
-        })
-    }
-    if (senha !== resenha) {
-        
-        return res.render('./users/cadastrar', {
-            usuario: req.session.usuario,
-            error: {
-                resenha : ' senhas não são iguais',
-                content: req.body
-            },
-            
-        })
-    }
-    const hash = bcrypt.hashSync(senha, 10);
-    const newUser = {
-        id: uuidv4(),
-        ...req.body,
-        senha:hash
-    };
+    const hash = bcrypt.hashSync(formBody.senha, 10); // aqui ele reescreve a senha em hash
 
-    delete newUser.resenha;
-    delete newUser.checkBox
+    await models.User.create({ // aqui vai criar o usuario, usando o model
 
-    usersJson.push (newUser);
-    fs.writeFileSync (street, JSON.stringify(usersJson));
-    console.log ('registrado')
-    
-    res.redirect('/')
+        usuario: formBody.usuario,
+        senha: hash,
+        email: formBody.email,
+        blocked: '1',
+        role: '0',
+    })
+    res.send('usuario criado')
 
-};
+
+    });
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
 module.exports.analise = (req, res) => {res.render('./users/analise', {usuario: req.session.usuario}) };
