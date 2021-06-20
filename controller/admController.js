@@ -1,6 +1,8 @@
 const usersArray = require('../model/users.json')
 const analiseArray = require('../model/analise.json')
 const jogosArray = require('../model/jogos.json')
+const db = require('../models')
+const { Op } = require('sequelize')
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Notícias', 'Admin', '', ''] 
@@ -33,12 +35,35 @@ module.exports.painelJogo0 = (req, res) => {
 module.exports.painelJogo1 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, listaJogos: jogosArray})
 }
-module.exports.painelJogo2 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'jogo', opcoes: opJogo})
+
+module.exports.painelJogo2 = async (req, res) => {
+    const generos = await db.Genero.findAll()
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'jogo', opcoes: opJogo, generos})
 }
-module.exports.painelJogo3 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'jogo', opcoes: opJogo})
+module.exports.criarGenero = async (req, res) => {
+    if(!req.body.nome){
+        return res.send(400)        
+    }
+    await db.Genero.create({
+        nome: req.body.nome
+    })
+    res.redirect('/gamepadm/painel/jogo/2')
 }
+
+module.exports.painelJogo3 = async (req, res) => {
+    const plataformas = await db.Plataforma.findAll()
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'jogo', opcoes: opJogo, plataformas})
+}
+module.exports.criarPlataforma = async (req, res) => {
+    if(!req.body.nome){
+        return res.send(400)        
+    }
+    await db.Plataforma.create({
+        nome: req.body.nome
+    })
+    res.redirect('/gamepadm/painel/jogo/3')
+}
+
 //sistema
 module.exports.painelSistema = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'sistema', opcoes: opSistema})

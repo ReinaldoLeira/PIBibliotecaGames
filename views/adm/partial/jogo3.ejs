@@ -1,1 +1,33 @@
-jogo3
+<link rel="stylesheet" href="/css/tema.css">
+<link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
+
+<section class="pai coluna">
+<form class="pai coluna fundoBranco" id="jogo3Form" action="/gamepadm/painel/jogo/3" method="POST">
+    <p><label for="plataforma">Nova Plataforma</label>
+    <input type="text" id="plataforma" name="nome" autocomplete="off" placeholder="Nova Plataforma" required/></p>
+    <p><input id="jogo3Submit" type="submit" value="Criar"/></p>
+</form>
+
+<section class="fundoBranco jogo2-3MaxH">
+    <table class="tablePainelAdmin">
+    <tr> 
+        <th>Id</th>
+        <th>Plataforma</th>
+        <th>Cadastrado em</th>
+        <th>Ações</th>
+    </tr>
+    
+    <%if(plataformas){%>
+    <%for(let i = 0; i < plataformas.length; i++){%>
+    <tr>
+        <td><%=plataformas[i].id%></td>
+        <td><%=plataformas[i].nome%></td>
+        <td><%=plataformas[i].createdAt%></td>
+        <td><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+    </tr>
+    <%}%>
+    <%}%>
+
+    </table>
+</section>
+</section>

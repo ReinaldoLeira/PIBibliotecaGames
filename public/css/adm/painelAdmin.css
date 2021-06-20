@@ -37,6 +37,9 @@
 .pai{
     display: flex
 }
+.coluna{
+    flex-direction: column;
+}
 
 .acessosPainelAdmin{
     height: 80vh;
@@ -133,3 +136,57 @@
     width: 17rem;
     vertical-align: middle;  
 }
+
+.jogo2-3MaxH{
+    max-height: 68vh;
+    overflow: scroll;
+}
+
+/* ====jogo3====*/
+
+#jogo3Form{
+    text-align: center;
+    
+}
+#plataforma{
+    width: 50%;   
+}
+#jogo3Form input{
+    margin-top: 5px;
+    font-family: PressStart2P;
+    font-size: 10rem;
+    text-align: center;
+}
+#jogo3Submit{
+    color: white;
+    height: 4vh;
+    width: 10%;
+    background: #0E9AA7;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/*====jogo2====*/
+
+#jogo2Form{
+    text-align: center;
+    
+}
+#genero{
+    width: 50%;   
+}
+#jogo2Form input{
+    margin-top: 5px;
+    font-family: PressStart2P;
+    font-size: 10rem;
+    text-align: center;
+}
+#jogo2Submit{
+    color: white;
+    height: 4vh;
+    width: 10%;
+    background: #0E9AA7;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
