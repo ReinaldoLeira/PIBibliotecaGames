@@ -15,8 +15,11 @@ router.get('/painel/jogo/0',admController.painelJogo0)
 router.get('/painel/jogo/1',admController.painelJogo1)
 router.get('/painel/jogo/2',admController.painelJogo2)
 router.post('/painel/jogo/2',admController.criarGenero)
+router.get('/painel/jogo/2/:id',admController.deletarGenero)
+
 router.get('/painel/jogo/3',admController.painelJogo3)
 router.post('/painel/jogo/3',admController.criarPlataforma)
+router.get('/painel/jogo/3/:id',admController.deletarPlataforma)
 
 //sistema
 router.get('/painel/sistema',admController.painelSistema)

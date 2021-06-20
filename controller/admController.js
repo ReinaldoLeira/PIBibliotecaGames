@@ -49,6 +49,13 @@ module.exports.criarGenero = async (req, res) => {
     })
     res.redirect('/gamepadm/painel/jogo/2')
 }
+module.exports.deletarGenero = async (req, res) => {
+    await db.Genero.destroy({
+        where: {id:req.params.id}
+})
+res.redirect('/gamepadm/painel/jogo/2')
+}
+
 
 module.exports.painelJogo3 = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
@@ -60,6 +67,12 @@ module.exports.criarPlataforma = async (req, res) => {
     }
     await db.Plataforma.create({
         nome: req.body.nome
+    })
+    res.redirect('/gamepadm/painel/jogo/3')
+}
+module.exports.deletarPlataforma = async (req, res) => {
+        await db.Plataforma.destroy({
+            where: {id:req.params.id}
     })
     res.redirect('/gamepadm/painel/jogo/3')
 }
