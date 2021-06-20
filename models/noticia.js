@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     users_id: {
       type: DataTypes.BIGINT,
       references: {
-        model:'user'
+        model:'users'
       }
     },
     capa: DataTypes.STRING(150)
