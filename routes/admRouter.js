@@ -4,24 +4,24 @@ const admController = require('../controller/admController')
 
 //user
 router.get('/painel',admController.painel)
-router.get('/painel/user/cadastrar',admController.painelUserCadastrar)
-router.get('/painel/user/editar',admController.painelUserEditar)
-router.get('/painel/user/bloquear',admController.painelUserBloq)
-router.get('/painel/user/apagar',admController.painelUserApagar)
+router.get('/painel/user/0',admController.painelUser0)
+router.get('/painel/user/1',admController.painelUser1)
+router.get('/painel/user/2',admController.painelUser2)
+router.get('/painel/user/3',admController.painelUser3)
 
 //jogo
 router.get('/painel/jogo',admController.painelJogo)
-router.get('/painel/jogo/cadastrar',admController.painelJogoCadastrar)
-router.get('/painel/jogo/editar',admController.painelJogoEditar)
-router.get('/painel/jogo/bloquear',admController.painelJogoBloq)
-router.get('/painel/jogo/apagar',admController.painelJogoApagar)
+router.get('/painel/jogo/0',admController.painelJogo0)
+router.get('/painel/jogo/1',admController.painelJogo1)
+router.get('/painel/jogo/2',admController.painelJogo2)
+router.get('/painel/jogo/3',admController.painelJogo3)
 
-//analise
-router.get('/painel/analise',admController.painelAnalise)
-router.get('/painel/analise/cadastrar',admController.painelAnaliseCadastrar)
-router.get('/painel/analise/editar',admController.painelAnaliseEditar)
-router.get('/painel/analise/bloquear',admController.painelAnaliseBloq)
-router.get('/painel/analise/apagar',admController.painelAnaliseApagar)
+//sistema
+router.get('/painel/sistema',admController.painelSistema)
+router.get('/painel/sistema/0',admController.painelSistema0)
+router.get('/painel/sistema/1',admController.painelSistema1)
+router.get('/painel/sistema/2',admController.painelSistema2)
+router.get('/painel/sistema/3',admController.painelSistema3)
 
 
 

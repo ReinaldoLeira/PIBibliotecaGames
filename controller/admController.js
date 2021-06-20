@@ -1,54 +1,57 @@
 const usersArray = require('../model/users.json')
 const analiseArray = require('../model/analise.json')
 const jogosArray = require('../model/jogos.json')
+const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
+const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
+const opSistema = ['Notícias', 'Admin', '', ''] 
 
 //user
 module.exports.painel = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'user'})
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'user', opcoes: opUser})
 }
-module.exports.painelUserCadastrar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Cadastrar', aba: 'user',     error:{
+module.exports.painelUser0 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'user', opcoes: opUser, error:{
         content:{email: '', senha:''}
         }})
 }
-module.exports.painelUserEditar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Editar', aba: 'user', listaUsers: usersArray})
+module.exports.painelUser1 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'user', opcoes: opUser, listaUsers: usersArray})
 }
-module.exports.painelUserBloq = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Bloquear', aba: 'user'})
+module.exports.painelUser2 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'user', opcoes: opUser})
 }
-module.exports.painelUserApagar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Apagar', aba: 'user'})
+module.exports.painelUser3 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'user', opcoes: opUser})
 }
 //jogo
 module.exports.painelJogo = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'jogo'})
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'jogo', opcoes: opJogo})
 }
-module.exports.painelJogoCadastrar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Cadastrar', aba: 'jogo'})
+module.exports.painelJogo0 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo})
 }
-module.exports.painelJogoEditar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Editar', aba: 'jogo', listaJogos: jogosArray})
+module.exports.painelJogo1 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, listaJogos: jogosArray})
 }
-module.exports.painelJogoBloq = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Bloquear', aba: 'jogo'})
+module.exports.painelJogo2 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'jogo', opcoes: opJogo})
 }
-module.exports.painelJogoApagar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Apagar', aba: 'jogo'})
+module.exports.painelJogo3 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'jogo', opcoes: opJogo})
 }
-//analise
-module.exports.painelAnalise = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'analise'})
+//sistema
+module.exports.painelSistema = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'sistema', opcoes: opSistema})
 }
-module.exports.painelAnaliseCadastrar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Cadastrar', aba: 'analise'})
+module.exports.painelSistema0 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'sistema', opcoes: opSistema})
 }
-module.exports.painelAnaliseEditar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Editar', aba: 'analise'})
+module.exports.painelSistema1 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'sistema', opcoes: opSistema})
 }
-module.exports.painelAnaliseBloq = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Bloquear', aba: 'analise', listaAnalises: analiseArray})
+module.exports.painelSistema2 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'sistema', opcoes: opSistema})
 }
-module.exports.painelAnaliseApagar = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: 'Apagar', aba: 'analise'})
+module.exports.painelSistema3 = (req, res) => {
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'sistema', opcoes: opSistema})
 }

@@ -63,6 +63,6 @@ module.exports.cadastrar = (req, res) => {
     arrayJogos[0] = jogoNovo.id
     arrayJogos.push(jogoNovo)    
     salvarJogos(arrayJogos)
-    res.redirect('/jogos/perfil/'+jogoNovo.id ,{usuario: req.session.usuario})    
+    res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
 
