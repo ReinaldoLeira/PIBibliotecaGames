@@ -20,6 +20,8 @@ router.get('/painel/jogo/2/:id',admController.deletarGenero)
 router.get('/painel/jogo/3',admController.painelJogo3)
 router.post('/painel/jogo/3',admController.criarPlataforma)
 router.get('/painel/jogo/3/:id',admController.deletarPlataforma)
+router.get('/painel/jogo/3/edit/:id',admController.editarPlataforma)
+router.post('/painel/jogo/3/edit',admController.salvarPlataforma)
 
 //sistema
 router.get('/painel/sistema',admController.painelSistema)

@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/css/tema.css">
+<link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
+
+<form action="/gamepadm/painel/jogo/3/edit" method="POST" class="jogo3Form pai coluna fundoBranco" id="jogo3EditForm">
+    <p><label for="id">Id</label></p>
+    <p><input type="text" id="id" name="id" value="<%=plataformas.id%>" readonly/></p> 
+    <p><label for="nome">Nome</label></p>
+    <p><input type="text" id="nome" name="nome" value="<%=plataformas.nome%>"></p> 
+    <p><label for="createdAt">Criado em</label></p>
+    <p><input type="text" id="createdAt" name="createdAt" value="<%=plataformas.createdAt%>" readonly/></p> 
+    <p><label for="updatedAt">Editado em</label></p>
+    <p><input type="text" id="updateAt" name="updatedAt" value="<%=plataformas.updatedAt%>" readonly/></p> 
+    <input type="submit" class="submitPainelAdmin" value="Salvar">
+</form>

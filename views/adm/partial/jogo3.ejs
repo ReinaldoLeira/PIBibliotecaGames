@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
 
 <section class="pai coluna">
-<form class="pai coluna fundoBranco" id="jogo3Form" action="/gamepadm/painel/jogo/3" method="POST">
+<form class="pai coluna fundoBranco jogo3Form" action="/gamepadm/painel/jogo/3" method="POST">
     <p><label for="plataforma">Nova Plataforma</label>
     <input type="text" id="plataforma" name="nome" autocomplete="off" placeholder="Nova Plataforma" required/></p>
-    <p><input id="jogo3Submit" type="submit" value="Criar"/></p>
+    <p><input class="submitPainelAdmin" type="submit" value="Criar"/></p>
 </form>
 
 <section class="fundoBranco jogo2-3MaxH">
@@ -20,8 +20,8 @@
     <%if(plataformas){%>
     <%for(let i = 0; i < plataformas.length; i++){%>
     <tr>
-        <td><%=plataformas[i].id%></td>
-        <td><%=plataformas[i].nome%></td>
+        <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><%=plataformas[i].id%></a></td>
+        <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><%=plataformas[i].nome%></a></td>
         <td><%=plataformas[i].createdAt%></td>
         <td><a href="/gamepadm/painel/jogo/3/<%=plataformas[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
     </tr>

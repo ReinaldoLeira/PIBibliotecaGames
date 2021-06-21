@@ -132,6 +132,10 @@
     font-size: 8rem;
     padding: 5px;
 }
+.tablePainelAdmin td a{
+    text-decoration: none;
+    color: black;
+}
 .tablePainelAdmin td a img{
     width: 17rem;
     vertical-align: middle;  
@@ -141,23 +145,7 @@
     max-height: 68vh;
     overflow: scroll;
 }
-
-/* ====jogo3====*/
-
-#jogo3Form{
-    text-align: center;
-    
-}
-#plataforma{
-    width: 50%;   
-}
-#jogo3Form input{
-    margin-top: 5px;
-    font-family: PressStart2P;
-    font-size: 10rem;
-    text-align: center;
-}
-#jogo3Submit{
+.submitPainelAdmin{
     color: white;
     height: 4vh;
     width: 10%;
@@ -165,6 +153,29 @@
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
+/* ====jogo3====*/
+
+.jogo3Form{
+    text-align: center;
+    
+}
+.jogo3Form input, label{
+    margin-top: 5px;
+    font-family: PressStart2P;
+    font-size: 10rem;
+    text-align: center;
+    width: 50%;
+}
+#jogo3EditForm{
+    align-items: center;
+    
+}
+#jogo3EditForm p{
+    width: 100%;
+}
+
+
 
 /*====jogo2====*/
 
@@ -181,12 +192,5 @@
     font-size: 10rem;
     text-align: center;
 }
-#jogo2Submit{
-    color: white;
-    height: 4vh;
-    width: 10%;
-    background: #0E9AA7;
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-}
+
 
