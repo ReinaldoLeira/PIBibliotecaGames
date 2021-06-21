@@ -167,30 +167,47 @@
     text-align: center;
     width: 50%;
 }
-#jogo3EditForm{
+.jogo3EditForm{
     align-items: center;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    width: 100%;
     
 }
-#jogo3EditForm p{
+.jogo3EditForm p{
     width: 100%;
 }
-
-
+.jogo3section{
+    height: inherit;
+    padding: 2%;      
+}
 
 /*====jogo2====*/
 
-#jogo2Form{
+.jogo2Form{
     text-align: center;
     
 }
-#genero{
-    width: 50%;   
-}
-#jogo2Form input{
+.jogo2Form input, label{
     margin-top: 5px;
     font-family: PressStart2P;
     font-size: 10rem;
     text-align: center;
+    width: 50%;
+}
+.jogo2EditForm{
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    width: 100%;
+    
+}
+.jogo2EditForm p{
+    width: 100%;
+}
+.jogo2section{
+    height: inherit;
+    padding: 2%;      
 }
 
 

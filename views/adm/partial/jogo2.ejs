@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
 
 <section class="pai coluna">
-<form class="pai coluna fundoBranco" id="jogo2Form" action="/gamepadm/painel/jogo/2" method="POST">
+<form class="pai coluna fundoBranco jogo2Form" action="/gamepadm/painel/jogo/2" method="POST">
     <p><label for="genero">Novo Gênero</label>
     <input type="text" id="genero" name="nome" autocomplete="off" placeholder="Novo Gênero" required/></p>
     <p><input class="submitPainelAdmin" type="submit" value="Criar"/></p>
@@ -20,8 +20,8 @@
     <%if(generos){%>
     <%for(let i = 0; i < generos.length; i++){%>
     <tr>
-        <td><%=generos[i].id%></td>
-        <td><%=generos[i].nome%></td>
+        <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><%=generos[i].id%></a></td>
+        <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><%=generos[i].nome%></a></td>
         <td><%=generos[i].createdAt%></td>
         <td><a href="/gamepadm/painel/jogo/2/<%=generos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
     </tr>

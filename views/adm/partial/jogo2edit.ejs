@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/tema.css">
+<link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
+
+<section class="pai jogo3section">
+<form action="/gamepadm/painel/jogo/2/edit" method="POST" class="jogo2Form pai coluna fundoBranco jogo2EditForm">
+    <section class="jogo2EditForm">
+    <p><label for="id">Id</label></p>
+    <p><input type="text" id="id" name="id" value="<%=generos.id%>" readonly/></p> 
+    </section>
+    <section class="jogo2EditForm">
+    <p><label for="nome">Nome</label></p>
+    <p><input type="text" id="nome" name="nome" value="<%=generos.nome%>"></p> 
+    </section>
+    <section class="jogo2EditForm">
+    <p><label for="createdAt">Criado em</label></p>
+    <p><input type="text" id="createdAt" name="createdAt" value="<%=generos.createdAt%>" readonly/></p> 
+    </section>
+    <section class="jogo2EditForm">
+    <p><label for="updatedAt">Editado em</label></p>
+    <p><input type="text" id="updateAt" name="updatedAt" value="<%=generos.updatedAt%>" readonly/></p> 
+    </section>
+    <input type="submit" class="submitPainelAdmin" value="Salvar">
+</form>
+</section>
