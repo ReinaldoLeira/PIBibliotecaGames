@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     senha: DataTypes.INTEGER,
     email: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
-    role: DataTypes.BOOLEAN(1)
+    role: DataTypes.ENUM('ADMIN', 'USER')
     
   }, {
     sequelize,
