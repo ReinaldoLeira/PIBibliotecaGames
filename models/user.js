@@ -6,12 +6,12 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     
     static associate(models) {
-      this.hasOne(models.Perfil, {
-        foreignKey: 'perfis_id',
+      this.belongsTo(models.Perfil, {
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
       this.hasMany(models.Noticia, {
-        foreignKey: 'users_id',
+        foreignKey: 'idUsers',
         targetKey: 'id'
       })
     }
@@ -26,7 +26,13 @@ module.exports = (sequelize, DataTypes) => {
     senha: DataTypes.INTEGER,
     email: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
-    role: DataTypes.ENUM('ADMIN', 'USER')
+    role: DataTypes.ENUM('ADMIN', 'USER'),
+    idPerfil: {
+      type: DataTypes.BIGINT,
+      references: {
+        model: 'perfis'
+      }
+    }
     
   }, {
     sequelize,

@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.hasMany(models.jogoGenero, {
-        foreignKey: 'generos_id',
+        foreignKey: 'idGeneros',
         targetKey: 'id'
       })
     }

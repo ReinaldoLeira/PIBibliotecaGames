@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
  
     static associate(models) {
       this.belongsTo(models.Jogo, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.belongsTo(models.Perfil, {
-        foreignKey: 'perfis_id',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       })
     }
@@ -24,24 +24,20 @@ module.exports = (sequelize, DataTypes) => {
     },
     tipo: DataTypes.ENUM('IMAGEM','VIDEO'),
     path: DataTypes.STRING(150),
-    perfis_id: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
         model: 'perfis'
       }
     },
-    jogos_id: {
+    idJogos: {
       type: DataTypes.BIGINT,
       references: {
         model: 'jogos'
       }
-    },
-    perfis_users_id: {
-      type: DataTypes.BIGINT,
-      references: {
-        model: 'users'
-      }
+
     }
+    
   }, {
     sequelize,
     modelName: 'Midia',

@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   class Noticia extends Model {
 
     static associate(models) {
-      this.belongsTo(models.User, {
-        foreignKey: 'users_id',
+      this.belongsTo(models.Perfil, {
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       })
     }
@@ -20,10 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     titulo:DataTypes.STRING(50),
     descricao: DataTypes.STRING(100),
-    users_id: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
-        model:'users'
+        model:'perfis'
       }
     },
     capa: DataTypes.STRING(150)

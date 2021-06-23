@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.belongsTo (models.Perfil, {
-        foreignKey: 'perfis_id',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       })
     }
@@ -20,19 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     descricao: DataTypes.STRING(100),
     titulo: DataTypes.STRING(100),
-    perfis_id: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
-        model: 'perfis'
-      }
-    },
-    perfis_users_id: {
-      type: DataTypes.BIGINT,
-      references: {
-        model: 'perfis'
+        model:'perfis'
       }
     }
-    
+
   }, {
     sequelize,
     modelName: 'Post',

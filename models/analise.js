@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
   
     static associate(models) {
       this.belongsTo (models.Perfil, {
-        foreignKey: 'perfis_id',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
       this.belongsTo(models.Jogo, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       })
     }
@@ -26,25 +26,19 @@ module.exports = (sequelize, DataTypes) => {
     titulo: DataTypes.STRING(100),
     analise: DataTypes.STRING(1000),
     nota: DataTypes.BOOLEAN(1),
-    jogos_id: {
+    idJogos: {
       type: DataTypes.BIGINT,
       references : {
         model: 'jogos'
       }
     },
-    perfis_id: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
         model: 'perfis'
       }
     },
-    blocked: DataTypes.BOOLEAN(1),
-    perfis_users_id: {
-      type: DataTypes.BIGINT,
-      references: {
-        model: 'users'
-      }
-    }
+    blocked: DataTypes.BOOLEAN(1)
   }, {
     sequelize,
     modelName: 'Analise',

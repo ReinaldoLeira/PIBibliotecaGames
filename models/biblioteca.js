@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.belongsTo(models.Perfil, {
-        foreignKey: 'perfis_id',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
       this.hasMany(models.bibliotecaJogo, {
-        foreignKey: 'biblioteca_id',
+        foreignKey: 'idBibliotecas',
         targetKey: 'id'
       })
     }
@@ -23,18 +23,14 @@ module.exports = (sequelize, DataTypes) => {
     primaryKey: true,
     autoIncrement: true
   },
-    perfis_id: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
         model: 'perfis'
       }
-  },
-    perfis_users_id: {
-      type: DataTypes.BIGINT,
-      references: {
-        model: 'users'
-      }
-    }
+
+  }
+    
   }, {
     sequelize,
     modelName: 'Biblioteca',

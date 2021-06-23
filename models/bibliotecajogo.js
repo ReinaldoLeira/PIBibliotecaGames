@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.belongsTo(models.Biblioteca, {
-        foreignKey: 'bibliotecas_id',
+        foreignKey: 'idBibliotecas',
         targetKey : 'id'
       }),
       this.belongsTo(models.Jogo, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       })
     }
@@ -24,13 +24,13 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     plataforma: DataTypes.STRING(100),
-    biblioteca_id: {
+    idBibliotecas: {
       type: DataTypes.BIGINT,
       references: {
         model: 'bibliotecas'      
       }
     },
-    jogos_id: {
+    idJogos: {
       type: DataTypes.BIGINT,
       references: {
         model: 'jogos'

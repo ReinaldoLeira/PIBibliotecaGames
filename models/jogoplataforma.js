@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
   
     static associate(models) {
       this.belongsTo(models.Jogo, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.belongsTo(models.Plataforma, {
-        foreignKey: 'plataformas_id',
+        foreignKey: 'idPlataformas',
         targetKey: 'id'
       })
     }
@@ -22,13 +22,13 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement: true
     },
-    jogos_id: {
+    idJogos: {
       type: DataTypes.BIGINT,
       references: {
         model: 'jogos'
       }
     },
-    plataformas_id: {
+    idPlataformas: {
       type:  DataTypes.BIGINT,
       references: {
         model: 'plataformas'

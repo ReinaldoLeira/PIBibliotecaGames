@@ -7,23 +7,23 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.hasMany(models.Analise, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.hasMany(models.bibliotecaJogo, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.hasMany(models.Midia, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.hasMany(models.jogoGenero, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       }),
       this.hasMany(models.jogoPlataforma, {
-        foreignKey: 'jogos_id',
+        foreignKey: 'idJogos',
         targetKey: 'id'
       })
     
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING(150),
     desenvolvedor: DataTypes.STRING(100),
     descricao: DataTypes.STRING(1000),
-    data_de_lancamento: DataTypes.STRING(10),
+    lancamento: DataTypes.STRING(10),
     capa: DataTypes.STRING(100),
     validado: DataTypes.BOOLEAN(1),
     createdBy: DataTypes.STRING(100)
