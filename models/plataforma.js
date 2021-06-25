@@ -6,9 +6,11 @@ module.exports = (sequelize, DataTypes) => {
   class Plataforma extends Model {
 
     static associate(models) {
-      this.hasMany(models.jogoPlataforma, {
+      this.belongsToMany(models.Jogo, {
+        through: 'JogosGeneros',
+        as: 'jogos',
         foreignKey: 'idPlataformas',
-        targetKey: 'id'
+        otherKey: 'idJogos',
       })
     }
   };
