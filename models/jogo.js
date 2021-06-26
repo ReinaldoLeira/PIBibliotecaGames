@@ -10,27 +10,24 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'idJogos',
         targetKey: 'id'
       }),
-      this.belongsToMany(models.Biblioteca, {
-        through: 'bibliotecasJogos',
-        as: 'bibliotecas',
-        foreignKey: 'idJogos',
-        otherKey: 'idBibliotecas',        
+      this.hasMany(models.bibliotecaJogo, {
+       foreignKey: 'idJogos',
+       targetKey: 'id'      
       }),
       this.hasMany(models.Midia, {
         foreignKey: 'idJogos',
         targetKey: 'id'
       }),
-      this.belongsToMany(models.Genero, {
-        through: 'JogosGeneros',
-        as: 'generos',
+      this.hasMany(models.jogoGenero, {
+
         foreignKey: 'idJogos',
-        otherKey: 'idGeneros',
+        targetKey: 'id'
+
       }),
-      this.belongsToMany(models.Plataformas, {
-        through: 'JogosGeneros',
-        as: 'plataforas',
+      this.hasMany(models.jogoPlataforma, {
+        
         foreignKey: 'idJogos',
-        otherKey: 'idPlataformas',
+       targetKey: 'id'
       })
     
     }

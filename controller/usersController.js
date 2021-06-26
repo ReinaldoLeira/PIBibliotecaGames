@@ -78,6 +78,16 @@ module.exports.registrado = (async (req, res) => {
 
     const perfil = await models.Perfil.create()
 
+    const perfilCriado =  (value) =>{
+        if(value) {
+            console.log('perfilCriado')
+            return value.id
+        }else{
+            return console.log('perfil não foi criado')
+        }
+
+    }
+
     await models.User.create({ // aqui vai criar o usuario, usando o model
 
         usuario: formBody.usuario,
@@ -85,7 +95,7 @@ module.exports.registrado = (async (req, res) => {
         email: formBody.email,
         blocked: '0',
         role: 'USER',
-        idPerfis: perfil.id
+        idPerfis: perfilCriado(perfil)
              
     })
     
