@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       this.hasOne(models.User, {
-        foreignKey: 'idUsers',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
       this.hasMany(models.Post, {
@@ -45,6 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Perfil',
+    tableName: 'perfis'
   });
   return Perfil;
 };

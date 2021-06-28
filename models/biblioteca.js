@@ -10,9 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
-      this.hasMany(models.bibliotecaJogo, {
+      this.belongsToMany(models.Jogo, {
+        through: 'bibliotecasJogos',
+        as: 'jogos',
         foreignKey: 'idBibliotecas',
-        targetKey: 'id'
+        otherKey: 'idJogos',
       })
     }
   };

@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: 'id'
       }),
       this.hasMany(models.Noticia, {
-        foreignKey: 'idUsers',
+        foreignKey: 'idPerfis',
         targetKey: 'id'
       })
     }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
     role: DataTypes.ENUM('ADMIN', 'USER'),
-    idPerfil: {
+    idPerfis: {
       type: DataTypes.BIGINT,
       references: {
         model: 'perfis'

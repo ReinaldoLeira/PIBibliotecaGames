@@ -11,20 +11,23 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: 'id'
       }),
       this.hasMany(models.bibliotecaJogo, {
-        foreignKey: 'idJogos',
-        targetKey: 'id'
+       foreignKey: 'idJogos',
+       targetKey: 'id'      
       }),
       this.hasMany(models.Midia, {
         foreignKey: 'idJogos',
         targetKey: 'id'
       }),
-      this.hasMany(models.JogoGenero, {
+      this.hasMany(models.jogoGenero, {
+
         foreignKey: 'idJogos',
         targetKey: 'id'
+
       }),
-      this.hasMany(models.JogoPlataforma, {
+      this.hasMany(models.jogoPlataforma, {
+        
         foreignKey: 'idJogos',
-        targetKey: 'id'
+       targetKey: 'id'
       })
     
     }

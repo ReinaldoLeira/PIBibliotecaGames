@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 const jogos = require('../model/jogos.json')
 const noticias = require('../model/noticias.json')
 const models = require('../models')
-const { Op } = require('sequelize')
+const { Op } = require('sequelize');
+const perfil = require('../models/perfil');
 
 
 
@@ -72,7 +73,20 @@ module.exports.registrado = (async (req, res) => {
     }
 
     
+    
     const hash = bcrypt.hashSync(formBody.senha, 10); // aqui ele reescreve a senha em hash
+
+    const perfil = await models.Perfil.create()
+
+    const perfilCriado =  (value) =>{
+        if(value) {
+            console.log('perfilCriado')
+            return value.id
+        }else{
+            return console.log('perfil não foi criado')
+        }
+
+    }
 
     await models.User.create({ // aqui vai criar o usuario, usando o model
 
@@ -81,7 +95,10 @@ module.exports.registrado = (async (req, res) => {
         email: formBody.email,
         blocked: '0',
         role: 'USER',
+        idPerfis: perfilCriado(perfil)
+             
     })
+    
     res.send('usuario criado')
 
 
