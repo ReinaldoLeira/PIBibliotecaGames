@@ -79,7 +79,7 @@ module.exports.registrado = (async (req, res) => {
         usuario: formBody.usuario,
         senha: hash,
         email: formBody.email,
-        blocked: '1',
+        blocked: '0',
         role: 'USER',
     })
     res.send('usuario criado')

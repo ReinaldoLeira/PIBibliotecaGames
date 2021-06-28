@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'idJogos',
         targetKey: 'id'
       }),
-      this.hasMany(models.jogoGenero, {
+      this.hasMany(models.JogoGenero, {
         foreignKey: 'idJogos',
         targetKey: 'id'
       }),
-      this.hasMany(models.jogoPlataforma, {
+      this.hasMany(models.JogoPlataforma, {
         foreignKey: 'idJogos',
         targetKey: 'id'
       })
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING(1000),
     lancamento: DataTypes.STRING(10),
     capa: DataTypes.STRING(100),
-    validado: DataTypes.BOOLEAN(1),
+    validado: DataTypes.TINYINT(1),
     createdBy: DataTypes.STRING(100)
     
   }, {

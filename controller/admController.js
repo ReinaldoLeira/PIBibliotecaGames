@@ -29,9 +29,33 @@ module.exports.painelUser3 = (req, res) => {
 module.exports.painelJogo = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'jogo', opcoes: opJogo, extra:''})
 }
-module.exports.painelJogo0 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:''})
+//jogo-cadastrar
+module.exports.painelJogo0 = async (req, res) => {
+    const plataformas = await db.Plataforma.findAll()
+    const generos = await db.Genero.findAll()
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:'', plataformas, generos})
 }
+module.exports.criarJogo = async (req, res) => {
+    console.log(req.body)
+    const novoJogo = await db.Jogo.create({
+        nome: req.body.nome,
+        desenvolvedor: req.body.desenvolvedor,        
+        descricao: req.body.descricao,
+        lancamento: req.body.lancamento,
+        capa: req.body.capa,        
+        createdBy: 'testeAdmin' 
+    })  
+    await db.JogoGenero.create({
+        idJogos: novoJogo.id,
+        idGeneros: req.body.idGeneros
+    })
+    await db.JogoPlataforma.create({
+        idJogos: novoJogo.id,
+        plataformas_id: req.body.plataformas_id
+    })
+    res.redirect('/gamepadm/painel/jogo/0')
+}
+//jogo-listar
 module.exports.painelJogo1 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray})
 }
@@ -47,7 +71,7 @@ module.exports.criarGenero = async (req, res) => {
     }
     await db.Genero.create({
         nome: req.body.nome
-    })
+    })    
     res.redirect('/gamepadm/painel/jogo/2')
 }
 module.exports.deletarGenero = async (req, res) => {
