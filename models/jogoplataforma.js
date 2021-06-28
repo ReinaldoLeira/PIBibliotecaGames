@@ -36,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'jogoPlataforma',
-    tableName: 'jogosPlataformas'
+    modelName: 'JogoPlataforma',
+    tableName: 'jogosplataformas'
   });
   return JogoPlataforma;
 };

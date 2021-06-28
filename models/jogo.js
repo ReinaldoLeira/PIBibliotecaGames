@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING(1000),
     lancamento: DataTypes.STRING(10),
     capa: DataTypes.STRING(100),
-    validado: DataTypes.BOOLEAN(1),
+    validado: DataTypes.TINYINT(1),
     createdBy: DataTypes.STRING(100)
     
   }, {
