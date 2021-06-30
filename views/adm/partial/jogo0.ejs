@@ -11,17 +11,17 @@
     <label for="imgJogo">URL de Imagem do Jogo:</label>
     <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" required/>
     <label>Plataformas:</label>
-    <div class="pai ">
+    <div class="pai wrap">
         <%for(let plataforma of plataformas){%>
-        <input type="checkbox" id="<%= plataforma.nome %>" name="plataformas_id" value="<%= plataforma.id %>"/>
-        <label class="labelCheckbox" for="<%= plataforma.nome %> "><%= plataforma.nome %> </label>
+        <div> <input type="checkbox" id="<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>"/>
+        <label class="labelCheckbox" for="<%= plataforma.nome %> "><%= plataforma.nome %> </label></div>
         <%}%>
     </div>
     <label>Gêneros:</label>
-    <div class="pai ">
+    <div class="pai wrap">
         <%for(let genero of generos){%>
-        <input type="checkbox" id="<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>"/>
-        <label class="labelCheckbox" for="<%= genero.nome %> "><%= genero.nome %> </label>
+        <div> <input type="checkbox" id="<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>"/>
+        <label class="labelCheckbox" for="<%= genero.nome %>"><%= genero.nome %> </label></div>
         <%}%>
         </div>    
     <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>

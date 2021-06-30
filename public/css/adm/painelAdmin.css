@@ -40,6 +40,10 @@
 .coluna{
     flex-direction: column;
 }
+.wrap{
+    flex-wrap: wrap;
+    max-width: 50%;
+}
 
 .acessosPainelAdmin{
     height: 80vh;
