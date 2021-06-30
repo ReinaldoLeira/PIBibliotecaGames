@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class bibliotecaJogo extends Model {
+  class BibliotecaJogo extends Model {
 
     static associate(models) {
       this.belongsTo(models.Biblioteca, {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   };
-  bibliotecaJogo.init({
+  BibliotecaJogo.init({
 
     id: {
       type: DataTypes.BIGINT,
@@ -39,8 +39,8 @@ module.exports = (sequelize, DataTypes) => {
     
   }, {
     sequelize,
-    modelName: 'bibliotecaJogo',
+    modelName: 'BibliotecaJogo',
     tableName: 'bibliotecasJogos'
   });
-  return bibliotecaJogo;
+  return BibliotecaJogo;
 };
