@@ -31,19 +31,22 @@ module.exports.login = (req, res) => { res.render('./users/login', {
 module.exports.logar = (async(req, res) => {
 
     const formBody =req.body; //requisição do corpo do formulario front end
-    console.log(formBody)
-    const fUser = await models.User.findOne({ where: { email: formBody.email } }) //const para achar o email
-    console.log(fUser)
+   
+    const FindUser = await models.User.findOne({include: 'Perfil' , where: { email: formBody.email } }) //const para achar o email
+   
 
-    if(formBody.email || formBody.senha) // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
-    if (!fUser) {
-        return res.send('email errado')
+    if(!formBody.email || !formBody.senha){
+        return res.send('campos vazios')
+    } // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
+    if (!FindUser) {
+        return res.send('email ou senha errado ou inexistente');
     }
-    if (!bcrypt.compareSync(formBody.senha, fUser.senha)){ // compara a senha hash
-        return res.send('senha errada');      
+    if (!bcrypt.compareSync(formBody.senha, FindUser.senha)){ // compara a senha hash
+        return res.send('email ou senha errado ou inexistente');      
     }
-    req.session.usuario = fUser // cria a sessão Usuario
-    res.redirect ('/users')       
+    req.session.usuario = FindUser // cria a sessão Usuario
+    console.log(FindUser)
+    res.redirect ('/users')      
 
 });
 //Controle das rotas GET >> POST
@@ -59,7 +62,7 @@ module.exports.registrado = (async (req, res) => {
     }
     const comparacaoUsuario = await models.User.findOne({ where: { usuario: formBody.usuario } }); //
                                                                                                     // acha o usuario e a senha no banco de dados com as
-    const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } }) //          informações vinda do body
+    const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } })     //          informações vinda do body
     
     if (!formBody.email || !formBody.senha  || !formBody.resenha || !formBody.usuario ){
         return res.send ('todos os campos são obrigatorios')
