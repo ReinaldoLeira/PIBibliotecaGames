@@ -36,29 +36,38 @@ module.exports.painelJogo0 = async (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:'', plataformas, generos})
 }
 module.exports.criarJogo = async (req, res) => {
-    console.log(req.body)
+    const generos = req.body.idGeneros
+    const plataformas = req.body.idPlataformas 
+    const jogo = req.body
+
     const novoJogo = await db.Jogo.create({
-        nome: req.body.nome,
-        desenvolvedor: req.body.desenvolvedor,        
-        descricao: req.body.descricao,
-        lancamento: req.body.lancamento,
-        capa: req.body.capa,        
+        nome: jogo.nome,
+        desenvolvedor: jogo.desenvolvedor,        
+        descricao: jogo.descricao,
+        lancamento: jogo.lancamento,
+        capa: jogo.capa,     
+        validado: 0,   
         createdBy: 'testeAdmin' 
     })  
-    await db.JogoGenero.create({
-        idJogos: novoJogo.id,
-        idGeneros: req.body.idGeneros
-    })
-    await db.JogoPlataforma.create({
-        idJogos: novoJogo.id,
-        idPlataformas: req.body.idPlataformas
-    })
+    
+    for(let i = 0; i < generos.length; i++ ){
+        await db.JogoGenero.create({
+            idJogos: novoJogo.id,
+            idGeneros: generos[i]
+    })}
+    
+    for(let i = 0; i < plataformas.length; i++){
+        await db.JogoPlataforma.create({
+            idJogos: novoJogo.id,
+            idPlataformas: plataformas[i]
+    })}
     res.redirect('/gamepadm/painel/jogo/0')
 }
 
 //jogo-listar
-module.exports.painelJogo1 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray})
+module.exports.painelJogo1 = async (req, res) => {
+    const jogos = await db.Jogo.findAll()
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray, jogos})
 }
 
 //jogo-genero

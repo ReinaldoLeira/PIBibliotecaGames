@@ -12,19 +12,20 @@
         <th>Ações</th>
     </tr>
     
-    <%for(let i = 1; i < listaJogos.length; i++){%>
-    <tr>
-        <td><%=listaJogos[i].id%></td>
-        <td><%=listaJogos[i].nomeJogo%></td>
-        <td><%=listaJogos[i].publisherJogo%></td>
-        <td><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
-    </tr>
-    <%}%>
+    <%for(let i = 0; i < jogos.length; i++){%>
+    <%if(jogos[i].validado === 1){%>
+        <tr>
+            <td><%=jogos[i].id%></td>
+            <td><%=jogos[i].nome%></td>
+            <td><%=jogos[i].desenvolvedor%></td>
+            <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+        </tr>
+    <%}}%>
 
 </table>
 </section>
-<p><label>Jogos Bloqueados</label></p>
-<section class="fundoBranco jogo1MaxH20">
+<p><label>Jogos Não Validados</label></p>
+<section class="fundoBranco jogo1MaxH35">
     <table class="tablePainelAdmin">
         <tr>
             <th>Id</th>
@@ -33,14 +34,15 @@
             <th>Ações</th>
         </tr>
         
-        <%for(let i = 1; i < listaJogos.length; i++){%>
-        <tr>
-            <td><%=listaJogos[i].id%></td>
-            <td><%=listaJogos[i].nomeJogo%></td>
-            <td><%=listaJogos[i].publisherJogo%></td>
-            <td><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
-        </tr>
-        <%}%>
+        <%for(let i = 0; i < jogos.length; i++){%>
+            <%if(jogos[i].validado === 0){%>
+                <tr>
+                    <td><%=jogos[i].id%></td>
+                    <td><%=jogos[i].nome%></td>
+                    <td><%=jogos[i].desenvolvedor%></td>
+                    <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                </tr>
+        <%}}%>
     
     </table>
 </section>

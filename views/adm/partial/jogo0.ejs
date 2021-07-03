@@ -26,3 +26,8 @@
         </div>    
     <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>
 </form> 
+<script>
+    document.querySelector('textarea').oninput = () => {
+        document.querySelector('textarea').style.height = (document.querySelector('textarea').scrollHeight) + 'px'
+    }
+</script>

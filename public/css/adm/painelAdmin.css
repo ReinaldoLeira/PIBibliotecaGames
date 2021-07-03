@@ -128,7 +128,7 @@
 .tablePainelAdmin th{
     font-size: 10rem;
     font-weight: 900;
-    width: 33%;
+    width: auto;
     border-bottom: 1px solid black;
 }
 .tablePainelAdmin td{
@@ -152,6 +152,7 @@
 .submitPainelAdmin{
     color: white;
     height: 4vh;
+    min-height: 4vh;
     width: 10%;
     background: #0E9AA7;
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
@@ -169,7 +170,11 @@
     width: 50%;
     max-width: 50%;   
     min-width: 50%; 
+    min-height: 15rem;
+    resize: none;
+    overflow: hidden;
 }
+
 .jogoForm input[type = checkbox], .labelCheckbox {
     width: fit-content;
     max-width: fit-content;   
@@ -223,8 +228,8 @@
     max-height: 60%;
     overflow: scroll;
 }
-.jogo1MaxH20{
-    max-height: 20%;
+.jogo1MaxH35{
+    max-height: 35%;
     overflow: scroll;
 }
 
