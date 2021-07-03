@@ -41,7 +41,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     sobre: DataTypes.STRING(1000),
     foto: DataTypes.STRING(100),
-    blocked: DataTypes.BOOLEAN(1)
+    blocked: DataTypes.BOOLEAN(1),
+    instagram: DataTypes.STRING(150),
+    facebook: DataTypes.STRING(150),
+    twitter: DataTypes.STRING(150)
   }, {
     sequelize,
     modelName: 'Perfil',
