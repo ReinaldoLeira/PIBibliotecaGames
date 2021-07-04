@@ -11,7 +11,8 @@ router.get ('/meusjogos', auth, usersController.meusJogos);
 
 router.get ('/posts', auth, usersController.posts);
 
-router.get ('/', auth, usersController.usuario)
+router.get ('/', auth, usersController.usuario);
+router.post ('/', auth, usersController.sendConfigUsers);
 
 router.get ('/midias', auth, usersController.userMidias)
 

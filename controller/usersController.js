@@ -79,7 +79,9 @@ module.exports.registrado = (async (req, res) => {
     
     const hash = bcrypt.hashSync(formBody.senha, 10); // aqui ele reescreve a senha em hash
 
-    const perfil = await models.Perfil.create()
+    const perfil = await models.Perfil.create({
+        blocked : '0'
+    })
 
     const perfilCriado =  (value) =>{
         if(value) {
@@ -105,6 +107,69 @@ module.exports.registrado = (async (req, res) => {
     res.send('usuario criado')
 
 
+    });
+
+    module.exports.sendConfigUsers = (async(req,res,next) => {
+
+        const usuarioLogado = req.session.usuario
+        const formBody = req.body
+        console.log(usuarioLogado)
+
+        if(!formBody.urlImg == ''){
+        
+            usuarioLogado.Perfil.Foto = formBody.urlImg
+            models.Perfil.update({
+                foto: formBody.urlImg
+            },{
+            where : {id : usuarioLogado.idPerfis}})
+        }
+
+        if (!formBody.usuario == '') {
+            const procurarUser = models.User.findOne({where: { usuario: formBody.usuario}});
+            if (!procurarUser) {
+                models.User.update({
+                    usuario: formBody.usuario
+                },{
+                    where: {id: usuarioLogado.id}
+                })
+            }else {
+                console.log('usuario ja existente')
+            }
+        }
+        
+        if(!formBody.sobreMim == '') {
+
+            models.Perfil.update({
+                sobre : formBody.sobreMim
+            },
+                { where: {id: usuarioLogado.Perfil.id}
+            })
+        }
+        if(!formBody.urlInsta == '') {
+
+            models.Perfil.update({
+                instagram : formBody.urlInsta
+            },
+                { where: {id: usuarioLogado.Perfil.id}
+            })
+
+        }
+        if(!formBody.urlTwitter == '') {
+            models.Perfil.update({
+                twitter : formBody.urlTwitter
+            },
+                { where: {id: usuarioLogado.Perfil.id}
+            })
+
+        }
+        if(!formBody.urlFace == '') {
+            models.Perfil.update({
+                facebook : formBody.urlFace
+            },
+                { where: {id: usuarioLogado.Perfil.id}
+            })
+        }
+        
     });
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario

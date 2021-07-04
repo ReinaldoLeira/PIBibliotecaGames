@@ -6,28 +6,60 @@
         <link rel="stylesheet" href="/css/users/usuario-include.css">
 
         <title>Usuario</title>
+
     </head>
-
     <body>
-        
-
         <aside class="containerPerfil">
-
+            
             <div class="caixaPerfil marginzero">
 
-                <div class="caixaFoto">
+                <div class="modalConfig"> 
+                    <form class= "confgForm " action="/users" method="POST">
+                        
+                        <button class="buttonClose">X</button>                        
+                        <label class="labelConfg" for="urlImg">Link da imagem</label>
+                        <input class="inputConfg" type="url" name="urlImg" id="">
+                        
 
+                        <label class="labelConfg" for="usuario">Mudar usuario</label>
+                        <input class="inputConfg" type="text" name="usuario" id="">
+                        
+
+                        <label class="labelConfg"for="sobreMim">Sobre Mim</label>
+                        <input class="inputConfg" type="text" name="sobreMim" id="">
+                        
+
+                        <label class="labelConfg" for="urlInsta">Instagram</label>
+                        <input class="inputConfg" type="url" name="urlInsta" id="">
+
+                        <label class="labelConfg" for="urlTwitter">Twitter</label>
+                        <input class="inputConfg" type="url" name="urlTwitter" id="">
+
+                        <label  class="labelConfg" for="urlFace">Facebook</label>
+                        <input  class="inputConfg" type="url" name="urlFace" id="">
+                        <input class="inputEnviar" type="submit" value="enviar">
+
+
+                    </form>
+                </div>
+                <img class= "confgFoto" src="/img/engrenagem.png" alt="">
+
+                <div class="caixaFoto">
+                    
+                    <img class='imgCaixaFoto' src= "<%= usuario.Perfil.foto %>" alt=""/>
+                    
                 </div>
 
                 <div class="caixaNick">
 
-                    <p>@<%=usuario.usuario %></p>
+                    <p><%=usuario.usuario %></p>
 
                 </div>
-
+                
                 <div class="caixaSobre">
-
-                    <p>sobre mim</p>
+                    
+                    
+                    <p class="pSobre">sobre mim</p>
                     <p><%= usuario.Perfil.sobre %> </p>
 
                 </div>
@@ -55,7 +87,7 @@
         </aside>
 
         
-        
+        <script src="js/usuario-include.js"></script>
     </body>
 
 </html>

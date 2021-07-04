@@ -1,4 +1,6 @@
 
+
+
 .marginzero{
 
     margin: 0px;
@@ -31,20 +33,135 @@
     border-radius: 24px;
 }
 
+
+.modalConfig{
+
+    
+    position: absolute;  
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 30vw;
+    min-width: 350px;
+    max-width: 400px;
+    height: 95vh;
+    min-height: 600px;
+    max-height: 900px;
+    border-radius: 24px;
+    display: none;
+    
+}
+.confgForm{
+   
+ 
+    margin: 50% auto;
+    padding: 0 7%;
+    
+    background-color: white;
+    border: #0E9AA7 5px solid;
+    border-radius: 20px;
+    width: 15vw;
+    min-width: 250px;
+    height: 45vh;
+    left: 40%;
+    top: 40%;
+    box-sizing: border-box;
+    box-shadow: 0.2vw 0.5vh 0.3vh rgba(0, 0, 0, 0.25);
+
+
+}
+
+.buttonClose{
+
+    background-color: white;
+    color: teal;
+    position: relative;
+    left: 100%;
+    bottom: 2vh;
+
+    display: block;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.labelConfg{
+    
+    font-size: 10em;
+}
+
+
+.inputEnviar{
+
+    margin: auto;
+    font-size: 20em;
+    color: white;
+    width: 20vw;
+    max-width:200px;
+    height: 5vh; 
+    border: #0e8f59 2px solid;
+    background-color: #0E9AA7;
+    display: table;
+    margin-top: 2vw;
+    font-family: 'Press Start 2P';
+
+}
+.inputConfg{
+
+    margin: auto;
+    width: 20vw;
+    max-width: 200px;
+    min-width: 150px;
+    height: 2.5vh;
+    display: table;
+    margin-bottom: 5px;
+    border: #0E9AA7 2px solid;
+}
+.confgFoto {
+    
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    opacity: 0.9;
+    left: 1vw;
+    top: 1vh;
+
+}
+
 .caixaFoto {
 
-    margin: 2vh auto;
+    margin: 0 auto;
     width: 13.5vw;
     height: 26vh;
     min-width: 220px;
     max-width: 250px;
     min-height: 180px;
     max-height: 250px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background-color: white;    
+    
     box-sizing: border-box;
     box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+}
+.imgCaixaFoto{
+
+    
+    width: 13.5vw;
+    height: 26vh;
+    min-width: 220px;
+    max-width: 250px;
+    min-height: 180px;
+    max-height: 250px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+
+}
+
+
+.confgFoto:hover {
+
+    cursor: pointer;
+    
 }
 
 .caixaNick{
@@ -66,10 +183,13 @@
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 20px;
-
-    text-align: center;
+  
     font-size: 9em;
 
+}
+.pSobre{
+
+    text-align: center;
 }
 .listaPerfil a {
 
