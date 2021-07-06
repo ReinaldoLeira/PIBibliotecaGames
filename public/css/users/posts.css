@@ -89,8 +89,91 @@ body {
     font-size: 10em;
 
 }
-/* CAIXA DO ASIDE */
+/* CAIXA DO MODAL */
+.modalPost{ 
 
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 107vh;
+    background-color: rgba(0, 0, 0, 0.397);
+
+}
+
+.formPost {
+    
+    margin: 10% auto;
+    width: 40vw;
+    max-width: 500px;
+    
+    height: 25vh;
+    background-color: rgb(180, 180, 180);;
+    border: 2px solid white;
+    border-radius: 10px 10px 50px 10px;
+    box-shadow: 2px 5px 5px grey;
+    box-sizing: border-box;
+} 
+.textareaPost{
+
+    font-size: 20em;
+    border-radius: 5px;
+    border: 10px solid rgb(109, 117, 117);
+    
+    box-sizing: content-box;
+    background-color: rgba(66, 168, 72, 0.473);
+    min-width: 300px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    box-sizing: border-box;
+    
+}
+
+
+
+.sendClose{
+
+    box-sizing: border-box;
+    margin: auto;
+    
+    width: 70%; 
+    height: 10vh;
+    display: table;
+}
+.inputPost{
+
+    cursor: pointer;
+    background-color: greenyellow;
+    width: 70px;    
+    height: 70px;
+    border-radius: 100%;
+    
+}
+.closeButton{
+    cursor: pointer;
+    margin-left: 40%;
+    padding-top: 2%;    
+    width: 50px;
+    height: 50px;
+    
+    
+    
+}
+
+
+.addPost{
+
+    position: fixed;
+    left: 02%;
+    bottom: 20%;
+    cursor: pointer;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px 20px;
+    box-shadow: 2px 5px 2px grey;
+
+}
 
 
 @media (max-width: 956px) and (max-height: 890px) {

@@ -7,8 +7,6 @@ const models = require('../models')
 const { Op } = require('sequelize');
 const perfil = require('../models/perfil');
 
-
-
 //Controller para index
 module.exports.index = (req, res) => { 
     const top = jogos
@@ -30,11 +28,9 @@ module.exports.login = (req, res) => { res.render('./users/login', {
 
 module.exports.logar = (async(req, res) => {
 
-    const formBody =req.body; //requisição do corpo do formulario front end
-   
+    const formBody =req.body; //requisição do corpo do formulario front end 
     const FindUser = await models.User.findOne({include: 'Perfil' , where: { email: formBody.email } }) //const para achar o email
-   
-
+    
     if(!formBody.email || !formBody.senha){
         return res.send('campos vazios')
     } // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
@@ -45,7 +41,7 @@ module.exports.logar = (async(req, res) => {
         return res.send('email ou senha errado ou inexistente');      
     }
     req.session.usuario = FindUser // cria a sessão Usuario
-    console.log(FindUser)
+    
     res.redirect ('/users')      
 
 });
@@ -75,8 +71,6 @@ module.exports.registrado = (async (req, res) => {
         return res.send ('email já existe')        
     }
 
-    
-    
     const hash = bcrypt.hashSync(formBody.senha, 10); // aqui ele reescreve a senha em hash
 
     const perfil = await models.Perfil.create({
@@ -92,8 +86,7 @@ module.exports.registrado = (async (req, res) => {
         }
 
     }
-
-    await models.User.create({ // aqui vai criar o usuario, usando o model
+    await models.User.create ({ // aqui vai criar o usuario, usando o model
 
         usuario: formBody.usuario,
         senha: hash,
@@ -115,7 +108,7 @@ module.exports.registrado = (async (req, res) => {
         const formBody = req.body
         console.log(usuarioLogado)
 
-        if(!formBody.urlImg == ''){
+        if (!formBody.urlImg == ''){
         
             usuarioLogado.Perfil.Foto = formBody.urlImg
             models.Perfil.update({
@@ -137,7 +130,7 @@ module.exports.registrado = (async (req, res) => {
             }
         }
         
-        if(!formBody.sobreMim == '') {
+        if (!formBody.sobreMim == '') {
 
             models.Perfil.update({
                 sobre : formBody.sobreMim
@@ -145,7 +138,7 @@ module.exports.registrado = (async (req, res) => {
                 { where: {id: usuarioLogado.Perfil.id}
             })
         }
-        if(!formBody.urlInsta == '') {
+        if (!formBody.urlInsta == '') {
 
             models.Perfil.update({
                 instagram : formBody.urlInsta
@@ -154,7 +147,7 @@ module.exports.registrado = (async (req, res) => {
             })
 
         }
-        if(!formBody.urlTwitter == '') {
+        if (!formBody.urlTwitter == '') {
             models.Perfil.update({
                 twitter : formBody.urlTwitter
             },
@@ -162,13 +155,15 @@ module.exports.registrado = (async (req, res) => {
             })
 
         }
-        if(!formBody.urlFace == '') {
+        if (!formBody.urlFace == '') {
             models.Perfil.update({
                 facebook : formBody.urlFace
             },
                 { where: {id: usuarioLogado.Perfil.id}
             })
         }
+
+        res.redirect('/users')
         
     });
 

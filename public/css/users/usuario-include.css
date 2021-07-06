@@ -81,6 +81,7 @@
     border-radius: 50px;
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 .labelConfg{
@@ -104,6 +105,16 @@
     font-family: 'Press Start 2P';
 
 }
+
+.inputEnviar:hover {
+
+    width: 21vw;
+    max-width: 215px;
+    height: 5.5vh;
+    cursor: pointer;
+    background-color: #0ea78e;
+}
+
 .inputConfg{
 
     margin: auto;
@@ -113,7 +124,9 @@
     height: 2.5vh;
     display: table;
     margin-bottom: 5px;
-    border: #0E9AA7 2px solid;
+    border: rgb(240, 240, 240) 1px solid;
+    border-bottom: #0E9AA7 2px solid;
+
 }
 .confgFoto {
     

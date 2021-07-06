@@ -15,6 +15,21 @@
         <header>
             <%- include('../home/header.ejs'); %>
         </header>
+        <!-- MODAL DE ENVIAR POST -->
+        <div class="modalPost">
+            
+            <form action="/posts" method="POST" class=" formPost">
+                
+            <textarea name="userPost" id="" cols="30" rows="10" placeholder="DIGITE SEU POST AQUI com max 1000 caracters" class="textareaPost"></textarea>
+                <div class="sendClose">
+                    <input type="button" value="SEND" class="inputPost">
+                    <img src="/img/close.png" alt="" class="closeButton">
+                </div>
+            </form>
+        
+        </div>
+
+        <img src="/img/addPost.png" alt="" class="addPost">
 
         <div class="paiFlex">
 
@@ -56,12 +71,12 @@
                 
             </aside>
 
-        </div>
+        </div>       
         
         <footer>
             <%- include('../home/footer.ejs'); %>
         </footer>
-        
+        <script src="/js/posts.js"></script>
     </body>
 
 </html>
