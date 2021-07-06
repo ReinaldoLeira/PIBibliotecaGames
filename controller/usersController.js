@@ -5,7 +5,7 @@ const jogos = require('../model/jogos.json')
 const noticias = require('../model/noticias.json')
 const models = require('../models')
 const { Op } = require('sequelize');
-const perfil = require('../models/perfil');
+
 
 //Controller para index
 module.exports.index = (req, res) => { 
@@ -166,6 +166,31 @@ module.exports.registrado = (async (req, res) => {
         res.redirect('/users')
         
     });
+
+
+
+
+module.exports.sendPosts = (async(req,res,next)=> { 
+
+    const formBody = req.body;
+    const usuarioLogado = req.session.usuario
+    console.log(usuarioLogado)
+
+    console.log(req.body)
+
+
+    if(formBody.userPost !== '' && formBody.tituloPost !== '') {
+        await models.Post.create({
+            descricao : formBody.userPost,
+            titulo : formBody.tituloPost,
+            idPerfis : usuarioLogado.Perfil.id
+        })
+                
+    }
+    res.redirect('/users/posts')
+
+
+})
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
 module.exports.analise = (req, res) => {res.render('./users/analise', {usuario: req.session.usuario}) };
