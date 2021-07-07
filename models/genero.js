@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'idGeneros',
         targetKey: 'id'
         
+      }),
+      this.belongsToMany(models.Jogo, {
+        through: 'jogosGeneros' ,
+        as: 'jogo',
+        foreignKey: 'idGeneros',
+        targetKey: 'id'
+
       })
     }
   };

@@ -8,7 +8,8 @@
     <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Desenvolvedora</th> 
+        <th>Plataforma</th> 
+        <th>Genero</th> 
         <th>Ações</th>
     </tr>
     
@@ -17,7 +18,12 @@
         <tr>
             <td><%=jogos[i].id%></td>
             <td><%=jogos[i].nome%></td>
-            <td><%=jogos[i].desenvolvedor%></td>
+            <td><%for(let aux = 0; aux < jogos[i].plataforma.length; aux++){%>
+                <%=jogos[i].plataforma[aux].nome%>
+            <%}%> </td>
+            <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
+                <%=jogos[i].genero[aux].nome%>
+            <%}%> </td>
             <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
         </tr>
     <%}}%>
@@ -30,7 +36,8 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
-            <th>Desenvolvedora</th> 
+            <th>Plataforma</th> 
+            <th>Genero</th> 
             <th>Ações</th>
         </tr>
         
@@ -39,7 +46,12 @@
                 <tr>
                     <td><%=jogos[i].id%></td>
                     <td><%=jogos[i].nome%></td>
-                    <td><%=jogos[i].desenvolvedor%></td>
+                    <td><%for(let aux = 0; aux < jogos[i].plataforma.length; aux++){%>
+                        <%=jogos[i].plataforma[aux].nome%>
+                    <%}%> </td>
+                    <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
+                        <%=jogos[i].genero[aux].nome%>
+                    <%}%> </td>
                     <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
                 </tr>
         <%}}%>

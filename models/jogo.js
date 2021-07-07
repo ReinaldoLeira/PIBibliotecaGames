@@ -24,10 +24,24 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: 'id'
 
       }),
+      this.belongsToMany(models.Genero, {
+        through: 'jogosGeneros' ,
+        as: 'genero',
+        foreignKey: 'idJogos',
+        targetKey: 'id'
+
+      }),
       this.hasMany(models.JogoPlataforma, {
         
         foreignKey: 'idJogos',
        targetKey: 'id'
+      }),
+      this.belongsToMany(models.Plataforma, {
+        through: 'jogosPlataformas' ,
+        as: 'plataforma',
+        foreignKey: 'idJogos',
+        targetKey: 'id'
+
       })
     
     }

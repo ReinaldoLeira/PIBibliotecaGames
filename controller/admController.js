@@ -36,8 +36,8 @@ module.exports.painelJogo0 = async (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:'', plataformas, generos})
 }
 module.exports.criarJogo = async (req, res) => {
-    const generos = req.body.idGeneros
-    const plataformas = req.body.idPlataformas 
+    const generos = [].concat(req.body.idGeneros)
+    const plataformas = [].concat(req.body.idPlataformas )
     const jogo = req.body
 
     const novoJogo = await db.Jogo.create({
@@ -66,7 +66,9 @@ module.exports.criarJogo = async (req, res) => {
 
 //jogo-listar
 module.exports.painelJogo1 = async (req, res) => {
-    const jogos = await db.Jogo.findAll()
+    const jogos = await db.Jogo.findAll({
+        include:['genero','plataforma']
+    })    
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray, jogos})
 }
 
