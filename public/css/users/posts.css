@@ -27,7 +27,7 @@ body {
 
     box-sizing: border-box;
     display: flex;
-    height: 105vh;
+    height: auto;
     
 
 }
@@ -38,57 +38,88 @@ body {
 
     box-sizing: border-box;
     width: 70vw;
-    height: 105vh;
-
+    height: a;    
+    
 }
 
 .caixaTexto{
 
-    margin-left: 19%;
-    width: 47vw;
+    margin: auto;
+    width: 40vw;
     height: 18vh;
     
     font-size: 50em;
-    color: white;
+    
+    color: rgba(255, 217, 0, 0.918);
+    text-shadow: 0px 5px 0px #fff, 0px -5px 0px #fff, 5px 0px 0px #fff, -5px 0px 0px #fff, 1px 1px 0px #000;
     text-align: center;
-
-    background: #0E9AA7;
+    
+    background-image: url('/img/tijolos.png');
+    
     border: 1px solid #000000;
     box-sizing: border-box;
     box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
 
 }
 
+
 .caixaPosts{
 
+    background-color: rgb(190, 131, 3);
+    border: 2px rgb(138, 83, 0) solid;
+    border-top: 2px rgb(248, 185, 90) solid;
+    border-left: 2px rgb(248, 182, 74) solid;
+    margin: 3vh auto;
+    padding: 15px;
     
-    width: 50vw;
-    height: 82vh;
-    margin-left: 17.5%;
-    margin-top: 0.5%;
+    width: 50%;
+    height: 30vh;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);   
+    
+    
     box-sizing: border-box;
 
 }
-
-.posts{
-
-    width: 50vw;
-    min-width: 300px;
-    height: 24.5vh;
-
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+.postTitulo {
     
-}
+    
+    height: 3vh;
+    color: rgb(236, 198, 114);
+    background-color: rgb(194, 160, 88);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);;
+    text-align: center; 
+    margin: auto;
+    padding-top: 0.5%;
+    
 
-.textData{
-
-    box-sizing: border-box;
-    margin-left: 70%;
     font-size: 10em;
 
 }
+
+.areaPost{
+
+    
+    padding: 2%;
+    height: 70%;
+    box-sizing: border-box;
+    font-size: 12em;
+    line-height: 1.7em;
+    word-break: break-all;
+}
+
+.deletButtom {
+
+    
+    height: 30px;
+    width: 30px;
+    background-color: rgb(192, 80, 80);
+    color: white;
+    margin-left: 95%;
+    margin-top: 2%;
+}
+
+
+
 /* CAIXA DO MODAL */
 .modalPost{ 
 
@@ -112,6 +143,7 @@ body {
     width: 25vw;
     max-width: 300px;
     min-width: 200px;
+    height: 3vh;
 
     background-color: rgb(180, 180, 180);
     color: white;
@@ -123,16 +155,22 @@ body {
 
 .formPost {
     
-    margin: 10% auto;
+    
     width: 40vw;
     max-width: 500px;
     
-    height: 25vh;
+    height: 30vh;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+
+
     background-color: rgb(180, 180, 180);;
     border: 2px solid white;
     border-radius: 10px 10px 50px 10px;
     box-shadow: 2px 5px 5px grey;
     box-sizing: border-box;
+
 } 
 .textareaPost{
 
@@ -144,7 +182,7 @@ body {
     background-color: rgba(66, 168, 72, 0.473);
     min-width: 300px;
     width: 100%;
-    height: 120px;
+    height: 150px;
     resize: none;
     box-sizing: border-box;
 

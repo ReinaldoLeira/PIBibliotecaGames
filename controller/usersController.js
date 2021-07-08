@@ -167,15 +167,11 @@ module.exports.registrado = (async (req, res) => {
         
     });
 
-
-
-
 module.exports.sendPosts = (async(req,res,next)=> { 
 
     const formBody = req.body;
     const usuarioLogado = req.session.usuario
-    console.log(usuarioLogado)
-
+    
     console.log(req.body)
 
 
@@ -186,6 +182,8 @@ module.exports.sendPosts = (async(req,res,next)=> {
             idPerfis : usuarioLogado.Perfil.id
         })
                 
+    }else { 
+        console.log('não foi escrito :)')
     }
     res.redirect('/users/posts')
 

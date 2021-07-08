@@ -20,7 +20,7 @@
             
             <form action="/users/posts" method="POST" class=" formPost">
                 <div class="divTitulo">
-                    <input type="text" name="tituloPost" id="" placeholder= "Titulo" class="inputTitulo" autocomplete="off">
+                    <input type="text" name="tituloPost" id="" placeholder= "Digite o titulo" class="inputTitulo" autocomplete="off">
                 </div>
             <textarea name="userPost" id="" cols="30" rows="10" placeholder="DIGITE SEU POST AQUI com max 1000 caracters" class="textareaPost" autocomplete="off"></textarea>
                 <div class="sendClose">
@@ -43,27 +43,16 @@
 
                 </div>
 
-                <div class="caixaPosts">
-
-                    <div class="posts">
-                        
-                    </div>
-
-                    <p class="textData">data:</p>
-
-                    <div class="posts">
-                        
-                    </div>
-                    
-                    <p class="textData">data:</p>
-                    <div class="posts">
-                        
-                    </div>
-                    
-                    <p class="textData">data:</p>
-
-
-                </div>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                <%- include('../users/post-include.ejs'); %>
+                
+                
 
             </main>
 
