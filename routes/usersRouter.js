@@ -13,7 +13,7 @@ router.get ('/posts', auth, usersController.posts);
 router.post ('/posts', auth, usersController.sendPosts);
 
 router.get ('/', auth, usersController.usuario);
-router.post ('/', auth, usersController.sendConfigUsers);
+router.put ('/', auth, usersController.sendConfigUsers);
 
 router.get ('/midias', auth, usersController.userMidias)
 

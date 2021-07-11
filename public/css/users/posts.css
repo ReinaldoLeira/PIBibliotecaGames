@@ -37,11 +37,11 @@ body {
 .containerMain{
 
     box-sizing: border-box;
-    width: 70vw;
-    height: a;    
-    
+    width: 70vw;  
 }
-
+.containerPerfil {
+    width: 30vw;
+}
 .caixaTexto{
 
     margin: auto;

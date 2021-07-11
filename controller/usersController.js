@@ -29,20 +29,21 @@ module.exports.login = (req, res) => { res.render('./users/login', {
 module.exports.logar = (async(req, res) => {
 
     const formBody =req.body; //requisição do corpo do formulario front end 
-    const FindUser = await models.User.findOne({include: 'Perfil' , where: { email: formBody.email } }) //const para achar o email
+    const findUser = await models.User.findOne({ where: { email: formBody.email } })
+    const findPerfil = await models.Perfil.findOne({include: ['Midia', 'User', 'Biblioteca','Posts'], where : { id: findUser.id} })       
     
     if(!formBody.email || !formBody.senha){
-        return res.send('campos vazios')
+        return res.status({ "error" : "campo vazio" })
     } // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
-    if (!FindUser) {
-        return res.send('email ou senha errado ou inexistente');
+    if (!findUser) {
+        return res.status({ "error" : "campo vazio" });
     }
-    if (!bcrypt.compareSync(formBody.senha, FindUser.senha)){ // compara a senha hash
+    if (!bcrypt.compareSync(formBody.senha, findUser.senha)){ // compara a senha hash
         return res.send('email ou senha errado ou inexistente');      
     }
-    req.session.usuario = FindUser // cria a sessão Usuario
-    
-    res.redirect ('/users')      
+    req.session.usuario = (findPerfil) // cria a sessão Usuario
+    console.log(req.session.usuario.toJSON())
+    res.redirect ('/users', {})      
 
 });
 //Controle das rotas GET >> POST
@@ -56,18 +57,17 @@ module.exports.registrado = (async (req, res) => {
     if (formBody.senha !== formBody.resenha) {     //aqui, se a senha ea resenha do body estiverem errados, ele retorna um erro.
         return res.send('senha e resenha diferentes')
     }
-    const comparacaoUsuario = await models.User.findOne({ where: { usuario: formBody.usuario } }); //
-                                                                                                    // acha o usuario e a senha no banco de dados com as
-    const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } })     //          informações vinda do body
+    const comparacaoUsuario = await models.User.findOne({ where: { usuario: formBody.usuario } });                                                                                                     
+    const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } })     
     
     if (!formBody.email || !formBody.senha  || !formBody.resenha || !formBody.usuario ){
         return res.send ('todos os campos são obrigatorios')
     }  
     
     if (comparacaoUsuario) {
-        return res.send ('usuario ja existe')        //
-    }                                                   // aqui, ele executa a funcação de procuar, e se tiver ele retorna um erro e para a função
-    if (comparacaoEmail) {                           //
+        return res.send ('usuario ja existe')       
+    } // aqui, ele executa a funcação de procuar, e se tiver ele retorna um erro e para a função
+    if (comparacaoEmail) {                           
         return res.send ('email já existe')        
     }
 
@@ -109,21 +109,21 @@ module.exports.registrado = (async (req, res) => {
         console.log(usuarioLogado)
 
         if (!formBody.urlImg == ''){
-        
-            usuarioLogado.Perfil.Foto = formBody.urlImg
-            models.Perfil.update({
+         
+            await models.Perfil.update({
                 foto: formBody.urlImg
             },{
-            where : {id : usuarioLogado.idPerfis}})
+            where : {id : usuarioLogado.id}})
+            req.session.reload()
         }
 
         if (!formBody.usuario == '') {
             const procurarUser = models.User.findOne({where: { usuario: formBody.usuario}});
             if (!procurarUser) {
-                models.User.update({
+                await models.User.update({
                     usuario: formBody.usuario
                 },{
-                    where: {id: usuarioLogado.id}
+                    where: {id: usuarioLogado.User.id}
                 })
             }else {
                 console.log('usuario ja existente')
@@ -131,40 +131,35 @@ module.exports.registrado = (async (req, res) => {
         }
         
         if (!formBody.sobreMim == '') {
-
-            models.Perfil.update({
+            await models.Perfil.update({
                 sobre : formBody.sobreMim
             },
-                { where: {id: usuarioLogado.Perfil.id}
+                { where: {id: usuarioLogado.id}
             })
         }
         if (!formBody.urlInsta == '') {
-
-            models.Perfil.update({
+            await models.Perfil.update({
                 instagram : formBody.urlInsta
             },
-                { where: {id: usuarioLogado.Perfil.id}
+                { where: {id: usuarioLogado.id}
             })
-
         }
         if (!formBody.urlTwitter == '') {
-            models.Perfil.update({
+            await models.Perfil.update({
                 twitter : formBody.urlTwitter
             },
-                { where: {id: usuarioLogado.Perfil.id}
+                { where: {id: usuarioLogado.id}
             })
-
         }
+
         if (!formBody.urlFace == '') {
-            models.Perfil.update({
+            await models.Perfil.update({
                 facebook : formBody.urlFace
             },
-                { where: {id: usuarioLogado.Perfil.id}
+                { where: {id: usuarioLogado.id}
             })
         }
-
-        res.redirect('/users')
-        
+        res.redirect('/users')        
     });
 
 module.exports.sendPosts = (async(req,res,next)=> { 
@@ -179,7 +174,7 @@ module.exports.sendPosts = (async(req,res,next)=> {
         await models.Post.create({
             descricao : formBody.userPost,
             titulo : formBody.tituloPost,
-            idPerfis : usuarioLogado.Perfil.id
+            idPerfis : usuarioLogado.id
         })
                 
     }else { 

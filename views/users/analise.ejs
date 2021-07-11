@@ -10,44 +10,31 @@
     <header>
         <%- include('../home/header.ejs') %> 
     </header>
-    <div class="pai">
-        <div class="analise-div">
-            <ul>
-                <li>
-                    <img src="/img/imagem-jogo">
-                    <div class="opniao">
-                        <label for="analise">Escreva a sua análise:</label>
-                        <textarea id="analise" placeholder="A minha opnião sobre esse jogo é..."></textarea>
-                    </div>
-                </li>
-                <li>
-                    <img src="/img/imagem-jogo">
-                    <div class="opniao">
-                        <label for="analise">Escreva a sua análise:</label>
-                        <textarea id="analise" placeholder="A minha opnião sobre esse jogo é..."></textarea>
-                    </div>
-                </li>
-                <li>
-                    <img src="/img/imagem-jogo">
-                    <div class="opniao">
-                        <label for="analise">Escreva a sua análise:</label>
-                        <textarea id="analise" placeholder="A minha opnião sobre esse jogo é..."></textarea>
-                    </div>
-                </li>
-                <li>
-                    <img src="/img/imagem-jogo">
-                    <div class="opniao">
-                        <label for="analise">Escreva a sua análise:</label>
-                        <textarea id="analise" placeholder="A minha opnião sobre esse jogo é..."></textarea>
-                    </div>
-                </li>
-            </ul>
-            <button><a href="" class="btn-add">+</a></button>
-        </div>
-        <div class="include-analise">
+    <div class="divPai">
+
+        <main class="areaAnalise">
+
+            <%- include('../users/analise-include.ejs') %> 
+            <%- include('../users/analise-include.ejs') %>
+            <%- include('../users/analise-include.ejs') %>
+            <%- include('../users/analise-include.ejs') %>
+            <%- include('../users/analise-include.ejs') %>
+            <%- include('../users/analise-include.ejs') %>
+            <%- include('../users/analise-include.ejs') %>
+        </main>
+
+        <aside class="usuario-include">
             <%- include('../users/usuario-include.ejs') %> 
-        </div>
+            
+        </aside>
+
+
+
+
     </div>
+
+
+
     <footer>
         <%- include('../home/footer.ejs') %> 
     </footer>

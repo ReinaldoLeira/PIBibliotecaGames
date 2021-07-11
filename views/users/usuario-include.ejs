@@ -15,7 +15,7 @@
 
                 <div class="modalConfig"> 
                       
-                    <form class= "confgForm " action="/users" method="POST">
+                    <form class= "confgForm " action="/users" method="PUT">
                         
                         <img src="/img/close.png" class= "buttonClose"alt="">
                         <label class="labelConfg" for="urlImg">Link da imagem</label>
@@ -47,13 +47,13 @@
 
                 <div class ="caixaFoto">
                     
-                    <img class='imgCaixaFoto' src= "<%= usuario.Perfil.foto %>" alt=""/>
+                    <img class='imgCaixaFoto' src= "<%= usuario.foto %>" alt=""/>
                     
                 </div>
 
                 <div class="caixaNick">
 
-                    <p><%=usuario.usuario %></p>
+                    <p><%=usuario.User.usuario %></p>
 
                 </div>
                 
@@ -61,7 +61,7 @@
                     
                     
                     <p class="pSobre">sobre mim</p>
-                    <p><%= usuario.Perfil.sobre %> </p>
+                    <p><%= usuario.sobre %> </p>
 
                 </div>
 
@@ -76,9 +76,9 @@
 
                 <div class="sociais">
 
-                    <a href="<%= usuario.Perfil.instagram %>"><img src="/img/instagramIcon.png" alt=""></a>
-                    <a href="<%= usuario.Perfil.twitter %>"><img src="/img/twitterIcon.png" alt=""></a>
-                    <a href="<%= usuario.Perfil.facebook %>"><img src="/img/facebookIcon.png" alt=""></a>
+                    <a href="<%= usuario.instagram %>"><img src="/img/instagramIcon.png" alt=""></a>
+                    <a href="<%= usuario.twitter %>"><img src="/img/twitterIcon.png" alt=""></a>
+                    <a href="<%= usuario.facebook %>"><img src="/img/facebookIcon.png" alt=""></a>
                 
                 </div>
 

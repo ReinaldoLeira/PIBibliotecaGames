@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Post extends Model {
 
     static associate(models) {
-      this.belongsTo (models.Perfil, {
+      this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
         targetKey: 'id'
       })
