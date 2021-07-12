@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Analise extends Model {
   
     static associate(models) {
-      this.belongsTo (models.Perfil, {
+      this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
         targetKey: 'id'
       }),
@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Analise',
+    
   });
   return Analise;
 };

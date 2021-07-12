@@ -25,61 +25,76 @@ body {
 
 .paiFlex {
     display: flex;
+    height: auto;
 }
-
-.caixaMain {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    width: 75vw;
-    height: 100vh;
+.caixaMain{
     
-    
-}
-.caixaAside {
-    
-    width: 25vw;
-    height: 100vh;
-}
-
-.caixaMidias{
-
-    background-color: white;
     width: 70vw;
-    height: 100vh;
-    
-    margin: 0 auto;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
-   
-}
-.Mtitulo {
-
-    background: #0E9AA7;
-    height: 6vh;
-    text-align: center;
-    font-size: 40em;
-    padding-top: 2vh;
-   
-    
 }
 
-.imgVideos{
+.containerPerfil{
+    box-sizing: border-box;
+    width: 30vw;
+}
+.cxTitulo{
 
     display: flex;
-    flex-wrap: wrap;
+    margin-left: 7.2%;
+    margin-top: 5vh;
+}
+.titulo1 {
+
+    background-color: white;
+    height: 5vh;
+    width: 46.3%;
+    text-align: center;
+}
+.titulo1 p {
+    font-size: 18rem;
+}
+.titulo2 {
+
+    background-color: #10838d;
+    height: 5vh;
+    width: 46.4%;
+    cursor: pointer;
+    text-align: center;
+}
+.titulo2 p {
+    font-size: 18rem;
 }
 
-.cxVideo{
-
-    width: 10vw;
-    height: 25vh;
-    margin-left: 5%;
-    margin-top: 5vh ;
-    background: #C4C4C4;
-    border: 1px solid #000000;
+.conteudo1 {
+    
+    background-color: white;
+    width: 60%;
+    height: 70vh;
+    position: absolute;
+    left: 5%;
+    border: 2px #10838d solid;
+    border-top: none;  
+    box-sizing: border-box; 
+    
+}
+.conteudo2 {
+    
+    background-color: white;
+    width: 60%;
+    height: 70vh;
+    position: absolute;
+    left: 5%;
+    display: none;
+    border: 2px #10838d solid;
+    border-top: none;
     box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+    
+    
 }
+.aparecer {
+    display: block;
+}
+
+
 
 @media (max-width: 956px) and (max-height: 890px) {
     

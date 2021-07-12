@@ -30,20 +30,20 @@ module.exports.logar = (async(req, res) => {
 
     const formBody =req.body; //requisição do corpo do formulario front end 
     const findUser = await models.User.findOne({ where: { email: formBody.email } })
-    const findPerfil = await models.Perfil.findOne({include: ['Midia', 'User', 'Biblioteca','Posts'], where : { id: findUser.id} })       
+    const findPerfil = await models.Perfil.findOne({include: ['User','Posts','Midia','Biblioteca','Analises'], where : { id: findUser.id} })       
     
     if(!formBody.email || !formBody.senha){
-        return res.status({ "error" : "campo vazio" })
+        return res.render({ "error" : "campo vazio" })
     } // se o campo 'email' e o campo 'senha' estiverem vazio ele retorna uma mensagem de erro'
     if (!findUser) {
-        return res.status({ "error" : "campo vazio" });
+        return res.render({ "error" : "campo vazio" });
     }
     if (!bcrypt.compareSync(formBody.senha, findUser.senha)){ // compara a senha hash
         return res.send('email ou senha errado ou inexistente');      
     }
     req.session.usuario = (findPerfil) // cria a sessão Usuario
     console.log(req.session.usuario.toJSON())
-    res.redirect ('/users', {})      
+    res.redirect ('/users')      
 
 });
 //Controle das rotas GET >> POST
