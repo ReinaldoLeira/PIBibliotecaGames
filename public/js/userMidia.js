@@ -18,3 +18,41 @@ aba1.onclick = () => {
     aba2.style.cursor = 'pointer'
 
 }
+
+const buttomAdd = document.querySelector('.buttonAdd img')
+const modalSend = document.querySelector('.containerPai')
+const closeButtom = document.querySelector('.closeButtom')
+
+buttomAdd.onclick = () => {
+    modalSend.style.display = 'block';
+}
+closeButtom.onclick = () => {
+    modalSend.style.display = 'none';
+}
+const videoButtomOne = document.querySelector('.t-one')
+const videoButtomTwo = document.querySelector('.t-two')
+const videoModal = document.querySelector('.videoModal')
+
+videoButtomTwo.onclick = () => {
+
+    videoModal.style.display = 'block';
+    videoButtomTwo.style.backgroundColor = 'white';
+    videoButtomTwo.style.cursor = 'default';
+    videoButtomOne.style.backgroundColor ='rgb(150, 150, 150)' ;
+    videoButtomOne.style.cursor = 'pointer';
+        
+}
+videoButtomOne.onclick = () => {
+
+    videoModal.style.display = 'none';
+    videoButtomOne.style.backgroundColor ='white' ;
+    videoButtomOne.style.cursor = 'default';
+    videoButtomTwo.style.backgroundColor = 'rgb(150, 150, 150)';
+    videoButtomTwo.style.cursor = 'pointer';
+
+
+
+
+}
+
+
