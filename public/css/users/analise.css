@@ -101,3 +101,106 @@ body{
     
     font-size: 10em;
 }
+
+/* MODALLLLLLL */
+
+.containerPai {
+    width: 100vw;    
+    
+    position: absolute;
+    display: none;
+    
+}
+
+.modalAnalise{
+    margin: 10% auto;
+    
+    background-color: rgb(231, 231, 231);
+    width: 30vw;
+    min-width: 400px;
+    height: 41vh;
+    border: 2px rgb(62, 141, 134) solid;
+    border-radius: 10px;
+    
+}
+.tituloAnalise{
+    
+    margin: auto;
+    height: 6vh;
+    width: 80%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16rem;
+    margin-top: 1%;
+
+}
+.imgModal{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+}
+#analiseInput{ 
+
+    width: 80%;
+    height: 20px;
+    margin: auto;
+    display: block;
+}
+
+#textAnalise{
+    margin-left: 8%;
+    
+    width: 25vw;
+    min-width: 330px;
+    height: 12vh;
+    resize: none;
+    border-radius: 5px;
+}
+
+#selecJogo{
+    width: 200px;
+    height: 30px;
+    margin-left: 30%;
+}
+
+.cxRadio{
+    
+    height: 7vh;
+    text-align: center;
+    font-size: 13rem;
+    
+}
+
+.cxRadio input { 
+    
+    margin-left: 4%;    
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+}
+
+.analiseSubmit {
+
+    margin-left: 30%;
+    margin-top: 2%;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px rgb(62, 141, 134) solid;
+    border-radius: 5px;
+}
+
+.avaliarAdd{
+    position: fixed;
+    left: 2%;
+    bottom: 10%;
+}
+
+.avaliarAdd img{ 
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}

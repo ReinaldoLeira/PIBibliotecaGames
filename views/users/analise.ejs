@@ -9,7 +9,17 @@
 <body>
     <header>
         <%- include('../home/header.ejs') %> 
-    </header>
+    </header>  
+
+    <div>
+        <%- include('../users/modals/analise-modal-include.ejs') %> 
+    </div>
+    
+    <div class="avaliarAdd">
+        <img src="/img/avaliar.png" alt="">
+    </div>
+
+
     <div class="divPai">
 
         <main class="areaAnalise">
@@ -35,6 +45,7 @@
 
 
 
+    <script src="/js/analise.js"></script>
     <footer>
         <%- include('../home/footer.ejs') %> 
     </footer>
