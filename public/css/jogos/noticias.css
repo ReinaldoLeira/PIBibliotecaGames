@@ -1,0 +1,22 @@
+.noticia{
+    border: 1px solid black;
+    width: 70%;
+    height: 225px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #fff;
+    font-size: 15px;
+    margin-left: 10%;
+}
+.btn-p{
+    color: black;
+    text-decoration: none;
+}
+.linha{
+    margin-top: 25px;
+    display: flex;
+}
+.img{
+    width: 200px;
+    height: 225px;
+}

@@ -238,3 +238,37 @@
     align-items: center;
 }
 
+/* === NOTICIA ===*/
+.noticiaForm{
+    background: white;
+    text-align: center;
+    padding: 5px;
+    font-family: PressStart2P;
+}
+.h2{
+    font-size: 20px;
+    text-align: center;
+}
+.textarea{
+    width: 620px;
+    height: 200px;
+    text-align:left;
+    padding:5px;
+}
+.titulo{
+    width: 620px;
+    font-family: PressStart2P;
+}
+.control{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.field{
+    margin: 20px;
+}
+.button{
+    background: #0e9aa7;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+}

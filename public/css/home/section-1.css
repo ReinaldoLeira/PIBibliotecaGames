@@ -42,14 +42,39 @@ html{
     align-items: center;
     width: 100%;
 }
-
+.noticia p{
+    overflow: hidden;
+    max-height: 10ch;
+    text-overflow: ellipsis;
+}
 .noticia{
     border: 1px solid black;
-    width: 100%;
+    width: 30%;
     height: auto;
     padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    background: #fff;
 }
-
+.noticia button{
+    background-color: #000;
+    border: none;;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.btn-p{
+    color: black;
+    text-decoration: none;
+}
+.btn-w{
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: white;
+}
+.column{
+    display: flex;
+    justify-content: space-between;
+}
 .bloco-2{
     background-color: #0E9AA7;
     box-shadow: 10px 5px 5px grey;

@@ -1,0 +1,16 @@
+.titulo{
+    background-color: #0e9aa7;      
+    text-align: center;
+}
+.geral{
+    font-size: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+p{
+    font-size: 8px;
+}
+.article{
+    margin-left: 7%;
+    margin-right: 5%;
+}

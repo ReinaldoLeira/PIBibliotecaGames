@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/jogos/noticias.css">
+    <link rel="stylesheet" href="/css/tema.css">
+    <title><%= noticias.titulo %></title>
+</head>
+<body>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>
+    <div>
+        <% for (let i = 0; i< noticias.length; i++) { %> 
+            <div class="linha">
+                <div class="noticia">
+                        <a class="btn-p" href="/jogos/noticias/<% noticias[i].id %>">
+                        <h4><%= noticias[i].titulo %> </h4>
+                        <p><%= noticias[i].descricao %> </p>
+                    </div>
+                    <div><img class="img" src="/img/" ></div>
+                </div>
+            </a>
+        <% } %> 
+    </div>
+    <footer>
+        <%- include('../home/footer.ejs') %> 
+    </footer>
+</body>
+</html>

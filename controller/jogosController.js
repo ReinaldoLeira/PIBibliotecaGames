@@ -1,6 +1,8 @@
 const fs = require('fs');
 let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
+const noticias = require('../model/noticias.json');
+
 
 //Salva o Array no  jogos.json
 function salvarJogos(arrayJogos) {
@@ -65,4 +67,16 @@ module.exports.cadastrar = (req, res) => {
     salvarJogos(arrayJogos)
     res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
+module.exports.noticias = (req, res) => {
+    const noticia = noticias
+    res.render('./jogos/noticias', {
+        usuario: req.session.usuario,
+        noticias: noticia
+    })};
 
+    module.exports.noti = (req, res) =>{
+        const noticia = noticias
+        res.render('./jogos/noti', {
+            usuario: req.session.usuario,
+            noticias: noticia
+        })};
