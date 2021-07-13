@@ -245,17 +245,17 @@
     padding: 5px;
     font-family: PressStart2P;
 }
-.h2{
+.CadastroH2{
     font-size: 20px;
     text-align: center;
 }
-.textarea{
+.NoticiaTextarea{
     width: 620px;
     height: 200px;
     text-align:left;
     padding:5px;
 }
-.titulo{
+.tituloNoticia{
     width: 620px;
     font-family: PressStart2P;
 }
