@@ -14,8 +14,10 @@ router.get('/painel/jogo',admController.painelJogo)
 //jogo-cadastrar
 router.get('/painel/jogo/0',admController.painelJogo0)
 router.post('/painel/jogo/0',admController.criarJogo)
-
+//jogo-listar
 router.get('/painel/jogo/1',admController.painelJogo1)
+router.get('/painel/jogo/1/edit/:id',admController.editarJogo)
+router.post('/painel/jogo/1/edit',admController.salvarJogo)
 //jogo-genero
 router.get('/painel/jogo/2',admController.painelJogo2)
 router.post('/painel/jogo/2',admController.criarGenero)

@@ -71,6 +71,32 @@ module.exports.painelJogo1 = async (req, res) => {
     })    
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray, jogos})
 }
+module.exports.editarJogo = async (req, res) => {
+    const plataformas = await db.Plataforma.findAll()
+    const generos = await db.Genero.findAll()
+    const jogo = await db.Jogo.findOne({        
+        where: {id: req.params.id},
+        include:['genero','plataforma']
+    })    
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'edit', listaJogos: jogosArray, jogo, plataformas, generos})
+}
+module.exports.salvarJogo = async (req, res) => {
+    const generos = [].concat(req.body.idGeneros)
+    const plataformas = [].concat(req.body.idPlataformas )
+    const jogo = req.body//mexendo
+
+    await db.Jogo.update(
+        {nome: req.body.nome},
+        {where: {id:req.body.id}
+    })
+  
+    //trabalhando
+
+    const jogos = await db.Jogo.findAll({
+        include:['genero','plataforma']
+    })    
+    res.redirect('/gamepadm/painel/jogo/1/')
+}
 
 //jogo-genero
 module.exports.painelJogo2 = async (req, res) => {

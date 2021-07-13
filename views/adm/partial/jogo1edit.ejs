@@ -1,0 +1,42 @@
+
+<form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="#" method="POST">
+    <label for="idJogo">Id do Jogo:</label>
+    <input type="text" id="idJogo"name="id" autocomplete="off" value="<%=jogo.id%>" readonly disabled/>   
+    <div> 
+        <input type="checkbox" id="validado" name="validado" value="1" <%if(jogo.validado==1){%>checked<%}%>/>
+        <label class="labelCheckbox" for="validado">Validado </label>
+    </div>
+    <label for="nomeJogo">Nome do Jogo:</label>
+    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" value="<%=jogo.nome%>" required/>    
+    <label for="publisherJogo">Desenvolvedora:</label>
+    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" value="<%=jogo.desenvolvedor%>" required/>
+    <label for="dataJogo">Data de Lançamento:</label>
+    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" value="<%=jogo.lancamento%>" required/>    
+    <label for="sinopseJogo">Sinopse:</label>
+    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse"><%=jogo.descricao%></textarea>
+    <label for="imgJogo">URL de Imagem do Jogo:</label>
+    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" value="<%=jogo.capa%>" required/>
+    <label>Plataformas:</label>
+    <div class="pai wrap">
+        <%for(let plataforma of plataformas){%>
+        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>"  <%if(jogo.plataforma.find((plat) => plat.id == plataforma.id)){%>checked<%}%>/>
+        <label class="labelCheckbox" for="plat<%= plataforma.nome %>"><%= plataforma.nome %> </label></div>
+        <%}%>
+    </div>
+    <label>Gêneros:</label>
+    <div class="pai wrap">
+        <%for(let genero of generos){%>
+        <div> <input type="checkbox" id="gen<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>" <%if(jogo.genero.find((gen) => gen.id == genero.id)){%>checked<%}%>/>
+        <label class="labelCheckbox" for="gen<%= genero.nome %>"><%= genero.nome %> </label></div>
+        <%}%>
+    </div>    
+    
+    <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>
+</form> 
+<script>
+    const sinopse = document.querySelector('#sinopseJogo')
+    sinopse.onkeyup = () => {
+        sinopse.style.height = (sinopse.scrollHeight+10) + 'px'
+    }
+    sinopse.style.height = (sinopse.scrollHeight+10) + 'px'    
+</script>
