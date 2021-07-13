@@ -41,7 +41,7 @@ module.exports.logar = (async(req, res) => {
     if (!bcrypt.compareSync(formBody.senha, findUser.senha)){ // compara a senha hash
         return res.send('email ou senha errado ou inexistente');      
     }
-    req.session.usuario = (findPerfil) // cria a sessão Usuario
+    req.session.usuario = findPerfil // cria a sessão Usuario
     console.log(req.session.usuario.toJSON())
     res.redirect ('/users')      
 
@@ -113,10 +113,8 @@ module.exports.registrado = (async (req, res) => {
             await models.Perfil.update({
                 foto: formBody.urlImg
             },{
-            where : {id : usuarioLogado.id}})
-            req.session.reload()
+            where : {id : usuarioLogado.id}})            
         }
-
         if (!formBody.usuario == '') {
             const procurarUser = models.User.findOne({where: { usuario: formBody.usuario}});
             if (!procurarUser) {
@@ -159,7 +157,18 @@ module.exports.registrado = (async (req, res) => {
                 { where: {id: usuarioLogado.id}
             })
         }
-        res.redirect('/users')        
+
+        const findPerfil =  await models.Perfil.findOne({include: ['User','Posts','Midia','Biblioteca','Analises'], where : { id: usuarioLogado.id} })
+        console.log(findPerfil.toJSON())
+        req.session.save(function(e) {
+            req.session.usuario = findPerfil
+            
+            res.redirect('/users')
+        })
+        
+        
+        
+                
     });
 
 module.exports.sendPosts = (async(req,res,next)=> { 
