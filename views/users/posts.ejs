@@ -32,15 +32,20 @@
 
                 </div>
 
-                <%- include('../users/modals/post-include.ejs'); %>
-                <%- include('../users/modals/post-include.ejs'); %>
-                <%- include('../users/modals/post-include.ejs'); %>
-                <%- include('../users/modals/post-include.ejs'); %>
-                <%- include('../users/modals/post-include.ejs'); %>
-                <%- include('../users/modals/post-include.ejs'); %>
-                
-                
-                
+               <% Post.forEach(i => { %>
+                <div class="caixaPosts">
+                    <div class="postTitulo"> 
+                        <p><%=i.titulo %></p>
+                    </div>
+                    
+                    <div class="areaPost">
+                        <span ><%= i.descricao%>
+                        </span>
+                        
+                    </div>
+                    <button class="deletButtom" >X</button>
+                </div>                
+               <% })%> 
 
             </main>
 

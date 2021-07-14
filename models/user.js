@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement:true
     },
-    usuario: DataTypes.STRING(100),
     senha: DataTypes.INTEGER,
     email: DataTypes.STRING(100),
     blocked: DataTypes.BOOLEAN(1),
