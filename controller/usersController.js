@@ -224,7 +224,14 @@ module.exports.criarAnalise = (async(req,res,next)=> {
 
 
 })
+module.exports.sair = async (req, res) => {
 
+    const usuario = req.session.usuario 
+
+    req.session.destroy(function(){
+        res.redirect('/')
+    }) 
+}
 
 
 
