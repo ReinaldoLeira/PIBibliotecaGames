@@ -1,4 +1,6 @@
 const fs = require('fs');
+const db = require('../models')
+const { Op } = require('sequelize')
 let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
 const noticias = require('../model/noticias.json');
@@ -27,30 +29,51 @@ function selecionarAnalise(array, id){
     res.render('./jogos/analiseJogos')
 }*/
 
-module.exports.analise2 = (req, res) => {
-    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
+module.exports.analise2 = async (req, res) => {
+    const jogo = await db.Jogo.findOne({        
+        where: {id: req.params.id},
+        include:['genero','plataforma']
+    }) 
+    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
-    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo:jogoSelecionado, analises: analiseSelecionada})
+    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
 }
 
-module.exports.historico = (req, res) => {
-    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/histDePreco',{usuario: req.session.usuario,jogo:jogoSelecionado})
+module.exports.historico = async (req, res) => {
+    const jogo = await db.Jogo.findOne({        
+        where: {id: req.params.id},
+        include:['genero','plataforma']
+    }) 
+    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+    res.render('./jogos/histDePreco',{usuario: req.session.usuario, jogo})
 }
 
-module.exports.midia = (req, res) => {
-    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo:jogoSelecionado})
+module.exports.midia = async (req, res) => {
+    const jogo = await db.Jogo.findOne({        
+        where: {id: req.params.id},
+        include:['genero','plataforma']
+    }) 
+    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+    res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo})
 }
 
-module.exports.perfil = (req, res) => {
-    const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
+module.exports.perfil = async (req, res) => {
+    const jogo = await db.Jogo.findOne({        
+        where: {id: req.params.id},
+        include:['genero','plataforma']
+    }) 
+    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
-    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario,jogo:jogoSelecionado, analises: analiseSelecionada})
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
 }
 
-module.exports.listar = (req, res) => {
-    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos:arrayJogos})
+module.exports.listar = async (req, res) => {
+    const jogos = await db.Jogo.findAll({
+        include:['genero','plataforma']
+    })
+    const generos = await db.Genero.findAll()
+    const plataformas = await db.Plataforma.findAll()
+    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
 }
 
 module.exports.cadastra = (req, res) => {

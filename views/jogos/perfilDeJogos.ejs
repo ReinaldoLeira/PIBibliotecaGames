@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/tema.css">
     <link rel="stylesheet" href="/css/jogos/perfilDeJogos.css">
-    <title><%= jogo.nomeJogo %></title>
+    <title><%= jogo.nome %></title>
 </head>
 
 <body class="pai coluna">
@@ -17,21 +17,25 @@
     <container class="pai containerPerfilDeJogos">
         <main class="pai coluna mainPerfilDeJogos">
             <section class="fundoBranco" id="tituloPerfilDeJogos">
-                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nomeJogo %></a></h1>
+                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nome%></a></h1>
             </section>
             <section class="pai  h-33PerfilDeJogos">
                 <figure class="fundoBranco" id="imgJogo">
-                    <img src="<%=jogo.imgJogo%>" />
+                    <img src="<%=jogo.capa%>" />
                 </figure>
                 <section id="descricaoPerfilDeJogos">
                     <article class="fundoVerde" id="informacoesPerfilDeJogos">
-                        <p>Site Oficial: <%= jogo.siteJogo%></p>
-                        <p>Desenvolvedora: <%= jogo.publisherJogo%></p>
-                        <p>Data de Lançamento: <%= jogo.dataJogo%></p>
-                        <p>Plataformas: <%= jogo.plataformaJogo%></p> 
+                        <p>Desenvolvedora: <%= jogo.desenvolvedor%></p>
+                        <p>Data de Lançamento: <%= jogo.lancamento%></p>
+                        <p>Plataformas: <%for(let i = 0; i < jogo.plataforma.length; i++){%>
+                            <%=jogo.plataforma[i].nome%>
+                        <%}%></p>
+                        <p>Gênero: <%for(let i = 0; i < jogo.genero.length; i++){%>
+                            <%=jogo.genero[i].nome%>
+                        <%}%></p> 
                     </article>
                     <article class="fundoBranco pai" id="sinopsePerfilDeJogos">
-                        <p><%= jogo.sinopseJogo %></p>
+                        <p><%= jogo.descricao %></p>
                     </article> 
                 </section>
             </section>

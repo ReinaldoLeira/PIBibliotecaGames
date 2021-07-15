@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= jogo.nomeJogo %></title>
+    <title><%= jogo.nome %></title>
     <link rel="stylesheet" href="/css/jogos/analiseJogos.css">
     <link rel="stylesheet" href="/css/tema.css">
 </head>
@@ -37,8 +37,8 @@
         </div>
         <div class="jogo">
             <ul>
-                <li><a href="/jogos/perfil/<%=jogo.id%>"><img src="<%=jogo.imgJogo%>" width="400px" height="500px"></a></li>
-                <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.sinopseJogo%></p></li>
+                <li><a href="/jogos/perfil/<%=jogo.id%>"><img src="<%=jogo.capa%>" width="400px" height="500px"></a></li>
+                <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.descricao%></p></li>
                 <% let aux = 0;for(let analise of analises){%>
                     <%aux+=analise.nota%> 
                 <%}%>
