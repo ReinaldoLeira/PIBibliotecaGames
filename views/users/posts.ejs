@@ -32,10 +32,10 @@
 
                 </div>
 
-               <% Post.forEach(i => { %>
+            <% Post.forEach(i => { %>
                 <div class="caixaPosts">
                     <div class="postTitulo"> 
-                        <p><%=i.titulo %></p>
+                        <p><%=i.titulo %> <%= i.id%></p>
                     </div>
                     
                     <div class="areaPost">
@@ -43,9 +43,11 @@
                         </span>
                         
                     </div>
-                    <button class="deletButtom" >X</button>
+                   <form action="/users/posts/deletar/<%=i.id%>" method="POST">
+                        <button type="submit" class="deletButtom" >x</button>
+                    </form>
                 </div>                
-               <% })%> 
+            <% })%> 
 
             </main>
 

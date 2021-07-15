@@ -40,7 +40,7 @@ module.exports.logar = (async(req, res) => {
     }
     const findPerfil = await models.Perfil.findOne({ where: { id : findUser.id} })
     req.session.usuario = findPerfil 
-    console.log(req.session.usuario.toJSON())    
+        
     return res.redirect ('/users')      
 
 });
@@ -145,7 +145,7 @@ module.exports.registrado = (async (req, res) => {
             })
         }
         const findPerfil = await models.Perfil.findOne({ where : { id: usuarioLogado.id} })
-        console.log(findPerfil.toJSON())
+        
         req.session.save(function() {
             req.session.usuario = findPerfil       
             res.redirect('/users')
@@ -174,9 +174,28 @@ module.exports.sendPosts = (async(req,res,next)=> {
 module.exports.posts = (async (req, res, next) => {
     const usuario = req.session.usuario
     const findPost = await models.Post.findAll({ where: { idPerfis: usuario.id}, order: [['createdAt', 'DESC']]})
-    console.log(findPost)
+    
     res.render('./users/posts', {usuario: req.session.usuario , Post: findPost})
  });
+
+module.exports.deletPost = (async(req,res,next)=> {
+    const usuario = req.session.usuario
+    const { id } = req.params      
+    const achouPost = await models.Post.destroy({where: { id: id , idPerfis: usuario.id }})
+    if(achouPost) {
+        res.redirect('/users/posts')
+    }else{
+        res.send('não achou o post')
+    }
+})
+
+
+
+
+
+
+
+
 
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
