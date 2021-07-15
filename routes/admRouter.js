@@ -24,13 +24,13 @@ router.get('/painel/jogo/2',admController.painelJogo2)
 router.post('/painel/jogo/2',admController.criarGenero)
 router.get('/painel/jogo/2/deletar/:id',admController.deletarGenero)
 router.get('/painel/jogo/2/edit/:id',admController.editarGenero)
-router.post('/painel/jogo/2/edit',admController.salvarGenero)
+router.post('/painel/jogo/2/edit/:id',admController.salvarGenero)
 //jogo-plataforma
 router.get('/painel/jogo/3',admController.painelJogo3)
 router.post('/painel/jogo/3',admController.criarPlataforma)
 router.get('/painel/jogo/3/deletar/:id',admController.deletarPlataforma)
 router.get('/painel/jogo/3/edit/:id',admController.editarPlataforma)
-router.post('/painel/jogo/3/edit',admController.salvarPlataforma)
+router.post('/painel/jogo/3/edit/:id',admController.salvarPlataforma)
 
 //sistema
 router.get('/painel/sistema',admController.painelSistema)

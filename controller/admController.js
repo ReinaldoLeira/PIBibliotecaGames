@@ -5,6 +5,7 @@ const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Notícias', 'Admin', '', ''] 
 
+
 //user
 module.exports.painel = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'user', opcoes: opUser, extra:''})
@@ -27,6 +28,7 @@ module.exports.painelUser3 = (req, res) => {
 module.exports.painelJogo = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '', aba: 'jogo', opcoes: opJogo, extra:''})
 }
+
 
 //jogo-cadastrar
 module.exports.painelJogo0 = async (req, res) => {
@@ -62,6 +64,7 @@ module.exports.criarJogo = async (req, res) => {
     })}
     res.redirect('/gamepadm/painel/jogo/0')
 }
+
 
 //jogo-listar
 module.exports.painelJogo1 = async (req, res) => {
@@ -176,9 +179,14 @@ module.exports.criarGenero = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    await db.Genero.create({
-        nome: req.body.nome
+    const generoCadastrado = await db.Genero.findAll({
+        where: {nome:req.body.nome}
     })    
+    if(!generoCadastrado[0]){
+        await db.Genero.create({
+            nome: req.body.nome
+        })  
+    }    
     res.redirect('/gamepadm/painel/jogo/2')
 }
 module.exports.deletarGenero = async (req, res) => {
@@ -195,14 +203,22 @@ res.redirect('/gamepadm/painel/jogo/2')
 module.exports.editarGenero = async (req, res) => {
     const generos = await db.Genero.findOne({
         where: {id:req.params.id}
-})
-res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'jogo', opcoes: opJogo, extra:'edit', generos})
+    })
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '2', aba: 'jogo', opcoes: opJogo, extra:'edit', generos})
 }
 module.exports.salvarGenero = async (req, res) => {
-    await db.Genero.update(
-        {nome: req.body.nome},
-        {where: {id:req.body.id}
-})
+    if(!req.body.nome){
+        return res.send(400)        
+    }
+    const generoCadastrado = await db.Genero.findAll({
+        where: {nome:req.body.nome}
+    })    
+    if(!generoCadastrado[0]){        
+        await db.Genero.update(
+            {nome: req.body.nome},
+            {where: {id:req.params.id}
+        })
+    }
 res.redirect('/gamepadm/painel/jogo/2')
 }
 
@@ -215,9 +231,14 @@ module.exports.criarPlataforma = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    await db.Plataforma.create({
-        nome: req.body.nome
-    })
+    const plataformaCadastrada = await db.Plataforma.findAll({
+        where: {nome:req.body.nome}
+    })    
+    if(!plataformaCadastrada[0]){ 
+        await db.Plataforma.create({
+            nome: req.body.nome
+        })
+    }
     res.redirect('/gamepadm/painel/jogo/3')
 }
 module.exports.deletarPlataforma = async (req, res) => {
@@ -238,10 +259,18 @@ module.exports.editarPlataforma = async (req, res) => {
 res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '3', aba: 'jogo', opcoes: opJogo, extra:'edit', plataformas})
 }
 module.exports.salvarPlataforma = async (req, res) => {
-    await db.Plataforma.update(
-        {nome: req.body.nome},
-        {where: {id:req.body.id}
-})
+    if(!req.body.nome){
+        return res.send(400)        
+    }
+    const plataformaCadastrada = await db.Plataforma.findAll({
+        where: {nome:req.body.nome}
+    })    
+    if(!plataformaCadastrada[0]){ 
+        await db.Plataforma.update(
+            {nome: req.body.nome},
+            {where: {id:req.params.id}
+        })
+    }
 res.redirect('/gamepadm/painel/jogo/3')
 }
 
