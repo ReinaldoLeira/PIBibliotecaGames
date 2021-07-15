@@ -13,7 +13,7 @@ html{
     display: flex;
     align-items: center;
     border-radius: 25px;
-    padding: 20px;
+    padding-left: 20px;
     height: 100px;
     margin: 8px;
     box-sizing: border-box;
@@ -76,8 +76,8 @@ nav{
 
 .img-usuarioLogado {
 
-    border: 2px solid gray;
-    margin-left: 1vw;
+    border: 2px solid rgb(157, 255, 0);
+    margin-right: 15px;
     width: 7vh;
     height: 7vh;
     border-radius: 50%;
@@ -86,12 +86,23 @@ nav{
 
 .nome-usuario-logado {
 
-    text-decoration: none;
+    
     margin-left: 1vw;
     margin-top: 3vh;
-    font-size: 15rem;
+    
     padding-bottom: 2vh;
     
+}
+.botaoSair {
+        
+    margin: auto;
+    width: 40px;
+    height: 40px;
+
+}
+.botaoSair img{
+    height: 40px;
+    height: 40px;
 }
 
 @media (max-width: 1400px){
