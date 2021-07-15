@@ -1,5 +1,5 @@
 
-<form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="#" method="POST">
+<form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="/gamepadm/painel/jogo/1/edit/<%=jogo.id%>" method="POST">
     <label for="idJogo">Id do Jogo:</label>
     <input type="text" id="idJogo"name="id" autocomplete="off" value="<%=jogo.id%>" readonly disabled/>   
     <div> 
@@ -31,7 +31,7 @@
         <%}%>
     </div>    
     
-    <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>
+    <input  class="submitPainelAdmin" type="submit" value="Salvar"/>
 </form> 
 <script>
     const sinopse = document.querySelector('#sinopseJogo')

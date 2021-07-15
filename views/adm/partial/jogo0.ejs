@@ -13,7 +13,7 @@
     <label>Plataformas:</label>
     <div class="pai wrap">
         <%for(let plataforma of plataformas){%>
-        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>"/>
+        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>" />
         <label class="labelCheckbox" for="plat<%= plataforma.nome %>"><%= plataforma.nome %> </label></div>
         <%}%>
     </div>

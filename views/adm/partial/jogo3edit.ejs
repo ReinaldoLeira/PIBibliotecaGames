@@ -2,22 +2,22 @@
 <link rel="stylesheet" href="/css/adm/painelAdmin.css"> 
 
 <section class="pai jogo3section">
-<form action="/gamepadm/painel/jogo/3/edit" method="POST" class="jogoForm pai coluna fundoBranco jogo3EditForm">
+<form action="/gamepadm/painel/jogo/3/edit/<%=plataformas.id%>" method="POST" class="jogoForm pai coluna fundoBranco jogo3EditForm">
     <section class="jogo3EditForm">
     <p><label for="id">Id</label></p>
-    <p><input type="text" id="id" name="id" value="<%=plataformas.id%>" readonly/></p> 
+    <p><input type="text" id="id" name="id" value="<%=plataformas.id%>" readonly disabled/></p> 
     </section>
     <section class="jogo3EditForm">
     <p><label for="nome">Nome</label></p>
-    <p><input type="text" id="nome" name="nome" value="<%=plataformas.nome%>"></p> 
+    <p><input type="text" id="nome" name="nome" value="<%=plataformas.nome%>" required></p> 
     </section>
     <section class="jogo3EditForm">
     <p><label for="createdAt">Criado em</label></p>
-    <p><input type="text" id="createdAt" name="createdAt" value="<%=plataformas.createdAt%>" readonly/></p> 
+    <p><input type="text" id="createdAt" name="createdAt" value="<%=plataformas.createdAt%>" readonly disabled/></p> 
     </section>
     <section class="jogo3EditForm">
     <p><label for="updatedAt">Editado em</label></p>
-    <p><input type="text" id="updateAt" name="updatedAt" value="<%=plataformas.updatedAt%>" readonly/></p> 
+    <p><input type="text" id="updateAt" name="updatedAt" value="<%=plataformas.updatedAt%>" readonly disabled/></p> 
     </section>
     <input type="submit" class="submitPainelAdmin" value="Salvar">
 </form>
