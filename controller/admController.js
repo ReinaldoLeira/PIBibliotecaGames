@@ -77,24 +77,79 @@ module.exports.editarJogo = async (req, res) => {
     const jogo = await db.Jogo.findOne({        
         where: {id: req.params.id},
         include:['genero','plataforma']
-    })    
+    })        
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'edit', listaJogos: jogosArray, jogo, plataformas, generos})
 }
 module.exports.salvarJogo = async (req, res) => {
     const generos = [].concat(req.body.idGeneros)
     const plataformas = [].concat(req.body.idPlataformas )
     const jogo = req.body//mexendo
-
-    await db.Jogo.update(
-        {nome: req.body.nome},
-        {where: {id:req.body.id}
-    })
-  
-    //trabalhando
-
-    const jogos = await db.Jogo.findAll({
+    const jogoOriginal = await db.Jogo.findOne({        
+        where: {id: req.params.id},
         include:['genero','plataforma']
-    })    
+    })  
+    
+    //update na tabela jogos
+    await db.Jogo.update(
+        {
+            nome: jogo.nome,
+            desenvolvedor: jogo.desenvolvedor,        
+            descricao: jogo.descricao,
+            lancamento: jogo.lancamento,
+            capa: jogo.capa,     
+            validado: jogo.validado != 1 ? 0 : jogo.validado
+        },
+        {where: {id:req.params.id}
+    })
+      
+    //remover generos que não tem mais
+    for(let i = 0; i < jogoOriginal.genero.length; i++){
+        if(!generos.find((gen) => jogoOriginal.genero[i].id == gen)){
+            await db.JogoGenero.destroy({
+                where: {
+                    [Op.and]: [
+                        {idJogos:req.params.id},
+                        {idGeneros: jogoOriginal.genero[i].id}
+                    ]
+                }
+            })
+        }
+    }
+       
+    //cadastrar generos novos no jogo
+    for(let i = 0; i < generos.length; i++){
+        if(!jogoOriginal.genero.find((gen) => generos[i] == gen.id)){
+            await db.JogoGenero.create({
+                idJogos: req.params.id,
+                idGeneros: generos[i]
+            })
+        }
+    }
+   
+    //remover plataformas que não tem mais
+    for(let i = 0; i < jogoOriginal.plataforma.length; i++){
+        if(!plataformas.find((plat) => jogoOriginal.plataforma[i].id == plat)){
+            await db.JogoPlataforma.destroy({
+                where: {
+                    [Op.and]: [
+                        {idJogos:req.params.id},
+                        {idPlataformas: jogoOriginal.plataforma[i].id}
+                    ]
+                }
+            })
+        }
+    }
+
+    //cadastrar generos novos no jogo
+    for(let i = 0; i < plataformas.length; i++){
+        if(!jogoOriginal.plataforma.find((plat) => plataformas[i] == plat.id)){
+            await db.JogoPlataforma.create({
+                idJogos: req.params.id,
+                idPlataformas: plataformas[i]
+            })
+        }
+    }
+        
     res.redirect('/gamepadm/painel/jogo/1/')
 }
 
