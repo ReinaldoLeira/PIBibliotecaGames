@@ -24,7 +24,7 @@
             <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
                 <%=jogos[i].genero[aux].nome%>
             <%}%> </td>
-            <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+            <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="/gamepadm/painel/jogo/1/deletar/<%=jogos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
         </tr>
     <%}}%>
 
@@ -52,7 +52,7 @@
                     <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
                         <%=jogos[i].genero[aux].nome%>
                     <%}%> </td>
-                    <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                    <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="/gamepadm/painel/jogo/1/deletar/<%=jogos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
                 </tr>
         <%}}%>
     

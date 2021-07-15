@@ -1,5 +1,4 @@
 const usersArray = require('../model/users.json')
-const jogosArray = require('../model/jogos.json')
 const db = require('../models')
 const { Op } = require('sequelize')
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
@@ -69,7 +68,7 @@ module.exports.painelJogo1 = async (req, res) => {
     const jogos = await db.Jogo.findAll({
         include:['genero','plataforma']
     })    
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', listaJogos: jogosArray, jogos})
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', jogos})
 }
 module.exports.editarJogo = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
@@ -78,7 +77,7 @@ module.exports.editarJogo = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     })        
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'edit', listaJogos: jogosArray, jogo, plataformas, generos})
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'edit', jogo, plataformas, generos})
 }
 module.exports.salvarJogo = async (req, res) => {
     const generos = [].concat(req.body.idGeneros)
@@ -152,6 +151,21 @@ module.exports.salvarJogo = async (req, res) => {
         
     res.redirect('/gamepadm/painel/jogo/1/')
 }
+module.exports.deletarJogo = async (req, res) => {
+    await db.JogoPlataforma.destroy({
+        where: {idJogos:req.params.id}
+    })
+
+    await db.JogoGenero.destroy({
+        where: {idJogos:req.params.id}
+    })
+
+    await db.Jogo.destroy({
+        where: {id:req.params.id}
+    })
+    res.redirect('/gamepadm/painel/jogo/1/')
+}
+
 
 //jogo-genero
 module.exports.painelJogo2 = async (req, res) => {
@@ -170,7 +184,7 @@ module.exports.criarGenero = async (req, res) => {
 module.exports.deletarGenero = async (req, res) => {
     await db.Genero.destroy({
         where: {id:req.params.id}
-})
+    })
 res.redirect('/gamepadm/painel/jogo/2')
 }
 module.exports.editarGenero = async (req, res) => {
