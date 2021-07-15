@@ -23,9 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
 
     },
-    titulo: DataTypes.STRING(100),
-    analise: DataTypes.STRING(1000),
-    nota: DataTypes.BOOLEAN(1),
+    titulo: DataTypes.STRING(150),
+    analise: DataTypes.STRING(300),
+    nota: DataTypes.TINYINT(1),
     idJogos: {
       type: DataTypes.BIGINT,
       references : {

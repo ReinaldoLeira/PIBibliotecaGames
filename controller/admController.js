@@ -179,14 +179,16 @@ module.exports.criarGenero = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    const generoCadastrado = await db.Genero.findAll({
-        where: {nome:req.body.nome}
-    })    
-    if(!generoCadastrado[0]){
-        await db.Genero.create({
-            nome: req.body.nome
-        })  
-    }    
+    if(req.body.nome.length < 50){
+        const generoCadastrado = await db.Genero.findAll({
+            where: {nome:req.body.nome}
+        })    
+        if(!generoCadastrado[0]){
+            await db.Genero.create({
+                nome: req.body.nome
+            })  
+        }    
+    }
     res.redirect('/gamepadm/painel/jogo/2')
 }
 module.exports.deletarGenero = async (req, res) => {
@@ -210,14 +212,16 @@ module.exports.salvarGenero = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    const generoCadastrado = await db.Genero.findAll({
-        where: {nome:req.body.nome}
-    })    
-    if(!generoCadastrado[0]){        
-        await db.Genero.update(
-            {nome: req.body.nome},
-            {where: {id:req.params.id}
-        })
+    if(req.body.nome.length < 50){
+        const generoCadastrado = await db.Genero.findAll({
+            where: {nome:req.body.nome}
+        })    
+        if(!generoCadastrado[0]){        
+            await db.Genero.update(
+                {nome: req.body.nome},
+                {where: {id:req.params.id}
+            })
+        }
     }
 res.redirect('/gamepadm/painel/jogo/2')
 }
@@ -231,13 +235,15 @@ module.exports.criarPlataforma = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    const plataformaCadastrada = await db.Plataforma.findAll({
-        where: {nome:req.body.nome}
-    })    
-    if(!plataformaCadastrada[0]){ 
-        await db.Plataforma.create({
-            nome: req.body.nome
-        })
+    if(req.body.nome.length < 50){
+        const plataformaCadastrada = await db.Plataforma.findAll({
+            where: {nome:req.body.nome}
+        })    
+        if(!plataformaCadastrada[0]){ 
+            await db.Plataforma.create({
+                nome: req.body.nome
+            })
+        }
     }
     res.redirect('/gamepadm/painel/jogo/3')
 }
@@ -262,14 +268,16 @@ module.exports.salvarPlataforma = async (req, res) => {
     if(!req.body.nome){
         return res.send(400)        
     }
-    const plataformaCadastrada = await db.Plataforma.findAll({
-        where: {nome:req.body.nome}
-    })    
-    if(!plataformaCadastrada[0]){ 
-        await db.Plataforma.update(
-            {nome: req.body.nome},
-            {where: {id:req.params.id}
-        })
+    if(req.body.nome.length < 50){
+        const plataformaCadastrada = await db.Plataforma.findAll({
+            where: {nome:req.body.nome}
+        })    
+        if(!plataformaCadastrada[0]){ 
+            await db.Plataforma.update(
+                {nome: req.body.nome},
+                {where: {id:req.params.id}
+            })
+        }
     }
 res.redirect('/gamepadm/painel/jogo/3')
 }

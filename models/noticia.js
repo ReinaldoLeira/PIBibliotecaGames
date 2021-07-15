@@ -18,15 +18,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement: true
     },
-    titulo:DataTypes.STRING(50),
-    descricao: DataTypes.STRING(100),
+    titulo:DataTypes.STRING(100),
+    descricao: DataTypes.STRING(1000),
     idPerfis: {
       type: DataTypes.BIGINT,
       references: {
         model:'perfis'
       }
     },
-    capa: DataTypes.STRING(150)
+    capa: DataTypes.STRING(500)
   }, {
     sequelize,
     modelName: 'Noticia',

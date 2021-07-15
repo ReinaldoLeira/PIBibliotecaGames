@@ -1,15 +1,15 @@
 
 <form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="/gamepadm/painel/jogo/0" method="POST">
     <label for="nomeJogo">Nome do Jogo:</label>
-    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" required/>    
+    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" maxlength="120" required/>    
     <label for="publisherJogo">Desenvolvedora:</label>
-    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" required/>
+    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" maxlength="120" required/>
     <label for="dataJogo">Data de Lançamento:</label>
-    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" required/>    
+    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" maxlength="10" required/>    
     <label for="sinopseJogo">Sinopse:</label>
-    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse"></textarea>
+    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse" maxlength="500"></textarea>
     <label for="imgJogo">URL de Imagem do Jogo:</label>
-    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" required/>
+    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" maxlength="500" required/>
     <label>Plataformas:</label>
     <div class="pai wrap">
         <%for(let plataforma of plataformas){%>

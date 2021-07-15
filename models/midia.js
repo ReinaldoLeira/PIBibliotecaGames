@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     tipo: DataTypes.ENUM('IMAGEM','VIDEO'),
-    path: DataTypes.STRING(150),
+    path: DataTypes.STRING(500),
     idPerfis: {
       type: DataTypes.BIGINT,
       references: {

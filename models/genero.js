@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 
     },
 
-    nome: DataTypes.STRING
+    nome: DataTypes.STRING(50)
 
   }, {
     sequelize,

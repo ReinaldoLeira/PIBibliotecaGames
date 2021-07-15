@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement:true
     },
-    senha: DataTypes.INTEGER,
-    email: DataTypes.STRING(100),
+    senha: DataTypes.STRING(100),
+    email: DataTypes.STRING(45),
     blocked: DataTypes.BOOLEAN(1),
     role: DataTypes.ENUM('ADMIN', 'USER'),
     idPerfis: {
