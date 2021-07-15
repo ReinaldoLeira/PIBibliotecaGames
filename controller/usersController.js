@@ -190,16 +190,46 @@ module.exports.deletPost = (async(req,res,next)=> {
 })
 
 
+module.exports.analise = (async(req, res) => {
+    const usuario = req.session.usuario
+    const acharAnalise = await models.Analise.findAll({
+        where: {
+            idPerfis:  usuario.id
+        }, order: [['createdAt', 'DESC']]
+    })
+    const acharJogo = await models.Jogo.findAll()
+
+    res.render('./users/analise', {usuario: req.session.usuario , analises: acharAnalise, jogos: acharJogo,  }) 
+});
+
+module.exports.criarAnalise = (async(req,res,next)=> {
+    const usuario = req.session.usuario
+    const formBody = req.body
+    console.log(formBody)
+    const criarAnalise = await models.Analise.create({
+
+        titulo: formBody.titulo,
+        analise: formBody.analise,
+        nota: formBody.nota,
+        idJogos: formBody.idJogo,
+        blocked: '0',
+        idPerfis: usuario.id
+    })
+    console.log(criarAnalise.toJSON())
+    if(criarAnalise){
+        res.redirect('/users/analise')
+    }else{
+        return res.send('não foi criado')
+    }
 
 
-
-
+})
 
 
 
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
-module.exports.analise = (req, res) => {res.render('./users/analise', {usuario: req.session.usuario}) };
+
 module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {usuario: req.session.usuario}) };
 module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
 

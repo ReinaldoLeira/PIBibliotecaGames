@@ -5,6 +5,7 @@ const auth = require('../middlewares/auth');
 
 
 router.get ('/analise', auth, usersController.analise);
+router.post('/analise', auth, usersController.criarAnalise )
 
 router.get ('/form-analise', auth, usersController.formAnalise);
 

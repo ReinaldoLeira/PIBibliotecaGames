@@ -1,15 +1,21 @@
-<main class="areaAnalise">
-
+<div class="areaAnalise2">
+    <% analises.forEach(a => { %>
     <div class="analise">
-        <img src="a" alt="" class="imagemAnalise">
+        <div class="imagemAnalise">
+            <img src="" alt="">
+        </div>
         <div class="titulo-Analise">
             <div class="tituloA">
-                <p> TITULOOOOOO</p>
+                <p> <%=a.titulo%></p>
+                <div class="nota">
+                    <p>Nota:<%=a.nota%></p>
+                </div>
             </div>
             <div class="spanA">
-                <span>ssdsdssssdsd</span>
+                <span><%=a.analise%></span>
             </div>
+            <div class="dataPost"><p>Data: <%=a.createdAt%> </p></div>
         </div>
     </div>
-
-</main>
+    <%})%>
+</div>

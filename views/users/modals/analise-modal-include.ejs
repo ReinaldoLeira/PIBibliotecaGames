@@ -1,18 +1,20 @@
 <div class="containerPai">
     <div class="modalAnalise">
         <img src="/img/close.png" alt="" class="imgModal">
-        <form action="">
+        <form action="/users/analise" method="POST">
             <div class="tituloAnalise"> 
                                       
-                <label for="">Titulo</label>
-                <input type="text" name="" id="analiseInput">                    
+                <label for="titulo" placeholder="digite o titulo">Titulo</label>
+                <input type="text" name="titulo" id="analiseInput">                    
             </div>
             <div class="areaAnalise">
-                <textarea name="" id="textAnalise" cols="30" rows="10"></textarea>
+                <textarea name="analise" id="textAnalise" cols="30" rows="10" placeholder="digite a analise com max 300caracters"></textarea>
             </div>
                 <div>
-                    <select name="" id="selecJogo">
-                        <option value="">jogo</option>
+                    <select name="idJogo" id="selecJogo">
+                        <%jogos.forEach(i => { %>
+                        <option value="<%=i.id%>"><%=i.nome%></option>
+                    <% })%>
                     </select>
                 </div>
                     <div class="cxRadio">
