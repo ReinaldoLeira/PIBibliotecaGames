@@ -172,10 +172,9 @@ module.exports.sendPosts = (async(req,res,next)=> {
 })
 
 module.exports.posts = (async (req, res, next) => {
-    const usuario = req.session.usuario
-    const findPost = await models.Post.findAll({ where: { idPerfis: usuario.id}, order: [['createdAt', 'DESC']]})
-    
-    res.render('./users/posts', {usuario: req.session.usuario , Post: findPost})
+
+    const usuario = req.session.usuario    
+    res.render('./users/posts', {usuario: req.session.usuario})
  });
 
 module.exports.deletPost = (async(req,res,next)=> {
@@ -192,20 +191,20 @@ module.exports.deletPost = (async(req,res,next)=> {
 
 module.exports.analise = (async(req, res) => {
     const usuario = req.session.usuario
-    const acharAnalise = await models.Analise.findAll({
-        where: {
-            idPerfis:  usuario.id
-        }, order: [['createdAt', 'DESC']]
-    })
-    const acharJogo = await models.Jogo.findAll()
-
-    res.render('./users/analise', {usuario: req.session.usuario , analises: acharAnalise, jogos: acharJogo,  }) 
+                
+    res.render('./users/analise', {usuario: req.session.usuario}) 
 });
 
 module.exports.criarAnalise = (async(req,res,next)=> {
     const usuario = req.session.usuario
     const formBody = req.body
     console.log(formBody)
+    
+    const jogo = await models.Jogo.findOne({
+        where: {id : formBody.idJogo}
+    })
+    console.log(jogo)
+
     const criarAnalise = await models.Analise.create({
 
         titulo: formBody.titulo,
@@ -213,7 +212,8 @@ module.exports.criarAnalise = (async(req,res,next)=> {
         nota: formBody.nota,
         idJogos: formBody.idJogo,
         blocked: '0',
-        idPerfis: usuario.id
+        idPerfis: usuario.id,
+        imgJogo: jogo.capa
     })
     console.log(criarAnalise.toJSON())
     if(criarAnalise){

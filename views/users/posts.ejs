@@ -31,24 +31,7 @@
                     <p>Posts</p>
 
                 </div>
-
-            <% Post.forEach(i => { %>
-                <div class="caixaPosts">
-                    <div class="postTitulo"> 
-                        <p><%=i.titulo %> <%= i.id%></p>
-                    </div>
-                    
-                    <div class="areaPost">
-                        <span ><%= i.descricao%>
-                        </span>
-                        
-                    </div>
-                   <form action="/users/posts/deletar/<%=i.id%>" method="POST">
-                        <button type="submit" class="deletButtom" >x</button>
-                    </form>
-                </div>                
-            <% })%> 
-
+                
             </main>
 
             <aside class="containerPerfil">
