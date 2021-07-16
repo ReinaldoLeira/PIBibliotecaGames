@@ -28,7 +28,7 @@ acharJogo()
 
 const selectAnalise = document.querySelector('.includAnalise')
 
-async function acharAnalise() {
+async function modalAnalise() {
 
     const resultado = await fetch("http://localhost:3000/apis/analises")
     const body = await resultado.json()
@@ -57,4 +57,4 @@ async function acharAnalise() {
     
     }
 }
-acharAnalise()
+modalAnalise()

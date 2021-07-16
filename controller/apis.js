@@ -6,7 +6,7 @@ module.exports.acharJogo =  async (req,res) => {
     res.send(acharJogo)
 }
 
-module.exports.acharAnalise = async (req,res) => {
+module.exports.userAnalise = async (req,res) => {
     
     const usuario = req.session.usuario
     const acharAnalise = await models.Analise.findAll({

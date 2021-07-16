@@ -5,6 +5,6 @@ const api = require('../controller/apis')
 
 router.get('/jogos', api.acharJogo )
 router.get('/posts', api.acharPost)
-router.get('/analises', api.acharAnalise)
+router.get('/analises', api.userAnalise)
 
 module.exports = router
