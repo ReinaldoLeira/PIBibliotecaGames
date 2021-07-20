@@ -112,7 +112,7 @@ module.exports.registrado = (async (req, res) => {
                     { where: {id: usuarioLogado.id}
                 })   
             }else{
-                return res.render('./users/usuario', {usuario: req.session.usuario, error: 'error'})
+                return res.render('./users/usuario', {usuario: req.session.usuario, error: 'tem error'})
             }
         }
         
@@ -189,6 +189,18 @@ module.exports.deletPost = (async(req,res,next)=> {
 })
 
 
+module.exports.deletAnalise = (async(req,res)=> {
+    const usuario = req.session.usuario
+    const {id} = req.params
+    const achouAnalise = await models.Analise.destroy ({where: { id: id, idPerfis: usuario.id }})
+    if(achouAnalise) {
+        res.redirect('/users/analise')
+    }else{
+        res.send('não achou')
+    }
+})
+
+
 module.exports.analise = (async(req, res) => {
     const usuario = req.session.usuario
                 
@@ -224,6 +236,7 @@ module.exports.criarAnalise = (async(req,res,next)=> {
 
 
 })
+
 module.exports.sair = async (req, res) => {
 
     const usuario = req.session.usuario 
@@ -234,6 +247,39 @@ module.exports.sair = async (req, res) => {
 }
 
 
+module.exports.userMidias =  (req, res) => {res.render('./users/userMidia', {usuario: req.session.usuario})};
+
+module.exports.criarMidia = async (req, res) => {
+    const usuario = req.session.usuario;
+    const formBody = req.body;
+    console.log(formBody)
+    const criarMidia = await models.Midia.create({
+        tipo: formBody.tipo,
+        path: formBody.url, 
+        idPerfis: usuario.id,
+        idJogos: formBody.selectJogo
+    })
+
+    if(criarMidia) {
+        res.send('criou')
+    }
+}
+
+module.exports.deletMidia = async(req, res) => {
+
+    const usuario = req.session.usuario
+    const {id} = req.params
+    const achouMidia = await models.Midia.destroy ({where: { id: id, idPerfis: usuario.id }})
+    if(achouMidia) {
+        res.redirect('/users/midias')
+    }else{
+        res.send('não achou')
+    }
+
+}
+
+
+
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
 
@@ -241,4 +287,3 @@ module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {
 module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
 
 module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario, error:'' })};
-module.exports.userMidias =  (req, res) => {res.render('./users/userMidia', {usuario: req.session.usuario})};

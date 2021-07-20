@@ -98,7 +98,7 @@ body{
     padding: 3px;
     box-sizing: border-box;
     font-size: 10em;
-    margin: 5px;
+    margin: 2px 0;
     justify-content: space-between;
     
 }
@@ -110,7 +110,7 @@ body{
 
 .spanA{
 
-    margin: 10px auto;
+    margin: auto;
     background-color: rgb(137, 167, 131);
     
     height: 75%;
@@ -118,14 +118,31 @@ body{
     box-sizing: border-box;
     border-radius:  0 0 50px 0;
     padding: 10px;
-    margin: 5px;
+    
     
     font-size: 10em;
 }
 .dataPost{
-    font-size: 8em;
-    text-align: center;
+
+    display: flex;
+    justify-content:space-between;
+    
+    width: 90%;
+    margin: auto;
+    font-size: 6em;
+    text-align: left;
+    
 }
+
+.deletButtom{
+    
+    width: 5vw;
+    height: 23px;
+    background-color: rgb(207, 108, 108);
+}
+
+
+
 
 /* MODALLLLLLL */
 

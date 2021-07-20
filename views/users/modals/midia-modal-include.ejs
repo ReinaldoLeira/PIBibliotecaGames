@@ -11,25 +11,27 @@
                  <img src="." alt="">
              </div>
          <div class="cxImagem">
-             <form action="">
+             <form action="/users/midias" method="POST" name="IMAGEM">
                  <label for="url">Link da Imagem</label>
-                 <input type="url" name="url" id="" class="url">
-                 <select name="selectJogo" id="selectJogo">
-                     <option value="Jogo">Jogo</option>
+                 <input type="url" name="url"  class="url">
+                 <select name="selectJogo" class="selectJogo">
+                     
                  </select>
-                 <input type="submit" name="modalSend" id="modalSend" value="SEND">
+                 <input type="radio" name="tipo"  style="display: none;" value="IMAGEM" checked>
+                 <input type="submit" id="modalSend" value="ENVIAR">
              </form>
          </div>
          </div>
          <div class="videoModal">           
             <div class="cxVideo">
-                <form action="">
+                <form action="/users/midias" method="POST" name="VIDEO">
                     <label for="url">Link da video</label>
                     <input type="url" name="url" id="" class="url">
-                    <select name="selectJogo" id="selectJogo">
-                        <option value="Jogo">Jogo</option>
+                    <select name="selectJogo" class="selectJogo2">
+                    
                     </select>
-                    <input type="submit" name="modalSend" id="modalSend" value="SEND">
+                    <input type="radio" name="tipo" id="" style="display: none;" value="VIDEO" checked>
+                    <input type="submit" id="modalSend" value="ENVIAR">
                 </form>
             </div>
          </div>

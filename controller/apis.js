@@ -26,3 +26,25 @@ module.exports.acharPost = async (req,res) => {
 
     res.send(acharPosts)
 }
+
+module.exports.userImg = async (req, res) => {
+
+    const usuario = req.session.usuario
+    const userImg = await models.Midia.findAll({ where : { idPerfis: usuario.id, tipo: 'IMAGEM' }})
+    if(userImg){
+        res.send(userImg)
+    }else{
+        res.send('não achei')
+    }
+}
+
+module.exports.userVideo = async (req, res) => {
+
+    const usuario = req.session.usuario
+    const userVideo = await models.Midia.findAll({ where : { idPerfis: usuario.id , tipo: 'VIDEO' }})
+    if(userVideo){
+        res.send(userVideo)
+    }else{
+        res.send('não achei')
+    }
+}

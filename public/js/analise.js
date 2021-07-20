@@ -51,7 +51,11 @@ async function modalAnalise() {
                     <div class="spanA">
                         <span>${analises.analise}</span>
                     </div>
-                    <div class="dataPost"><p>Data: ${analises.createdAt} </p></div>
+                    <div class="dataPost"><p>Data: ${analises.createdAt} </p>
+                        <form action="/users/analise/deletar/${analises.id}" method="POST" class="formSubmit">
+                            <button type="submit" class="deletButtom" >x</button>
+                        </form>
+                    </div>
                 </div>
             </div>`
     
