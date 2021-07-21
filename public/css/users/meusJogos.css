@@ -22,71 +22,141 @@ body {
 
 }
 .paiFlex{
-
-    
     display: flex;
 }
 
+.mainContainer{
+    
+    width: 70vw;
+    height: auto;
+    box-sizing: border-box;
+}
+.boxContainer{
 
+    width: 90%;
+    height: auto;
+    background-color: blue;
+    margin: 10px auto;
+    
 
+}
 .tituloTexto{
-    
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(68, 154, 160);
+    text-align: center;
+    padding-top: 2vh;
     box-sizing: border-box;
-    margin-left: 3%;
     font-size: 12em;
+    margin: 0;   
 }
-
-.meusJogos{
-
+.tituloTexto:hover{
+    background-color: yellow;
+}
+.content{
     
+    width: 100%;
+    height: auto;
     box-sizing: border-box;
-    width: 70vw;
-    height: 55vh;
+    background-color: gray;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 3%;
+    margin-bottom: 2vh;
+    box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.637);
+}
+
+.showBox{
+    /* background-color: white; */
+    width: 12vw;
+    height: 30vh;
+    margin: 0.5vh auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.637) ;
+    
+}
+.showBox a {
+
+    text-decoration: none;
+    color: white;
+}
+.showBox a:hover {
+    
+    text-decoration: none;
+    color: black;
+}
+.showBox:hover{
+    cursor: pointer;
+    background-color: yellow;
+    width: 13vw;
+    height: 31vh;
+    margin: 0.10vh auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.432);
+
+}
+.showBox button {
+    width: 20px;
+    height: 20px;
+    margin-left: 90%;
+    position: static;
+    margin-bottom: 0;
+    font-size: 12em;
+    cursor: pointer;
+    background-color: grey;
+    
+    border: 1px rgba(255, 0, 0, 0.295) solid;
+    border-radius: 50%;
+    color: rgb(182, 182, 182);
+}
+
+.imgJogo{
+    background-color: gray;
+    width: 90%;
+    height: 76%;
+    margin: auto;
+}
+
+.nomeJogo{
+    width: 100%;
+    height: 13%;
+
+    font-size: 10em;
+    margin-top: 0;
+    text-align: center;
+    box-sizing: border-box;
     padding-top: 1%;
+}
+.caixaDesejo{
+
+    width: 90%;
+    height: auto;
+    background-color: blue;
+    margin: auto;
+    
 
 }
-
-.meusJogos a {
-
-    
-    width: 10vw;
-    height: 25vh;
-    margin-right: 5%;
-
-    background: #C4C4C4;
-    border: 1px solid #000000;
+.tituloTexto{
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(68, 154, 160);
+    text-align: center;
+    padding-top: 2vh;
     box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
-    
+    font-size: 12em;
+    margin: 0;
+    border: 2px rgb(54, 121, 126) solid;
 }
 
-.listaDesejo{
-    
-    box-sizing: border-box;
-    width: 70vw;
-    height: 36vh;
+#meusJogos{
     display: flex;
-    flex-wrap: wrap;
-    padding-left: 3%;
-    padding-top: 3%;
-
+}
+#meusDesejos{
+    display: none;
 }
 
-.listaDesejo a {
-
-    width: 10vw;
-    height: 25vh;
-    margin-right: 5%;
-
-    background: #C4C4C4;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+.aparecer {
+    display: none;
 }
-
 
 @media (max-width: 956px) and (max-height: 890px) {
     

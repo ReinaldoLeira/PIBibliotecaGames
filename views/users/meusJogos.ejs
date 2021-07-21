@@ -20,36 +20,40 @@
 
             <main class="mainContainer">
 
-                <p class="tituloTexto">Meus Jogos</p>
+                <div class="boxContainer" >
 
-                <div class="meusJogos">
+                    <p class="tituloTexto" id="tituloJogos">Meus Jogos</p>
 
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-
+                    <div class="content" id="meusJogos">
+                        
+                            <div class="showBox"> 
+                                <a href="">
+                                    <form action="/users"><button type="submit">x</button></form>
+                                    <div class="imgJogo"><img src="" alt="" srcset="" /></div>
+                                    <div class="nomeJogo"><p>league of legends</p></div>
+                                </a>
+                            </div> 
+                                                                   
+                        </div>
                 </div>
 
-                <p class="tituloTexto">Lista de Desejo</p>
+                <div class="boxContainer">
 
-                <div class="listaDesejo">
+                    <p class="tituloTexto" id="tituloDesejos">Lista de Desejo</p>
 
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    <a href="/jogos/">.</a>
-                    
+                    <div class="content" id="meusDesejos">                        
+                        
+                        <div class="showBox">                            
+                                <a href="http://">
+                                    <form action="/users"><button type="submit">x</button></form>
+                                    <div class="imgJogo"><img src="" alt="" srcset="" /></div>
+                                    <div class="nomeJogo"><p>league of legends</p></div>
+                                </a>                                                       
+                        </div>
+
+                    </div>
 
                 </div>
-
             </main>
 
             <aside class="containerPerfil">
@@ -61,7 +65,7 @@
         <footer>
             <%- include('../home/footer.ejs'); %>
         </footer>
-
+        <script src="/js/meusJogos.js"></script>
     </body>
 
 </html>
