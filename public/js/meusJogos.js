@@ -54,6 +54,8 @@ const contentJogo = document.querySelector('.contentJogo')
 const contentJogoFinal = document.querySelector('.contentJogoFinal')
 const botaoClose = document.querySelector('.close')
 
+const botaoClose2 = document.querySelector('.close2')
+
 botaoNext.onclick = () => {
     contentJogo.style.display = 'none'
     contentJogoFinal.style.display = 'flex'
@@ -63,6 +65,10 @@ const modal = document.querySelector('#modal')
 botaoClose.onclick = () => {   
     modal.style.display = 'none'
 }
+botaoClose2.onclick = () => {   
+    modal.style.display = 'none'
+}
+
 
 const botaoAddJogo = document.querySelector('.botaoAddJogo')
 
@@ -70,7 +76,7 @@ botaoAddJogo.onclick = () => {
     modal.style.display = "block"
 }
 
-const botaoVoltar = document.querySelector('.voltar')
+const botaoVoltar = document.querySelector('.imgVoltar')
 
 botaoVoltar.onclick = () =>{
     contentJogo.style.display = 'block'
