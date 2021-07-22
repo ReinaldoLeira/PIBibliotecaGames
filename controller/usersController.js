@@ -8,8 +8,8 @@ const { Op } = require('sequelize');
 
 
 //Controller para index
-module.exports.index = (req, res) => { 
-    const top = jogos
+module.exports.index = async (req, res) => { 
+    const top =  await models.Jogo.findAll() 
     const noticia = noticias
     res.render ('index', {
         usuario: req.session.usuario,
