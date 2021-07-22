@@ -105,8 +105,8 @@ body {
 .showBox button {
     width: 20px;
     height: 20px;
-    margin-left: 90%;
-    position: static;
+    
+    position: absolute;
     margin-bottom: 0;
     font-size: 12em;
     cursor: pointer;
@@ -119,12 +119,19 @@ body {
 
 .imgJogo{
     background-color: gray;
-    width: 90%;
-    height: 76%;
+    width: 100%;
+    height: 88%;
+    margin: auto;
+}
+.imgJogo img{
+    background-color: gray;
+    width: 100%;
+    height: 100%;
     margin: auto;
 }
 
 .nomeJogo{
+    
     width: 100%;
     height: 13%;
 
@@ -134,6 +141,7 @@ body {
     box-sizing: border-box;
     padding-top: 1%;
 }
+
 .caixaDesejo{
 
     width: 90%;

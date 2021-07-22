@@ -11,6 +11,8 @@ router.post('/analise/deletar/:id', auth , usersController.deletAnalise)
 router.get ('/form-analise', auth, usersController.formAnalise);
 
 router.get ('/meusjogos', auth, usersController.meusJogos);
+router.post ('/meusjogos', auth, usersController.addMeusJogos);
+router.post ('/meusjogos/deletar/:id', auth, usersController.deletarMeuJogo);
 
 router.get ('/posts', auth, usersController.posts);
 router.post ('/posts', auth, usersController.sendPosts);

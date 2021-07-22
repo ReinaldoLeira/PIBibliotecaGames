@@ -82,3 +82,35 @@ botaoVoltar.onclick = () =>{
     contentJogo.style.display = 'block'
     contentJogoFinal.style.display ='none'
 }
+
+async function showJogos () {
+    const minhaBiblioteca = await fetch ('http://localhost:3000/apis/minhabiblioteca')
+    const bodyBiblioteca = await minhaBiblioteca.json()
+
+    for (const biblioteca of bodyBiblioteca) {
+        if (biblioteca.obtido == 'SIM'){
+            meusJogos.innerHTML += `
+                <div class="showBox"> 
+                    <a href="http://localhost:3000/jogos/perfil/${biblioteca.Jogo.id}">
+                        <form action="/users/meusjogos/deletar/${biblioteca.id}" method ="POST"><button type="submit">x</button></form>
+                        <div class="imgJogo" id="imgJogo"><img src="${biblioteca.Jogo.capa}" alt="" srcset="" /></div>
+                        <div class="nomeJogo"><p>${biblioteca.Jogo.nome}</p></div>
+                    </a>
+                </div> 
+                `
+        }
+        if (biblioteca.obtido == 'DESEJO'){
+            
+            meusDesejos.innerHTML += `
+                <div class="showBox">                            
+                    <a href="http://localhost:3000/jogos/perfil/${biblioteca.Jogo.id}">
+                        <form action="/users/meusjogos/deletar/${biblioteca.id}" method ="POST"><button type="submit">x</button></form>
+                        <div class="imgJogo"><img src="${biblioteca.Jogo.capa}" alt="" srcset="" /></div>
+                        <div class="nomeJogo"><p>${biblioteca.Jogo.nome}</p></div>
+                    </a>                                                       
+                </div>
+            `
+        }
+    }
+ }
+showJogos()

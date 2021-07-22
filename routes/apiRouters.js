@@ -9,5 +9,5 @@ router.get('/analises', api.userAnalise)
 router.get('/userimg',api.userImg)
 router.get('/uservideo' , api.userVideo)
 router.get ('/plataformas', api.plataformas)
-
+router.get('/minhabiblioteca', api.minhasBibliotecas)
 module.exports = router

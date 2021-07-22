@@ -282,11 +282,44 @@ module.exports.deletMidia = async(req, res) => {
 }
 
 
+module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
+module.exports.addMeusJogos = async(req, res) => { 
+    const formBody = req.body
+    const usuario = req.session.usuario
+    console.log(formBody)
+    const acharBiblioteca = await models.Biblioteca.findOne({where: { idPerfis : usuario.id}})
+    const criarMinhaBiblioteca = await models.BibliotecaJogo.create({
+        plataforma: formBody.plataforma,
+        idBibliotecas: acharBiblioteca.id,
+        idJogos: formBody.jogo,
+        obtido: formBody.escolha
+    })
+    if (criarMinhaBiblioteca){
+        res.redirect ('/users/meusjogos')
+    }
+    
+}
+
+module.exports.deletarMeuJogo = async (req,res) => {
+    const usuario = req.session.usuario
+    const {id} = req.params
+    
+    
+    try {
+        const acharBiblioteca = await models.Biblioteca.findOne({where : { id : usuario.id}})
+        const deletarBiblioteca = await models.BibliotecaJogo.destroy ({where: { id: id, idBibliotecas: acharBiblioteca.id }})
+        return res.redirect('/users/meusjogos')
+    }catch{
+        return res.redirect('/users/meusjogos')
+    }
+
+
+}
 
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
 
 module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {usuario: req.session.usuario}) };
-module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
+
 
 module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario, error:'' })};

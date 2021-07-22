@@ -59,3 +59,18 @@ module.exports.plataformas = async (req,res) => {
         return res.send('[não foi encontrado nenhuma plataforma]')
     }
 }
+
+module.exports.minhasBibliotecas = async (req,res) => {    
+    try{
+        const usuario = req.session.usuario
+        const acharBiblioteca = await models.Biblioteca.findOne({where: {idPerfis: usuario.id}})
+      
+        const acharMinhaBiblioteca = await models.BibliotecaJogo.findAll({
+            include : 'Jogo',  
+            where: { idBibliotecas: acharBiblioteca.id} })        
+            return res.send(acharMinhaBiblioteca)
+        
+    }catch{
+        return res.redirect('/login')
+    }
+}
