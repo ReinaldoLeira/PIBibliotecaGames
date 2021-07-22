@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    plataforma: DataTypes.STRING(100),
+    plataforma: DataTypes.STRING(50),
     idBibliotecas: {
       type: DataTypes.BIGINT,
       references: {
@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: 'jogos'
       }
-    }
+    },
+    obtido: DataTypes.ENUM('SIM', 'DESEJO')
     
   }, {
     sequelize,

@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     primaryKey: true,
     autoIncrement: true
   },
+    
     idPerfis: {
       type: DataTypes.BIGINT,
       references: {

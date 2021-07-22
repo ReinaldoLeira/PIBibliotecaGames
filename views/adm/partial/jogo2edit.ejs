@@ -1,20 +1,20 @@
 <section class="pai jogo3section">
-<form action="/gamepadm/painel/jogo/2/edit" method="POST" class="jogoForm pai coluna fundoBranco jogo2EditForm">
+<form action="/gamepadm/painel/jogo/2/edit/<%=generos.id%>" method="POST" class="jogoForm pai coluna fundoBranco jogo2EditForm">
     <section class="jogo2EditForm">
     <p><label for="id">Id</label></p>
-    <p><input type="text" id="id" name="id" value="<%=generos.id%>" readonly/></p> 
+    <p><input type="text" id="id" name="id" value="<%=generos.id%>" readonly disabled/></p> 
     </section>
     <section class="jogo2EditForm">
     <p><label for="nome">Nome</label></p>
-    <p><input type="text" id="nome" name="nome" value="<%=generos.nome%>"></p> 
+    <p><input type="text" id="nome" name="nome" value="<%=generos.nome%>" maxlength="50" required></p> 
     </section>
     <section class="jogo2EditForm">
     <p><label for="createdAt">Criado em</label></p>
-    <p><input type="text" id="createdAt" name="createdAt" value="<%=generos.createdAt%>" readonly/></p> 
+    <p><input type="text" id="createdAt" name="createdAt" value="<%=generos.createdAt%>" readonly disabled/></p> 
     </section>
     <section class="jogo2EditForm">
     <p><label for="updatedAt">Editado em</label></p>
-    <p><input type="text" id="updateAt" name="updatedAt" value="<%=generos.updatedAt%>" readonly/></p> 
+    <p><input type="text" id="updateAt" name="updatedAt" value="<%=generos.updatedAt%>" readonly disabled/></p> 
     </section>
     <input type="submit" class="submitPainelAdmin" value="Salvar">
 </form>

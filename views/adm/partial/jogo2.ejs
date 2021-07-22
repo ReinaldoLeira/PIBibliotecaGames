@@ -1,7 +1,7 @@
 <section class="pai coluna">
 <form class="pai coluna fundoBranco jogoForm" action="/gamepadm/painel/jogo/2" method="POST">
     <p><label for="genero">Novo Gênero</label>
-    <input type="text" id="genero" name="nome" autocomplete="off" placeholder="Novo Gênero" required/></p>
+    <input type="text" id="genero" name="nome" autocomplete="off" placeholder="Novo Gênero" maxlength="50" required/></p>
     <p><input class="submitPainelAdmin" type="submit" value="Criar"/></p>
 </form>
 
@@ -20,7 +20,7 @@
         <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><%=generos[i].id%></a></td>
         <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><%=generos[i].nome%></a></td>
         <td><%=generos[i].createdAt%></td>
-        <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a> <a href="/gamepadm/painel/jogo/2/<%=generos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+        <td><a href="/gamepadm/painel/jogo/2/edit/<%=generos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a> <a href="/gamepadm/painel/jogo/2/deletar/<%=generos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
     </tr>
     <%}%>
     <%}%>

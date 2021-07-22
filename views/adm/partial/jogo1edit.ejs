@@ -1,5 +1,5 @@
 
-<form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="#" method="POST">
+<form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="/gamepadm/painel/jogo/1/edit/<%=jogo.id%>" method="POST">
     <label for="idJogo">Id do Jogo:</label>
     <input type="text" id="idJogo"name="id" autocomplete="off" value="<%=jogo.id%>" readonly disabled/>   
     <div> 
@@ -7,15 +7,15 @@
         <label class="labelCheckbox" for="validado">Validado </label>
     </div>
     <label for="nomeJogo">Nome do Jogo:</label>
-    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" value="<%=jogo.nome%>" required/>    
+    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" value="<%=jogo.nome%>" maxlength="120" required/>    
     <label for="publisherJogo">Desenvolvedora:</label>
-    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" value="<%=jogo.desenvolvedor%>" required/>
+    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" value="<%=jogo.desenvolvedor%>" maxlength="120" required/>
     <label for="dataJogo">Data de Lançamento:</label>
-    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" value="<%=jogo.lancamento%>" required/>    
+    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" value="<%=jogo.lancamento%>" maxlength="10" required/>    
     <label for="sinopseJogo">Sinopse:</label>
-    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse"><%=jogo.descricao%></textarea>
+    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse" maxlength="500"><%=jogo.descricao%></textarea>
     <label for="imgJogo">URL de Imagem do Jogo:</label>
-    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" value="<%=jogo.capa%>" required/>
+    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" value="<%=jogo.capa%>" maxlength="500" required/>
     <label>Plataformas:</label>
     <div class="pai wrap">
         <%for(let plataforma of plataformas){%>
@@ -31,7 +31,7 @@
         <%}%>
     </div>    
     
-    <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>
+    <input  class="submitPainelAdmin" type="submit" value="Salvar"/>
 </form> 
 <script>
     const sinopse = document.querySelector('#sinopseJogo')

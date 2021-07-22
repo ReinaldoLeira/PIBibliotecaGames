@@ -17,10 +17,10 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div><%=jogos.length -1%> Jogos Cadastrados</div></div> 
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div><%=jogos.length%> Jogos Cadastrados</div></div> 
             <div class="pai jogosProcuraJogos">
-                <% for(let i=1; i<jogos.length && i < 16; i++){ %>
-                <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].imgJogo%>"/><p><%=jogos[i].nomeJogo%></p></a>
+                <% for(let i=0; i<jogos.length && i < 16; i++){ %>
+                <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].capa%>"/><p><%=jogos[i].nome%></p></a>
                 
                 <% }%>                
             </div>
@@ -45,61 +45,16 @@
                 <label>Plataforma</label>
                 <p>
                     <select name="plataforma" id="plataformaId">
-                        <option value="ps4">Playstation 4</option>
-                        <option value="ps5">Playstation 5</option>
-                        <option value="3ds">Nintendo 3DS</option>
-                        <option value="nswitch">Nintendo Switch</option>
-                        <option value="xone">Xbox One</option>
-                        <option value="xseries">Xbox Series X/S</option>
-                        <option value="pc">PC</option>
-                        <option value="ios">IOS</option>
-                        <option value="android">Android</option>
-                        <option value="outros">Outros</option>
+                        <%for(let plataforma of plataformas){%> <option value="<%=plataforma.id%>"><%=plataforma.nome%></option> <%}%>                        
                     </select>
                 </p>
-            </div>
-            <div id="publisher">
-                <label>Publisher</label>
-                <p>
-                    <select name="publisher" id="publisherId">
-                        <option value="nintendo">Nintendo</option>
-                        <option value="ubisoft">Ubisoft</option>
-                        <option value="sega">Sega</option>
-                        <option value="capcom">Capcom</option>
-                        <option value="konami">Konami</option>
-                    </select>
-                </p>
-            </div>
+            </div>            
             <div id="categoria">
                 <p><label>Categoria</label></p>
-                <p>
-                    <input type="checkbox" id="acaoId" name="categoria" value="Ação" />
-                    <label for="acaoId">Ação</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="aventuraId" name="categoria" value="Aventura" />
-                    <label for="aventuraId">Aventura</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="estrategiaId" name="categoria" value="Estratégia" />
-                    <label for="estrategiaId">Estratégia</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="rpgId" name="categoria" value="RPG" />
-                    <label for="rpgId">RPG</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="esporteId" name="categoria" value="Esporte" />
-                    <label for="esporteId">Esporte</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="corridaId" name="categoria" value="Corrida" />
-                    <label for="corridaId">Corrida</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="simulacaoId" name="categoria" value="Simulação" />
-                    <label for="simulacaoId">Simulação</label>
-                </p>
+                <%for(let genero of generos){%> <p>
+                    <input type="checkbox" id="<%=genero.nome%>Id" name="categoria" value="Ação" />
+                    <label for="<%=genero.nome%>Id"><%=genero.nome%></label>
+                </p><%}%>                
             </div>
             </form>
         </aside>

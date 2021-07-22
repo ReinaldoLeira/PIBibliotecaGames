@@ -39,12 +39,16 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement: true
     },
-    sobre: DataTypes.STRING(1000),
-    foto: DataTypes.STRING(100),
+    sobre: DataTypes.STRING(300),
+    foto: DataTypes.STRING(500),
     blocked: DataTypes.BOOLEAN(1),
     instagram: DataTypes.STRING(150),
     facebook: DataTypes.STRING(150),
-    twitter: DataTypes.STRING(150)
+    twitter: DataTypes.STRING(150),
+    usuario: {
+      type: DataTypes.STRING(45),
+      unique: true
+    }
   }, {
     sequelize,
     modelName: 'Perfil',

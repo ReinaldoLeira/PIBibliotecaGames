@@ -16,15 +16,15 @@
     <%for(let i = 0; i < jogos.length; i++){%>
     <%if(jogos[i].validado === 1){%>
         <tr>
-            <td><%=jogos[i].id%></td>
-            <td><%=jogos[i].nome%></td>
+            <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><%=jogos[i].id%></a></td>
+            <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><%=jogos[i].nome%></a></td>
             <td><%for(let aux = 0; aux < jogos[i].plataforma.length; aux++){%>
                 <%=jogos[i].plataforma[aux].nome%>
             <%}%> </td>
             <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
                 <%=jogos[i].genero[aux].nome%>
             <%}%> </td>
-            <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+            <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="/gamepadm/painel/jogo/1/deletar/<%=jogos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
         </tr>
     <%}}%>
 
@@ -44,7 +44,7 @@
         <%for(let i = 0; i < jogos.length; i++){%>
             <%if(jogos[i].validado === 0){%>
                 <tr>
-                    <td><%=jogos[i].id%></td>
+                    <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><%=jogos[i].id%></a></td>
                     <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><%=jogos[i].nome%></a></td>
                     <td><%for(let aux = 0; aux < jogos[i].plataforma.length; aux++){%>
                         <%=jogos[i].plataforma[aux].nome%>
@@ -52,7 +52,7 @@
                     <td><%for(let aux = 0; aux < jogos[i].genero.length; aux++){%>
                         <%=jogos[i].genero[aux].nome%>
                     <%}%> </td>
-                    <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                    <td><a href="/gamepadm/painel/jogo/1/edit/<%=jogos[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="/gamepadm/painel/jogo/1/deletar/<%=jogos[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
                 </tr>
         <%}}%>
     

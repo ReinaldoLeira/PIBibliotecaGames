@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/users/analise.css">
+    <title>Analises</title>
 </head>
 <body>
     <header>
         <%- include('../home/header.ejs') %> 
     </header>  
 
-    <div>
+    <div>        
         <%- include('../users/modals/analise-modal-include.ejs') %> 
     </div>
     
@@ -25,27 +26,16 @@
         <main class="areaAnalise">
 
             <%- include('../users/modals/analise-include.ejs') %> 
-            <%- include('../users/modals/analise-include.ejs') %> 
-            <%- include('../users/modals/analise-include.ejs') %> 
-            <%- include('../users/modals/analise-include.ejs') %> 
-            <%- include('../users/modals/analise-include.ejs') %> 
-            <%- include('../users/modals/analise-include.ejs') %> 
-            
+
         </main>
 
         <aside class="usuario-include">
-            <%- include('../users/usuario-include.ejs') %> 
-            
+            <%- include('../users/usuario-include.ejs') %>             
         </aside>
-
-
-
-
     </div>
 
-
-
     <script src="/js/analise.js"></script>
+    
     <footer>
         <%- include('../home/footer.ejs') %> 
     </footer>

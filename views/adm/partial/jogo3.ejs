@@ -4,7 +4,7 @@
 <section class="pai coluna">
 <form class="pai coluna fundoBranco jogoForm" action="/gamepadm/painel/jogo/3" method="POST">
     <p><label for="plataforma">Nova Plataforma</label>
-    <input type="text" id="plataforma" name="nome" autocomplete="off" placeholder="Nova Plataforma" required/></p>
+    <input type="text" id="plataforma" name="nome" autocomplete="off" placeholder="Nova Plataforma" maxlength="50" required/></p>
     <p><input class="submitPainelAdmin" type="submit" value="Criar"/></p>
 </form>
 
@@ -23,7 +23,7 @@
         <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><%=plataformas[i].id%></a></td>
         <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><%=plataformas[i].nome%></a></td>
         <td><%=plataformas[i].createdAt%></td>
-        <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="/gamepadm/painel/jogo/3/<%=plataformas[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+        <td><a href="/gamepadm/painel/jogo/3/edit/<%=plataformas[i].id%>"><img src="/img/adm/editar.png" alt="Editar"></a><a href="/gamepadm/painel/jogo/3/deletar/<%=plataformas[i].id%>"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
     </tr>
     <%}%>
     <%}%>

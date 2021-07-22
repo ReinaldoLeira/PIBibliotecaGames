@@ -55,13 +55,13 @@ module.exports = (sequelize, DataTypes) => {
       
     },
 
-    nome: DataTypes.STRING(150),
-    desenvolvedor: DataTypes.STRING(100),
-    descricao: DataTypes.STRING(1000),
+    nome: DataTypes.STRING(120),
+    desenvolvedor: DataTypes.STRING(120),
+    descricao: DataTypes.STRING(500),
     lancamento: DataTypes.STRING(10),
-    capa: DataTypes.STRING(100),
+    capa: DataTypes.STRING(500),
     validado: DataTypes.TINYINT(1),
-    createdBy: DataTypes.STRING(100)
+    createdBy: DataTypes.STRING(50)
     
   }, {
 

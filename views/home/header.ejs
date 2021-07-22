@@ -22,8 +22,10 @@
         </div>
     <% if (usuario) {%>
 
-        <img class="img-usuarioLogado" src="https://i.pinimg.com/originals/08/e9/0c/08e90c026242fbee0c7704b078219359.png" alt=""/>
-        <a class="nome-usuario-logado" href="/users">painel</a>
+        <a class="nome-usuario-logado" href="/users"><img class="img-usuarioLogado" src="<%=usuario.foto%>" alt=""/></a>
+        <form action="/sair" method="POST" class="botaoSair">
+            <button type="submit"><img src="/img/botaoSair.png" alt="" srcset=""></button>             
+        </form action="/sair">      
 
     <%}else { %>
     
