@@ -21,8 +21,8 @@
                 <h3><%= noticias.subTitulo %></h3>
             </div>
             <div class="att">
-                <p>Escrito por: <!-- autor --></p>
-                <p>Atualizado as: <!-- datatime --></p>
+                <p>Escrito por: <%= noticias.autor %></p>
+                <p>Atualizado as: <%= noticias.updatedAt %></p>
             </div>
         <% } %> 
 
@@ -35,7 +35,7 @@
     </div>
         <div>
             <% for (let i = 0; i< noticias.length && i < 1; i++) { %> 
-            <img src="/img/<% noticias[i].img %> " alt="">
+            <img src="/img/<% noticias[i].capa %> " alt="">
             <% } %> 
         </div>
     </article>
