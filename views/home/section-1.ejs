@@ -11,9 +11,9 @@
             <div>
                 <h3>Jogos em promoção</h3>
                 <div class="promocao">
-                    <% for(let i=1; i<jogos.length && i <=10; i++){ %>
+                    <% for(let i=0; i<jogos.length && i <=10; i++){ %>
                         <a href="/jogos/perfil/<%= jogos[i].id %>">
-                            <article><img class="img" src="<%= jogos[i].imgJogo %> "></article>
+                            <article><img class="img" src="<%= jogos[i].capa %> "></article>
                         </a>
                     <% } %>
                 </div>
@@ -44,14 +44,14 @@
             <div class="top-10"> 
                 <h3>Top 10 da semana</h3>
                 <ul>
-                <% for(let i=1; i<jogos.length && i<=10; i++){ %>
+                <% for(let i=0; i<jogos.length && i<=10; i++){ %>
                     <li class="lista">
                         <a class="link" href="/jogos/perfil/<%= jogos[i].id %> ">
                             <p class="top-num">
                                 <%= jogos[i].id %>
                             </p>
                             <p>
-                                <%= jogos[i].nomeJogo %>
+                                <%= jogos[i].nome %>
                             </p>
                         </a>
                     </li>
