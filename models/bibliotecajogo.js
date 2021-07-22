@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: 'jogos'
       }
-    }
+    },
+    obtido: DataTypes.ENUM('SIM', 'DESEJO')
     
   }, {
     sequelize,

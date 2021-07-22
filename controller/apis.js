@@ -48,3 +48,14 @@ module.exports.userVideo = async (req, res) => {
         res.send('não achei')
     }
 }
+
+module.exports.plataformas = async (req,res) => {
+
+    const plataformas = await models.Plataforma.findAll()
+
+    if(plataformas){
+        return res.send(plataformas)
+    } else {
+        return res.send('[não foi encontrado nenhuma plataforma]')
+    }
+}

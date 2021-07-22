@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     primaryKey: true,
     autoIncrement: true
   },
-    obtido: DataTypes.BOOLEAN(1),
+    
     idPerfis: {
       type: DataTypes.BIGINT,
       references: {

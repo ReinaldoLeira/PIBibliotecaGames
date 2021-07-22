@@ -188,7 +188,7 @@ body{
 }
 
 #analiseInput{ 
-
+    font-family: "PressStart2P";
     width: 80%;
     height: 20px;
     margin: auto;
@@ -197,7 +197,7 @@ body{
 
 #textAnalise{
     margin-left: 8%;
-    
+    font-family: "PressStart2P";
     width: 25vw;
     min-width: 330px;
     height: 12vh;

@@ -86,6 +86,9 @@ module.exports.registrado = (async (req, res) => {
         role: 'USER',
         idPerfis: perfilCriado(perfil)
 
+    })
+    await models.Biblioteca.create({
+        idPerfis: perfil.id
     })  
 
     return res.redirect('/login')
@@ -261,7 +264,7 @@ module.exports.criarMidia = async (req, res) => {
     })
 
     if(criarMidia) {
-        res.send('criou')
+        res.redirect('/users/midias')
     }
 }
 

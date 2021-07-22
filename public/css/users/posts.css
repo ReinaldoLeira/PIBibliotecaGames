@@ -147,10 +147,12 @@ body {
     height: 3vh;
 
     background-color: rgb(180, 180, 180);
-    color: white;
+    font-family: "PressStart2P";
+    font-size: 10em;
+    color: black;
     border: 0;
     border-left: 2px gray solid;
-    border-right: 2px gray solid;
+    border-right: 2px rgb(31, 31, 31) solid;
     
 }
 
@@ -174,8 +176,8 @@ body {
 
 } 
 .textareaPost{
-
-    font-size: 20em;
+    font-family: "PressStart2P";
+    font-size: 10em;
     border-radius: 0 0 40px 0;
     border: 10px solid rgb(109, 117, 117);
     
