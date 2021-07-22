@@ -15,41 +15,43 @@
             <%- include('../home/header.ejs'); %>
         </header>
 
-        <aside class="login-aside">
-            <div class="loginContainer">
-
-                <p class="loginText">LOGIN</p>
-
-                <div class="caixaForm">
-                    <form action="/login" method="POST">
-                        <div class="caixainput">
-                        <label for="email" class="textInput">email:</label>
-                        <input type="email" name="email" class="caixaInput" autocomplete="off" required>
-                        
-
-                        <label for="senha" class="textInput">Senha:</label>
-                        <input type="password" name="senha" class="caixaInput" autocomplete="off" required>
+        
+            <aside class="login-aside">
+                <div class="loginContainer">
+    
+                    <p class="loginText">LOGIN</p>
+    
+                    <div class="caixaForm">
+                        <form action="/login" method="POST">
+                            <div class="caixainput">
+                            <label for="email" class="textInput">email:</label>
+                            <input type="email" name="email" class="caixaInput" autocomplete="off" required>
                             
-                        </div>
-                    <input type="submit" value="ENTRAR" class="inputSubmit"/>
+    
+                            <label for="senha" class="textInput">Senha:</label>
+                            <input type="password" name="senha" class="caixaInput" autocomplete="off" required>
+                                
+                            </div>
+                        <input type="submit" value="ENTRAR" class="inputSubmit"/>
+                    </div>
+    
+                    <div class="aLink">
+    
+                        <a href="">esqueceu o usuário ?</a>
+                        <a href=""> esqueceu a senha ?</a>
+    
+                    </div>
+    
+                    <div class="aText"> 
+                      <a href="/registrar">inscrever-se</a>
+                    </div>
+                       
+                    
+    
                 </div>
+    
+            </aside>
 
-                <div class="aLink">
-
-                    <a href="">esqueceu o usuário ?</a>
-                    <a href=""> esqueceu a senha ?</a>
-
-                </div>
-
-                <div class="aText"> 
-                  <a href="/registrar">inscrever-se</a>
-                </div>
-                   
-                
-
-            </div>
-
-        </aside>
         
         <footer class="login-footer">
             <%- include('../home/footer.ejs'); %>

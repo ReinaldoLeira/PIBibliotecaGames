@@ -241,17 +241,13 @@ module.exports.criarAnalise = (async(req,res,next)=> {
 })
 
 module.exports.sair = async (req, res) => {
-
     const usuario = req.session.usuario 
-
     req.session.destroy(function(){
         res.redirect('/')
     }) 
 }
 
-
 module.exports.userMidias =  (req, res) => {res.render('./users/userMidia', {usuario: req.session.usuario})};
-
 module.exports.criarMidia = async (req, res) => {
     const usuario = req.session.usuario;
     const formBody = req.body;
@@ -280,7 +276,6 @@ module.exports.deletMidia = async(req, res) => {
     }
 
 }
-
 
 module.exports.meusJogos = (req, res) => {res.render('./users/meusJogos', {usuario: req.session.usuario})};
 module.exports.addMeusJogos = async(req, res) => { 
@@ -315,7 +310,6 @@ module.exports.deletarMeuJogo = async (req,res) => {
 
 
 }
-
 
 //Controller de rotas analise>>formAnalise>>meusJogos>>posts>>Usuario
 
