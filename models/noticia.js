@@ -18,7 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true,
       autoIncrement: true
     },
+    //autor:DataTypes.STRING(50),
     titulo:DataTypes.STRING(100),
+    //subTitulo:DataTypes.STRING(50),
     descricao: DataTypes.STRING(1000),
     idPerfis: {
       type: DataTypes.BIGINT,

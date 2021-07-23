@@ -17,9 +17,15 @@ module.exports = {
       users_id: {
         type: Sequelize.NUMBER
       },
+      /* autor: {
+        type: Sequelize.STRING
+      }, */
       titulo: {
         type: Sequelize.STRING
       },
+      /* subTitulo: {
+        type: Sequelize.STRING
+      }, */
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
