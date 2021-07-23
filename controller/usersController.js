@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path =require('path');
 const bcrypt = require('bcrypt');
-const jogos = require('../model/jogos.json')
 const noticias = require('../model/noticias.json')
 const models = require('../models')
 const { Op } = require('sequelize');

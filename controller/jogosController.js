@@ -103,3 +103,8 @@ module.exports.noticias = (req, res) => {
             usuario: req.session.usuario,
             noticias: noticia
         })};
+
+
+
+
+

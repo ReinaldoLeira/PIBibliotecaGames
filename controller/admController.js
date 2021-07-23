@@ -1,4 +1,5 @@
 const usersArray = require('../model/users.json')
+const jogosServices = require('../services/jogosServices')
 const db = require('../models')
 const { Op } = require('sequelize')
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
@@ -36,32 +37,8 @@ module.exports.painelJogo0 = async (req, res) => {
     const generos = await db.Genero.findAll()
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:'', plataformas, generos})
 }
-module.exports.criarJogo = async (req, res) => {
-    const generos = [].concat(req.body.idGeneros)
-    const plataformas = [].concat(req.body.idPlataformas )
-    const jogo = req.body
-
-    const novoJogo = await db.Jogo.create({
-        nome: jogo.nome,
-        desenvolvedor: jogo.desenvolvedor,        
-        descricao: jogo.descricao,
-        lancamento: jogo.lancamento,
-        capa: jogo.capa,     
-        validado: 0,   
-        createdBy: 'testeAdmin' 
-    })  
-    
-    for(let i = 0; i < generos.length; i++ ){
-        await db.JogoGenero.create({
-            idJogos: novoJogo.id,
-            idGeneros: generos[i]
-    })}
-    
-    for(let i = 0; i < plataformas.length; i++){
-        await db.JogoPlataforma.create({
-            idJogos: novoJogo.id,
-            idPlataformas: plataformas[i]
-    })}
+module.exports.criarJogo = async (req, res) => {   
+    await jogosServices.criarJogoDB(req.body)
     res.redirect('/gamepadm/painel/jogo/0')
 }
 
@@ -73,6 +50,7 @@ module.exports.painelJogo1 = async (req, res) => {
     })    
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', jogos})
 }
+
 module.exports.editarJogo = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
     const generos = await db.Genero.findAll()
@@ -82,76 +60,8 @@ module.exports.editarJogo = async (req, res) => {
     })        
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'edit', jogo, plataformas, generos})
 }
-module.exports.salvarJogo = async (req, res) => {
-    const generos = [].concat(req.body.idGeneros)
-    const plataformas = [].concat(req.body.idPlataformas )
-    const jogo = req.body//mexendo
-    const jogoOriginal = await db.Jogo.findOne({        
-        where: {id: req.params.id},
-        include:['genero','plataforma']
-    })  
-    
-    //update na tabela jogos
-    await db.Jogo.update(
-        {
-            nome: jogo.nome,
-            desenvolvedor: jogo.desenvolvedor,        
-            descricao: jogo.descricao,
-            lancamento: jogo.lancamento,
-            capa: jogo.capa,     
-            validado: jogo.validado != 1 ? 0 : jogo.validado
-        },
-        {where: {id:req.params.id}
-    })
-      
-    //remover generos que não tem mais
-    for(let i = 0; i < jogoOriginal.genero.length; i++){
-        if(!generos.find((gen) => jogoOriginal.genero[i].id == gen)){
-            await db.JogoGenero.destroy({
-                where: {
-                    [Op.and]: [
-                        {idJogos:req.params.id},
-                        {idGeneros: jogoOriginal.genero[i].id}
-                    ]
-                }
-            })
-        }
-    }
-       
-    //cadastrar generos novos no jogo
-    for(let i = 0; i < generos.length; i++){
-        if(!jogoOriginal.genero.find((gen) => generos[i] == gen.id)){
-            await db.JogoGenero.create({
-                idJogos: req.params.id,
-                idGeneros: generos[i]
-            })
-        }
-    }
-   
-    //remover plataformas que não tem mais
-    for(let i = 0; i < jogoOriginal.plataforma.length; i++){
-        if(!plataformas.find((plat) => jogoOriginal.plataforma[i].id == plat)){
-            await db.JogoPlataforma.destroy({
-                where: {
-                    [Op.and]: [
-                        {idJogos:req.params.id},
-                        {idPlataformas: jogoOriginal.plataforma[i].id}
-                    ]
-                }
-            })
-        }
-    }
-
-    //cadastrar generos novos no jogo
-    for(let i = 0; i < plataformas.length; i++){
-        if(!jogoOriginal.plataforma.find((plat) => plataformas[i] == plat.id)){
-            await db.JogoPlataforma.create({
-                idJogos: req.params.id,
-                idPlataformas: plataformas[i]
-            })
-        }
-    }
-        
+module.exports.salvarJogo = async (req, res) => {        
+    await jogosServices.editarJogoDB(req.body, req.params)
     res.redirect('/gamepadm/painel/jogo/1/')
 }
 module.exports.deletarJogo = async (req, res) => {
