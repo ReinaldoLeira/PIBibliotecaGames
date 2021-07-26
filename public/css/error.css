@@ -1,0 +1,91 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+*{
+    font-family:"PressStart2P";
+}
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #d5d5d5;    
+
+}
+.modalError{
+            
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.103);
+    position: absolute;
+    
+}
+
+.caixaError{
+
+    width: 40%;
+    height: 30%;
+    background-color: rgb(221, 221, 221);
+    position: fixed;
+    left: 30%;
+    top: 30%;
+
+    border: 10px rgb(241, 102, 102) solid;
+    box-sizing: border-box;
+
+}
+.cxImg{
+    width: 12%;
+    height: 30%;
+    
+    margin: 2% auto;
+}
+.imgError{
+    width: 100%;
+    height: 100%;
+}
+.imgError:hover{
+    cursor: pointer;
+    width: 102%;
+    height: 102%;
+}
+.messageError{
+    width: 100%;
+    text-align: center;
+    font-size: 15rem;
+}
+.buttonVoltar {
+    width: 100%;
+    height: 19%;
+    margin-top: 3%;
+    align-items: center;
+    display: flex;
+    
+
+}
+#buttonVoltar{
+    cursor: pointer;
+    margin: auto;
+    width: 40%;
+    height: 100%;
+    border-radius: 10%;
+}
+#buttonVoltar:hover {
+
+    width: 42%;
+    background-color: yellow;
+}
+#error {
+    position: absolute;
+}

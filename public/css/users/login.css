@@ -3,6 +3,10 @@
     font-family:"PressStart2P";
     src: url(/font/PressStart2P-Regular.ttf);
 }
+*{
+
+    font-family: "PressStart2P";
+}
 
 
 html{
@@ -120,8 +124,9 @@ body {
 
 .inputSubmit{
     
-    display: block;
-  
+    display: flex;
+    cursor: pointer;
+    align-items: center;
     
     width: 24vw;
     min-width: 285px;
@@ -132,12 +137,16 @@ body {
     text-align: center;
     color: white;
     font-family: "PressStart2P";
-    font-size: 25em;
+    font-size: 2rem;
 
     background: #0E9AA7;
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 
+}
+.inputSubmit p{
+    
+    width: 100%;
 }
 
 
