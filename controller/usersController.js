@@ -102,7 +102,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
 
         const usuarioLogado = req.session.usuario
         const formBody = req.body
-        
+    try{ 
         if (!formBody.urlImg == ''){
             await models.Perfil.update({
                 foto: formBody.urlImg
@@ -118,7 +118,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
                     { where: {id: usuarioLogado.id}
                 })   
             }else{
-                return res.render('./users/usuario', {usuario: req.session.usuario, error: 'tem error'})
+                throw new Error('Usuario ja encontrado')
             }
         }
         
@@ -153,9 +153,13 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
         const findPerfil = await models.Perfil.findOne({ where : { id: usuarioLogado.id} })
         
         req.session.save(function() {
-            req.session.usuario = findPerfil       
-            res.redirect('/users')
+            req.session.usuario = findPerfil
+            res.status(200).send({cadastro: 'Cadastrado'})
         })
+
+    }catch (e) {
+        return res.status(400).send({message : e.message, status:400})
+    }
     })
 module.exports.sendPosts = (async(req,res,next)=> { 
 

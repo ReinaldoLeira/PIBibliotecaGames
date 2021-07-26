@@ -9,38 +9,31 @@
 
     </head>
     <body>
-        <aside class="containerPerfil">
-            
+        <aside class="containerPerfil">            
             <div class="caixaPerfil marginzero">
-
-                <div class="modalConfig"> 
-                      
-                    <form class= "confgForm " action="/users" method="POST">
+                <div class="modalConfig">                       
+                    <form class= "confgForm"  method="POST">
                         
                         <img src="/img/close.png" class= "buttonClose"alt="">
                         <label class="labelConfg" for="urlImg">Link da imagem</label>
-                        <input class="inputConfg" type="url" name="urlImg" id="" >
-                        
+                        <input class="inputConfg" type="url" name="urlImg" id="formUrlImg" >                        
 
                         <label class="labelConfg" for="usuario">Mudar usuario</label>
-                        <input class="inputConfg" type="text" name="usuario" >
-                        
+                        <input class="inputConfg" type="text" name="usuario" id="formUsuario">                        
 
                         <label class="labelConfg"for="sobreMim">Sobre Mim</label>
-                        <input class="inputConfg" type="text" name="sobreMim" >
-                        
+                        <input class="inputConfg" type="text" name="sobreMim" id="formSobreMim" >                        
 
                         <label class="labelConfg" for="urlInsta">Instagram</label>
-                        <input class="inputConfg" type="url" name="urlInsta">
+                        <input class="inputConfg" type="url" name="urlInsta" id="formInsta">
 
                         <label class="labelConfg" for="urlTwitter">Twitter</label>
-                        <input class="inputConfg" type="url" name="urlTwitter" >
+                        <input class="inputConfg" type="url" name="urlTwitter" id="formTwitter">
 
                         <label  class="labelConfg" for="urlFace">Facebook</label>
-                        <input  class="inputConfg" type="url" name="urlFace" >
-                        <input class="inputEnviar" type="submit" value="enviar">
+                        <input  class="inputConfg" type="url" name="urlFace" id="formFace">
 
-
+                        <button class="inputEnviar"><p>Salvar</p></button>
                     </form>
                 </div>
                 <img class ="confgFoto" src="/img/engrenagem.png" alt="">
@@ -87,8 +80,8 @@
 
         </aside>
 
-        
-        <script src="/js/usuario-include.js"></script>
+        <div id="error"></div>
+        <script src="/js/users/usuario-include.js"></script>
     </body>
 
 </html>
