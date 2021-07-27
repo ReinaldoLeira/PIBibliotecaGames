@@ -38,8 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         model: 'perfis'
       }
     },
-    blocked: DataTypes.BOOLEAN(1),
-    imgJogo: DataTypes.STRING(200)
+    blocked: DataTypes.BOOLEAN(1)
   }, {
     sequelize,
     modelName: 'Analise',

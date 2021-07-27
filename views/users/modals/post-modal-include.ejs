@@ -1,14 +1,16 @@
 <div class="modalPost">
-            
-    <form action="/users/posts" method="POST" class=" formPost">
+    <div class=" formPost">     
+    <form method="POST" >
         <div class="divTitulo">
-            <input type="text" name="tituloPost" id="" placeholder= "Digite o titulo" class="inputTitulo" autocomplete="off">
+            <input type="text" name="tituloPost" id="tituloPost" placeholder= "Digite o titulo" class="inputTitulo" autocomplete="off">
         </div>
-    <textarea name="userPost" id="" cols="30" rows="10" placeholder="DIGITE SEU POST AQUI com max 1000 caracters" class="textareaPost" autocomplete="off"></textarea>
+    <textarea name="userPost" id="userPost" cols="30" rows="10" placeholder="DIGITE SEU POST AQUI com max 300 caracters" class="textareaPost" autocomplete="off" maxlength="300"></textarea>
+        </form>
         <div class="sendClose">
-            <input type="submit" value="SEND" class="inputPost">
+            <button type="submit" class="inputPost"><p>Save</p></button>
             <img src="/img/close.png" alt="" class="closeButton">
         </div>
-    </form>
-
+    
+</div>   
 </div>
+

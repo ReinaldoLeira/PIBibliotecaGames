@@ -10,3 +10,6 @@ module.exports.termo = (req,res) => {
 module.exports.contato = (req,res) => {
     res.render('./home/contato', {usuario: req.session.usuario})
 }
+
+
+

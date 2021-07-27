@@ -39,7 +39,7 @@ async function modalAnalise() {
         selectAnalise.innerHTML +=
             `<div class="analise">
                 <div class="imagemAnalise">
-                    <img src="${analises.imgJogo}" alt="" class='imgJogo' >
+                    <img src="${analises.Jogo.capa}" alt="" class='imgJogo' >
                 </div>
                 <div class="titulo-Analise">
                     <div class="tituloA">

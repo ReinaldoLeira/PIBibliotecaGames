@@ -2,101 +2,10 @@ const fs = require('fs');
 const path =require('path');
 const bcrypt = require('bcrypt');
 const noticias = require('../model/noticias.json')
-const models = require('../models')
+const models = require('../models');
 const { Op } = require('sequelize');
 const e = require('express');
 
-
-//Controller para index
-module.exports.index = async (req, res) => { 
-    const top =  await models.Jogo.findAll() 
-    const noticia = noticias
-    res.render ('index', {
-        usuario: req.session.usuario,
-        jogos: top,
-        noticias: noticia
-    })};
-
-//Controle das rota GET >> POST
-module.exports.login = (req, res) => { res.render('./users/login', {
-    usuario: req.session.usuario,
-    error:{msg : '' }
-    })
-};
-
-module.exports.logar = (async(req, res) => {    
-    try{
-        const formBody = req.body
-        const findUser = await models.User.findOne({ where: { email: formBody.email } })
-        if(!formBody.email || !formBody.senha){
-            throw new Error('caixa vazia')
-        }
-        if (!findUser) {
-            throw new Error('não achei o usuario')
-        }
-        if (!bcrypt.compareSync(formBody.senha, findUser.senha)){        
-            throw new Error('senha errada')
-        }
-        const findPerfil = await models.Perfil.findOne({ where: { id : findUser.id} })
-        req.session.usuario = findPerfil 
-        return res.status(200).send({message: 'usuario Logado'}) 
-        }catch (e) {
-            return res.status(400).send({message : e.message, status:400})
-        }
-                   
-
-});
-//Controle das rotas GET >> POST
-module.exports.registrar = (req, res) => { res.render('./users/cadastrar', { usuario: ''})};
-
-module.exports.registrado = (async (req, res) => { 
-    try{
-        const formBody = req.body;
-        if (!formBody.email || !formBody.senha  || !formBody.resenha || !formBody.usuario ){
-            throw new Error('Todos os dados são obrigatorios')
-        }
-        if (formBody.senha !== formBody.resenha) {     
-            throw new Error('senha e resenha erradas')
-        }
-        const comparacaoUsuario = await models.Perfil.findOne({ where: { usuario: formBody.usuario } });  
-        if (comparacaoUsuario) {
-            throw new Error('Ja existe o Usuario')   
-        }
-        const comparacaoEmail = await models.User.findOne({ where: { email: formBody.email } })
-        if (comparacaoEmail) {                           
-            throw new Error('E-mail ja existe')      
-        }
-        const hash = bcrypt.hashSync(formBody.senha, 10);
-        const perfil = await models.Perfil.create({
-            blocked : '0',
-            usuario: formBody.usuario
-        })
-        const perfilCriado =  (value) =>{
-            if(value) {
-                console.log('perfilCriado')
-                return value.id
-            }else{
-                return console.log('perfil não foi criado')
-            }
-
-        }
-        await models.User.create ({ 
-            senha: hash,
-            email: formBody.email,
-            blocked: '0',
-            role: 'USER',
-            idPerfis: perfilCriado(perfil)
-
-        })
-        await models.Biblioteca.create({
-            idPerfis: perfil.id
-        })
-        res.status(200).send({cadastro: 'Cadastrado'})  
-        }catch (e) {
-            return res.status(400).send({message : e.message, status:400})
-        }
-   
-        });
 
 module.exports.sendConfigUsers = (async(req,res,next) => {
 
@@ -109,6 +18,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
             },{
             where : {id : usuarioLogado.id}})
         }
+
         if (!formBody.usuario == '') {
             const procurarPerfil = await models.Perfil.findOne({ where: { usuario: formBody.usuario }});   
             if(!procurarPerfil){
@@ -129,6 +39,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
                 { where: {id: usuarioLogado.id}
             })
         }
+
         if (!formBody.urlInsta == '') {
             await models.Perfil.update({
                 instagram : formBody.urlInsta
@@ -136,6 +47,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
                 { where: {id: usuarioLogado.id}
             })
         }
+
         if (!formBody.urlTwitter == '') {
             await models.Perfil.update({
                 twitter : formBody.urlTwitter
@@ -143,6 +55,7 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
                 { where: {id: usuarioLogado.id}
             })
         }
+
         if (!formBody.urlFace == '') {
             await models.Perfil.update({
                 facebook : formBody.urlFace
@@ -150,42 +63,44 @@ module.exports.sendConfigUsers = (async(req,res,next) => {
                 { where: {id: usuarioLogado.id}
             })
         }
-        const findPerfil = await models.Perfil.findOne({ where : { id: usuarioLogado.id} })
-        
+
+        const findPerfil = await models.Perfil.findOne({ where : { id: usuarioLogado.id} })        
         req.session.save(function() {
             req.session.usuario = findPerfil
             res.status(200).send({cadastro: 'Cadastrado'})
         })
 
-    }catch (e) {
+    } catch (e) {
         return res.status(400).send({message : e.message, status:400})
     }
     })
+
+module.exports.posts = (async (req, res, next) => {
+        const usuario = req.session.usuario    
+        res.render('./users/posts', {usuario: req.session.usuario})
+});
+
 module.exports.sendPosts = (async(req,res,next)=> { 
 
     const formBody = req.body;
     const usuarioLogado = req.session.usuario
 
-    if(formBody.userPost !== '' && formBody.tituloPost !== '') {
+    try{
+        if (formBody.userPost == '' && formBody.tituloPost == '') {
+            throw new Error('não pode ter campo Vazio')
+
+        }
+       
         await models.Post.create({
             descricao : formBody.userPost,
             titulo : formBody.tituloPost,
             idPerfis : usuarioLogado.id
         })
-                
-    }else { 
-        console.log('não foi escrito :)')
+        res.status(200).send({criado:'criado'})
+    }catch (e) {
+        res.status(400).send({message : e.message, status:400})
     }
-    res.redirect('/users/posts')
-
-
 })
-
-module.exports.posts = (async (req, res, next) => {
-
-    const usuario = req.session.usuario    
-    res.render('./users/posts', {usuario: req.session.usuario})
- });
 
 module.exports.deletPost = (async(req,res,next)=> {
     const usuario = req.session.usuario
@@ -220,29 +135,24 @@ module.exports.criarAnalise = (async(req,res,next)=> {
     const usuario = req.session.usuario
     const formBody = req.body
     console.log(formBody)
-    
-    const jogo = await models.Jogo.findOne({
-        where: {id : formBody.idJogo}
-    })
-    console.log(jogo)
 
-    const criarAnalise = await models.Analise.create({
+    try{
+        if(formBody.nota > 5){
+            throw new Error('não pode mais que 5')
+        }
+        await models.Analise.create({
 
-        titulo: formBody.titulo,
-        analise: formBody.analise,
-        nota: formBody.nota,
-        idJogos: formBody.idJogo,
-        blocked: '0',
-        idPerfis: usuario.id,
-        imgJogo: jogo.capa
-    })
-    console.log(criarAnalise.toJSON())
-    if(criarAnalise){
-        res.redirect('/users/analise')
-    }else{
-        return res.send('não foi criado')
+            titulo: formBody.titulo,
+            analise: formBody.analise,
+            nota: formBody.nota,
+            idJogos: formBody.idJogo,
+            blocked: '0',
+            idPerfis: usuario.id,        
+        })
+        res.status(200).send('criado')
+    } catch (e) {
+        return res.status(400).send({message : e.message, status:400})
     }
-
 
 })
 
@@ -258,15 +168,19 @@ module.exports.criarMidia = async (req, res) => {
     const usuario = req.session.usuario;
     const formBody = req.body;
     console.log(formBody)
-    const criarMidia = await models.Midia.create({
-        tipo: formBody.tipo,
-        path: formBody.url, 
-        idPerfis: usuario.id,
-        idJogos: formBody.selectJogo
-    })
 
-    if(criarMidia) {
-        res.redirect('/users/midias')
+    try{
+        const criarMidia = await models.Midia.create({
+            tipo: formBody.tipo,
+            path: formBody.url, 
+            idPerfis: usuario.id,
+            idJogos: formBody.selectJogo
+        })
+        if(criarMidia) {
+            res.redirect('/users/midias')
+        }
+    } catch {
+        return res.status(400).send({message : e.message, status:400})
     }
 }
 
@@ -309,9 +223,13 @@ module.exports.deletarMeuJogo = async (req,res) => {
     try {
         const acharBiblioteca = await models.Biblioteca.findOne({where : { id : usuario.id}})
         const deletarBiblioteca = await models.BibliotecaJogo.destroy ({where: { id: id, idBibliotecas: acharBiblioteca.id }})
-        return res.redirect('/users/meusjogos')
-    }catch{
-        return res.redirect('/users/meusjogos')
+        if(deletarBiblioteca){
+            res.status(200).send('foi')
+        }else{
+            throw new Error('Não foi')
+        }      
+    }catch (e){
+        res.status(400).send({message : e.message, status:400})
     }
 
 
@@ -322,4 +240,4 @@ module.exports.deletarMeuJogo = async (req,res) => {
 module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {usuario: req.session.usuario}) };
 
 
-module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario, error:'' })};
+module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario})};
