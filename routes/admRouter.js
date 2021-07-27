@@ -34,6 +34,7 @@ router.post('/painel/jogo/3/edit/:id',admController.salvarPlataforma)
 
 //sistema
 router.get('/painel/sistema',admController.painelSistema)
+router.post('/painel/sistema',admController.criarNoticia)
 router.get('/painel/sistema/0',admController.painelSistema0)
 router.get('/painel/sistema/1',admController.painelSistema1)
 router.get('/painel/sistema/2',admController.painelSistema2)

@@ -1,31 +1,41 @@
-<link rel="stylesheet" href="/css/users/cadastrar.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users/cadastrar.css">
+    <title>Administração</title>
+</head>
+<body>
 
-
-
-<form action="/registrar" method="POST" class="noticiaForm">
+<form action="/gamepadm/painel/sistema" method="POST" class="noticiaForm">
     <h2 class="CadastroH2">Cadastrar Noticias</h2>
     <div class="field">
         <label class="label" for="titulo">Titulo da noticia:</label>
         <div class="control">
             <input class="tituloNoticia" type="text" name="titulo" autocomplete="off" required/>
         </div>
-        <label class="label" for="titulo">SubTitulo da noticia:</label>
+        <!-- <label class="label" for="titulo">SubTitulo da noticia:</label>
         <div class="control">
             <input class="tituloNoticia" type="text" name="titulo" autocomplete="off" required/>
+        </div> -->
+    </div>
+    <div class="field">
+        <label class="label" for="descricao">Noticia:</label>
+        <div class="control">
+            <textarea class="NoticiaTextarea" name="descricao" required></textarea>
         </div>
     </div>
     <div class="field">
-        <label class="label" for="noticia">Noticia:</label>
+        <label class="label" for="capa">Imagens:</label>
         <div class="control">
-            <textarea class="NoticiaTextarea" name="noticia" required></textarea>
-        </div>
-    </div>
-    <div class="field">
-        <label class="label" for="img">Imagens:</label>
-        <div class="control">
-            <input type="file" name="img" >
+            <input type="text" name="capa" >
             <img src="" >
         </div>
     </div>
 
     <a href=""><input class="button" type="submit" value="Criar"/></a>
+</form>
+</body>
+</html>

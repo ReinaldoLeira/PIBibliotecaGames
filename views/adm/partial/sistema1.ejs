@@ -1,1 +1,38 @@
-sistema1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+</head>
+<body>
+    <div class="lista-geral">
+        <div class="tituloLista">
+            <h2>Lista de Noticias</h2>
+        </div>
+            <hr class="hrNoticia"/>
+        <table class="tabelaNoticias">
+            <thead class="linha1">
+                <th class="colunaNoticia">Titulo</th>
+                <th class="colunaNoticia">SubTitulo</th>
+                <th class="colunaNoticia">Descrição</th>
+                <th class="colunaNoticia">Editar</th>
+            </thead>
+            <tbody class="linha2">
+                <% noticias.forEach(noticias => { %>  
+                    <tr>
+                        <td class="colunaNoticia"> <%= noticias.titulo %></td>
+                        <td class="colunaNoticia"> <%= noticias.SubTitulo %></td>
+                        <td class="colunaNoticia"><%= noticias.descricao %></td>
+                        <td class="colunaNoticia">
+                            <a href="#">Editar</a>
+                            <a href="#">Excluir</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>    
+    </div>
+</body>
+</html>
