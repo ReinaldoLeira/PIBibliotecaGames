@@ -93,7 +93,7 @@
 .inputEnviar{
 
     margin: auto;
-    font-size: 20em;
+    font-size: 15rem;
     color: white;
     width: 20vw;
     max-width:200px;
@@ -167,6 +167,7 @@
     border-radius: 20px;
     box-sizing: border-box;
     border: 2px solid #000000;
+    padding: 2%;
 
 }
 
@@ -191,6 +192,7 @@
     max-width: 300px;
     height: 15vh;
     max-height: 150px;
+    padding: 1% 2%;
     
     background: #FFFFFF;
     border: 1px solid #000000;

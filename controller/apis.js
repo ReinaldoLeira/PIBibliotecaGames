@@ -9,7 +9,7 @@ module.exports.acharJogo =  async (req,res) => {
 module.exports.userAnalise = async (req,res) => {
     
     const usuario = req.session.usuario
-    const acharAnalise = await models.Analise.findAll({
+    const acharAnalise = await models.Analise.findAll({ include: 'Jogo',
         where: {
             idPerfis:  usuario.id
         }, order: [['createdAt', 'DESC']]

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {login, logar, registrar, registrado, index , sair } = require ('../controller/usersController');
+const {login, logar, registrar, registrado, index} = require ('../controller/indexController');
+const { sair } = require ('../controller/usersController');
 const auth = require('../middlewares/auth');
 const redirectSession= require('../middlewares/redirectSession')
 /* GET home page. */

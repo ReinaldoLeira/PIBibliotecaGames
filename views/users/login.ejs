@@ -6,11 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/users/login.css">
         <title>Login</title>
+        
 
     </head>
 
     <body>
-
+        <div id="error"></div>
         <header class="login-header">
             <%- include('../home/header.ejs'); %>
         </header>
@@ -22,17 +23,18 @@
                     <p class="loginText">LOGIN</p>
     
                     <div class="caixaForm">
-                        <form action="/login" method="POST">
+                        <form method="POST" id='formLogin'>
                             <div class="caixainput">
                             <label for="email" class="textInput">email:</label>
-                            <input type="email" name="email" class="caixaInput" autocomplete="off" required>
+                            <input type="email" name="email" class="caixaInput" autocomplete="off" required id='email'>
                             
     
                             <label for="senha" class="textInput">Senha:</label>
-                            <input type="password" name="senha" class="caixaInput" autocomplete="off" required>
+                            <input type="password" name="senha" class="caixaInput" autocomplete="off" required id="senha">
                                 
                             </div>
-                        <input type="submit" value="ENTRAR" class="inputSubmit"/>
+                            <botton value="ENTRAR" class="inputSubmit"><p>ENTRAR</p></botton>
+                        </form>
                     </div>
     
                     <div class="aLink">
@@ -57,5 +59,7 @@
             <%- include('../home/footer.ejs'); %>
         </footer>
         
+        <div id="error"></div>
+        <script src="/js/index/login.js"></script>
     </body>
 </html>
