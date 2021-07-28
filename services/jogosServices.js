@@ -13,7 +13,7 @@ module.exports.criarJogoDB = async (data) => {
         lancamento: jogo.lancamento,
         capa: jogo.capa,     
         validado: 0,   
-        createdBy: 'testeAdmin' 
+        createdBy: 1 
 })  
 
 for(let i = 0; i < generos.length; i++ ){
