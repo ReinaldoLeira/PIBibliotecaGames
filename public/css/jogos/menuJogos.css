@@ -1,5 +1,6 @@
 .asideMenuJogos{
-    height: 100vh;   
+    height: 100vh;
+    max-height:4600px;   
     border-radius: 25px;  
     font-size: 10rem; 
     text-align: center;                                                  

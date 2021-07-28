@@ -13,42 +13,41 @@
         <%- include('../home/header.ejs') %> 
     </header>
     <div class="geral">
-    <div class="pai">
-        <div class="analiseJogo-div">
-            <ul>
-                <h2>Análises de Usuários</h2>
-                <h3>Exibindo <%=analises.length%> análises</h3>
-                <% for(const analise of analises){%>
-                <li>
-                    <div class="analise">
-                        <ul>
-                            <li class="center">
-                                <img src="<%=analise.nota>=3?'/img/like.png':'/img/dislike.png'%>" alt="<%=analise.nota>=3?'like':'dislike'%>" width="40px" height="40px">
-                                <h3><%=analise.tituloAnalise%></h3></li>
-                            <li class="flex">
-                                <div class="w-30"><img src="/img/avatar.png" width="100px" height="100px"></div>
-                                <div class="w-70"><p><%=analise.analise%></p></div>
-                            </li> 
-                        </ul>
-                    </div>
-                </li>
-                <%}%>                
-            </ul>
+        <div class="pai">
+            <div class="analiseJogo-div">
+                
+                <%if(analiseJogo.length > 0 ){ %>
+                    <% for(const analises of analiseJogo){%>
+                         <div class="conteudoCadaANalise">
+                             <div class="linkDoPerfil">
+                                <a href="http://"><img src="https://inovaveterinaria.com.br/wp-content/uploads/2015/04/gato-sem-raca-INOVA-scaled.jpg" alt=""></a>
+                             </div>
+                             <div class="tituloEConteudo">
+                                 <div class="tituloDaCaixaAnalise">
+                                     <p><%=analises.titulo%></p>
+                                     <p class="analiseNota"><%=analises.nota%></p>
+                                     <img src="/img/estrelinha.png" class="imgEstrellinha">
+                                 </div>
+                                 <div class="conteudoDaCaixaAnalise"><span><%=analises.analise%></span></div>
+                             </div>
+                         </div>
+                     <%}%>
+                 <%} %> 
+            </div>
+            <div class="jogo">
+                <ul>
+                    <li><a href="/jogos/perfil/<%=jogo.id%>"><img src="<%=jogo.capa%>" width="400px" height="500px"></a></li>
+                    <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.descricao%></p></li>
+                    <% let aux = 0;for(let analise of analises){%>
+                        <%aux+=analise.nota%> 
+                    <%}%>
+                    <li class="media"><h4>Avaliação Média:</h4><img src="/img/nota<%=Math.round(aux/analises.length) %>.png" width="70px" height="70px"></li>
+                </ul>
+            </div>
         </div>
-        <div class="jogo">
-            <ul>
-                <li><a href="/jogos/perfil/<%=jogo.id%>"><img src="<%=jogo.capa%>" width="400px" height="500px"></a></li>
-                <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.descricao%></p></li>
-                <% let aux = 0;for(let analise of analises){%>
-                    <%aux+=analise.nota%> 
-                <%}%>
-                <li class="media"><h4>Avaliação Média:</h4><img src="/img/nota<%=Math.round(aux/analises.length) %>.png" width="70px" height="70px"></li>
-            </ul>
-        </div>
-    </div>
-    <aside class="fundoVerde">
-        <%- include('../jogos/menuJogos.ejs') %>
-    </aside>
+        <aside class="fundoVerde">
+            <%- include('../jogos/menuJogos.ejs') %>
+        </aside>
     </div>
     <footer>
         <%- include('../home/footer.ejs') %> 
