@@ -62,9 +62,11 @@ module.exports.perfil = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
+    const analiseJogo = await db.Analise.findAll({include:'Jogo', where: {idJogos : jogo.id}})
+    console.log(analiseJogo)
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
-    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
 }
 
 module.exports.listar = async (req, res) => {
