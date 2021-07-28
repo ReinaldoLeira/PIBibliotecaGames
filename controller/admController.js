@@ -52,6 +52,14 @@ module.exports.painelJogo1 = async (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', jogos})
 }
 
+module.exports.procurarJogo = async (req, res) => {
+    const nome = req.query.pesquisarJogo
+    
+    const jogos = await jogosServices.pesquisarJogo(nome)
+    console.log(`3 - ${jogos}`)
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', jogos})
+}
+
 module.exports.editarJogo = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
     const generos = await db.Genero.findAll()

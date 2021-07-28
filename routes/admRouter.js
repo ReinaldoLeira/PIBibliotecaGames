@@ -16,6 +16,7 @@ router.get('/painel/jogo/0',admController.painelJogo0)
 router.post('/painel/jogo/0',admController.criarJogo)
 //jogo-listar
 router.get('/painel/jogo/1',admController.painelJogo1)
+router.get('/painel/jogo/1/pesquisar',admController.procurarJogo)
 router.get('/painel/jogo/1/edit/:id',admController.editarJogo)
 router.post('/painel/jogo/1/edit/:id',admController.salvarJogo)
 router.get('/painel/jogo/1/deletar/:id',admController.deletarJogo)
