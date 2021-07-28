@@ -36,15 +36,16 @@
         </div>
         </main>
         <aside class="fundoVerde asideProcurarJogos pai coluna">
-            <form action="/jogos/" method="GET">
+            <form action="/jogos/pesquisar" method="GET">
             <div id="pesquisar">
                 <label>Pesquisar</label>
-                <p><input type="text" placeholder="Buscar"></p>
+                <p><input type="text" placeholder="Buscar" name="nome"></p>
             </div>
             <div id="plataforma">
                 <label>Plataforma</label>
                 <p>
                     <select name="plataforma" id="plataformaId">
+                        <option value=""></option>
                         <%for(let plataforma of plataformas){%> <option value="<%=plataforma.id%>"><%=plataforma.nome%></option> <%}%>                        
                     </select>
                 </p>
@@ -52,10 +53,11 @@
             <div id="categoria">
                 <p><label>Categoria</label></p>
                 <%for(let genero of generos){%> <p>
-                    <input type="checkbox" id="<%=genero.nome%>Id" name="categoria" value="Ação" />
+                    <input type="checkbox" id="<%=genero.nome%>Id" name="genero" value="<%=genero.id%>" />
                     <label for="<%=genero.nome%>Id"><%=genero.nome%></label>
                 </p><%}%>                
             </div>
+            <input type="submit">
             </form>
         </aside>
     </container>

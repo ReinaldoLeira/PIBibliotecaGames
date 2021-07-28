@@ -13,6 +13,7 @@ router.get('/midia/:id',jogosController.midia)
 router.get('/perfil/:id',jogosController.perfil)
 
 router.get('/',jogosController.listar)
+router.get('/pesquisar',jogosController.procurar)
 
 router.get('/cadastra', jogosController.cadastra)
 

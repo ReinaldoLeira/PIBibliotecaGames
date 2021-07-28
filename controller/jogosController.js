@@ -1,6 +1,7 @@
 const fs = require('fs');
 const db = require('../models')
 const { Op } = require('sequelize')
+const jogosServices = require('../services/jogosServices')
 let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
 const noticias = require('../model/noticias.json');
@@ -77,6 +78,18 @@ module.exports.listar = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
     res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
 }
+module.exports.procurar = async (req, res) => {
+    const nome = req.query.nome
+    const plataforma = req.query.plataforma
+    const genero = [].concat(req.query.genero)
+    
+    const jogos = await jogosServices.pesquisarJogo(nome, plataforma, genero)
+    console.log(jogos)
+    const generos = await db.Genero.findAll()
+    const plataformas = await db.Plataforma.findAll()
+    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
+}
+
 
 module.exports.cadastra = (req, res) => {
     res.render('./jogos/cadastraJogo', {usuario: req.session.usuario})
