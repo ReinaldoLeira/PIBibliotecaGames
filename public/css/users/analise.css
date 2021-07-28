@@ -100,6 +100,7 @@ body{
     font-size: 10em;
     margin: 2px 0;
     justify-content: space-between;
+    word-break: break-all;
     
 }
 .nota{
@@ -118,6 +119,7 @@ body{
     box-sizing: border-box;
     border-radius:  0 0 50px 0;
     padding: 10px;
+    word-break: break-all;
     
     
     font-size: 10em;

@@ -49,13 +49,15 @@
                                        <a href="http://"><img src="https://inovaveterinaria.com.br/wp-content/uploads/2015/04/gato-sem-raca-INOVA-scaled.jpg" alt=""></a>
                                     </div>
                                     <div class="tituloEConteudo">
-                                        <div class="tituloDaCaixaAnalise"><p><%=analises.titulo%></p></div>
+                                        <div class="tituloDaCaixaAnalise">
+                                            <p><%=analises.titulo%></p>
+                                            <p class="analiseNota"><%=analises.nota%></p>
+                                            <img src="/img/estrelinha.png" class="imgEstrellinha">
+                                        </div>
                                         <div class="conteudoDaCaixaAnalise"><span><%=analises.analise%></span></div>
                                     </div>
                                  </div>
-
                             <%}%>
-
                         <%} %> 
                          
                 </div>

@@ -71,7 +71,7 @@
 .conteudoCadaANalise{
 
     width: 25vw;
-    min-width: 400px;
+    min-width: 450px;
     height: 20vh;
     background-color: rgb(78, 99, 81);
     margin: auto 1%;
@@ -115,11 +115,27 @@
     display: flex;
     align-items: center;
     border-bottom: 2px rgb(78, 99, 81) solid ;
-    padding: 10px;
+    
     color: rgb(156, 156, 156);
+    box-sizing: border-box;
+    padding-left: 10px;
+    
+
+}
+
+.analiseNota{
+    margin-left: auto;
+    font-size: 10rem;
+    margin-top: 5%;
+
+}
+.imgEstrellinha{
+    width: 5%;
+    height: 60%;
+    margin: 1%;
 }
 .conteudoDaCaixaAnalise{
-    
+    line-height: 17rem;
     width: 100%;
     height: 82%;
     margin: auto;
@@ -127,7 +143,10 @@
     word-break: break-all;
     font-size: 10rem;
     color: rgb(151, 151, 151);
+    overflow: auto;
+
 }
+
 
 /* .analise{
     background: white;
