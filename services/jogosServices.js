@@ -100,16 +100,15 @@ for(let i = 0; i < plataformas.length; i++){
 }
 }
 
-module.exports.pesquisarJogo = async (nome) => {
-    const resultados = await db.Jogo.findAll({
+module.exports.pesquisarJogo = async (nome, plataform, genero) => {
+    let resultados = await db.Jogo.findAll({
         include:['genero','plataforma'],
-        where: {
+        where: {            
             nome: {
                 [Op.like]: `%${nome}%`
-            }
-        }
-       
-    })
+            }            
+        }       
+    })   
     console.log(`2 - ${resultados}`)
     return resultados
 }
