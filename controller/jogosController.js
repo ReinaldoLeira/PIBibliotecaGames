@@ -91,18 +91,14 @@ module.exports.procurar = async (req, res) => {
 }
 
 
-module.exports.cadastra = (req, res) => {
-    res.render('./jogos/cadastraJogo', {usuario: req.session.usuario})
+module.exports.cadastra = async (req, res) => {
+    const plataformas = await db.Plataforma.findAll()
+    const generos = await db.Genero.findAll()
+    res.render('./jogos/cadastraJogo', {usuario: req.session.usuario, generos, plataformas})
 }
 
-module.exports.cadastrar = (req, res) => {
-    const jogoNovo = {
-        id: ++arrayJogos[0],
-        ...req.body
-    }
-    arrayJogos[0] = jogoNovo.id
-    arrayJogos.push(jogoNovo)    
-    salvarJogos(arrayJogos)
+module.exports.cadastrar = async (req, res) => {
+    const jogoNovo = await jogosServices.criarJogoDB(req.body)
     res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
 module.exports.noticias = (req, res) => {

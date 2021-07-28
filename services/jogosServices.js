@@ -27,6 +27,7 @@ for(let i = 0; i < plataformas.length; i++){
         idJogos: novoJogo.id,
         idPlataformas: plataformas[i]
 })}
+return novoJogo
 }
 
 module.exports.editarJogoDB = async (body, params) => {

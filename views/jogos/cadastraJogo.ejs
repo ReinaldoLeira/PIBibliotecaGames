@@ -21,23 +21,34 @@
             </section>
 
             <section class="fundoBranco" id="cadastroJogo">
-             <form class="pai coluna formCadastraJogo" action="/jogos/cadastrar" method="POST">
-                <label for="nomeJogo">Nome do Jogo:</label>
-                <input class="camposCadastraJogo" type="text" id="nomeJogo"name="nomeJogo" autocomplete="off" required/>
-                <label for="siteJogo">Site Oficial:</label>
-                <input class="camposCadastraJogo" type="text" id="siteJogo"name="siteJogo" autocomplete="off" required/>
-                <label for="publisherJogo">Desenvolvedora:</label>
-                <input class="camposCadastraJogo" type="text" id="publisherJogo"name="publisherJogo" autocomplete="off" required/>
-                <label for="dataJogo">Data de Lançamento:</label>
-                <input class="camposCadastraJogo" type="text" id="dataJogo"name="dataJogo" autocomplete="off" required/>
-                <label for="plataformaJogo">Plataformas:</label>
-                <input class="camposCadastraJogo" type="text" id="plataformaJogo"name="plataformaJogo" autocomplete="off" required/>
-                <label for="sinopseJogo">Sinopse:</label>
-                <textarea class="camposCadastraJogo" id="sinopseJogo" name="sinopseJogo" autocomplete="off" required>Sinopse</textarea>
-                <label for="imgJogo">URL de Imagem do Jogo:</label>
-                <input class="camposCadastraJogo" type="text" id="imgJogo"name="imgJogo" autocomplete="off" required/>
-                <input class="camposCadastraJogo submitCadastraJogo" type="submit" value="Cadastrar"/>
-            </form>   
+                <form class="pai coluna formCadastraJogo" action="/jogos/cadastrar" method="POST">
+                    <label for="nomeJogo">Nome do Jogo:</label>
+                    <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" maxlength="120" required/>    
+                    <label for="publisherJogo">Desenvolvedora:</label>
+                    <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" maxlength="120" required/>
+                    <label for="dataJogo">Data de Lançamento:</label>
+                    <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" maxlength="10" required/>    
+                    <label for="sinopseJogo">Sinopse:</label>
+                    <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse" maxlength="500"></textarea>
+                    <label for="imgJogo">URL de Imagem do Jogo:</label>
+                    <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" maxlength="500" required/>
+                    <label>Plataformas:</label>
+                    <div class="pai wrap">
+                        <%for(let plataforma of plataformas){%>
+                        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>" />
+                        <label class="labelCheckbox" for="plat<%= plataforma.nome %>"><%= plataforma.nome %> </label></div>
+                        <%}%>
+                    </div>
+                    <label>Gêneros:</label>
+                    <div class="pai wrap">
+                        <%for(let genero of generos){%>
+                        <div> <input type="checkbox" id="gen<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>"/>
+                        <label class="labelCheckbox" for="gen<%= genero.nome %>"><%= genero.nome %> </label></div>
+                        <%}%>
+                        </div>    
+                    <input  class="submitCadastraJogo" type="submit" value="Cadastrar"/>
+                </form> 
+               
             </section>
         </main>
        
@@ -47,5 +58,9 @@
         <%- include('../home/footer.ejs') %>
     </footer>
 </body>
-
+<script>
+    document.querySelector('textarea').onkeyup = () => {
+        document.querySelector('textarea').style.height = (document.querySelector('textarea').scrollHeight) + 'px'
+    }
+</script>
 </html>
