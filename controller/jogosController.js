@@ -35,9 +35,12 @@ module.exports.analise2 = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
+    const analiseJogo = await db.Analise.findAll({
+        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+    })
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
-    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
+    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
 }
 
 module.exports.historico = async (req, res) => {
@@ -63,8 +66,9 @@ module.exports.perfil = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
-    const analiseJogo = await db.Analise.findAll({include:'Jogo', where: {idJogos : jogo.id}})
-    console.log(analiseJogo)
+    const analiseJogo = await db.Analise.findAll({
+        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+    })
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
     res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
