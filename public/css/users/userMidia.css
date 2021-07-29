@@ -300,6 +300,12 @@ body {
     display: block;
     margin:auto
 }
+#titulo-cxVideo{
+    height: 20px;
+    width: 70%;
+    display: block;
+    margin:auto
+}
 
 .buttonAdd{
     position: fixed;
