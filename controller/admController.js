@@ -2,7 +2,6 @@ const usersArray = require('../model/users.json')
 const jogosServices = require('../services/jogosServices')
 const db = require('../models')
 const { Op } = require('sequelize')
-const noticia = require('../models/noticia')
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Cadastrar Notícias', 'Listar Notícias', 'Admin', ''] 

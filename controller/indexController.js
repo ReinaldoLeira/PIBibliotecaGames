@@ -5,11 +5,11 @@ const noticias = require('../model/noticias.json')
 
 module.exports.index = async (req, res) => { 
     const top =  await models.Jogo.findAll() 
-    const noticia = noticias
+    const noticias = await models.Noticia.findAll()
     res.render ('index', {
         usuario: req.session.usuario,
         jogos: top,
-        noticias: noticia
+        noticias: noticias
     })};
 
 
