@@ -174,7 +174,8 @@ module.exports.criarMidia = async (req, res) => {
             tipo: formBody.tipo,
             path: formBody.url, 
             idPerfis: usuario.id,
-            idJogos: formBody.selectJogo
+            idJogos: formBody.selectJogo,
+            titulo: formBody.titulo
         })
         if(criarMidia) {
             res.redirect('/users/midias')
