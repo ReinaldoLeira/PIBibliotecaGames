@@ -29,13 +29,13 @@
             <div>
                 <a class="btn-p" href="/jogos/noticias"><h3>Noticias</h3></a>
                 <div class="column">
-                    <% for (let i = 0; i< noticias.length && i < 4; i++) { %> 
+                    <% noticias.forEach(noticias => { %>  
                     <div class="noticia">
-                        <h4><%= noticias[i].titulo %> </h4>
-                        <p><%= noticias[i].descricao %> </p>
-                        <button><a class="btn-w" href="/jogos/noticias/<%= noticias[i].id %>">Ver mais</a></button>
+                        <h4><%= noticias.titulo %> </h4>
+                        <p><%= noticias.descricao %> </p>
+                        <button><a class="btn-w" href="/jogos/noticias/<%= noticias.id %>">Ver mais</a></button>
                     </div>
-                    <% } %>
+                    <% }) %>
                 </div>
             </div>
 
