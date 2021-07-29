@@ -13,17 +13,17 @@
         <%- include('../home/header.ejs') %> 
     </header>
     <div>
-        <% for (let i = 0; i< noticias.length; i++) { %> 
+        <% noticias.forEach(noticias => { %>  
             <div class="linha">
                 <div class="noticia">
-                        <a class="btn-p" href="/jogos/noticias/<% noticias[i].id %>">
-                        <h4><%= noticias[i].titulo %> </h4>
-                        <p><%= noticias[i].descricao %> </p>
+                    <a class="btn-p" href="/jogos/noticias/<%= noticias.id %>">
+                        <h4><%= noticias.titulo %></h4>
+                        <p><%= noticias.descricao %></p>
                     </div>
                     <div><img class="img" src="/img/" ></div>
-                </div>
-            </a>
-        <% } %> 
+                </a>
+            </div>
+        <% }) %> 
     </div>
     <footer>
         <%- include('../home/footer.ejs') %> 

@@ -46,18 +46,18 @@
                 <p>
                     <select name="plataforma" id="plataformaId">
                         <option value=""></option>
-                        <%for(let plataforma of plataformas){%> <option value="<%=plataforma.id%>"><%=plataforma.nome%></option> <%}%>                        
+                        <%for(let plataforma of plataformas){%> <option value="<%=plataforma.nome%>"><%=plataforma.nome%></option> <%}%>                        
                     </select>
                 </p>
             </div>            
             <div id="categoria">
                 <p><label>Categoria</label></p>
                 <%for(let genero of generos){%> <p>
-                    <input type="checkbox" id="<%=genero.nome%>Id" name="genero" value="<%=genero.id%>" />
+                    <input type="checkbox" id="<%=genero.nome%>Id" name="genero" value="<%=genero.nome%>" />
                     <label for="<%=genero.nome%>Id"><%=genero.nome%></label>
                 </p><%}%>                
             </div>
-            <input type="submit">
+            <input type="submit"  class="submitProcurarJogos" value="Pesquisar">
             </form>
         </aside>
     </container>

@@ -4,7 +4,7 @@ const { Op } = require('sequelize')
 const jogosServices = require('../services/jogosServices')
 let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
-const noticias = require('../model/noticias.json');
+//const noticias = require('../model/noticias.json');
 
 
 //Salva o Array no  jogos.json
@@ -88,7 +88,6 @@ module.exports.procurar = async (req, res) => {
     const genero = [].concat(req.query.genero)
     
     const jogos = await jogosServices.pesquisarJogo(nome, plataforma, genero)
-    console.log(jogos)
     const generos = await db.Genero.findAll()
     const plataformas = await db.Plataforma.findAll()
     res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
@@ -105,12 +104,13 @@ module.exports.cadastrar = async (req, res) => {
     const jogoNovo = await jogosServices.criarJogoDB(req.body)
     res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
-module.exports.noticias = (req, res) => {
-    const noticia = noticias
-    res.render('./jogos/noticias', {
-        usuario: req.session.usuario,
-        noticias: noticia
-    })};
+module.exports.noticias = async (req, res) => {
+    const noticias = await db.Noticia.findAll({
+        include:'Perfil'
+    });
+    console.log(noticias)
+    res.render('./jogos/noticias', {usuario: req.session.usuario, noticias})
+}
 
     module.exports.noti = (req, res) =>{
         const noticia = noticias

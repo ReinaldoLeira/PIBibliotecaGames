@@ -2,7 +2,6 @@ const usersArray = require('../model/users.json')
 const jogosServices = require('../services/jogosServices')
 const db = require('../models')
 const { Op } = require('sequelize')
-const noticia = require('../models/noticia')
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Cadastrar Notícias', 'Listar Notícias', 'Admin', ''] 
@@ -54,9 +53,10 @@ module.exports.painelJogo1 = async (req, res) => {
 
 module.exports.procurarJogo = async (req, res) => {
     const nome = req.query.pesquisarJogo
+    const plataforma = req.query.plataforma ? req.query.plataforma : ""
+    const genero = req.query.genero ? req.query.genero : ""
+    const jogos = await jogosServices.pesquisarJogo(nome, plataforma, genero)
     
-    const jogos = await jogosServices.pesquisarJogo(nome)
-    console.log(`3 - ${jogos}`)
     res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'jogo', opcoes: opJogo, extra:'', jogos})
 }
 
