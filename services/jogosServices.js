@@ -111,7 +111,9 @@ module.exports.pesquisarJogo = async (nome, plataforma, genero) => {
                 }
            // ]         
         },
-        include: [{model: db.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, {model: db.Genero, as: 'genero', where: {nome:{ [Op.like]: `%${genero}%`}}}]
+        include: [
+            {model: db.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, 
+            {model: db.Genero, as: 'genero', where: {nome:{ [Op.or]: [genero, {[Op.like]: `%${genero}%`}]}}}]
     })   
     //console.log(`2 - ${resultados[0].plataforma[0]}`)
     return resultados
