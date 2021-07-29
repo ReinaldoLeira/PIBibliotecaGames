@@ -4,20 +4,20 @@
         <form action="/users/analise" method="POST">
             <div class="tituloAnalise"> 
                                       
-                <label for="titulo" placeholder="digite o titulo">Titulo</label>
-                <input type="text" name="titulo" id="analiseInput">                    
+                <label for="titulo">Titulo</label>
+                <input type="text" name="titulo" id="analiseInput"  placeholder="digite o titulo" maxlength="20" required>                    
             </div>
             <div class="areaAnalise">
-                <textarea name="analise" id="textAnalise" cols="30" rows="10" placeholder="digite a analise com max 300caracters"></textarea>
+                <textarea name="analise" id="textAnalise" cols="30" rows="10" placeholder="digite a analise com max 300caracters" maxlength="300" required></textarea>
             </div>
                 <div>
-                    <select name="idJogo" id="selecJogo">                       
+                    <select name="idJogo" id="selecJogo" required>                       
                     
                     </select>
                 </div>
                     <div class="cxRadio">
                         <p>nota</p>
-                        <input type="radio" name="nota" id="" value="1"> 
+                        <input type="radio" name="nota" id="" value="1" required> 
                         <label for="name">1</label>
                         
                         <input type="radio" name="nota" id="" value="2"> 

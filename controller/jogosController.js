@@ -1,6 +1,7 @@
 const fs = require('fs');
 const db = require('../models')
 const { Op } = require('sequelize')
+const jogosServices = require('../services/jogosServices')
 let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
 //const noticias = require('../model/noticias.json');
@@ -34,9 +35,12 @@ module.exports.analise2 = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
+    const analiseJogo = await db.Analise.findAll({
+        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+    })
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
-    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
+    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
 }
 
 module.exports.historico = async (req, res) => {
@@ -62,9 +66,12 @@ module.exports.perfil = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
+    const analiseJogo = await db.Analise.findAll({
+        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+    })
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
-    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada})
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
 }
 
 module.exports.listar = async (req, res) => {
@@ -75,19 +82,27 @@ module.exports.listar = async (req, res) => {
     const plataformas = await db.Plataforma.findAll()
     res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
 }
-
-module.exports.cadastra = (req, res) => {
-    res.render('./jogos/cadastraJogo', {usuario: req.session.usuario})
+module.exports.procurar = async (req, res) => {
+    const nome = req.query.nome
+    const plataforma = req.query.plataforma
+    const genero = [].concat(req.query.genero)
+    
+    const jogos = await jogosServices.pesquisarJogo(nome, plataforma, genero)
+    //console.log(jogos[0].toJSON())
+    const generos = await db.Genero.findAll()
+    const plataformas = await db.Plataforma.findAll()
+    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
 }
 
-module.exports.cadastrar = (req, res) => {
-    const jogoNovo = {
-        id: ++arrayJogos[0],
-        ...req.body
-    }
-    arrayJogos[0] = jogoNovo.id
-    arrayJogos.push(jogoNovo)    
-    salvarJogos(arrayJogos)
+
+module.exports.cadastra = async (req, res) => {
+    const plataformas = await db.Plataforma.findAll()
+    const generos = await db.Genero.findAll()
+    res.render('./jogos/cadastraJogo', {usuario: req.session.usuario, generos, plataformas})
+}
+
+module.exports.cadastrar = async (req, res) => {
+    const jogoNovo = await jogosServices.criarJogoDB(req.body)
     res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
 module.exports.noticias = async (req, res) => {

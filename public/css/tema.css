@@ -42,6 +42,7 @@ footer{
     padding: 2vh 0.5vw;
     border: 1px solid black;
 	box-shadow: 0.7vw 0.5vh 1vh grey;   
+    max-height: 900px;
 }
 
 .fundoBranco{

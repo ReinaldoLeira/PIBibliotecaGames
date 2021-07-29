@@ -55,10 +55,100 @@
     object-fit: scale-down;  
 }
 
+.caixaAnalisesJogo{
+    background-color: rgba(143, 143, 143, 0.562);
+    width: 100%;
+    height: 95%;
+    margin: auto;
+    display: flex;
+    overflow: auto;
+    box-shadow: 2px 2px 0px rgb(0, 0, 0);
+    
+    
+
+}
+
+.conteudoCadaANalise{
+
+    width: 25vw;
+    min-width: 450px;
+    height: 20vh;
+    background-color: rgb(78, 99, 81);
+    margin: auto 1%;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow:  2px 4px 0px rgba(0, 0, 0, 0.192);
+    
+}   
+.linkDoPerfil{
+    
+    width: 30%;
+    height:70%;
+    border-radius: 50%;
+    margin: auto 2%;
+    
+
+    background-color: white;    
+    border: 6px rgb(57, 68, 55) solid ;
+    padding: 1px;
+
+}
+.linkDoPerfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.tituloEConteudo{
+    width: 62%;
+    height: 90%;
+    background-color: rgb(65, 78, 63);
+    margin: auto 2%;
+    display: block;
+    box-sizing: border-box;
+    border: 1px black solid;
+}
+
+.tituloDaCaixaAnalise{
+    width: 100%;
+    height: 17%;
+    
+    display: flex;
+    align-items: center;
+    border-bottom: 2px rgb(78, 99, 81) solid ;
+    
+    color: rgb(156, 156, 156);
+    box-sizing: border-box;
+    padding-left: 10px;
+    
+
+}
+
+.analiseNota{
+    margin-left: auto;
+    font-size: 10rem;
+    margin-top: 5%;
+
+}
+.imgEstrellinha{
+    width: 5%;
+    height: 60%;
+    margin: 1%;
+}
+.conteudoDaCaixaAnalise{
+    line-height: 17rem;
+    width: 100%;
+    height: 82%;
+    margin: auto;
+    padding: 10px;
+    word-break: break-all;
+    font-size: 10rem;
+    color: rgb(151, 151, 151);
+    overflow: auto;
+
+}
 
 
-
-.analise{
+/* .analise{
     background: white;
     width: 50%;
 }
@@ -99,4 +189,4 @@
     width: 100%;
     text-align: center;
     padding-top: 13vh;
-}
+} */

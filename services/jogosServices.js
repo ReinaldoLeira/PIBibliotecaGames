@@ -1,6 +1,7 @@
 const db = require('../models')
 const { Op } = require('sequelize')
 
+
 module.exports.criarJogoDB = async (data) => {
     const generos = [].concat(data.idGeneros)
     const plataformas = [].concat(data.idPlataformas )
@@ -13,7 +14,7 @@ module.exports.criarJogoDB = async (data) => {
         lancamento: jogo.lancamento,
         capa: jogo.capa,     
         validado: 0,   
-        createdBy: 'testeAdmin' 
+        createdBy: 1 
 })  
 
 for(let i = 0; i < generos.length; i++ ){
@@ -27,6 +28,7 @@ for(let i = 0; i < plataformas.length; i++){
         idJogos: novoJogo.id,
         idPlataformas: plataformas[i]
 })}
+return novoJogo
 }
 
 module.exports.editarJogoDB = async (body, params) => {
@@ -98,4 +100,19 @@ for(let i = 0; i < plataformas.length; i++){
         })
     }
 }
+}
+
+module.exports.pesquisarJogo = async (nome, plataforma, genero) => {
+    let resultados = await db.Jogo.findAll({        
+        where: {
+           // [Op.and]: [            
+                nome: {
+                    [Op.like]: `%${nome}%`
+                }
+           // ]         
+        },
+        include: [{model: db.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, {model: db.Genero, as: 'genero', where: {nome:{ [Op.like]: `%${genero}%`}}}]
+    })   
+    //console.log(`2 - ${resultados[0].plataforma[0]}`)
+    return resultados
 }
