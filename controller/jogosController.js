@@ -84,7 +84,7 @@ module.exports.procurar = async (req, res) => {
     const genero = [].concat(req.query.genero)
     
     const jogos = await jogosServices.pesquisarJogo(nome, plataforma, genero)
-    console.log(jogos)
+    //console.log(jogos[0].toJSON())
     const generos = await db.Genero.findAll()
     const plataformas = await db.Plataforma.findAll()
     res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
