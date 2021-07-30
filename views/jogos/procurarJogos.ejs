@@ -17,12 +17,9 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div><%=jogos.length%> Jogos Cadastrados</div></div> 
-            <div class="pai jogosProcuraJogos">
-                <% for(let i=0; i<jogos.length && i < 15; i++){ %>
-                <a href="/jogos/perfil/<%=jogos[i].id%>"><img src="<%=jogos[i].capa%>"/><p><%=jogos[i].nome%></p></a>
-                
-                <% }%>                
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"> Jogos Encontrados: </div></div> 
+            <div class="pai jogosProcuraJogos" id="exibirJogos">
+                                
             </div>
             <div><ul class="pai paginasProcurarJogos" id="paginacaoProcurarJogos">
                 <li><a href="#" id="pl">L</a></li>
@@ -66,6 +63,7 @@
 </body>
 <script>
     const paginacao = document.querySelector('#paginacaoProcurarJogos')
+    const exibirJogos = document.querySelector('#exibirJogos')
     let cont = 1
     paginacao.onclick = (e) => {
         e.preventDefault()        
@@ -76,22 +74,28 @@
             cont = parseInt(valorPagina)
             selecionarPaginasMaior()
             mudarAtivo()
+            carregarJogos()
             return
             }
             cont = parseInt(valorPagina)
             selecionarPaginasMenor()
             mudarAtivo()
+            carregarJogos()
         }      
     }
     document.querySelector('#pl').onclick = (e) => {               
         descerPaginas()
         mudarAtivo()
+        carregarJogos()
     }   
 
     document.querySelector('#pr').onclick = (e) => {        
         subirPaginas()
         mudarAtivo()
+        carregarJogos()
     }   
+
+    window.onload = carregarJogos
 
     /* window.onkeydown = (e) => {
        if(e.key == 'l') {        
@@ -103,6 +107,18 @@
         mudarAtivo()
        }
     }*/
+
+    async function carregarJogos(){
+        const resultado = await fetch("http://localhost:3000/apis/listarjogos")
+        const jogos = await resultado.json()
+        await console.log(jogos)
+        exibirJogos.innerHTML = ""
+        for(let i= 15 * (cont - 1); i<jogos.length && i < (cont * 15); i++){
+            console.log(i)
+            exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
+        }
+        document.querySelector('#jogosEncontrados').innerText += jogos.length
+    }
 
     function mudarAtivo(){
         document.querySelector('.ativo').classList.remove('ativo')

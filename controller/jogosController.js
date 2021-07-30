@@ -74,13 +74,10 @@ module.exports.perfil = async (req, res) => {
     res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
 }
 
-module.exports.listar = async (req, res) => {
-    const jogos = await db.Jogo.findAll({
-        include:['genero','plataforma']
-    })
+module.exports.listar = async (req, res) => {    
     const generos = await db.Genero.findAll()
     const plataformas = await db.Plataforma.findAll()
-    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, jogos, generos, plataformas})
+    res.render('./jogos/procurarJogos', {usuario: req.session.usuario, generos, plataformas})
 }
 module.exports.procurar = async (req, res) => {
     const nome = req.query.nome
