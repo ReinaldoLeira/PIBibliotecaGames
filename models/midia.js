@@ -36,7 +36,8 @@ module.exports = (sequelize, DataTypes) => {
         model: 'jogos'
       }
 
-    }
+    },
+    titulo: DataTypes.STRING(30)
     
   }, {
     sequelize,
