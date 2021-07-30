@@ -74,3 +74,10 @@ module.exports.minhasBibliotecas = async (req,res) => {
         return res.redirect('/login')
     }
 }
+
+module.exports.listarJogos = async (req,res) => {    
+    const jogos = await models.Jogo.findAll({
+        attributes: ['nome', 'id', 'capa']
+    })
+    return res.send(jogos)
+}

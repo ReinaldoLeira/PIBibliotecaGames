@@ -66,6 +66,7 @@
     border-radius: 10px;
     width: 20%;
     font-size: 12rem;
+    font-family: PressStart2P;
 }
 .submitCadastraJogo:hover{
     cursor: pointer;
