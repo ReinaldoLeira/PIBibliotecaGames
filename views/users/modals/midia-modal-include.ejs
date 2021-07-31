@@ -7,13 +7,15 @@
          
      </div>
          <div class="imagemModal">           
-             <div class="divImg">
-                 <img src="." alt="">
-             </div>
+            
          <div class="cxImagem">
              <form action="/users/midias" method="POST" name="IMAGEM">
                  <label for="url">Link da Imagem</label>
                  <input type="url" name="url"  class="url">
+
+                 <label for="titulo">Titulo</label>
+                 <input type="text" name="titulo" id="titulo-cxImagem" maxlength="30">
+
                  <select name="selectJogo" class="selectJogo">
                      
                  </select>
@@ -27,6 +29,9 @@
                 <form action="/users/midias" method="POST" name="VIDEO">
                     <label for="url">Link da video</label>
                     <input type="url" name="url" id="" class="url">
+                    
+                    <label for="titulo">Titulo</label>
+                    <input type="text" name="titulo" id="titulo-cxImagem" maxlength="30">
                     <select name="selectJogo" class="selectJogo2">
                     
                     </select>

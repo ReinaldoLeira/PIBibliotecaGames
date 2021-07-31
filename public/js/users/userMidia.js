@@ -42,14 +42,19 @@ aba2.onclick = () =>{
         for (const video of body) {
             conteudo.innerHTML += `
             <div class="caixaImagem">
-                    <a href="${video.path}">
-                        <div class="caixaImagem-img"><img src="https://image.flaticon.com/icons/png/512/74/74617.png" alt=""></div>
-                    </a>
-                <form action="/users/midias/deletar/${video.id}" method="POST">
-                    <div class="caixaImagem-titulo">
-                        <button type="submit" class="sendMidia"> Deletar </button>
+                    <div class="caixaImagem-img">
+                        <a href="${video.path}">
+                            <img src="/img/video.png" alt="">
+                        </a>
                     </div>
-                </form>
+                    <div class="caixaImagemTitulo">
+                            <form action="/users/midias/deletar/${video.id}" method="POST"> 
+                                
+                                    <p class="tituloSendMidia-caixaImagem">Titulo</p>
+                                    <button type="submit" class="sendMidia">Deletar</button>
+                                
+                        </form>
+                    </div>
             </div>`
         }
     }

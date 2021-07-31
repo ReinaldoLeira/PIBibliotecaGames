@@ -104,15 +104,14 @@ for(let i = 0; i < plataformas.length; i++){
 
 module.exports.pesquisarJogo = async (nome, plataforma, genero) => {
     let resultados = await db.Jogo.findAll({        
-        where: {
-           // [Op.and]: [            
-                nome: {
-                    [Op.like]: `%${nome}%`
-                }
-           // ]         
+        where: {                   
+            nome: {
+                [Op.like]: `%${nome}%`
+            }                
         },
-        include: [{model: db.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, {model: db.Genero, as: 'genero', where: {nome:{ [Op.like]: `%${genero}%`}}}]
-    })   
-    //console.log(`2 - ${resultados[0].plataforma[0]}`)
+        include: [
+            {model: db.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, 
+            {model: db.Genero, as: 'genero', where: {nome:{ [Op.or]: [genero, {[Op.like]: `%${genero}%`}]}}}]
+    })       
     return resultados
 }

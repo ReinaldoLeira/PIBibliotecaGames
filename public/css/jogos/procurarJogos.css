@@ -6,11 +6,18 @@
 
 .asideProcurarJogos{
     height: 100vh;          
-    align-items: center;
+    align-items: center;    
 }
 
 .asideProcurarJogos label{
     font-size: 10rem;
+}
+
+.asideProcurarJogos input[type = text], select, option{
+    font-family: PressStart2P;
+    font-size: 10rem;
+    width: 90%;   
+    height: 3vh;
 }
 
 .pai{
@@ -58,17 +65,36 @@
 }
 
 .jogosProcuraJogos a{ 
-    width:  fit-content;
-    height: fit-content;      
+    width:  fit-content;    
+    max-width: 10vw;
+    height: fit-content;       
     margin-right: 5%;   
     text-decoration: none;
     text-align: center;
     color: black;
+    overflow: hidden;
 }
 .jogosProcuraJogos img{    
     width:  10vw;
     height: 25vh;
     object-fit: scale-down;  
+}
+.submitProcurarJogos{
+    color: #0E9AA7;
+    height: 4vh;
+    min-height: 4vh;
+    width: 80%;
+    background: white;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: PressStart2P;
+    font-size: 10rem;
+}
+.submitProcurarJogos:hover{
+    cursor: pointer;
+    color: white;
+    background: #0E9AA7;
 }
 
 #cadastradosProcurarJogos{
@@ -80,9 +106,26 @@
     border: 1px solid black;
     border-radius: 5px;
     background: #0e9aa7;
-    padding: 2px;
+    padding: 1vh;
+    height: 3vh;   
+     
+}
+#cadastradosProcurarJogos a{
+    text-decoration: none;
+    color: white;
+    
 }
 
 #cadastraProcurarJogos:hover{
     box-shadow: 0vw 0vh 2vh #0e9aa7;      
+}
+#categoria{
+    margin-top: 2vh;
+}
+#categoria input[type = checkbox]:hover ,  label:hover{
+    cursor: pointer;
+}
+
+#plataforma{
+    margin-top: 2vh;
 }

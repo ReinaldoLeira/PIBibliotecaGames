@@ -140,6 +140,9 @@
     text-decoration: none;
     color: black;
 }
+.tablePainelAdmin td a:hover{
+    box-shadow: 1px 4px 4px #0E9AA7;
+}
 .tablePainelAdmin td a img{
     width: 17rem;
     vertical-align: middle;  
@@ -225,11 +228,11 @@
 /* ====jogo1====*/
 
 .jogo1MaxH60{
-    max-height: 60%;
+    max-height: 55%;
     overflow: scroll;
 }
 .jogo1MaxH35{
-    max-height: 35%;
+    max-height: 30%;
     overflow: scroll;
 }
 
