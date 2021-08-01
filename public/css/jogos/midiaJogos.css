@@ -1,12 +1,17 @@
+*{
+    text-decoration: none;
+}
 .mainMidiaJogos{            
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;             
+    min-height: auto;             
 }
 
-.containerMidiaJogos{                     
-    min-height: 100vh;          
+.containerMidiaJogos{        
+    
+    height: auto;
+    min-height: 700px;       
 }
  
 .pai{
@@ -28,20 +33,59 @@
 }  
 
 #galeriaImagensMidiaJogos{
+    
     flex-grow: 1;  
     flex-wrap: wrap;  
     overflow: auto;
+   
+    height: auto;
+    min-height: 700px;
 }
 .imagemGaleriaMidiaJogos{
     width: 100%;
     height: 100%;
     object-fit: cover;       
 }
-#galeriaImagensMidiaJogos a{
-    width: 30%;
-    min-width: 15%;
-    height: 30%;
-    min-height: 15%;
+
+.addConteudoMidiaJogos {
+    display: block;
+    width: 25%;
+    height: 40%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px #0e9aa7 solid;
+    padding: 0;
+    margin: 0 2%;
+}
+
+.addConteudoMidiaJogos-img{
+
+    cursor: pointer;
+
+    
+    width: 95%;
+    height: 85%;
+    margin: 2% 2%;
+  
+}
+.addConteudoMidiaJogos-titulo{
+
+    height: 12%;    
+    text-align: center;    
+    word-break: break-all;
+    
+    
+}
+.addConteudoMidiaJogos-titulo-a{
+    text-decoration: none;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+}
+.addConteudoMidiaJogos-titulo p {
+    font-size: 10rem;
+    margin-top: none;
+    padding: 0;
     margin: 1%;
-    border: 1px solid #0e9aa7;;
+    color: black;
 }
