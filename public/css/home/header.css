@@ -4,125 +4,184 @@
 }
 html{
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+    font-size: 6.25%;
 }
-
+*{
+    text-decoration: none;
+    color: black;
+    line-height: 15px;
+}
 .cabecalho{
     background-color: #0E9AA7;
+    margin: 0.5% auto;
+    width: 98%;
+    min-width: 700px;
+    height: 10vh;
+    border-radius: 20px;
+    display: flex;
     justify-content: space-between;
-    box-shadow: 10px 5px 5px grey;
-    display: flex;
-    align-items: center;
-    border-radius: 25px;
-    padding-left: 20px;
-    height: 100px;
-    margin: 8px;
-    box-sizing: border-box;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
 }
+.cabecalho-logo{
 
-nav{
-    display: flex;
-}
-
-.cabecalho ul{
-    padding: 0;
-}
-
-.cabecalho ul li{
-    display: inline-block;
-    padding: 10px;
-    font-size:  15em;
-}
-.cabecalho-logo{ 
-    width: 300px;
-    display: block; 
-    margin-left: 4%;
-}
-
-.div-pesquisa{
-    background-color: white;
-    border: 1px solid black;
-    margin: auto;
+    width: 17%;
+    height: 100%;
+    min-width: 250px;
     
 }
 
-.txt-pesquisa{
-    border:none;
-    padding-left:5px;
-    height:32px;
-    width: 200px
+.cabecalho-logo img{
+    margin-top: 1%;
+    
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
 }
-
-.nav-list li a{
-    color: black;
+.caixaCabecalho{
+    width: 20%;
+    min-width: 320px;
+    
+    height: 50%;
+    margin-top: 25px;
+    
+    
+}
+.caixaCabecalho ul{
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    list-style: none;  
+    padding: 0;
+}
+.listaInicio{
+    margin-left: 7%;
+    margin-top: 5%;
+    font-size: 15rem;
+}
+.listaInicio a {
     text-decoration: none;
 }
 
-.cabecalho-final button{
-    background-color: #0E9AA7;
-    border: none;;
-    cursor: pointer;
-    margin-left: 20px;
+.divPesquisar {
+    width: 15%;
+    height: 100%;
+    min-width: 250px;
+
+    
+}
+#formPesquisar-input{
+    width: 100%;
+    height: 30px;
+    margin-top: 12%;
+}
+.caixaEntrarSair{
+
+    width: 13vw;
+    height: 1.5vh;
+    display: flex;    
+    margin-top: 40px;
+    margin-right: 5%;
+    
 }
 .btn-w{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
-    color: white;
+    font-size: 15rem;
+    color: black;
+    margin-right: 12%;
+    
+    
+}
+.nome-usuario-logado {
+    cursor: pointer;   
 }
 
-.cabecalho-final{
-    display: flex;
-    margin-right: 4%;
+.caixaLogin{
+    
+    margin-right: 45px;
+    padding-top: 10px;
+    height: 100%;
+    
+    box-sizing: border-box;
 }
-
 .img-usuarioLogado {
 
     border: 2px solid rgb(157, 255, 0);
-    margin-right: 15px;
+    
     width: 7vh;
     height: 7vh;
     border-radius: 50%;
-}
-
-
-.nome-usuario-logado {
-
-    
-    margin-left: 1vw;
-    margin-top: 3vh;
-    
-    padding-bottom: 2vh;
+    padding: 2px;
     
 }
-.botaoSair {
-        
-    margin: auto;
-    width: 40px;
+.caixaListaLogin{
+    
+    position:absolute;
+    height: 24vh;
+    width: 7%;
+    min-width: 118px;
+    margin-top: 1px;
+    background-color: white;
+    border: 2px rgb(145, 145, 145) solid;
+    box-sizing: border-box;
+    font-size: 16rem;
+    display: none;    
+}
+.aparecer {
+    display: block;
+}
+.caixaListaLogin ul{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    
+}
+.caixaListaLogin ul a {
+    text-decoration: none;
+    
+}
+.caixaListaLogin-li{
+
+    margin-top: 1.5%;
+    border-bottom: 2px silver solid;
+    display: block;
+    width: 100%;
+    height: 15%;
+    box-sizing: border-box;
+    padding-top: 10%;
+    
+}
+.caixaListaLogin-li:hover{
+    cursor: pointer;
+    background-color: rgb(255, 251, 0);
+    border-bottom: 2px rgb(67, 252, 10) solid;
+}
+.inputCaixaSair{
+    width: 100%;
     height: 40px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Press Start 2P';
+}
+.inputCaixaSair:hover{
+    background-color: yellow;
+}
+
+.caixaListaLogin-li-sair{
+    
+    border-bottom: 2px silver solid;
+    display: block;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    
 
 }
-.botaoSair img{
-    height: 40px;
-    height: 40px;
-}
-
-@media (max-width: 1400px){
-    .cabecalho ul li a{
-        font-size:  0.9em;
-    }
-    .cabecalho-logo{
-        width: 240px;
-        height: 90px;
-        margin-left: 2%;
-
-    }
-    .cabecalho-final{
-        margin-right: 2%;
-    }
-    .cabecalho ul li{
-        padding: 5px;
-    }
-    .txt-pesquisa{
-        height:32px;
-        width: 180px
-    }
+.caixaListaLogin-li-sair:hover{
+    background-color: yellow;
 }

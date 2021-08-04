@@ -12,15 +12,19 @@ async function carregarConteudo(){
         
         conteudo.innerHTML += `
         <div class="caixaImagem">
-            <a href="${img.path}">
-                <div class="caixaImagem-img"><img src="${img.path}" alt=""></div>
-            </a>
-                <form action="/users/midias/deletar/${img.id}" method="POST">
-                    <div class="caixaImagem-titulo">
-                        <button type="submit" class="sendMidia">Deletar</button>
+                    <div class="caixaImagem-img"><a href="${img.path}">
+                            <img src="${img.path}" alt="">
+                            </a>
                     </div>
-                </form>
-        </div>`
+                    <div class="caixaImagemTitulo">
+                            <form action="/users/midias/deletar/${img.id}" method="POST"> 
+                                
+                                    <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
+                                    <button type="submit" class="sendMidia">Deletar</button>
+                                
+                        </form>
+                        </div>
+            </div>`
     }
 }
 
@@ -50,7 +54,7 @@ aba2.onclick = () =>{
                     <div class="caixaImagemTitulo">
                             <form action="/users/midias/deletar/${video.id}" method="POST"> 
                                 
-                                    <p class="tituloSendMidia-caixaImagem">Titulo</p>
+                                    <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
                                     <button type="submit" class="sendMidia">Deletar</button>
                                 
                         </form>
@@ -79,18 +83,21 @@ aba1.onclick = () => {
         const body = await resultado.json()
         conteudo.innerHTML =''
         for (const img of body) {
-            conteudo.innerHTML += `
-            
-                <div class="caixaImagem">
-                    <a href="${img.path}">
-                        <div class="caixaImagem-img"><img src="${img.path}" alt=""></div>
-                    </a>
-                <form action="/users/midias/deletar/${img.id}" method="POST">
-                    <div class="caixaImagem-titulo">
-                        <button type="submit" class="sendMidia" >Deletar</button>
-                    </div>
-            </form>
-            </div>`
+            conteudo.innerHTML +=`
+            <div class="caixaImagem">
+                        <div class="caixaImagem-img"><a href="${img.path}">
+                                <img src="${img.path}" alt="">
+                                </a>
+                        </div>
+                        <div class="caixaImagemTitulo">
+                                <form action="/users/midias/deletar/${img.id}" method="POST"> 
+                                    
+                                        <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
+                                        <button type="submit" class="sendMidia">Deletar</button>
+                                    
+                            </form>
+                            </div>
+                </div>`
         }
     }
 

@@ -8,30 +8,51 @@
     <div class="cabecalho-logo">
         <img src="/img/logo.png">
     </div>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/home/quemSomos">Sobre</a></li>
-            <li><a href="/jogos/">Jogos</a></li>
-            <li><a href="#">Anúncios</a></li>
+
+    <div class="caixaCabecalho">
+        <ul>
+            <li class="listaInicio"> <a href="/">Inicio</a></li>
+            <li class="listaInicio"> <a href="/home/quemSomos">Sobre</a></li>
+            <li class="listaInicio"> <a href="/jogos">Jogos</a></li>
         </ul>
-    </nav>
-    <div class="cabecalho-final">
-        <div class="div-pesquisa">
-            <input type="search" class="txt-pesquisa" placeholder="Pesquisar">
-        </div>
+    </div>
+    <div class="divPesquisar">
+        <form action="" class="formPesquisar">
+            <input type="search" name="" id="formPesquisar-input" placeholder="Pequisar">
+        </form>
+    </div>
+    
     <% if (usuario) {%>
 
-        <a class="nome-usuario-logado" href="/users"><img class="img-usuarioLogado" src="<%=usuario.foto%>" alt=""/></a>
-        <form action="/sair" method="POST" class="botaoSair">
+        <div class="caixaLogin">
+            <a class="nome-usuario-logado">
+                <img class="img-usuarioLogado" src="<%=usuario.foto%>" alt=""/>
+            </a>
+            <div class="caixaListaLogin">
+                <ul>
+                    <a href="/users"><li class="caixaListaLogin-li">inicio</li></a>
+                    <a href="/users/posts"><li class="caixaListaLogin-li">Posts</li></a>
+                    <a href="/users/analise"><li class="caixaListaLogin-li">Análise</li></a>
+                    <a href="/users/midias"><li class="caixaListaLogin-li">Midias</li></a>
+                    <a href="/users/meusjogos"><li class="caixaListaLogin-li">Jogos</li></a>
+                    <li class="caixaListaLogin-li-sair">
+                    <form action="/sair" method="POST">
+                        <button type="submit" class="inputCaixaSair">Sair</button>             
+                    </form action="/sair"> </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- <form action="/sair" method="POST" class="botaoSair">
             <button type="submit"><img src="/img/botaoSair.png" alt="" srcset=""></button>             
-        </form action="/sair">      
+        </form action="/sair">       -->
 
     <%}else { %>
-    
-    <button><a class="btn-w" href="/login">Entrar</a></button>
-    <button><a class="btn-w" href="/registrar">Registrar</a></button>
-        
+        <div class="caixaEntrarSair"> 
+            <a class="btn-w" href="/login">Entrar</a>
+            <a class="btn-w" href="/registrar">Registrar</a>
+        </div>   
     <%}%>
+    <script src="/js/index/header.js"></script>
 </header>
 </html>
