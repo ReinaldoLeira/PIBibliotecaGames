@@ -109,12 +109,13 @@ module.exports.noticias = async (req, res) => {
     res.render('./jogos/noticias', {usuario: req.session.usuario, noticias})
 }
 
-    module.exports.noti = (req, res) =>{
-        const noticia = noticias
-        res.render('./jogos/noti', {
-            usuario: req.session.usuario,
-            noticias: noticia
-        })};
+module.exports.noti = async (req, res) =>{
+    const noticias = await db.Noticia.findOne({
+        where: {id: req.params.id}
+    });
+    res.render('./jogos/noti', {usuario: req.session.usuario, noticias})
+    console.log(noticias)
+};
 
 
 

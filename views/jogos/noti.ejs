@@ -13,9 +13,8 @@
         <%- include('../home/header.ejs') %> 
     </header>
     <div class="geral">
-        <% for (let i = 0; i< noticias.length && i < 1; i++) { %> 
             <div class="titulo">
-                <h1><%= noticias[1].titulo %></h1>
+                <h1><%= noticias.titulo %></h1>
             </div>
             <div class="subTitulo">
                 <h3><%= noticias.subTitulo %></h3>
@@ -24,19 +23,14 @@
                 <p>Escrito por: <%= noticias.autor %></p>
                 <p>Atualizado as: <%= noticias.updatedAt %></p>
             </div>
-        <% } %> 
 
     </div>
     <article class="article">
         <div class="texto">
-        <% for (let i = 0; i< noticias.length && i < 1; i++) { %> 
-            <p><%= noticias[1].descricao %> </p>
-        <% } %> 
+            <p><%= noticias.descricao %> </p>
     </div>
         <div>
-            <% for (let i = 0; i< noticias.length && i < 1; i++) { %> 
-            <img src="/img/<% noticias[i].capa %> " alt="">
-            <% } %> 
+                <img src="<%= noticias.capa %> " alt="">
         </div>
     </article>
     <footer>
