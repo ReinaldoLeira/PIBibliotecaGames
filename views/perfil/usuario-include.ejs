@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/users/usuario-include.css">
+
+        <title><%= perfil.usuario %></title>
+
+    </head>
+    <body>
+        <aside class="containerPerfil">            
+            <div class="caixaPerfil marginzero">
+                
+                <div class ="caixaFoto">
+                    
+                    <img class='imgCaixaFoto' src= "<%= perfil.foto %>" alt=""/>
+                    
+                </div>
+
+                <div class="caixaNick">
+
+                    <p><%= perfil.usuario %></p>
+
+                </div>
+                
+                <div class="caixaSobre">
+                    
+                    
+                    <p class="pSobre">sobre mim</p>
+                    <p><%= perfil.sobre %> </p>
+
+                </div>
+
+                <div class="listaPerfil">
+                    
+                        <a href='/users/posts'>Post</a>
+                        <a href='/users/analise'>Análise</a></a>
+                        <a href='/users/midias'>Midias</a>
+                        <a href="/users/meusjogos">Jogos</a>
+                    
+                </div>
+
+                <div class="sociais">
+
+                    <a href="<%= perfil.instagram %>"><img src="/img/instagramIcon.png" alt=""></a>
+                    <a href="<%= perfil.twitter %>"><img src="/img/twitterIcon.png" alt=""></a>
+                    <a href="<%= perfil.facebook %>"><img src="/img/facebookIcon.png" alt=""></a>
+                
+                </div>
+
+
+            </div>
+
+        </aside>
+
+        <div id="error"></div>
+        <script src="/js/users/usuario-include.js"></script>
+    </body>
+
+</html>

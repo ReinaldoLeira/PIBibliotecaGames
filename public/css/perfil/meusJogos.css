@@ -1,0 +1,458 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #d5d5d5;    
+
+}
+.paiFlex{
+    display: flex;
+}
+
+.botaoAddJogo img {
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 10vh;
+    left: 1vw;
+}
+
+.mainContainer{
+    
+    width: 70vw;
+    height: auto;
+    box-sizing: border-box;
+}
+.boxContainer{
+
+    width: 90%;
+    height: auto;
+    background-color: blue;
+    margin: 10px auto;
+    
+
+}
+.tituloTexto{
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(68, 154, 160);
+    text-align: center;
+    padding-top: 2vh;
+    box-sizing: border-box;
+    font-size: 12em;
+    margin: 0;   
+}
+.tituloTexto:hover{
+    background-color: yellow;
+}
+.content{
+    
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2vh;
+    box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.637);
+}
+
+.showBox{
+    /* background-color: white; */
+    width: 12vw;
+    height: 30vh;
+    margin: 0.5vh auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.637) ;
+    
+}
+.showBox a {
+
+    text-decoration: none;
+    color: white;
+}
+.showBox a:hover {
+    
+    text-decoration: none;
+    color: black;
+}
+.showBox:hover{
+    cursor: pointer;
+    background-color: yellow;
+    width: 13vw;
+    height: 31vh;
+    margin: 0.10vh auto;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.432);
+
+}
+.showBox button {
+    width: 20px;
+    height: 20px;
+    
+    position: absolute;
+    margin-bottom: 0;
+    font-size: 12em;
+    cursor: pointer;
+    background-color: grey;
+    
+    border: 1px rgba(255, 0, 0, 0.295) solid;
+    border-radius: 50%;
+    color: rgb(182, 182, 182);
+}
+
+.imgJogo{
+    background-color: gray;
+    width: 100%;
+    height: 88%;
+    margin: auto;
+}
+.imgJogo img{
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.nomeJogo{
+    
+    width: 100%;
+    height: 13%;
+
+    font-size: 10em;
+    margin-top: 0;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 1%;
+}
+
+.caixaDesejo{
+
+    width: 90%;
+    height: auto;
+    background-color: blue;
+    margin: auto;
+    
+
+}
+.tituloTexto{
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(68, 154, 160);
+    text-align: center;
+    padding-top: 2vh;
+    box-sizing: border-box;
+    font-size: 12em;
+    margin: 0;
+    border: 2px rgb(54, 121, 126) solid;
+}
+
+#meusJogos{
+    display: flex;
+}
+#meusDesejos{
+    display: none;
+}
+
+.aparecer {
+    display: none;
+}
+
+/* add jogo modal*/
+
+#modal{
+    position: fixed ;
+    left: 0;
+    top: 0;
+    display: none;
+    
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: rgba(0, 0, 0, 0.247);
+}
+.boxModal{
+
+    background-color: rgb(114, 114, 114);
+    width: 40%;
+    height: 40%;
+    margin: 15% auto;
+    border: 7px rgba(49, 49, 49, 0.562) solid;
+    border-radius: 10px;
+
+}
+.formModal{
+    width: 100%;
+    height: 100%;
+   
+}
+.contentJogo{
+    width: 100%;
+    height: 100%;
+    
+}
+.labelJogo{
+    width: 100%;
+    height: 5vh;
+    
+    font-size: 20rem;
+    text-align: center;
+    padding-top: 2%;
+    box-sizing: border-box;
+    border-bottom: 2px rgb(78, 78, 78) solid;
+}
+
+.caixaSelecionarJogo{
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    margin: 1% auto;
+    overflow: auto;
+    
+}
+.inputRadio{
+    width: 100%;
+    height: 50%;    
+    
+    display: flex;
+    align-items:center;
+    margin-bottom: 0.5%;
+}
+.inputRadio input {
+    display: none;
+}
+
+.labelRadio{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+}
+.labelRadio:hover{
+    background-color: yellow;
+}
+.radioSelectJogo:checked + .labelRadio{
+    background-color: yellow
+
+}
+
+.inputRadio img {
+    width: 25%;
+    height: 100%;
+}
+.TituloInputRadio{
+    font-size: 20rem;
+    margin-left: 1%;
+}
+.butaoNext {
+    width: 100%;
+    height: auto;
+    
+    padding-left: 47%;
+    box-sizing: border-box;
+}
+.butaoNext img {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    
+}
+.butaoNext img:hover{
+    width: 50px;
+    height: 50px;
+}
+.contentJogoFinal{
+    width: 100%;
+    height: 100%;
+    
+    box-sizing: border-box;
+    display: none;
+}
+.selectJogo{
+    
+    width: 100%;
+    height: 100%;
+   
+    box-sizing: border-box;
+    border-bottom: 2px black solid;
+}
+.tituloSelect{
+    width: 100%;
+    height: 10%;
+    
+    text-align: center;
+}
+.tituloSelect p {
+    font-size: 20rem;
+    
+    margin: 0;
+    
+    padding-top: 1.5%;
+    box-sizing: border-box;
+}
+.selectComOpcoes{
+    
+    width: 100%;
+    height: 10%;
+   
+}
+.selectComOpcoes select {
+    cursor: pointer;
+    margin-left: 35%;
+    
+    width: 30%;
+    height: 100%;
+    font-family: "PressStart2P";
+    
+}
+.tenhoOuDesejo{
+    width: 100%;
+    height: 20%;
+    
+    display: flex;
+    padding-left: 37%;
+    margin: 5vh auto;
+    box-sizing: border-box;
+    
+}
+.tenhoOuDesejo input {
+    display: none;
+}
+.labelTenho{
+    
+    cursor: pointer;
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 100%;
+    background-image: url(/img/estrelaCrua.png);
+    background-size: 70px;
+    
+}
+.labelDesejo{
+    
+    cursor: pointer;
+        
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+    background-image: url(/img/desejoCru.png);
+    background-size: 70px;
+    
+    
+}
+.inputTouD:checked + .labelDesejo{
+    background-image: url(/img/desejoPintado.png);
+    background-size: 70px;
+}
+.inputTouD:checked + .labelTenho{
+    background-image: url(/img/estrelaPintada.png);
+    background-size: 70px;
+} 
+
+.divTenho{
+    
+    display: flex;
+    align-items: center;
+    
+    width: 70px;
+    height: 70px;
+}
+.divDesejo{
+    
+    display: flex;
+    align-items: center;    
+    width: 70px;
+    height: 70px;
+    margin-left: 5%;
+    
+
+}
+
+.imgDesejo{
+    width:100%;
+    height:100%;
+    border-radius: 100%;    
+}
+.enviarJogo{
+    
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+.enviarJogo input{
+    margin: auto;
+    width: 30%;
+    height: 100%;
+
+    background-color: rgb(82, 187, 82);
+    border: 3px green solid;
+    border-radius: 5px;
+    font-family: "PressStart2P";
+}
+.enviarJogo input:hover {
+    cursor: pointer;
+    width: 35%;
+    height: 110%;
+    background-color: rgb(0, 255, 0);
+}
+
+.voltar {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 2% auto;
+    display: flex;
+}
+
+.voltar img {
+    width: 100%;
+    height: 100%;
+}
+.voltar img:hover {
+    width: 52px;
+    height: 52px;
+
+}
+
+
+
+
+@media (max-width: 956px) and (max-height: 890px) {
+    
+    .paiFlex{
+
+        display: flex;
+        height: 210vh;
+        /* width: 100vw; */
+        
+        flex-direction: column-reverse;
+        
+    }
+}
+
+

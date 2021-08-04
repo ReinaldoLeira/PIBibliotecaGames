@@ -1,0 +1,255 @@
+@font-face {
+
+    font-family: 'Press Start 2P';
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+    font-size: 6.25%;
+    
+}
+
+body{
+
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: #d5d5d5;  
+}
+
+.divPai{
+
+    
+    display: flex;
+   
+    height: auto;
+    box-sizing: border-box;
+
+}
+
+.areaAnalise{
+
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+.usuario-include{
+
+    width: 30%;
+         
+}
+
+.analise{
+
+    
+    
+    background-color: white;
+    width: 50vw;
+    min-width: 300px;
+    height: 25vh;
+    min-height: 180px;
+    margin: 3vh auto;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 0 0 50px 0;
+    box-shadow: 2px 4px 0.5px rgba(0, 0, 0, 0.445);
+}
+
+.imagemAnalise {    
+    background-color: red;
+    width: 8vw;
+    min-width: 120px;
+    height: 85%;
+    min-height: 16px;
+    margin: 1.5vh auto;  
+    
+}
+.imgJogo { 
+
+    width: 8vw;
+    min-width: 120px;
+    height: 100%;
+    min-height: 16px;
+     
+    
+}
+
+.titulo-Analise{
+
+    margin: auto;    
+    width: 80%;
+    height: 90%;
+    box-sizing: border-box;
+
+}
+
+.tituloA{
+
+    background-color: rgb(137, 167, 131);
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    text-align: center;
+    padding: 3px;
+    box-sizing: border-box;
+    font-size: 10em;
+    margin: 2px 0;
+    justify-content: space-between;
+    word-break: break-all;
+    
+}
+.nota{
+    background-color: white;
+    
+}
+
+
+.spanA{
+
+    margin: auto;
+    background-color: rgb(137, 167, 131);
+    
+    height: 75%;
+    
+    box-sizing: border-box;
+    border-radius:  0 0 50px 0;
+    padding: 10px;
+    word-break: break-all;
+    
+    
+    font-size: 10em;
+}
+.dataPost{
+
+    display: flex;
+    justify-content:space-between;
+    
+    width: 90%;
+    margin: auto;
+    font-size: 6em;
+    text-align: left;
+    
+}
+
+.deletButtom{
+    
+    width: 5vw;
+    height: 23px;
+    background-color: rgb(207, 108, 108);
+}
+
+
+
+
+/* MODALLLLLLL */
+
+.containerPai {
+
+    width: 100vw;    
+    height: 100vh;
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.322);
+    bottom: 0px;
+    
+}
+
+.modalAnalise{
+    margin: 10% auto;
+    
+    background-color: rgb(231, 231, 231);
+    width: 30vw;
+    min-width: 400px;
+    height: 41vh;
+    border: 2px rgb(62, 141, 134) solid;
+    border-radius: 10px;
+    
+}
+.tituloAnalise{
+    
+    margin: auto;
+    height: 6vh;
+    width: 80%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16rem;
+    margin-top: 1%;
+
+}
+.imgModal{
+
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+}
+
+#analiseInput{ 
+    font-family: "PressStart2P";
+    width: 80%;
+    height: 20px;
+    margin: auto;
+    display: block;
+}
+
+#textAnalise{
+    margin-left: 8%;
+    font-family: "PressStart2P";
+    width: 25vw;
+    min-width: 330px;
+    height: 12vh;
+    resize: none;
+    border-radius: 5px;
+}
+
+#selecJogo{
+    width: 200px;
+    height: 30px;
+    margin-left: 30%;
+}
+
+.cxRadio{
+    
+    height: 7vh;
+    text-align: center;
+    font-size: 13rem;
+    
+}
+
+.cxRadio input { 
+    
+    margin-left: 4%;    
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+}
+
+.analiseSubmit {
+
+    margin-left: 30%;
+    margin-top: 2%;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px rgb(62, 141, 134) solid;
+    border-radius: 5px;
+}
+
+.avaliarAdd{
+    position: fixed;
+    left: 2%;
+    bottom: 10%;
+}
+
+.avaliarAdd img{ 
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
