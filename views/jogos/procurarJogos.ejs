@@ -31,7 +31,7 @@
         </div>
         </main>
         <aside class="fundoVerde asideProcurarJogos pai coluna">
-            <form >
+            <form action="/jogos/pesquisar" method="GET">
             <div id="pesquisar">
                 <label for="textPesquisar">Pesquisar</label>
                 <p><input type="text" placeholder="Buscar" name="nome" id="textPesquisar"></p>
@@ -65,10 +65,7 @@
     const paginacao = document.querySelector('#paginacaoProcurarJogos')
     const exibirJogos = document.querySelector('#exibirJogos')
     let cont = 1
-    document.querySelector('.submitProcurarJogos').onclick = (e) => {
-        e.preventDefault()
-        carregarJogos()
-    }
+   
     paginacao.onclick = (e) => {
         e.preventDefault()        
         let valorPagina = e.target.innerText
@@ -113,11 +110,8 @@
     }*/
 
     async function carregarJogos(){
-        console.log(URL)
-        const nome = ""
-        const plataforma  = ""
-        const genero = ""
-        const resultado = await fetch(`http://localhost:3000/apis/listarjogos2?nome=${nome}&plataforma=${plataforma}&genero=${genero}`)
+        const url = new URL(window.location.href)       
+        const resultado = await fetch(`http://localhost:3000/apis/listarjogos${url.search}`)
         const jogos = await resultado.json()
         await console.log(jogos)
         exibirJogos.innerHTML = ""

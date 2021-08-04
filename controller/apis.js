@@ -76,12 +76,6 @@ module.exports.minhasBibliotecas = async (req,res) => {
     }
 }
 
-module.exports.listarJogos = async (req,res) => {    
-    const jogos = await models.Jogo.findAll({
-        attributes: ['nome', 'id', 'capa']
-    })
-    return res.send(jogos)
-}
 module.exports.pesquisarJogo = async (req, res) => {
     console.log(req.query)
     const nome = req.query.nome ? req.query.nome : ""
@@ -95,7 +89,8 @@ module.exports.pesquisarJogo = async (req, res) => {
         },
         include: [
             {model: models.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, 
-            {model: models.Genero, as: 'genero', where: {nome:{ [Op.or]: [genero, {[Op.like]: `%${genero}%`}]}}}]
+            {model: models.Genero, as: 'genero', where: {nome:{ [Op.or]: [genero, {[Op.like]: `%${genero}%`}]}}}],
+        attributes: ['nome', 'id', 'capa']
     })       
     return res.send(resultados)
 }
