@@ -14,7 +14,7 @@ module.exports.index = async (req, res) => {
 
 
 //controllers Registrar
-module.exports.registrar = (req, res) => { res.render('./users/cadastrar', { usuario: ''})};
+module.exports.registrar = (req, res) => { res.render('./home/cadastrar', { usuario: ''})};
 
 module.exports.registrado = (async (req, res) => { 
     try{
@@ -66,7 +66,7 @@ module.exports.registrado = (async (req, res) => {
         });
 
 //controllers login
-module.exports.login = (req, res) => { res.render('./users/login', {
+module.exports.login = (req, res) => { res.render('./home/login', {
     usuario: req.session.usuario,
     error:{msg : '' }
     })

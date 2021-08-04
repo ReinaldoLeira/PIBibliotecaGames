@@ -56,9 +56,14 @@ module.exports.midia = async (req, res) => {
     const jogo = await db.Jogo.findOne({        
         where: {id: req.params.id},
         include:['genero','plataforma']
+    })
+    const midiaJogo = await db.Midia.findAll({
+        where: {
+            idJogos : jogo.id
+        }
     }) 
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo})
+    res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo , midiaJogo : midiaJogo})
 }
 
 module.exports.perfil = async (req, res) => {
