@@ -17,7 +17,7 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"> Jogos Encontrados: </div></div> 
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"></div></div> 
             <div class="pai jogosProcuraJogos" id="exibirJogos">
                                 
             </div>
@@ -31,7 +31,7 @@
         </div>
         </main>
         <aside class="fundoVerde asideProcurarJogos pai coluna">
-            <form action="/jogos/pesquisar" method="GET">
+            <form >
             <div id="pesquisar">
                 <label for="textPesquisar">Pesquisar</label>
                 <p><input type="text" placeholder="Buscar" name="nome" id="textPesquisar"></p>
@@ -65,6 +65,10 @@
     const paginacao = document.querySelector('#paginacaoProcurarJogos')
     const exibirJogos = document.querySelector('#exibirJogos')
     let cont = 1
+    document.querySelector('.submitProcurarJogos').onclick = (e) => {
+        e.preventDefault()
+        carregarJogos()
+    }
     paginacao.onclick = (e) => {
         e.preventDefault()        
         let valorPagina = e.target.innerText
@@ -95,7 +99,7 @@
         carregarJogos()
     }   
 
-    window.onload = carregarJogos
+    window.onload = carregarJogos()
 
     /* window.onkeydown = (e) => {
        if(e.key == 'l') {        
@@ -109,15 +113,19 @@
     }*/
 
     async function carregarJogos(){
-        const resultado = await fetch("http://localhost:3000/apis/listarjogos")
+        console.log(URL)
+        const nome = ""
+        const plataforma  = ""
+        const genero = ""
+        const resultado = await fetch(`http://localhost:3000/apis/listarjogos2?nome=${nome}&plataforma=${plataforma}&genero=${genero}`)
         const jogos = await resultado.json()
         await console.log(jogos)
         exibirJogos.innerHTML = ""
         for(let i= 15 * (cont - 1); i<jogos.length && i < (cont * 15); i++){
-            console.log(i)
+            //console.log(i)
             exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
         }
-        document.querySelector('#jogosEncontrados').innerText += jogos.length
+        document.querySelector('#jogosEncontrados').innerText = ` Jogos Encontrados: ${jogos.length}`
     }
 
     function mudarAtivo(){
