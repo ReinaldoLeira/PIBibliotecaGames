@@ -73,11 +73,13 @@
         if(valorPagina !== 'L' && valorPagina !== 'R' && parseInt(valorPagina) !== cont){
             
             if(valorPagina > cont){
-            cont = parseInt(valorPagina) > limite ? limite : parseInt(valorPagina)
-            selecionarPaginasMaior()
-            mudarAtivo()
-            carregarJogos()
-            return
+                if(parseInt(valorPagina) <= limite){
+                    cont = parseInt(valorPagina)
+                    selecionarPaginasMaior()                
+                    mudarAtivo()
+                    carregarJogos()
+                }
+                return
             }
             cont = parseInt(valorPagina)
             selecionarPaginasMenor()
@@ -153,9 +155,10 @@
             document.querySelector(`#p${cont + 2}`).id = `p${cont + 1}`;  
         }
     }
-    function subirPaginas(){
-        cont < limite ? cont ++ : cont = cont
-        if(cont >= 3){
+    function subirPaginas(){         
+        if(cont < limite){
+            cont ++
+            if(cont >= 3){
             document.querySelector(`#p${cont}`).innerText =   cont + 1
             document.querySelector(`#p${cont}`).id = `p${cont + 1}`;
 
@@ -165,6 +168,8 @@
             document.querySelector(`#p${cont - 2}`).innerText =   cont  - 1 
             document.querySelector(`#p${cont - 2}`).id = `p${cont - 1}`;            
         }
+    }
+        
     }
     function descerPaginas(){
         cont == 1 ?  "" : cont --
