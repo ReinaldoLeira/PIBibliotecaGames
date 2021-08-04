@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/users/posts.css">
+    <link rel="stylesheet" href="/css/perfil/posts.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Posts </title>
@@ -16,7 +16,7 @@
             <%- include('../home/header.ejs'); %>
         </header>
       
-        <img src="/img/addPost.png" alt="" class="addPost" id="addPost">
+        
 
         <div class="paiFlex">
 
@@ -28,7 +28,7 @@
 
                 </div>
                 
-                <% for (const post of posts ){ %>
+                <% for (let post of posts ){ %>
 
                     <div class="caixaPosts">
                         <div class="postTitulo"> 
@@ -40,11 +40,9 @@
                             </span>
                             
                         </div>
-                    <form action="/users/posts/deletar/<%= post.id%>" method="POST">
-                            <button type="submit" class="deletButtom" >x</button>
-                        </form>
+                    
                     </div>
-                }
+                <%}%>
             </main>
 
             <aside class="containerPerfil">
@@ -58,8 +56,8 @@
         <footer>
             <%- include('../home/footer.ejs'); %>
         </footer>
-        <div id="error"></div>
-        <script src="/js/users/posts.js"></script>
+        
+        
     </body>
 
 </html>
