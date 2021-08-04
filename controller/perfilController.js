@@ -1,10 +1,11 @@
 const models = require('../models');
+const { post } = require('../routes/indexRouter');
 
 module.exports.showPerfil = async (req, res) => {
     const usuario = req.session.usuario
-    const params = req.params.id
+    const idParams = req.params.id
     const perfil = await models.Perfil.findOne({
-        where: { id : params }
+        where: { id : idParams }
     })
     
    if(perfil) {
@@ -15,20 +16,28 @@ module.exports.showPerfil = async (req, res) => {
 }
 
 module.exports.showPosts = async (req, res) => {
-    const params = req.params.id
+
+    try{
+        
+    const usuario = req.session.usuario
+    const idParams = req.params.id
     const perfil = await models.Perfil.findOne({
-        where: { id : params }
+        where: { id : idParams }
     })
-    const posts = await models.Post.findAll({
-        where: { id : perfil.id }
+    const perfilPosts = await models.Post.findAll({
+        where : { idPerfis : perfil.id }
     })
-    if(perfil){
-        res.render('./perfil/posts.ejs', {usuario : req.session.usuario , perfil: perfil, posts : posts})
-    }   
+    console.log(perfilPosts);
+    
+    res.render('./perfil/perfilPost.ejs', {usuario : usuario , perfil: perfil, posts: perfilPosts})
+}catch(e){
+    res.send('chegou no catch')
+}
+    
 }
 
 module.exports.showAnalise = async (req, res)=> {
-    const params = req.params
+    const params = req.params.id
     const perfil = models.Perfil.findOne({
         where: { id : params }
     })
@@ -42,7 +51,7 @@ module.exports.showAnalise = async (req, res)=> {
 }
 
 module.exports.showMidias = async (req, res) => {
-    const params = req.params
+    const params = req.params.id
     const perfil = models.Perfil.findOne({
         where: { id : params }
     })
@@ -55,9 +64,9 @@ module.exports.showMidias = async (req, res) => {
 }
 
 module.exports.showBiblioteca = async (req, res) => {
-    const params = req.params
+    const params = req.params.id
     const perfil = models.Perfil.findOne({
-        include:'BibliotecaJogo',
+        
         Where : { id : params }
     })
     if(perfil){
