@@ -1,28 +1,26 @@
 <div class="includAnalise">
 
-<%for (const analise of analises ) { %>
-    <div class="analise">
-        <div class="imagemAnalise">
-        <a href="http://localhost:3000/jogos/perfil/<%= analise.idJogos %>">
-            <img src="<%perfil.jogo.capa%>" alt="" class='imgJogo'/>
-            </a>
-        </div>
-        <div class="titulo-Analise">
-            <div class="tituloA">
-                <p> <%= analise.titulo %></p>
-                <div class="nota">
-                    <p>Nota:<%= analise.nota %></p>
+    <%for (let analise of analises ) { %>
+        <div class="analise">
+            <div class="imagemAnalise">
+            <a href="http://localhost:3000/jogos/perfil/<%= analise.idJogos %>">
+                <img src="<%= analise.Jogo.capa %>" alt="" class='imgJogo'/>
+                </a>
+            </div>
+            <div class="titulo-Analise">
+                <div class="tituloA">
+                    <p> <%= analise.titulo %></p>
+                    <div class="nota">
+                        <p>Nota:<%= analise.nota %></p>
+                    </div>
+                </div>
+                <div class="spanA">
+                    <span><%= analise.analise %></span>
+                </div>
+                <div class="dataPost">
+                    <p>Data: <%= analise.createdAt %> </p>                    
                 </div>
             </div>
-            <div class="spanA">
-                <span><%= analise.analise %></span>
-            </div>
-            <div class="dataPost"><p>Data: <%= perfil.analise.createdAt %> </p>
-                <form action="/users/analise/deletar/<%= analise.id %>" method="POST" class="formSubmit">
-                    <button type="submit" class="deletButtom" >x</button>
-                </form>
-            </div>
         </div>
-    </div>
-<% } %>
+    <% } %>
 </div>
