@@ -69,7 +69,7 @@ html{
 .btn-w{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
-    
+    color: white;
 }
 .column{
     display: flex;
