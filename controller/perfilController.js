@@ -19,19 +19,23 @@ module.exports.showPosts = async (req, res) => {
 
     try{
         
-    const usuario = req.session.usuario
-    const idParams = req.params.id
-    const perfil = await models.Perfil.findOne({
-        where: { id : idParams }
-    })
-    const perfilPosts = await models.Post.findAll({
-        where : { idPerfis : perfil.id }
-    })
-    console.log(perfilPosts);
-    
-    res.render('./perfil/perfilPost.ejs', {usuario : usuario , perfil: perfil, posts: perfilPosts})
-}catch(e){
-    res.send('chegou no catch')
+        const usuario = req.session.usuario
+        const idParams = req.params.id
+        const perfil = await models.Perfil.findOne({
+            where: { id : idParams }
+        })
+        const perfilPosts = await models.Post.findAll({
+            where : { idPerfis : perfil.id }
+        })
+        console.log(perfilPosts);
+        
+        res.render('./perfil/perfilPost', {
+            usuario : usuario ,
+            perfil: perfil,
+            posts: perfilPosts,
+           })
+    }catch(e){
+        res.send('chegou no catch')
 }
     
 }

@@ -52,12 +52,13 @@ html{
     width: 100%;
     height: 100%;
     display: flex;  
-    list-style: none;  
+    list-style: none;
+    align-items: center;
     padding: 0;
 }
 .listaInicio{
     margin-left: 7%;
-    margin-top: 5%;
+   
     font-size: 15rem;
 }
 .listaInicio a {
@@ -83,6 +84,7 @@ html{
     display: flex;    
     margin-top: 40px;
     margin-right: 5%;
+    align-items: center;
     
 }
 .btn-w{
