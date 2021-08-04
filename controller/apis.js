@@ -1,4 +1,5 @@
 const models = require('../models')
+const { Op } = require('sequelize')
 
 module.exports.acharJogo =  async (req,res) => {
 
@@ -75,9 +76,21 @@ module.exports.minhasBibliotecas = async (req,res) => {
     }
 }
 
-module.exports.listarJogos = async (req,res) => {    
-    const jogos = await models.Jogo.findAll({
+module.exports.pesquisarJogo = async (req, res) => {
+    console.log(req.query)
+    const nome = req.query.nome ? req.query.nome : ""
+    const plataforma  = req.query.plataforma ? req.query.plataforma : ""
+    const genero = req.query.genero ? req.query.genero : ""
+    let resultados = await models.Jogo.findAll({        
+        where: {                   
+            nome: {
+                [Op.like]: `%${nome}%`
+            }                
+        },
+        include: [
+            {model: models.Plataforma, as: 'plataforma', where: {nome:{ [Op.like]: `%${plataforma}%`}}}, 
+            {model: models.Genero, as: 'genero', where: {nome:{ [Op.or]: [genero, {[Op.like]: `%${genero}%`}]}}}],
         attributes: ['nome', 'id', 'capa']
-    })
-    return res.send(jogos)
+    })       
+    return res.send(resultados)
 }

@@ -10,5 +10,5 @@ router.get('/userimg',api.userImg)
 router.get('/uservideo' , api.userVideo)
 router.get ('/plataformas', api.plataformas)
 router.get('/minhabiblioteca', api.minhasBibliotecas)
-router.get('/listarjogos', api.listarJogos)
+router.get('/listarjogos', api.pesquisarJogo)
 module.exports = router

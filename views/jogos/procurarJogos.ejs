@@ -17,7 +17,7 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"> Jogos Encontrados: </div></div> 
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"></div></div> 
             <div class="pai jogosProcuraJogos" id="exibirJogos">
                                 
             </div>
@@ -65,13 +65,15 @@
     const paginacao = document.querySelector('#paginacaoProcurarJogos')
     const exibirJogos = document.querySelector('#exibirJogos')
     let cont = 1
+    let limite = 0
+   
     paginacao.onclick = (e) => {
         e.preventDefault()        
         let valorPagina = e.target.innerText
         if(valorPagina !== 'L' && valorPagina !== 'R' && parseInt(valorPagina) !== cont){
             
             if(valorPagina > cont){
-            cont = parseInt(valorPagina)
+            cont = parseInt(valorPagina) > limite ? limite : parseInt(valorPagina)
             selecionarPaginasMaior()
             mudarAtivo()
             carregarJogos()
@@ -95,7 +97,7 @@
         carregarJogos()
     }   
 
-    window.onload = carregarJogos
+    window.onload = carregarJogos()
 
     /* window.onkeydown = (e) => {
        if(e.key == 'l') {        
@@ -109,15 +111,17 @@
     }*/
 
     async function carregarJogos(){
-        const resultado = await fetch("http://localhost:3000/apis/listarjogos")
+        const url = new URL(window.location.href)       
+        const resultado = await fetch(`http://localhost:3000/apis/listarjogos${url.search}`)
         const jogos = await resultado.json()
-        await console.log(jogos)
+        await console.log(Math.ceil(jogos.length / 15))        
+        limite = Math.ceil(jogos.length / 15)
         exibirJogos.innerHTML = ""
         for(let i= 15 * (cont - 1); i<jogos.length && i < (cont * 15); i++){
-            console.log(i)
+            //console.log(i)
             exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
         }
-        document.querySelector('#jogosEncontrados').innerText += jogos.length
+        document.querySelector('#jogosEncontrados').innerText = ` Jogos Encontrados: ${jogos.length}`
     }
 
     function mudarAtivo(){
@@ -125,6 +129,7 @@
         document.querySelector(`#p${cont}`).classList.add('ativo')
     }
     function selecionarPaginasMaior(){
+
         if(cont > 2){
             document.querySelector(`#p${cont}`).innerText =   cont  + 1 
             document.querySelector(`#p${cont}`).id = `p${cont + 1}`; 
@@ -149,7 +154,7 @@
         }
     }
     function subirPaginas(){
-        cont ++
+        cont < limite ? cont ++ : cont = cont
         if(cont >= 3){
             document.querySelector(`#p${cont}`).innerText =   cont + 1
             document.querySelector(`#p${cont}`).id = `p${cont + 1}`;
