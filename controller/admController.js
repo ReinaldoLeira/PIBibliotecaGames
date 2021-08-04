@@ -215,18 +215,17 @@ module.exports.painelSistema0 =  (req, res) => {
 
     const novaNoticia = await db.Noticia.create({
         titulo: noticia.titulo,     
+        subTitulo: noticia.subTitulo,     
+        autor: noticia.autor,     
         descricao: noticia.descricao,
         capa: noticia.capa,     
-        idPerfis: "1"
+        idPerfis: 1
     });
     
     console.log(novaNoticia)
     res.redirect('/gamepadm/painel/sistema/0')
-} /* 
-module.exports.painelSistema1 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'sistema', opcoes: opSistema, extra:'', noticia:''}) 
-} */
- module.exports.painelSistema1 = async (req, res) => {
+}
+module.exports.painelSistema1 = async (req, res) => {
     const noticias = await db.Noticia.findAll({
         include:'Perfil'
     });

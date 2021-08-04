@@ -39,7 +39,9 @@ async function modalAnalise() {
         selectAnalise.innerHTML +=
             `<div class="analise">
                 <div class="imagemAnalise">
+                <a href="http://localhost:3000/jogos/perfil/${analises.idJogos}}">
                     <img src="${analises.Jogo.capa}" alt="" class='imgJogo' >
+                    </a>
                 </div>
                 <div class="titulo-Analise">
                     <div class="tituloA">

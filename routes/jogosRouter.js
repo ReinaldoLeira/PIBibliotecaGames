@@ -21,7 +21,7 @@ router.post('/cadastrar', jogosController.cadastrar)
 
 router.get('/noticias', jogosController.noticias)
 
-router.get('/noticias/noti', jogosController.noti)/* Sera mudado para /id assim que fizer a integracao com o banco */
+router.get('/noticias/:id', jogosController.noti)
 
 
 module.exports = router;

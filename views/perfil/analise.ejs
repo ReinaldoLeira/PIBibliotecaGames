@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/users/analise.css">
+    <title>Analises</title>
+</head>
+<body>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>  
+    
+    <div class="avaliarAdd">
+        <img src="/img/avaliar.png" alt="">
+    </div>
+
+
+    <div class="divPai">
+
+        <main class="areaAnalise">
+
+            <%- include('../perfil/modals/analise-include.ejs') %> 
+
+        </main>
+
+        <aside class="usuario-include">
+            <%- include('../perfil/usuario-include.ejs') %>             
+        </aside>
+    </div>
+
+    <script src="/js/users/analise.js"></script>
+    
+    <footer>
+        <%- include('../home/footer.ejs') %> 
+    </footer>
+</body>
+</html>

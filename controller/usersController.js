@@ -135,7 +135,7 @@ module.exports.criarAnalise = (async(req,res,next)=> {
     const formBody = req.body
     console.log(formBody)
 
-    try{
+    
         if(formBody.nota > 5){
             throw new Error('não pode mais que 5')
         }
@@ -148,10 +148,9 @@ module.exports.criarAnalise = (async(req,res,next)=> {
             blocked: '0',
             idPerfis: usuario.id,        
         })
-        res.status(200).send('criado')
-    } catch (e) {
-        return res.status(400).send({message : e.message, status:400})
-    }
+        res.redirect('/users/analise')
+    
+   
 
 })
 

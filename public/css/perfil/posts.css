@@ -1,0 +1,312 @@
+
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+
+html{
+
+    font-family: "PressStart2P";
+    font-size: 6.25%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #d5d5d5;
+}
+/* CAIXA DO MAIN E DO ASIDE*/
+
+.paiFlex{
+
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    
+
+}
+ /* CAIXA DO MAIN */
+
+
+.containerMain{
+    
+    box-sizing: border-box;
+    width: 70vw;  
+}
+.containerPerfil {
+    width: 30vw;
+}
+.caixaTexto{
+
+    margin: auto;
+    width: 40vw;
+    height: 18vh;
+    
+    font-size: 50em;
+    
+    color: rgba(255, 217, 0, 0.918);
+    text-shadow: 0px 5px 0px #fff, 0px -5px 0px #fff, 5px 0px 0px #fff, -5px 0px 0px #fff, 1px 1px 0px #000;
+    text-align: center;
+    
+    background-image: url('/img/tijolos.png');
+    
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.caixaPosts{
+
+    background-color: rgb(190, 131, 3);
+    border: 2px rgb(138, 83, 0) solid;
+    border-top: 2px rgb(248, 185, 90) solid;
+    border-left: 2px rgb(248, 182, 74) solid;
+    margin: 3vh auto;
+    padding: 15px;
+    
+    width: 50%;
+    height: 30vh;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);   
+    
+    
+    box-sizing: border-box;
+
+}
+.postTitulo {
+    
+    
+    height: 3vh;
+    color: rgb(236, 198, 114);
+    background-color: rgb(194, 160, 88);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);;
+    text-align: center; 
+    margin: auto;
+    padding-top: 0.5%;
+    
+
+    font-size: 10em;
+
+}
+
+.areaPost{
+
+    
+    padding: 2%;
+    height: 70%;
+    box-sizing: border-box;
+    font-size: 12em;
+    line-height: 1.7em;
+    word-break: break-all;
+}
+
+.deletButtom {
+
+    
+    height: 30px;
+    width: 30px;
+    background-color: rgb(192, 80, 80);
+    color: white;
+    margin-left: 95%;
+    margin-top: 2%;
+}
+
+
+
+/* CAIXA DO MODAL */
+.modalPost{ 
+
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 107vh;
+    background-color: rgba(0, 0, 0, 0.397);
+    bottom: 0px;
+
+}
+
+.divTitulo{
+
+    
+    box-sizing: border-box;
+}
+
+.inputTitulo{
+
+    margin-left: 30%;
+    width: 25vw;
+    max-width: 300px;
+    min-width: 200px;
+    height: 3vh;
+
+    background-color: rgb(180, 180, 180);
+    font-family: "PressStart2P";
+    font-size: 10em;
+    color: black;
+    border: 0;
+    border-left: 2px gray solid;
+    border-right: 2px rgb(31, 31, 31) solid;
+    
+}
+
+.formPost {
+    
+    
+    width: 40vw;
+    max-width: 500px;
+    
+    height: 30vh;
+    position: fixed;
+    left: 30%;
+    top: 30%;
+
+
+    background-color: rgb(180, 180, 180);;
+    border: 2px solid white;
+    border-radius: 10px 10px 50px 10px;
+    box-shadow: 2px 5px 5px grey;
+    box-sizing: border-box;
+
+} 
+.textareaPost{
+    font-family: "PressStart2P";
+    font-size: 10em;
+    border-radius: 0 0 40px 0;
+    border: 10px solid rgb(109, 117, 117);
+    
+    box-sizing: content-box;
+    background-color: rgba(66, 168, 72, 0.473);
+    min-width: 300px;
+    width: 100%;
+    height: 150px;
+    resize: none;
+    box-sizing: border-box;
+
+    
+}
+
+
+
+.sendClose{
+
+    box-sizing: border-box;
+    margin: auto;
+    
+    width: 70%; 
+    height: 10vh;
+    display: table;
+}
+.inputPost{
+
+    cursor: pointer;
+    background-color: greenyellow;
+    width: 70px;    
+    height: 70px;
+    border-radius: 100%;
+    
+}
+.closeButton{
+    cursor: pointer;
+    margin-left: 40%;
+    padding-top: 2%;    
+    width: 50px;
+    height: 50px;
+    
+    
+    
+}
+
+
+
+.addPost{
+
+    position: fixed;
+    left: 02%;
+    bottom: 20%;
+    cursor: pointer;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px 20px;
+    box-shadow: 2px 5px 2px grey;
+
+}
+
+
+@media (max-width: 956px) and (max-height: 890px) {
+    
+    .paiFlex{
+
+        display: flex;
+        height: 210vh;
+        /* width: 100vw; */
+        
+        flex-direction: column-reverse;
+        
+    }
+
+    .containerMain{
+        
+        margin: 0 auto ;
+        height: 110vh;
+        width: 100vw;
+        min-width: 100vw;
+
+    }
+    .containerPerfil{
+
+        width: 100vw;
+       
+        
+    }
+
+    .sociais a {
+        margin-top: 4%;
+    }
+
+    .caixaPerfil{
+
+        margin-left: 25%;
+
+    } 
+
+    .caixaTexto {
+        
+        margin-left: 19vw;
+        width: 60vw;
+        height: 150px;
+
+    }
+
+    .caixaTexto p {
+        
+        padding-top: 4%;
+        text-align: center;
+        font-size: 80%;
+    }
+
+    .caixaPosts{
+
+        height: 90vh;
+        width: 80vw;
+        margin-left: 9vw;
+        margin-top: 20px;
+    }
+
+    .posts{
+
+        width:80vw;
+    }
+
+
+   
+    
+}
+

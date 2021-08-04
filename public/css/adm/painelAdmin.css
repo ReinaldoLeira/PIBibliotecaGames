@@ -258,8 +258,8 @@
     text-align:left;
     padding:5px;
 }
-.tituloNoticiaf{
-    width: 620px;
+.inputNoticias{
+    width: 50%;
     font-family: PressStart2P;
 }
 .control{
