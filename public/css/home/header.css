@@ -11,42 +11,28 @@ html{
 *{
     text-decoration: none;
     color: black;
-    line-height: 15px;
 }
 .cabecalho{
     background-color: #0E9AA7;
     margin: 0.5% auto;
     width: 98%;
     min-width: 700px;
-    height: 10vh;
+    height: 100px;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 5px 5px grey;
 }
 .cabecalho-logo{
-
+    margin-left: 10px;
     width: 17%;
     height: 100%;
-    min-width: 250px;
-    
-}
-
-.cabecalho-logo img{
-    margin-top: 1%;
-    
-    width: 100%;
-    height: 100%;
-    min-width: 250px;
 }
 .caixaCabecalho{
     width: 20%;
     min-width: 320px;
-    
     height: 50%;
     margin-top: 25px;
-    
-    
 }
 .caixaCabecalho ul{
     width: 100%;
@@ -68,13 +54,13 @@ html{
     width: 15%;
     height: 100%;
     min-width: 250px;
-
-    
 }
 #formPesquisar-input{
     width: 100%;
     height: 30px;
     margin-top: 12%;
+    border: 1px solid black;
+    padding-left: 5px;
 }
 .caixaEntrarSair{
 
@@ -85,7 +71,7 @@ html{
     margin-right: 5%;
     
 }
-.btn-w{
+.btn-p{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     font-size: 15rem;
