@@ -17,7 +17,7 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"> Jogos Encontrados: </div></div> 
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"></div></div> 
             <div class="pai jogosProcuraJogos" id="exibirJogos">
                                 
             </div>
@@ -61,118 +61,5 @@
         <%- include('../home/footer.ejs') %>
     </footer>
 </body>
-<script>
-    const paginacao = document.querySelector('#paginacaoProcurarJogos')
-    const exibirJogos = document.querySelector('#exibirJogos')
-    let cont = 1
-    paginacao.onclick = (e) => {
-        e.preventDefault()        
-        let valorPagina = e.target.innerText
-        if(valorPagina !== 'L' && valorPagina !== 'R' && parseInt(valorPagina) !== cont){
-            
-            if(valorPagina > cont){
-            cont = parseInt(valorPagina)
-            selecionarPaginasMaior()
-            mudarAtivo()
-            carregarJogos()
-            return
-            }
-            cont = parseInt(valorPagina)
-            selecionarPaginasMenor()
-            mudarAtivo()
-            carregarJogos()
-        }      
-    }
-    document.querySelector('#pl').onclick = (e) => {               
-        descerPaginas()
-        mudarAtivo()
-        carregarJogos()
-    }   
-
-    document.querySelector('#pr').onclick = (e) => {        
-        subirPaginas()
-        mudarAtivo()
-        carregarJogos()
-    }   
-
-    window.onload = carregarJogos
-
-    /* window.onkeydown = (e) => {
-       if(e.key == 'l') {        
-        descerPaginas()
-        mudarAtivo()
-       }
-       if(e.key == 'r') {        
-        subirPaginas()
-        mudarAtivo()
-       }
-    }*/
-
-    async function carregarJogos(){
-        const resultado = await fetch("http://localhost:3000/apis/listarjogos")
-        const jogos = await resultado.json()
-        await console.log(jogos)
-        exibirJogos.innerHTML = ""
-        for(let i= 15 * (cont - 1); i<jogos.length && i < (cont * 15); i++){
-            console.log(i)
-            exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
-        }
-        document.querySelector('#jogosEncontrados').innerText += jogos.length
-    }
-
-    function mudarAtivo(){
-        document.querySelector('.ativo').classList.remove('ativo')
-        document.querySelector(`#p${cont}`).classList.add('ativo')
-    }
-    function selecionarPaginasMaior(){
-        if(cont > 2){
-            document.querySelector(`#p${cont}`).innerText =   cont  + 1 
-            document.querySelector(`#p${cont}`).id = `p${cont + 1}`; 
-
-            document.querySelector(`#p${cont - 1}`).innerText =   cont
-            document.querySelector(`#p${cont - 1}`).id = `p${cont}`;
-            
-            document.querySelector(`#p${cont - 2}`).innerText =   cont - 1
-            document.querySelector(`#p${cont - 2}`).id = `p${cont - 1}`;
-    }
-    }
-    function selecionarPaginasMenor(){ 
-        if(cont >= 2){
-            document.querySelector(`#p${cont}`).innerText =   cont - 1
-            document.querySelector(`#p${cont}`).id = `p${cont - 1}`;
-
-            document.querySelector(`#p${cont + 1}`).innerText =   cont
-            document.querySelector(`#p${cont + 1}`).id = `p${cont}`;
-            
-            document.querySelector(`#p${cont + 2}`).innerText =   cont + 1
-            document.querySelector(`#p${cont + 2}`).id = `p${cont + 1}`;  
-        }
-    }
-    function subirPaginas(){
-        cont ++
-        if(cont >= 3){
-            document.querySelector(`#p${cont}`).innerText =   cont + 1
-            document.querySelector(`#p${cont}`).id = `p${cont + 1}`;
-
-            document.querySelector(`#p${cont - 1}`).innerText =   cont
-            document.querySelector(`#p${cont - 1}`).id = `p${cont}`;
-
-            document.querySelector(`#p${cont - 2}`).innerText =   cont  - 1 
-            document.querySelector(`#p${cont - 2}`).id = `p${cont - 1}`;            
-        }
-    }
-    function descerPaginas(){
-        cont == 1 ?  "" : cont --
-        if(cont > 1){
-            document.querySelector(`#p${cont}`).innerText =   cont - 1   
-            document.querySelector(`#p${cont}`).id = `p${cont - 1}`;      
-
-            document.querySelector(`#p${cont + 1}`).innerText =   cont
-            document.querySelector(`#p${cont + 1}`).id = `p${cont}`;
-
-            document.querySelector(`#p${cont+2}`).innerText =   cont + 1
-            document.querySelector(`#p${cont+2}`).id = `p${cont + 1}`;
-        }
-    }
-</script>
+<script src="/js/jogos/procurarJogos.js"></script>
 </html>

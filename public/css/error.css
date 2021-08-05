@@ -5,7 +5,9 @@
 }
 
 *{
-    font-family:"PressStart2P";
+    font-family:"PressStart2P";    
+    margin: 0;
+    padding: 0;
 }
 html{
 
@@ -17,75 +19,71 @@ html{
 }
 
 body {
+    height: 100vh;
     border: 0;
     margin: 0;
     padding: 0;
-    background: #d5d5d5;    
+    background: #e6e6e6;    
 
 }
-.modalError{
-            
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.103);
-    position: absolute;
-    
+
+.mainError {
+    width: 40vw;
+    height: 60vh;
+    background-color: rgb(223, 223, 223);
+    margin: 5vh auto;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.37);
+
 }
 
-.caixaError{
-
-    width: 40%;
-    height: 30%;
-    background-color: rgb(221, 221, 221);
-    position: fixed;
-    left: 30%;
-    top: 30%;
-
-    border: 10px rgb(241, 102, 102) solid;
+.caixaImgError{
     box-sizing: border-box;
-
-}
-.cxImg{
-    width: 12%;
-    height: 30%;
-    
-    margin: 2% auto;
+    border: 3px black solid;
+    background-color: rgb(255, 0, 0);
+    width: 40vw;
+    height: 40vh;
+    display: flex;
 }
 .imgError{
-    width: 100%;
-    height: 100%;
+
+    width: 25%;
+    height: 40%;
+    margin: 8vh 37%;    
+    
 }
 .imgError:hover{
     cursor: pointer;
-    width: 102%;
-    height: 102%;
-}
-.messageError{
-    width: 100%;
-    text-align: center;
-    font-size: 15rem;
-}
-.buttonVoltar {
-    width: 100%;
-    height: 19%;
-    margin-top: 3%;
-    align-items: center;
-    display: flex;
+    width: 30%;
+    height: 45%;
+    margin: 7vh 34%;    
     
-
 }
-#buttonVoltar{
+.textError{
+    
+    box-sizing: border-box;
+    padding-top: 2vh;
+    width: 100%;
+    height: 20vh;
+    
+    font-size: 20rem;
+    text-align: center;
+    
+}
+.textError a {
+    display: block;
+    
+}
+.textError button{
+    border-radius: 20px;
     cursor: pointer;
-    margin: auto;
-    width: 40%;
-    height: 100%;
-    border-radius: 10%;
+    width: 15vw;
+    height: 40px;
+    margin-top: 30px;
 }
-#buttonVoltar:hover {
-
-    width: 42%;
+.textError button:hover{
+   
     background-color: yellow;
-}
-#error {
-    position: absolute;
+    cursor: pointer;
+    width: 16vw;
+    height: 45px;
 }
