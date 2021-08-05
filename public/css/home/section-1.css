@@ -30,6 +30,7 @@ html{
     width: 100px;
     height: 170px;
     margin: 10px;
+    border-radius: 15px;
 }
 
 /* height: auto; sera colocado no lugar do 200px quando tiver conteudo no destaque */
@@ -58,9 +59,10 @@ html{
 }
 .noticia button{
     background-color: #000;
-    border: none;;
+    border: none;
     cursor: pointer;
     margin-bottom: 5px;
+    width: 100%;
 }
 .btn-p{
     color: black;
