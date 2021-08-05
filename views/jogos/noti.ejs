@@ -12,27 +12,29 @@
     <header>
         <%- include('../home/header.ejs') %> 
     </header>
-    <div class="geral">
-            <div class="titulo">
-                <h1><%= noticias.titulo %></h1>
-            </div>
-            <div class="subTitulo">
-                <h3><%= noticias.subTitulo %></h3>
-            </div>
-            <div class="att">
-                <p>Escrito por: <%= noticias.autor %></p>
-                <p>Atualizado as: <%= noticias.updatedAt %></p>
-            </div>
+    <div class="flex">
+        <div class="geral">
+                <div>
+                    <h1 class="titulo"><%= noticias.titulo %></h1>
+                </div>
+                <div class="subTitulo">
+                    <h3><%= noticias.subTitulo %></h3>
+                </div>
+                <div class="att">
+                    <p>Escrito por: <%= noticias.autor %></p>
+                    <p>Atualizado as: <%= noticias.updatedAt %></p>
+                </div>
 
-    </div>
-    <article class="article">
-        <div class="texto">
-            <p><%= noticias.descricao %> </p>
-    </div>
-        <div>
-                <img src="<%= noticias.capa %> " alt="">
         </div>
-    </article>
+        <article class="article">
+            <div class="texto">
+                <p class="descricao"><%= noticias.descricao %> </p>
+            </div>
+            <div class="teste">
+                <img class="capa" src="<%= noticias.capa %> " alt="">
+            </div>
+        </article>
+    </div>
     <footer>
         <%- include('../home/footer.ejs') %> 
     </footer>
