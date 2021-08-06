@@ -15,7 +15,7 @@ async function fazerLogin(url, body) {
         divError.innerHTML = `
         <div class="modalError">
 
-        <div class="caixaError">
+            <div class="caixaError">
         
             <div class="cxImg">
                     <img src="/img/error.png" alt="" class="imgError">
