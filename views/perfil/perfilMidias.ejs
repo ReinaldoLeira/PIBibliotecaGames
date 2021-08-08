@@ -36,13 +36,8 @@
                                         </a>
                                 </div>
                                 <div class="caixaImagemTitulo">
-                                        <form action="/users/midias/deletar/<%= imagem.id %>" method="POST"> 
-                                            
-                                                <p class="tituloSendMidia-caixaImagem"><%= imagem.titulo %></p>
-                                                <button type="submit" class="sendMidia">Deletar</button>
-                                            
-                                    </form>
-                                    </div>
+                                    <p class="tituloSendMidia-caixaImagem"><%= imagem.titulo %></p>
+                                </div>
                             </div>
                         <% } %>
                     <% } %>
@@ -57,13 +52,8 @@
                                     <img src="/img/video.png" alt="">
                                 </a>
                             </div>
-                            <div class="caixaImagemTitulo">
-                                    <form action="/users/midias/deletar/<%=video.id%>" method="POST"> 
-                                        
-                                            <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>
-                                            <button type="submit" class="sendMidia">Deletar</button>
-                                        
-                                </form>
+                            <div class="caixaImagemTitulo">  
+                                <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>
                             </div>
                         </div>
                   <%  } %>
