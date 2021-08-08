@@ -1,5 +1,6 @@
 const models = require('../models')
 const { Op } = require('sequelize')
+const { param } = require('express-validator')
 
 module.exports.acharJogo =  async (req,res) => {
 
@@ -29,22 +30,30 @@ module.exports.acharPost = async (req,res) => {
 }
 
 module.exports.userImg = async (req, res) => {
-
+    const params = req.params.id
     const usuario = req.session.usuario
-    const userImg = await models.Midia.findAll({ where : { idPerfis: usuario.id, tipo: 'IMAGEM' }})
+    const userImg = await models.Midia.findAll({ where : {  tipo: 'IMAGEM' }})
     if(userImg){
-        res.send(userImg)
+        res.send({
+            userImg : userImg,
+            usuario : usuario ,
+            params : params
+        })
     }else{
         res.send('não achei')
     }
 }
 
 module.exports.userVideo = async (req, res) => {
-
+    const params = req.params.id ;
     const usuario = req.session.usuario
-    const userVideo = await models.Midia.findAll({ where : { idPerfis: usuario.id , tipo: 'VIDEO' }})
+    const userVideo = await models.Midia.findAll({ where : { tipo: 'VIDEO' }})
     if(userVideo){
-        res.send(userVideo)
+        res.send({
+            userVideo : userVideo,
+            usuario :  usuario,
+            params : params
+        })
     }else{
         res.send('não achei')
     }

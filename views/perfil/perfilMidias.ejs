@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/perfil/userMidia.css">
+        <title>Midias</title>
+</head>
+<body>
+    <header>
+        <%- include('../home/header.ejs') %> 
+    </header>
+
+
+    
+    <div class="paiFlex">
+        <main class="caixaMain">
+            
+            <div class="cxTitulo">
+                
+                <div class="titulo1">
+                    <p>imagem</p>
+                </div>
+                <div class="titulo2">
+                    <p>video</p>
+                </div>
+                
+            </div>
+            <div class="cxConteudo">
+                <div class="conteudoImagem">
+                    <% for ( const imagem of midias){ %>
+                        <%    if ( imagem.tipo == "IMAGEM") { %>
+                            <div class="caixaImagem">
+                                <div class="caixaImagem-img"><a href="<%= imagem.path %>">
+                                        <img src="<%= imagem.path %>" alt="">
+                                        </a>
+                                </div>
+                                <div class="caixaImagemTitulo">
+                                        <form action="/users/midias/deletar/<%= imagem.id %>" method="POST"> 
+                                            
+                                                <p class="tituloSendMidia-caixaImagem"><%= imagem.titulo %></p>
+                                                <button type="submit" class="sendMidia">Deletar</button>
+                                            
+                                    </form>
+                                    </div>
+                            </div>
+                        <% } %>
+                    <% } %>
+                    
+                </div>
+                <div class="conteudoVideo">
+                    <% for (const video of midias) {%>
+                        <% if ( video.tipo == 'VIDEO') { %>
+                        <div class="caixaImagem">
+                            <div class="caixaImagem-img">
+                                <a href="<%= video.path %>">
+                                    <img src="/img/video.png" alt="">
+                                </a>
+                            </div>
+                            <div class="caixaImagemTitulo">
+                                    <form action="/users/midias/deletar/<%=video.id%>" method="POST"> 
+                                        
+                                            <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>
+                                            <button type="submit" class="sendMidia">Deletar</button>
+                                        
+                                </form>
+                            </div>
+                        </div>
+                  <%  } %>
+                  <% } %>
+                
+                </div>
+
+               
+            </div>       
+            
+        </main>
+
+        <aside class="containerPerfil">
+            <%- include('../perfil/usuario-include.ejs') %> 
+        </aside>
+        <div id="containerFoto"></div>
+        <script src="/js/perfil/perfilMidias.js"></script>
+    </div>
+    <footer>
+            <%- include('../home/footer.ejs'); %>
+    </footer>
+</body>
+</html>
