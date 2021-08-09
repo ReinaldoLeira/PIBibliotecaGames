@@ -66,8 +66,7 @@ module.exports.showMidias = async (req, res) => {
         const midias = await models.Midia.findAll({
             where: { idPerfis: perfil.id}
         })
-        
-        
+                
     try{   
         return res.render('./perfil/perfilMidias.ejs', { usuario: usuario, params: params , perfil: perfil, midias: midias})
     }catch(e) {
@@ -76,15 +75,22 @@ module.exports.showMidias = async (req, res) => {
 }
 
 module.exports.showBiblioteca = async (req, res) => {
+    try{
     const usuario = req.session.usuario;
     const params = req.params.id
 
     const perfil = await models.Perfil.findOne({
             where: { id : params }
     })
-    try{
-        return res.render('./perfil/perfilMidias.ejs', {
+    const biblioteca = await models.Biblioteca.findOne({where: {idPerfis: perfil.id}})
+    const perfilMeusJogos = await models.BibliotecaJogo.findAll({
+        include: 'Jogo',
+        where: {idBibliotecas : biblioteca.id}
+    })
 
+        return res.render('./perfil/perfil-MeusJogos.ejs', {
+
+            perfilMeusJogos : perfilMeusJogos,
             usuario: usuario ,
             params: params,
             perfil: perfil
