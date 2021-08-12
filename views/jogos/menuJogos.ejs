@@ -12,11 +12,8 @@
 
 <body >
 <container class="asideMenuJogos">
-   <ul class="fundoBranco compreAgora">
-        <!-- <h3>Compre Agora</h3><br>           
-        <% for(let i = 1; i < 6; i++){ %>
-        <a href="#"><li>Loja 0<%= i %> - R$ xx,xx</li></a>
-        <% } %> -->
+   <ul class="fundoBranco capaMenuJogos">
+        <img src="<%=jogo.capa%>" />
         
     </ul>
     <ul>
@@ -26,6 +23,14 @@
         <%if(usuario){%> <a href="/users/meusJogos"><li class="fundoBranco">Adicionar à Lista de Desejos</li></a> <% } %> 
         <%if(usuario){%> <a href="/jogos/cadastra"><li class="fundoBranco">Cadastrar Novo Jogo</li></a> <% } %> 
     </ul>
-</container>
+    </container>
 </body>
+<script>
+let aux = 0;
+for(let analise of analises){
+        aux+=analise.nota
+    }
+//<li class="media"><h4>Avaliação Média:</h4><img src="/img/nota<%=Math.round(aux/analises.length) %>.png" width="70px" height="70px"></li>
+
+</script>
 </html>

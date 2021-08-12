@@ -1,14 +1,14 @@
-const fs = require('fs');
+//const fs = require('fs');
 const db = require('../models')
 const { Op } = require('sequelize')
 const jogosServices = require('../services/jogosServices')
-let arrayJogos = require('../model/jogos.json')
+//let arrayJogos = require('../model/jogos.json')
 let arrayAnalise = require('../model/analise.json')
 //const noticias = require('../model/noticias.json');
 
 
 //Salva o Array no  jogos.json
-function salvarJogos(arrayJogos) {
+/*function salvarJogos(arrayJogos) {
     fs.writeFileSync(
       './model/jogos.json',
       JSON.stringify(arrayJogos)
@@ -20,6 +20,7 @@ function selecionarJogo(array, id){
     const selecionado = array.filter((array) => {return array.id === parseInt(id)});    
     return selecionado[0]
 }
+*/
 
 function selecionarAnalise(array, id){      
     const selecionado = array.filter((array) => {return array.idJogo === parseInt(id)});    

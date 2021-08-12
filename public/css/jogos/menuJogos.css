@@ -19,6 +19,15 @@
     text-decoration: none;
     color: black;
 }
-    .compreAgora{            
-        height: 50%;            
-    }
+.capaMenuJogos{            
+    height: 50%;       
+    display: flex;  
+    align-items: center;   
+    justify-content: center;
+}
+.capaMenuJogos img{            
+   max-height: 99%;          
+   max-width: 99%;  
+   width: 99%;
+   object-fit: scale-down; 
+}

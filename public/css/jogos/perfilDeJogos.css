@@ -50,12 +50,6 @@
     overflow: hidden;
      
 }
-#imgJogo img{
-    height: 200px;
-    width: 170px;
-    object-fit: scale-down;  
-}
-
 .caixaAnalisesJogo{
     background-color: rgba(143, 143, 143, 0.562);
     width: 100%;
@@ -64,11 +58,8 @@
     display: flex;
     overflow: auto;
     box-shadow: 2px 2px 0px rgb(0, 0, 0);   
-
 }
-
 .conteudoCadaANalise{
-
     width: 25vw;
     min-width: 450px;
     height: 20vh;
@@ -76,8 +67,7 @@
     margin: auto 1%;
     display: flex;
     box-sizing: border-box;
-    box-shadow:  2px 4px 0px rgba(0, 0, 0, 0.192);
-    
+    box-shadow:  2px 4px 0px rgba(0, 0, 0, 0.192);    
 }   
 .linkDoPerfil{
     
