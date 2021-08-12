@@ -14,6 +14,7 @@
     border: 1px solid black;
 	box-shadow: 0.7vw 0.5vh 1vh grey;   
 }
+
 .pesquisa-ajuda{
     background-color: white;
     border: 1px solid black;
@@ -50,7 +51,10 @@
 .click{
     text-decoration: none;
 }
-
+.click:hover{
+    transform:scale(1.15    );
+    transition-duration: 1.5s;
+  }
 .populares-div{
     border-radius: 50px;
     background: white; 

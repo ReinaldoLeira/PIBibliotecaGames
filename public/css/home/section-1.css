@@ -56,7 +56,9 @@ html{
     padding-right: 10px;
     margin-right: 10px;
     background: #fff;
+    flex: 1;
 }
+
 .noticia button{
     background-color: #000;
     border: none;

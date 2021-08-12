@@ -2,38 +2,52 @@
     font-family: 'Press Start 2P';
     src: url(/font/PressStart2P-Regular.ttf);
 }
+
 html{
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
     box-sizing: border-box;
     font-size: 6.25%;
 }
+
 *{
     text-decoration: none;
     color: black;
 }
+
+
 .cabecalho{
     background-color: #0E9AA7;
     margin: 0.5% auto;
     width: 98%;
-    min-width: 700px;
+    min-width: 320px;
     height: 100px;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
     box-shadow: 10px 5px 5px grey;
 }
+
 .cabecalho-logo{
+    
     margin-left: 10px;
-    width: 17%;
+    width: 21vw;
     height: 100%;
 }
+.cabecalho-logo img {
+    width: 100%;
+    height: 100%;
+    min-width: 150px;
+    max-width: 300px;
+}
+
 .caixaCabecalho{
     width: 20%;
     min-width: 320px;
     height: 50%;
     margin-top: 25px;
 }
+
 .caixaCabecalho ul{
     width: 100%;
     height: 100%;
@@ -42,70 +56,71 @@ html{
     align-items: center;
     padding: 0;
 }
+
 .listaInicio{
     margin-left: 7%;
-   
     font-size: 15rem;
 }
+
 .listaInicio a {
     text-decoration: none;
 }
 
 .divPesquisar {
-    width: 15%;
+   
+    width: 15vw;
     height: 100%;
-    min-width: 250px;
+    
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
 }
+
 #formPesquisar-input{
     width: 100%;
     height: 30px;
-    margin-top: 12%;
+    
     border: 1px solid black;
-    padding-left: 5px;
+    
 }
-.caixaEntrarSair{
 
+.caixaEntrarSair{
     width: 13vw;
     height: 1.5vh;
     display: flex;    
     margin-top: 40px;
-    margin-right: 5%;
+    margin-right: 1%;
     align-items: center;
-    
 }
+
 .btn-p{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
     font-size: 15rem;
     color: black;
     margin-right: 12%;
-    
-    
 }
+
 .nome-usuario-logado {
     cursor: pointer;   
 }
 
 .caixaLogin{
-    
     margin-right: 45px;
     padding-top: 10px;
     height: 100%;
-    
     box-sizing: border-box;
 }
-.img-usuarioLogado {
 
+.img-usuarioLogado {
     border: 2px solid rgb(157, 255, 0);
-    
     width: 7vh;
     height: 7vh;
     border-radius: 50%;
     padding: 2px;
-    
 }
+
 .caixaListaLogin{
-    
     position:absolute;
     height: 24vh;
     width: 7%;
@@ -117,9 +132,11 @@ html{
     font-size: 16rem;
     display: none;    
 }
+
 .aparecer {
     display: block;
 }
+
 .caixaListaLogin ul{
     margin: 0;
     padding: 0;
@@ -127,14 +144,13 @@ html{
     text-align: center;
     text-decoration: none;
     color: black;
-    
 }
+
 .caixaListaLogin ul a {
     text-decoration: none;
-    
 }
-.caixaListaLogin-li{
 
+.caixaListaLogin-li{
     margin-top: 1.5%;
     border-bottom: 2px silver solid;
     display: block;
@@ -142,13 +158,14 @@ html{
     height: 15%;
     box-sizing: border-box;
     padding-top: 10%;
-    
 }
+
 .caixaListaLogin-li:hover{
     cursor: pointer;
     background-color: rgb(255, 251, 0);
     border-bottom: 2px rgb(67, 252, 10) solid;
 }
+
 .inputCaixaSair{
     width: 100%;
     height: 40px;
@@ -156,20 +173,51 @@ html{
     cursor: pointer;
     font-family: 'Press Start 2P';
 }
+
 .inputCaixaSair:hover{
     background-color: yellow;
 }
 
 .caixaListaLogin-li-sair{
-    
     border-bottom: 2px silver solid;
     display: block;
     width: 100%;
     height: 20%;
     box-sizing: border-box;
-    
-
 }
+
 .caixaListaLogin-li-sair:hover{
     background-color: yellow;
+}
+
+@media (max-width: 1440px) {
+
+    .listaInicio{
+        font-size: 10rem;
+    }
+    #formPesquisar-input {
+        width: 85%;
+    }
+
+    .btn-p {
+        font-size: 13rem;
+    }
+  
+}
+
+@media (max-width: 1236px) {
+    .btn-p {
+        font-size: 9rem;
+    }
+
+    .divPesquisar {
+        width: 7%;
+    }
+
+    #formPesquisar-input {
+        width: 100%;
+    }
+    .divPesquisar {
+        width: 9vw;
+    }
 }

@@ -8,8 +8,8 @@ async function carregarConteudo(){
     const resultado = await fetch("http://localhost:3000/apis/userimg")
     const body = await resultado.json()
     
-    for (const img of body) {
-        
+    for (const img of body.userImg) {
+        if(img.idPerfis == body.usuario.id)
         conteudo.innerHTML += `
         <div class="caixaImagem">
                     <div class="caixaImagem-img"><a href="${img.path}">
@@ -43,7 +43,8 @@ aba2.onclick = () =>{
         const body = await resultado.json()
         conteudo.innerHTML =''
 
-        for (const video of body) {
+        for (const video of body.userVideo) {
+            if(video.idPerfis == body.usuario.id) {
             conteudo.innerHTML += `
             <div class="caixaImagem">
                     <div class="caixaImagem-img">
@@ -62,7 +63,7 @@ aba2.onclick = () =>{
             </div>`
         }
     }
-
+    }
     
     AcharVideo()
 
@@ -82,7 +83,8 @@ aba1.onclick = () => {
         const resultado = await fetch("http://localhost:3000/apis/userimg")
         const body = await resultado.json()
         conteudo.innerHTML =''
-        for (const img of body) {
+        for (const img of body.userImg) {
+            if(img.idPerfis == body.usuario.id) {
             conteudo.innerHTML +=`
             <div class="caixaImagem">
                         <div class="caixaImagem-img"><a href="${img.path}">
@@ -100,7 +102,7 @@ aba1.onclick = () => {
                 </div>`
         }
     }
-
+    }
     acharImg()
     
     
