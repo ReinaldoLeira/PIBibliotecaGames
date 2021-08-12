@@ -1,5 +1,6 @@
+
 const models = require('../models');
-const { post } = require('../routes/indexRouter');
+
 
 module.exports.showPerfil = async (req, res) => {
     const usuario = req.session.usuario
@@ -55,25 +56,46 @@ module.exports.showAnalise = async (req, res)=> {
 }
 
 module.exports.showMidias = async (req, res) => {
-    const params = req.params.id
-    const perfil = models.Perfil.findOne({
-        where: { id : params }
-    })
-    const midias = models.Midia.findAll({
-        where: { id: perfil.id }
-    })
-    if(perfil){
-        res.render('./perfil/userMidias.ejs', {usuario : req.session.usuario , perfil: perfil, midias : midias})
-    }  
+    
+        const usuario = req.session.usuario
+        const params = req.params.id
+        
+        const perfil = await models.Perfil.findOne({
+            where: { id : params }
+        })
+        const midias = await models.Midia.findAll({
+            where: { idPerfis: perfil.id}
+        })
+                
+    try{   
+        return res.render('./perfil/perfilMidias.ejs', { usuario: usuario, params: params , perfil: perfil, midias: midias})
+    }catch(e) {
+        res.send('nada')
+    }
 }
 
 module.exports.showBiblioteca = async (req, res) => {
+    try{
+    const usuario = req.session.usuario;
     const params = req.params.id
-    const perfil = models.Perfil.findOne({
-        
-        Where : { id : params }
+
+    const perfil = await models.Perfil.findOne({
+            where: { id : params }
     })
-    if(perfil){
-        res.render('./perfil/meusJogos.ejs', {usuario : req.session.usuario , perfil: perfil })
-    }  
+    const biblioteca = await models.Biblioteca.findOne({where: {idPerfis: perfil.id}})
+    const perfilMeusJogos = await models.BibliotecaJogo.findAll({
+        include: 'Jogo',
+        where: {idBibliotecas : biblioteca.id}
+    })
+
+        return res.render('./perfil/perfil-MeusJogos.ejs', {
+
+            perfilMeusJogos : perfilMeusJogos,
+            usuario: usuario ,
+            params: params,
+            perfil: perfil
+        })
+    }catch(e) {
+        res.send('nada')
+    } 
 }

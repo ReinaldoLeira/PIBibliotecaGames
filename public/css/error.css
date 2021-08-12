@@ -18,14 +18,7 @@ html{
     padding: 0;
 }
 
-body {
-    height: 100vh;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    background: #e6e6e6;    
 
-}
 
 .mainError {
     width: 40vw;
@@ -44,14 +37,14 @@ body {
     height: 40vh;
     display: flex;
 }
-.imgError{
+.img-Error{
 
     width: 25%;
     height: 40%;
     margin: 8vh 37%;    
     
 }
-.imgError:hover{
+.img-Error:hover{
     cursor: pointer;
     width: 30%;
     height: 45%;

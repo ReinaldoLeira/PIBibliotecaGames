@@ -36,8 +36,9 @@ module.exports.analise2 = async (req, res) => {
         include:['genero','plataforma']
     }) 
     const analiseJogo = await db.Analise.findAll({
-        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+        include:'Perfil', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
     })
+  
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
     res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
@@ -72,7 +73,7 @@ module.exports.perfil = async (req, res) => {
         include:['genero','plataforma']
     }) 
     const analiseJogo = await db.Analise.findAll({
-        include:'Jogo', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+        include:'Perfil', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
     })
     //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
