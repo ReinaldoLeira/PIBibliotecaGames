@@ -5,24 +5,23 @@
     <link rel="stylesheet" href="/css/home/header.css">
 </head>
 <header class="cabecalho">
-    <div class="cabecalho-logo">
-        <img src="/img/logo.png">
-    </div>
+        <div class="cabecalho-logo">
+            <a href="/"><img src="/img/logo.png"></a>
+        </div>
 
-    <div class="caixaCabecalho">
-        <ul>
-            <li class="listaInicio"> <a href="/">Inicio</a></li>
-            <li class="listaInicio"> <a href="/home/quemSomos">Sobre</a></li>
-            <li class="listaInicio"> <a href="/jogos">Jogos</a></li>
-            <li class="listaInicio"> <a href="/jogos/noticias">Noticias</a></li>
-        </ul>
-    </div>
-    <div class="divPesquisar">
-        <form action="/jogos/pesquisar" class="formPesquisar" method="GET">
-            <input type="search" name="nome" id="formPesquisar-input" placeholder="Pequisar">
-        </form>
-    </div>
-    
+        <div class="caixaCabecalho">
+            <ul>
+                <li class="listaInicio"><a href="/">Inicio</a></li>
+                <li class="listaInicio"><a href="/home/quemSomos">Sobre</a></li>
+                <li class="listaInicio"><a href="/jogos">Jogos</a></li>
+                <li class="listaInicio"><a href="/jogos/noticias">Noticias</a></li>
+            </ul>
+        </div>
+        <div class="divPesquisar">
+            <form action="/jogos/pesquisar" class="formPesquisar" method="GET">
+                <input type="search" name="nome" id="formPesquisar-input" placeholder="Pequisar">
+            </form>
+        </div>
     <% if (usuario) {%>
 
         <div class="caixaLogin">
@@ -31,22 +30,23 @@
             </a>
             <div class="caixaListaLogin">
                 <ul>
-                    <a href="/users"><li class="caixaListaLogin-li">inicio</li></a>
-                    <a href="/users/posts"><li class="caixaListaLogin-li">Posts</li></a>
-                    <a href="/users/analise"><li class="caixaListaLogin-li">Análise</li></a>
-                    <a href="/users/midias"><li class="caixaListaLogin-li">Midias</li></a>
-                    <a href="/users/meusjogos"><li class="caixaListaLogin-li">Jogos</li></a>
+                    <li class="caixaListaLogin-li"><a href="/users">inicio</a></li>
+                    <li class="caixaListaLogin-li"><a href="/users/posts">Posts</a></li>
+                    <li class="caixaListaLogin-li"><a href="/users/analise">Análise</a></li>
+                    <li class="caixaListaLogin-li"><a href="/users/midias">Midias</a></li>
+                    <li class="caixaListaLogin-li"><a href="/users/meusjogos">Jogos</a></li>
                     <li class="caixaListaLogin-li-sair">
-                    <form action="/sair" method="POST">
-                        <button type="submit" class="inputCaixaSair">Sair</button>             
-                    </form action="/sair"> </li>
+                        <form action="/sair" method="POST">
+                            <button type="submit" class="inputCaixaSair">Sair</button>             
+                        </form action="/sair">
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <!-- <form action="/sair" method="POST" class="botaoSair">
+        <form action="/sair" method="POST" class="botaoSair">
             <button type="submit"><img src="/img/botaoSair.png" alt="" srcset=""></button>             
-        </form action="/sair">       -->
+        </form action="/sair">
 
     <%}else { %>
         <div class="caixaEntrarSair"> 
@@ -54,6 +54,7 @@
             <a class="btn-p" href="/registrar">Registrar</a>
         </div>   
     <%}%>
+    
     <script src="/js/index/header.js"></script>
 </header>
 </html>
