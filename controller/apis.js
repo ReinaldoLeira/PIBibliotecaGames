@@ -103,3 +103,13 @@ module.exports.pesquisarJogo = async (req, res) => {
     })       
     return res.send(resultados)
 }
+module.exports.jogosAnalises = async (req,res) => {    
+    
+    const acharAnalise = await models.Analise.findAll({
+        where: {
+            idJogos: req.params.id
+        }
+    })
+    
+    res.send(acharAnalise)    
+}
