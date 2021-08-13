@@ -10,7 +10,7 @@ module.exports.showPerfil = async (req, res) => {
     })
     
    if(perfil) {
-       res.render('./perfil/usuario.ejs', { usuario : usuario , perfil : perfil})
+       res.render('./perfil/perfil.ejs', { usuario : usuario , perfil : perfil})
    }    
 }
 
