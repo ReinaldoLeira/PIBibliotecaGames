@@ -4,53 +4,57 @@
 <head>
     <link rel="stylesheet" href="/css/home/header.css">
 </head>
-<header class="cabecalho">
-        <div class="cabecalho-logo">
-            <a href="/"><img src="/img/logo.png"></a>
-        </div>
-
-        <div class="caixaCabecalho">
-            <ul>
+<header>
+    <div>
+        <nav class="navbar">
+            <a class="navLogo" href="/"><img src="/img/logo.png"></a>
+            <ul class="navList">
                 <li class="listaInicio"><a href="/">Inicio</a></li>
                 <li class="listaInicio"><a href="/home/quemSomos">Sobre</a></li>
                 <li class="listaInicio"><a href="/jogos">Jogos</a></li>
                 <li class="listaInicio"><a href="/jogos/noticias">Noticias</a></li>
             </ul>
-        </div>
-        <div class="divPesquisar">
+            <% if (usuario) {%>
+            <div class="navFinal-logado">
+                <form action="/jogos/pesquisar" class="formPesquisar" method="GET">
+                    <input type="search" name="nome" id="formPesquisar-input" placeholder="Pequisar">
+                </form>
+                <div class="caixaLogin-logado">
+                    <a class="nome-usuario-logado">
+                        <img class="img-usuarioLogado" src="<%=usuario.foto%>" alt=""/>
+                    </a>
+                    <div class="caixaListaLogin">
+                        <ul>
+                            <li class="caixaListaLogin-li"><a href="/users">inicio</a></li>
+                            <li class="caixaListaLogin-li"><a href="/users/posts">Posts</a></li>
+                            <li class="caixaListaLogin-li"><a href="/users/analise">Análise</a></li>
+                            <li class="caixaListaLogin-li"><a href="/users/midias">Midias</a></li>
+                            <li class="caixaListaLogin-li"><a href="/users/meusjogos">Jogos</a></li>
+                            <li class="caixaListaLogin-li-sair">
+                                <form action="/sair" method="POST">
+                                    <button type="submit" class="inputCaixaSair">Sair</button>             
+                                </form action="/sair">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    <%}else { %>
+        <div class="navFinal">
             <form action="/jogos/pesquisar" class="formPesquisar" method="GET">
                 <input type="search" name="nome" id="formPesquisar-input" placeholder="Pequisar">
             </form>
-        </div>
-    <% if (usuario) {%>
-
-        <div class="caixaLogin">
-            <a class="nome-usuario-logado">
-                <img class="img-usuarioLogado" src="<%=usuario.foto%>" alt=""/>
-            </a>
-            <div class="caixaListaLogin">
-                <ul>
-                    <li class="caixaListaLogin-li"><a href="/users">inicio</a></li>
-                    <li class="caixaListaLogin-li"><a href="/users/posts">Posts</a></li>
-                    <li class="caixaListaLogin-li"><a href="/users/analise">Análise</a></li>
-                    <li class="caixaListaLogin-li"><a href="/users/midias">Midias</a></li>
-                    <li class="caixaListaLogin-li"><a href="/users/meusjogos">Jogos</a></li>
-                    <li class="caixaListaLogin-li-sair">
-                        <form action="/sair" method="POST">
-                            <button type="submit" class="inputCaixaSair">Sair</button>             
-                        </form action="/sair">
-                    </li>
-                </ul>
+            <div class="caixaLogin">
+                <div class="caixaEntrarSair"> 
+                    <ul class="listaEntrar">
+                        <li><a class="btn-p" href="/login">Entrar</a></li>
+                        <li><a class="btn-p" href="/registrar">Registrar</a></li>
+                    </ul>
+                </div>  
             </div>
-        </div>
-
-    <%}else { %>
-        <div class="caixaEntrarSair"> 
-            <a class="btn-p" href="/login">Entrar</a>
-            <a class="btn-p" href="/registrar">Registrar</a>
         </div>   
     <%}%>
-    
+</nav>
     <script src="/js/index/header.js"></script>
 </header>
 </html>
