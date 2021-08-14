@@ -47,8 +47,11 @@
     height: 13vh;
     max-height: 13vh ;
     font-size: 10rem;  
-    overflow: hidden;
-     
+    overflow: hidden;     
+}
+.avisoPerfilJogo{
+    color: red;
+    font-size: 7rem;
 }
 .caixaAnalisesJogo{
     background-color: rgba(143, 143, 143, 0.562);

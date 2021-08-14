@@ -33,18 +33,16 @@
     async function carregarAnalises(){
         const idJogo = document.querySelector("#capaMenu").alt        
         const resultado = await fetch(`http://localhost:3000/apis/listaranalises/${idJogo}`)
-        const analisesNotas = await resultado.json()
-        console.log(analisesNotas)
+        const analisesNotas = await resultado.json()        
         let aux = 0;
     for(let analise of analisesNotas){
         aux+=analise.nota
     }
-    aux = Math.round(aux/analisesNotas.length)
-    console.log(aux)
+    aux = Math.round(aux/analisesNotas.length)    
     document.querySelector(".avaliarMenuJogo").innerHTML = `<li class="media"><h4>Avaliação Média:</h4><img src="/img/nota${aux}.png" width="70px" height="70px"></li>`
     }
     
-    //<li class="media"><h4>Avaliação Média:</h4><img src="/img/nota=Math.round(aux/analises.length).png" width="70px" height="70px"></li>
+   
 
 </script>
 </html>

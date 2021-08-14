@@ -18,6 +18,8 @@
         <main class="pai coluna mainPerfilDeJogos">
             <section class="fundoBranco" id="tituloPerfilDeJogos">
                 <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nome%></a></h1>
+                <% console.log(jogo) %> 
+                <p class="avisoPerfilJogo"> <%if(jogo.validado != 1){ %> *Este jogo ainda não foi validado pela nossa Staff e pode conter erros. <% } %> </p>
             </section>
             <section class="pai  h-33PerfilDeJogos">                
                 <section id="descricaoPerfilDeJogos">
@@ -62,6 +64,7 @@
             </section>
             <section class="fundoBranco h-33PerfilDeJogos">
                 Avaliações
+                
             </section>
         </main>
         <aside class="fundoVerde">

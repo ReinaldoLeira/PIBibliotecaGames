@@ -49,6 +49,7 @@ const paginacao = document.querySelector('#paginacaoProcurarJogos')
             exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
         }
         document.querySelector('#jogosEncontrados').innerText = ` Jogos Encontrados: ${jogos.length}`
+        mudarAtivo()
     }
 
     function mudarAtivo(){
