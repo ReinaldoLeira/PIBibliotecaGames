@@ -1,35 +1,6 @@
-//const fs = require('fs');
 const db = require('../models')
 const { Op } = require('sequelize')
 const jogosServices = require('../services/jogosServices')
-//let arrayJogos = require('../model/jogos.json')
-let arrayAnalise = require('../model/analise.json')
-//const noticias = require('../model/noticias.json');
-
-
-//Salva o Array no  jogos.json
-/*function salvarJogos(arrayJogos) {
-    fs.writeFileSync(
-      './model/jogos.json',
-      JSON.stringify(arrayJogos)
-    );
-}
-
-//Recebe o id da pagina e o array e retorna o jogo selecionado
-function selecionarJogo(array, id){      
-    const selecionado = array.filter((array) => {return array.id === parseInt(id)});    
-    return selecionado[0]
-}
-*/
-
-function selecionarAnalise(array, id){      
-    const selecionado = array.filter((array) => {return array.idJogo === parseInt(id)});    
-    return selecionado
-}
-
-/*module.exports.analise = (req, res) => {
-    res.render('./jogos/analiseJogos')
-}*/
 
 module.exports.analise2 = async (req, res) => {
     const jogo = await db.Jogo.findOne({        
@@ -39,10 +10,7 @@ module.exports.analise2 = async (req, res) => {
     const analiseJogo = await db.Analise.findAll({
         include:'Perfil', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
     })
-  
-    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)   
-    const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id)  
-    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
+    res.render('./jogos/analiseJogos2',{usuario: req.session.usuario, jogo, analiseJogo: analiseJogo})
 }
 
 module.exports.historico = async (req, res) => {
@@ -50,7 +18,6 @@ module.exports.historico = async (req, res) => {
         where: {id: req.params.id},
         include:['genero','plataforma']
     }) 
-    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     res.render('./jogos/histDePreco',{usuario: req.session.usuario, jogo})
 }
 
@@ -64,7 +31,6 @@ module.exports.midia = async (req, res) => {
             idJogos : jogo.id
         }
     }) 
-    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
     res.render('./jogos/midiaJogo',{usuario: req.session.usuario, jogo , midiaJogo : midiaJogo})
 }
 
@@ -75,10 +41,8 @@ module.exports.perfil = async (req, res) => {
     }) 
     const analiseJogo = await db.Analise.findAll({
         include:'Perfil', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
-    })
-    //const jogoSelecionado = selecionarJogo(arrayJogos, req.params.id)    
-    const analiseSelecionada = selecionarAnalise(arrayAnalise, req.params.id) 
-    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analises: analiseSelecionada, analiseJogo: analiseJogo})
+    })    
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analiseJogo: analiseJogo})
 }
 
 module.exports.listar = async (req, res) => {    

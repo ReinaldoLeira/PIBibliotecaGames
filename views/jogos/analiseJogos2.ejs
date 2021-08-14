@@ -36,12 +36,8 @@
             </div>
             <div class="jogo">
                 <ul>
-                    <li><a href="/jogos/perfil/<%=jogo.id%>"><img src="<%=jogo.capa%>" width="400px" height="500px"></a></li>
-                    <li><h4>Sobre o jogo:</h4><p width="450px"><%=jogo.descricao%></p></li>
-                    <% let aux = 0;for(let analise of analises){%>
-                        <%aux+=analise.nota%> 
-                    <%}%>
-                    <li class="media"><h4>Avaliação Média:</h4><img src="/img/nota<%=Math.round(aux/analises.length) %>.png" width="70px" height="70px"></li>
+                    
+                    
                 </ul>
             </div>
         </div>

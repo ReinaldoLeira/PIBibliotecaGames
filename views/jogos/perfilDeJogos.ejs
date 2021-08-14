@@ -17,8 +17,7 @@
     <container class="pai containerPerfilDeJogos">
         <main class="pai coluna mainPerfilDeJogos">
             <section class="fundoBranco" id="tituloPerfilDeJogos">
-                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nome%></a></h1>
-                <% console.log(jogo) %> 
+                <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nome%></a></h1>                
                 <p class="avisoPerfilJogo"> <%if(jogo.validado != 1){ %> *Este jogo ainda não foi validado pela nossa Staff e pode conter erros. <% } %> </p>
             </section>
             <section class="pai  h-33PerfilDeJogos">                
