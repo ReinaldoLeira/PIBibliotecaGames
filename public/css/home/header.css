@@ -11,8 +11,7 @@ html{
 }
 
 *{
-    text-decoration: none;
-    color: black;
+    text-decoration: none;    
     box-sizing: border-box;
 }
 /* ===================================================================== */
@@ -63,6 +62,7 @@ html{
 }
 
 .listaInicio a {
+    color: black;
     text-decoration: none;
 }
 

@@ -1,7 +1,10 @@
 const aba1= document.querySelector('.titulo1')
 const aba2 = document.querySelector('.titulo2')
 const conteudo = document.querySelector('.conteudo1')
+
 conteudo.innerHTML = '';
+
+
 
 
 async function carregarConteudo(){
@@ -39,35 +42,57 @@ aba2.onclick = () =>{
     aba1.style.background = '#10838d'
 
     async function AcharVideo(){
+        
         const resultado = await fetch("http://localhost:3000/apis/uservideo")
         const body = await resultado.json()
+        
         conteudo.innerHTML =''
 
         for (const video of body.userVideo) {
             if(video.idPerfis == body.usuario.id) {
-            conteudo.innerHTML += `
-            <div class="caixaImagem" id="caixaVIdeo">
-                    <div class="caixaImagem-img">
-                        <a href="https://www.youtube.com/watch?v=${video.path}">
-                            <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="caixaImagemTitulo">
-                            <form action="/users/midias/deletar/${video.id}" method="POST"> 
-                                
-                                    <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
-                                    <button type="submit" class="sendMidia">Deletar</button>
-                                
+                console.log(video.path)
+            conteudo.innerHTML += 
+            `           
+            <div class='caixaImagem caixaVideo ' onclick="myFunction('${video.path}')">
+                <div class="caixaImagem-img">
+                    <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt=""/>                        
+                </div>
+                <div class="caixaImagemTitulo">
+                    <form action="/users/midias/deletar/${video.id}" method="POST">         
+                        <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
+                        <button type="submit" class="sendMidia">Deletar</button>        
                         </form>
-                    </div>
-            </div>`
+                </div>
+            </div>
+            `
+            }
         }
-    }
-    }
-    
-    AcharVideo()
-
+        
+    }    
+    AcharVideo()   
 }
+
+function myFunction(value) {
+    const modalVideo = document.getElementById('modalVideo')
+    modalVideo.style.display='block'
+    modalVideo.innerHTML =
+            `
+            <div id="bigVideo">
+                <button id="fecharAba">FECHAR</button>
+                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${value}" 
+                 title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                 allowfullscreen></iframe>
+             </div> 
+            
+            `
+    const fecharAba = document.getElementById('fecharAba')
+    fecharAba.onclick = () => {
+        modalVideo.style.display ='none'
+
+    }
+} 
+
 
 aba1.onclick = () => {
     
@@ -104,6 +129,7 @@ aba1.onclick = () => {
     }
     }
     acharImg()
+    
     
     
 }
@@ -154,4 +180,3 @@ async function acharJogo() {
     }
 }
 acharJogo()
-
