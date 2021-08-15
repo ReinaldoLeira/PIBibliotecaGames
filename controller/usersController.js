@@ -165,22 +165,36 @@ module.exports.userMidias =  (req, res) => {res.render('./users/userMidia', {usu
 module.exports.criarMidia = async (req, res) => {
     const usuario = req.session.usuario;
     const formBody = req.body;
-    console.log(formBody)
+    
+    if (formBody.tipo == 'VIDEO') {
+        
+        const tipvideo = formBody.url;
+        const array = tipvideo.split('?v=', 2)
+        const finalArray = array[1].split('&', 2)
+        const url = finalArray[0]
 
-    try{
         const criarMidia = await models.Midia.create({
-            tipo: formBody.tipo,
+            tipo: 'VIDEO',
+            path: url, 
+            idPerfis: usuario.id,
+            idJogos: formBody.selectJogo,
+            titulo: formBody.titulo
+        })
+        return res.redirect('/users/midias')
+    }
+    if (formBody.tipo == 'IMAGEM'){
+
+        const criarMidia = await models.Midia.create({
+            tipo: 'IMAGEM',
             path: formBody.url, 
             idPerfis: usuario.id,
             idJogos: formBody.selectJogo,
             titulo: formBody.titulo
         })
-        if(criarMidia) {
-            res.redirect('/users/midias')
-        }
-    } catch {
-        return res.status(400).send({message : e.message, status:400})
+        return res.redirect('/users/midias')
     }
+
+    return res.redirect('/users/midias')
 }
 
 module.exports.deletMidia = async(req, res) => {
@@ -201,6 +215,7 @@ module.exports.addMeusJogos = async(req, res) => {
     const formBody = req.body
     const usuario = req.session.usuario
     console.log(formBody)
+
     const acharBiblioteca = await models.Biblioteca.findOne({where: { idPerfis : usuario.id}})
     const criarMinhaBiblioteca = await models.BibliotecaJogo.create({
         plataforma: formBody.plataforma,
@@ -210,6 +225,8 @@ module.exports.addMeusJogos = async(req, res) => {
     })
     if (criarMinhaBiblioteca){
         res.redirect ('/users/meusjogos')
+    }else{
+        res.redirect('/users/meusJogos')
     }
     
 }

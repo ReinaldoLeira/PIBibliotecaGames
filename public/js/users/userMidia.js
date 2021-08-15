@@ -46,10 +46,10 @@ aba2.onclick = () =>{
         for (const video of body.userVideo) {
             if(video.idPerfis == body.usuario.id) {
             conteudo.innerHTML += `
-            <div class="caixaImagem">
+            <div class="caixaImagem" id="caixaVIdeo">
                     <div class="caixaImagem-img">
-                        <a href="${video.path}">
-                            <img src="/img/video.png" alt="">
+                        <a href="https://www.youtube.com/watch?v=${video.path}">
+                            <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt="">
                         </a>
                     </div>
                     <div class="caixaImagemTitulo">
@@ -86,7 +86,7 @@ aba1.onclick = () => {
         for (const img of body.userImg) {
             if(img.idPerfis == body.usuario.id) {
             conteudo.innerHTML +=`
-            <div class="caixaImagem">
+            <div class="caixaImagem" id="caixaImagem">
                         <div class="caixaImagem-img"><a href="${img.path}">
                                 <img src="${img.path}" alt="">
                                 </a>
