@@ -14,19 +14,16 @@ async function carregarConteudo(){
     for (const img of body.userImg) {
         if(img.idPerfis == body.usuario.id)
         conteudo.innerHTML += `
-        <div class="caixaImagem">
-                    <div class="caixaImagem-img"><a href="${img.path}">
-                            <img src="${img.path}" alt="">
-                            </a>
-                    </div>
-                    <div class="caixaImagemTitulo">
-                            <form action="/users/midias/deletar/${img.id}" method="POST"> 
-                                
-                                    <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
-                                    <button type="submit" class="sendMidia">Deletar</button>
-                                
-                        </form>
-                        </div>
+        <div class="caixaImagem" onclick="showModalImagem('${img.path}')">
+            <div class="caixaImagem-img">
+                    <img src="${img.path}" alt="">
+            </div>
+            <div class="caixaImagemTitulo">
+                <form action="/users/midias/deletar/${img.id}" method="POST">
+                    <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
+                    <button type="submit" class="sendMidia">Deletar</button>
+                </form>
+            </div>
             </div>`
     }
 }
@@ -53,7 +50,7 @@ aba2.onclick = () =>{
                 console.log(video.path)
             conteudo.innerHTML += 
             `           
-            <div class='caixaImagem caixaVideo ' onclick="myFunction('${video.path}')">
+            <div class='caixaImagem caixaVideo ' onclick="showModal('${video.path}')">
                 <div class="caixaImagem-img">
                     <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt=""/>                        
                 </div>
@@ -72,7 +69,7 @@ aba2.onclick = () =>{
     AcharVideo()   
 }
 
-function myFunction(value) {
+function showModal(value) {
     const modalVideo = document.getElementById('modalVideo')
     modalVideo.style.display='block'
     modalVideo.innerHTML =
@@ -89,6 +86,7 @@ function myFunction(value) {
     const fecharAba = document.getElementById('fecharAba')
     fecharAba.onclick = () => {
         modalVideo.style.display ='none'
+        modalVideo.innerHTML = ''
 
     }
 } 
@@ -180,3 +178,24 @@ async function acharJogo() {
     }
 }
 acharJogo()
+
+
+function showModalImagem(value){
+    const showModal = document.getElementById('modalVideo')
+    showModal.style.display='block'
+    showModal.innerHTML = 
+    `
+        <div id="bigVideo">
+            <button id="fecharAba">FECHAR</button>
+            <a href="${value}" > <img src="${value}" alt="Minha Figura" class="iframe"/></a>
+        
+        </div>
+    `
+    const fecharAba = document.getElementById('fecharAba')
+    fecharAba.onclick = () => {
+        showModal.style.display ='none'
+        showModal.innerHTML = ''
+
+    }
+
+}
