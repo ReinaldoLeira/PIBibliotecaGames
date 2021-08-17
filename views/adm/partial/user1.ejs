@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="/css/adm/admListar.css">
+
+
+
 <p><label>Procurar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
                 <section class="fundoBranco h-50">
                     <table class="tablePainelAdmin">
@@ -11,9 +15,13 @@
                     <%for(let user of listaUsers){%>
                     <tr>
                         <td><%=user.id%></td>
-                        <td><%=user.nick%></td>
+                        <td><%=user.Perfil.usuario%></td>
                         <td><%=user.email%></td>
-                        <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                        <td>
+                            <button onclick="Editar()"><img src="/img/adm/editar.png" alt="Editar"></button>
+                            <button onclick="Bloquear()"><img src="/img/adm/bloquear.png" alt="Bloquear"></button>
+                            <button onclick="Deletar()"><img src="/img/adm/deletar.png" alt="Deletar"></button>
+                        </td>
                     </tr>
                     <%}%>
                 
@@ -21,5 +29,39 @@
                 </section>
                 <p><label>Usuários Bloqueados</label></p>
                 <section class="fundoBranco h-30">
+                    <table class="tablePainelAdmin">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nick</th>
+                            <th>email</th>
+                            <th>Ações</th>
+                        </tr>
+                        
+                        <%for(let user of listaUsers){%>
+                            <% if(user.blocked == '1') { %>
+                                <tr>
+                                    <td><%=user.id%></td>
+                                    <td><%=user.Perfil.usuario%></td>
+                                    <td><%=user.email%></td>
+                                    <td>
+                                       <button onclick="Editar()"><img src="/img/adm/editar.png" alt="Editar"></button>
+                                        <a href="#"><img src="/img/adm/bloquear.png" alt="Desbloquear"></a>
+                                        <a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+                                </tr>
+                                
+                           <% } %>
+                        <%}%>
+                    
+                    </table>
 
                 </section>
+
+                <div id="modalUser">
+                    <div id="cxEditar">
+                        <%- include('./includs/caixaEditar.ejs'); %>
+                    </div>
+                    
+                </div>
+                    
+
+<script src="/js/adm/admUsuario/admListar.js"></script>
