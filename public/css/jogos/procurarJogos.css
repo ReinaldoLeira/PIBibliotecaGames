@@ -50,9 +50,15 @@
     border-radius: 5px;
 }
 
-.paginasProcurarJogos a:hover:not(.ativo) {
+.paginacaoAtiva:hover:not(.ativo) {
     background-color: #9ee1e8;
     border-radius: 5px;
+}
+.paginacaoDesativa:hover:not(.ativo) {
+    background-color: rgb(192, 192, 192);
+    color: white;
+    border-radius: 5px;
+    cursor: not-allowed;
 }
 .jogosProcuraJogos{    
     width: 100%;      

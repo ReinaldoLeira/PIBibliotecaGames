@@ -41,20 +41,32 @@ const paginacao = document.querySelector('#paginacaoProcurarJogos')
         const url = new URL(window.location.href)       
         const resultado = await fetch(`http://localhost:3000/apis/listarjogos${url.search}`)
         const jogos = await resultado.json()
-        await console.log(Math.ceil(jogos.length / 15))        
+        console.log(Math.ceil(jogos.length / 15))        
         limite = Math.ceil(jogos.length / 15)
         exibirJogos.innerHTML = ""
         for(let i= 15 * (cont - 1); i<jogos.length && i < (cont * 15); i++){
             //console.log(i)
             exibirJogos.innerHTML +=  `<a href="/jogos/perfil/${jogos[i].id}"><img src="${jogos[i].capa}"/><p>${jogos[i].nome}</p></a>`                
         }
-        document.querySelector('#jogosEncontrados').innerText = ` Jogos Encontrados: ${jogos.length}`
-        mudarAtivo()
+        document.querySelector('#jogosEncontrados').innerText = ` Jogos Encontrados: ${jogos.length}`  
+        botoesAtivos()     
+    }
+
+    function botoesAtivos(){
+        if(cont + 1 > limite){
+            document.querySelector(`#p${cont + 1}`).classList.add('paginacaoDesativa')
+            document.querySelector(`#pr`).classList.add('paginacaoDesativa')
+            cont == 1 ? document.querySelector(`#p${cont + 2}`).classList.add('paginacaoDesativa') : ""
+        }else{
+            document.querySelector(`#p${cont + 1}`).classList.remove('paginacaoDesativa')
+            document.querySelector(`#pr`).classList.remove('paginacaoDesativa')
+        }
+        cont == 1 ? document.querySelector(`#pl`).classList.add('paginacaoDesativa') : document.querySelector(`#pl`).classList.remove('paginacaoDesativa')
     }
 
     function mudarAtivo(){
         document.querySelector('.ativo').classList.remove('ativo')
-        document.querySelector(`#p${cont}`).classList.add('ativo')
+        document.querySelector(`#p${cont}`).classList.add('ativo')       
     }
     function selecionarPaginasMaior(){
 
@@ -67,7 +79,7 @@ const paginacao = document.querySelector('#paginacaoProcurarJogos')
             
             document.querySelector(`#p${cont - 2}`).innerText =   cont - 1
             document.querySelector(`#p${cont - 2}`).id = `p${cont - 1}`;
-    }
+        }
     }
     function selecionarPaginasMenor(){ 
         if(cont >= 2){
