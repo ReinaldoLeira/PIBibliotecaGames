@@ -6,6 +6,9 @@ const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Cadastrar Notícias', 'Listar Notícias', 'Admin', ''] 
 
+module.exports.login = (req, res) => {
+    res.render('./adm/loginAdmin', {usuario: req.session.usuario})
+}
 
 //user
 module.exports.painel = (req, res) => {

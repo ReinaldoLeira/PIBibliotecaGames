@@ -1,104 +1,29 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Login</title>
- </head>
- <style>
-     body{
-         background-color: rgb(226, 220, 220);
-         margin: 0;
-         padding: 0;
-     }
-     .card{
-         box-shadow: 1px 1px 5px #ccc;
-         background-color: white;
-         padding: 30px;
-         height: 500px;
-         
-         
-         
-     }
-
-     .form{
-         width: 400px;
-         margin: auto;
-         display: flex 50px;
-         margin-right: 100px;
-         display: block;
-         margin: 10px auto;
-         
-         
-     }
-     .login{
-         text-align: center;
-         color: black;
-         font-size: 40px;
-         
-         
-     }
-     .usuario{
-         color: black;
-         font-size: 20px;
-         display: block;
-         margin-left: 50px;
-         
-     }
-     .senha{
-         color: black;
-         font-size: 20px;
-         display: block;
-         margin-left: 50px;
-         margin-top: 10%;
-         
-     }
-     .entrar{
-         display: block;
-         width: 250px;
-         margin-bottom:350px;
-         margin-top: 150px;
-         margin-left: 55px;
-         padding: 5px;
-         background-color: #0E9AA7;
-         color: white;
-         font-size: 20px;
-         
-     }
-     .cabecalho{
-         height: 70px;
-         background-color: #0E9AA7;
-
-     }
-     .password{
-         margin-left: 50px;
-         margin-top: 3px;
-         font-size: 20px;
-         
-     }
-     .texto{
-         margin-left: 50px;
-         font-size: 20px;
-         
-     }
-
- </style>
- <body>
-     <header class="cabecalho"></header>
-
-    <form class="form" action="form">
-        
-    <div class="card">
-    <h1 class="login">LOGIN</h1>
-    <label class="usuario"> Usuario</label>
-    <input class="texto" type="text">
-    <label class="senha">Senha</label>
-    <input class="password" type="password">
-    <button class="entrar">entrar</button>   
-    </div>
-    </form>
-    
-
- </body>
- </html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/adm/loginAdmin.css">
+        <title>Login</title>
+    </head>
+    <body class="bodyLoginAdmin">
+        <div id="error"></div>              
+            <aside class="login-aside">
+                <div class="loginContainer">
+                    <p class="loginText">LOGIN</p>
+                    <div class="caixaForm">
+                        <form method="POST" id='formLogin'>
+                            <div class="caixainput">
+                                <label for="email" class="textInput">E-mail:</label>
+                                <input type="email" name="email" class="caixaInput" autocomplete="off" required id='email'>
+                                <label for="senha" class="textInput">Senha:</label>
+                                <input type="password" name="senha" class="caixaInput" autocomplete="off" required id="senha">
+                            </div>
+                            <input type="submit" value="Entrar" class="inputSubmit">
+                        </form>
+                    </div>
+                </div>
+            </aside>
+        <div id="error"></div>        
+    </body>
+</html>

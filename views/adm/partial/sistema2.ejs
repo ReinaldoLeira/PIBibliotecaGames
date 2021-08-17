@@ -1,1 +1,22 @@
-sistema2
+<p><label>Procurar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
+<section class="fundoBranco h-50">
+    <table class="tablePainelAdmin">
+        <tr>
+            <th>Id</th>
+            <th>Nick</th>
+            <th>email</th>
+            <th>Ações</th>
+        </tr>                        
+        for(let user of listaUsers){
+        <tr>
+            <td>user.id</td>
+            <td>user.nick</td>
+            <td>user.email</td>
+            <td><a href="#"><img src="/img/adm/editar.png" alt="Editar"></a><a href="#"><img src="/img/adm/bloquear.png" alt="Bloquear"></a><a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
+        </tr>
+        }                   
+    </table>
+</section>
+    <p><label>Usuários Bloqueados</label></p>
+<section class="fundoBranco h-30">
+</section>
