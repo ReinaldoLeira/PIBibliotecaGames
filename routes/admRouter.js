@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const admController = require('../controller/admController')
 
+router.get('/',admController.login)
+
 //user
 router.get('/painel',admController.painel)
 router.get('/painel/user/0',admController.painelUser0)
