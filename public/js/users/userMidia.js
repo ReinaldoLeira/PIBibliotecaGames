@@ -1,7 +1,10 @@
 const aba1= document.querySelector('.titulo1')
 const aba2 = document.querySelector('.titulo2')
 const conteudo = document.querySelector('.conteudo1')
+
 conteudo.innerHTML = '';
+
+
 
 
 async function carregarConteudo(){
@@ -11,19 +14,16 @@ async function carregarConteudo(){
     for (const img of body.userImg) {
         if(img.idPerfis == body.usuario.id)
         conteudo.innerHTML += `
-        <div class="caixaImagem">
-                    <div class="caixaImagem-img"><a href="${img.path}">
-                            <img src="${img.path}" alt="">
-                            </a>
-                    </div>
-                    <div class="caixaImagemTitulo">
-                            <form action="/users/midias/deletar/${img.id}" method="POST"> 
-                                
-                                    <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
-                                    <button type="submit" class="sendMidia">Deletar</button>
-                                
-                        </form>
-                        </div>
+        <div class="caixaImagem" onclick="showModalImagem('${img.path}')">
+            <div class="caixaImagem-img">
+                    <img src="${img.path}" alt="">
+            </div>
+            <div class="caixaImagemTitulo">
+                <form action="/users/midias/deletar/${img.id}" method="POST">
+                    <p class="tituloSendMidia-caixaImagem">${img.titulo}</p>
+                    <button type="submit" class="sendMidia">Deletar</button>
+                </form>
+            </div>
             </div>`
     }
 }
@@ -39,35 +39,58 @@ aba2.onclick = () =>{
     aba1.style.background = '#10838d'
 
     async function AcharVideo(){
+        
         const resultado = await fetch("http://localhost:3000/apis/uservideo")
         const body = await resultado.json()
+        
         conteudo.innerHTML =''
 
         for (const video of body.userVideo) {
             if(video.idPerfis == body.usuario.id) {
-            conteudo.innerHTML += `
-            <div class="caixaImagem">
-                    <div class="caixaImagem-img">
-                        <a href="${video.path}">
-                            <img src="/img/video.png" alt="">
-                        </a>
-                    </div>
-                    <div class="caixaImagemTitulo">
-                            <form action="/users/midias/deletar/${video.id}" method="POST"> 
-                                
-                                    <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
-                                    <button type="submit" class="sendMidia">Deletar</button>
-                                
+                console.log(video.path)
+            conteudo.innerHTML += 
+            `           
+            <div class='caixaImagem caixaVideo ' onclick="showModal('${video.path}')">
+                <div class="caixaImagem-img">
+                    <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt=""/>                        
+                </div>
+                <div class="caixaImagemTitulo">
+                    <form action="/users/midias/deletar/${video.id}" method="POST">         
+                        <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
+                        <button type="submit" class="sendMidia">Deletar</button>        
                         </form>
-                    </div>
-            </div>`
+                </div>
+            </div>
+            `
+            }
         }
-    }
-    }
-    
-    AcharVideo()
-
+        
+    }    
+    AcharVideo()   
 }
+
+function showModal(value) {
+    const modalVideo = document.getElementById('modalVideo')
+    modalVideo.style.display='block'
+    modalVideo.innerHTML =
+            `
+            <div id="bigVideo">
+                <button id="fecharAba">FECHAR</button>
+                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${value}" 
+                 title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                 allowfullscreen></iframe>
+             </div> 
+            
+            `
+    const fecharAba = document.getElementById('fecharAba')
+    fecharAba.onclick = () => {
+        modalVideo.style.display ='none'
+        modalVideo.innerHTML = ''
+
+    }
+} 
+
 
 aba1.onclick = () => {
     
@@ -86,7 +109,7 @@ aba1.onclick = () => {
         for (const img of body.userImg) {
             if(img.idPerfis == body.usuario.id) {
             conteudo.innerHTML +=`
-            <div class="caixaImagem">
+            <div class="caixaImagem" id="caixaImagem">
                         <div class="caixaImagem-img"><a href="${img.path}">
                                 <img src="${img.path}" alt="">
                                 </a>
@@ -104,6 +127,7 @@ aba1.onclick = () => {
     }
     }
     acharImg()
+    
     
     
 }
@@ -155,3 +179,23 @@ async function acharJogo() {
 }
 acharJogo()
 
+
+function showModalImagem(value){
+    const showModal = document.getElementById('modalVideo')
+    showModal.style.display='block'
+    showModal.innerHTML = 
+    `
+        <div id="bigVideo">
+            <button id="fecharAba">FECHAR</button>
+            <a href="${value}" > <img src="${value}" alt="Minha Figura" class="iframe"/></a>
+        
+        </div>
+    `
+    const fecharAba = document.getElementById('fecharAba')
+    fecharAba.onclick = () => {
+        showModal.style.display ='none'
+        showModal.innerHTML = ''
+
+    }
+
+}

@@ -1,7 +1,7 @@
 const models = require('../models');
 const bcrypt = require('bcrypt');
-const noticias = require('../model/noticias.json')
-//controller index
+
+
 
 module.exports.index = async (req, res) => { 
     const top =  await models.Jogo.findAll() 

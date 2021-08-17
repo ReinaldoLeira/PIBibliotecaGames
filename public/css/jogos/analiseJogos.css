@@ -11,6 +11,8 @@ html{
 
 
 .geral{
+   
+    flex-grow: 1;
     display: flex;
     
 }
@@ -18,12 +20,23 @@ html{
     display: flex;
     width: 80%;
     font-size:  13em;
+    
+    display: flex;
+    justify-content: center;
+    
 }
 
 .analiseJogo-div{
+   
+    margin-top: 1%;
     width: 80%;
+    background-color: rgb(255, 255, 255);
+    border: 2px silver solid;
 
-    display: block;
+    display: flex;
+    flex-flow: wrap;
+    
+    
 }
 
 .center{
@@ -69,9 +82,9 @@ html{
 
 .conteudoCadaANalise{
 
-    width: 35vw;
+    width: 27vw;
     min-width: 500px;
-    height: 25vh;
+    height: 20vh;
     background-color: rgb(78, 99, 81);
     margin: 1% auto;
     display: flex;
