@@ -87,10 +87,12 @@ body {
     
     margin-left: 2vw;
 }
-.textInput{
-
-    
-    font-size: 10em;
+.textInput{    
+    font-size: 10rem;
+}
+.textInputErro{    
+    font-size: 10rem;
+    color: red;
 }
 
 .caixaInput{

@@ -1,14 +1,46 @@
 const usersArray = require('../model/users.json')
 const jogosServices = require('../services/jogosServices')
 const db = require('../models')
-const { Op } = require('sequelize')
+const { Op, Model } = require('sequelize')
+const bcrypt = require('bcrypt');
 const opUser = ['Cadastrar', 'Listar', 'Análises', 'Mídias']
 const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Cadastrar Notícias', 'Listar Notícias', 'Admin', ''] 
 
-module.exports.login = (req, res) => {
-    res.render('./adm/loginAdmin', {usuario: req.session.usuario})
+module.exports.login = async (req, res) => {    
+    res.render('./adm/loginAdmin', {error: ""})
 }
+module.exports.logar = async (req, res) => {
+    const {email, senha} = req.body    
+    if(!email || !senha){
+        return res.render('./adm/loginAdmin', {error: "caixa vazia"})
+    }
+
+    const findUser = await db.User.findOne({ where: { email: email }})
+    if (!findUser) {
+        return res.render('./adm/loginAdmin', {error: "Login ou Senha incorretos"})
+    }
+    if (!bcrypt.compareSync(senha, findUser.senha)){        
+        return res.render('./adm/loginAdmin', {error: "Login ou Senha incorretos"})
+    }
+    if (findUser.role != 'ADMIN' ){
+        return res.render('./adm/loginAdmin', {error: "Usuário sem Permissão de acesso"})
+    }
+    const user = await db.User.findOne({
+        where: { id: findUser.id},
+        attributes: ['id', 'role', 'blocked', 'idPerfis'],
+        include: [
+            {model: db.Perfil, attributes: ['usuario']}
+        ]
+    })
+    req.session.user = user    
+    res.redirect('/gamepadm/painel')
+}
+/*module.exports.sair = async (req, res) => {    
+    req.session.destroy(function(){
+        res.redirect('/')
+    }) 
+}*/
 
 //user
 module.exports.painel = (req, res) => {

@@ -12,8 +12,9 @@
                 <div class="loginContainer">
                     <p class="loginText">LOGIN</p>
                     <div class="caixaForm">
-                        <form method="POST" id='formLogin'>
+                        <form method="POST" id='formLogin' action="/gamepadm/">
                             <div class="caixainput">
+                                <p><label class="textInputErro"><%=error%></label></p> 
                                 <label for="email" class="textInput">E-mail:</label>
                                 <input type="email" name="email" class="caixaInput" autocomplete="off" required id='email'>
                                 <label for="senha" class="textInput">Senha:</label>

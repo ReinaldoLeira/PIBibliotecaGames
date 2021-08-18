@@ -3,6 +3,7 @@ const router = express.Router();
 const admController = require('../controller/admController')
 
 router.get('/',admController.login)
+router.post('/',admController.logar)
 
 //user
 router.get('/painel',admController.painel)
