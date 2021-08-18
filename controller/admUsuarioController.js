@@ -58,3 +58,60 @@ module.exports.Atualizar = async (req,res) => {
         return res.status(400).send({message : e.message, status:400})   
     }
 }
+module.exports.Bloquear = async (req,res) => {
+    const body = req.body
+    try {
+        await models.User.update(
+            {blocked : '1' },
+            {where: { idPerfis : body.id }}
+
+        )
+        await models.Perfil.update(
+            {blocked: '1'},
+            {where: { id : body.id}}
+
+        )
+        return res.status(200).send({message: 'BLOQUEADO'})
+
+    } catch (e) {
+        res.status(400).send({message: e.message, status:400})        
+    }
+}
+module.exports.Desbloquear = async (req,res) => {
+    const body = req.body
+    try {
+        await models.User.update(
+            {blocked : '0' },
+            {where: { idPerfis : body.id }}
+
+        )
+        await models.Perfil.update(
+            {blocked: '0'},
+            {where: { id : body.id}}
+
+        )
+        return res.status(200).send({message: 'BLOQUEADO'})
+
+    } catch (e) {
+        res.status(400).send({message: e.message, status:400})        
+    }
+}
+
+
+
+
+
+module.exports.Deletar = async (req,res) => {
+    const body = req.body
+    
+    try {
+        await models.Perfil.destroy({
+            include: ['User', 'Noticia', 'Post', 'Biblioteca', 'Analise', 'Midia']  ,
+            where: { id: body.id}
+        })
+        return res.status(200).send({message: 'DELETADO'})
+    } catch (e) {
+        res.status(400).send({message: e.message, status:400})
+    }
+
+}

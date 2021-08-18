@@ -57,7 +57,7 @@ module.exports.painelUser1 = async (req, res) => {
     })
     console.log(todosUsuarios)
 
-    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'user', opcoes: opUser, extra:'', listaUsers: todosUsuarios})
+    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '1', aba: 'user', opcoes: opUser, extra:'', listaUsers: todosUsuarios})
 }
 module.exports.painelUser2 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'user', opcoes: opUser, extra:''})

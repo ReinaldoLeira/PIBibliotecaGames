@@ -66,6 +66,33 @@ async function Enviar(value){
         }
 }
 
+async function Bloquear(value){
+    try {
+        let url = 'http://localhost:3000/gamepadm/editar/bloquear';
+        let body = {
+            'id' : value
+        }
+        fazerFetch(url , body)       
+    } catch (e) {
+        alert(e.message)
+    }
+
+}
+async function Desbloquear(value){
+    try {
+        let url = 'http://localhost:3000/gamepadm/editar/desbloquear';
+        let body = {
+            'id' : value
+        }
+        fazerFetch(url , body)       
+    } catch (e) {
+        alert(e.message)
+    }
+
+}
+
+
+
 async function fazerFetch(url,body) {
     let result = await fetch(url,{
         method:'POST',
