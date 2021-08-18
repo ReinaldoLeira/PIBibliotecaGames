@@ -51,8 +51,13 @@ module.exports.painelUser0 = (req, res) => {
         content:{email: '', senha:''}
         }})
 }
-module.exports.painelUser1 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '1', aba: 'user', opcoes: opUser, extra:'', listaUsers: usersArray})
+module.exports.painelUser1 = async (req, res) => {
+    const todosUsuarios = await db.User.findAll({
+        include: 'Perfil'
+    })
+    console.log(todosUsuarios)
+
+    res.render('./adm/painelAdmin', {usuario: req.session.usuario, selecionado: '1', aba: 'user', opcoes: opUser, extra:'', listaUsers: todosUsuarios})
 }
 module.exports.painelUser2 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'user', opcoes: opUser, extra:''})

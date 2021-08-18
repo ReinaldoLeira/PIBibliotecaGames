@@ -94,3 +94,19 @@ module.exports.logar = (async(req, res) => {
                    
 
 });
+module.exports.deletar = async (req,res) => {
+    try {
+        const idBody = req.body.id
+        const deletarUsuario = await models.User.destroy({
+            include: 'Perfil',
+            where: { id : idBody  }
+        })
+        if(deletarUsuario){
+           return res.status(200).send('deletado')
+        }else {
+            throw new Error ('Não foi possivel Deletar')
+        }
+    } catch (e) {
+        return res.status(400).send({message : e.message, status:400})
+    }
+}
