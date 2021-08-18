@@ -2,7 +2,7 @@ const db = require('../models')
 const { Op } = require('sequelize')
 
 
-module.exports.criarJogoDB = async (data) => {
+module.exports.criarJogoDB = async (data, criador) => {
     const generos = [].concat(data.idGeneros)
     const plataformas = [].concat(data.idPlataformas )
     const jogo = data
@@ -14,7 +14,7 @@ module.exports.criarJogoDB = async (data) => {
         lancamento: jogo.lancamento,
         capa: jogo.capa,     
         validado: 0,   
-        createdBy: 1 
+        createdBy: criador
 })  
 
 for(let i = 0; i < generos.length; i++ ){
