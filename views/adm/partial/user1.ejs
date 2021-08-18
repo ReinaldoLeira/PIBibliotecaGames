@@ -18,7 +18,7 @@
                         <td><%=user.Perfil.usuario%></td>
                         <td><%=user.email%></td>
                         <td>
-                            <button onclick="Editar()"><img src="/img/adm/editar.png" alt="Editar"></button>
+                            <button onclick="Editar('<%=user.id%>')"><img src="/img/adm/editar.png" alt="Editar"></button>
                             <button onclick="Bloquear()"><img src="/img/adm/bloquear.png" alt="Bloquear"></button>
                             <button onclick="Deletar()"><img src="/img/adm/deletar.png" alt="Deletar"></button>
                         </td>
@@ -44,7 +44,7 @@
                                     <td><%=user.Perfil.usuario%></td>
                                     <td><%=user.email%></td>
                                     <td>
-                                       <button onclick="Editar()"><img src="/img/adm/editar.png" alt="Editar"></button>
+                                       <button><img src="/img/adm/editar.png" alt="Editar"></button>
                                         <a href="#"><img src="/img/adm/bloquear.png" alt="Desbloquear"></a>
                                         <a href="#"><img src="/img/adm/deletar.png" alt="Deletar"></a> </td>
                                 </tr>
@@ -57,9 +57,6 @@
                 </section>
 
                 <div id="modalUser">
-                    <div id="cxEditar">
-                        <%- include('./includs/caixaEditar.ejs'); %>
-                    </div>
                     
                 </div>
                     

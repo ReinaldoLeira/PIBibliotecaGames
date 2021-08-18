@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const admController = require('../controller/admController')
+const Atualizar  = require ('../controller/admUsuarioController')
 
 router.get('/',admController.login)
 
@@ -10,6 +11,8 @@ router.get('/painel/user/0',admController.painelUser0)
 router.get('/painel/user/1',admController.painelUser1)
 router.get('/painel/user/2',admController.painelUser2)
 router.get('/painel/user/3',admController.painelUser3)
+//user > editar e deletar e bloquear
+router.post('/editar/usuario', Atualizar.Atualizar )
 
 //jogo
 router.get('/painel/jogo',admController.painelJogo)

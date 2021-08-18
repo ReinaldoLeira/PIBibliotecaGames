@@ -82,7 +82,7 @@ html{
     color: green;
     cursor: pointer;
     display: block;
-    margin: 10% auto 0;
+    margin: 5% auto 0;
     width: 40%;
     height: 10%;
     border: 2px green solid;
@@ -96,7 +96,7 @@ html{
     display: block;
     margin: auto;
     width: 30%;
-    height: 7%;
+    height: 8%;
     margin-top: 2%;
     border: 2px red solid;
     font-family: 'Press Start 2P';
