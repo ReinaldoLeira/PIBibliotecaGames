@@ -4,8 +4,10 @@ const admController = require('../controller/admController')
 const authAdm = require('../middlewares/authAdm');
 const Atualizar  = require ('../controller/admUsuarioController')
 
+//login
 router.get('/',admController.login)
 router.post('/',admController.logar)
+router.get('/logout',admController.logout)
 
 //user
 router.get('/painel', authAdm,admController.painel)

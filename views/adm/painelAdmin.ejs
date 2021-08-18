@@ -11,7 +11,7 @@
 <body class="fundoCinzaClaro bodyPerfilAdmin pai">    
     
     <div id="conteudoPainelAdmin">
-        <header id="headerPainelAdmin">Painel de Administração</header>
+        <header id="headerPainelAdmin"> <div id="logadoAdmin">Bem-vindo(a) <%=usuario.Perfil.usuario %>  </div> <div>Painel de Administração</div><div> <a href="/gamepadm/logout"> <img src="/img/adm/power2.png" alt="Log Out" id="logOutAdmin"/></a></div></header>
         <nav class="navPainelAdm" ><ul class="pai">
         <p>L</p>
         <a href="/gamepadm/painel"><li id="<%if(aba==='user'){%>ativoPainelAdmin<%}%>">Usuários</li></a>

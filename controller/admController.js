@@ -36,11 +36,11 @@ module.exports.logar = async (req, res) => {
     req.session.user = user    
     res.redirect('/gamepadm/painel')
 }
-/*module.exports.sair = async (req, res) => {    
+module.exports.logout = async (req, res) => {    
     req.session.destroy(function(){
-        res.redirect('/')
+       res.redirect('/gamepadm/')
     }) 
-}*/
+}
 
 //user
 module.exports.painel = (req, res) => {
