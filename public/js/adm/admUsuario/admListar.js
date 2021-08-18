@@ -66,6 +66,72 @@ async function Enviar(value){
         }
 }
 
+function CertezaBloquear(value , nome) {
+    modalUser.style.display='flex'
+    modalUser.innerHTML= 
+    `
+    <div id="bloquearCtz">
+        <h1>Bloquear o(a) ${nome} ?</h1>
+        <button class="confirmar"onclick="Bloquear(${value})"> BLOQUEAR </button>
+        <button class="cancelar2" onclick="cancelar()">Cancelar</button> 
+    </div>
+    `
+}
+function CertezaDeletar(value, nome){
+
+    modalUser.style.display='flex'
+    modalUser.innerHTML= 
+    `
+    <div id="bloquearCtz">
+        <h1>Deletar o(a) ${nome} ?</h1>
+        <button class="confirmar"onclick="Deletar(${value})"> Deletar </button>
+        <button class="cancelar2" onclick="cancelar()">Cancelar</button> 
+    </div>
+    
+    `
+
+
+}
+
+async function Bloquear(value){
+    try {
+        let url = 'http://localhost:3000/gamepadm/editar/bloquear';
+        let body = {
+            'id' : value
+        }
+        fazerFetch(url , body)       
+    } catch (e) {
+        alert(e.message)
+    }
+
+}
+async function Desbloquear(value){
+    try {
+        let url = 'http://localhost:3000/gamepadm/editar/desbloquear';
+        let body = {
+            'id' : value
+        }
+        fazerFetch(url , body)       
+    } catch (e) {
+        alert(e.message)
+    }
+
+}
+async function Deletar(value){
+    try {
+        let url = 'http://localhost:3000/gamepadm/editar/deletar';
+        let body = {
+            'id' : value
+        }
+        fazerFetch(url , body)       
+    } catch (e) {
+        alert(e.message)
+    }
+
+}
+
+
+
 async function fazerFetch(url,body) {
     let result = await fetch(url,{
         method:'POST',
