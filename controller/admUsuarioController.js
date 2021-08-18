@@ -106,7 +106,7 @@ module.exports.Deletar = async (req,res) => {
     
     try {
         await models.Perfil.destroy({
-            include: ['User', 'Noticia', 'Post', 'Biblioteca', 'Analise', 'Midia']  ,
+            include: ['User', 'Noticia', 'Posts', 'Biblioteca', 'Analises', 'Midia']  ,
             where: { id: body.id}
         })
         return res.status(200).send({message: 'DELETADO'})
