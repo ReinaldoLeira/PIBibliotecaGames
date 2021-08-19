@@ -33,7 +33,9 @@
                         <%    if ( imagem.tipo == "IMAGEM") { %>
                             <div class="caixaImagem" onclick="showModalImagem('<%=imagem.path%>')">
                                 <div class="caixaImagem-img">
-                                   <img src="<%= imagem.path %>" alt=""/>                                    
+                                    <img src="/img/iconImg.png" alt="" class="opacity"/>
+                                    <img src="<%= imagem.path %>" alt="" class="caixaImagem-img-img"/>
+                                                                  
                                 </div>
                                 <div class="caixaImagemTitulo">
                                     <p class="tituloSendMidia-caixaImagem"><%= imagem.titulo %></p>
@@ -48,7 +50,9 @@
                         <% if ( video.tipo == 'VIDEO') { %>
                             <div class='caixaImagem caixaVideo ' onclick="showModal('<%=video.path%>')">
                                 <div class="caixaImagem-img">
-                                    <img src="http://i3.ytimg.com/vi/<%=video.path%>/hqdefault.jpg" alt=""/>                        
+                                    <img src="/img/play.png" alt="" class="opacity"/>
+                                    <img src="http://i3.ytimg.com/vi/<%=video.path%>/hqdefault.jpg" class="caixaImagem-img-img"/>
+                                                         
                                 </div>
                                 <div class="caixaImagemTitulo">     
                                         <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>

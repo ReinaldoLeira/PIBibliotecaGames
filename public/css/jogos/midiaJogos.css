@@ -68,6 +68,7 @@
 
 
 .addConteudoMidiaJogos:hover{
+    cursor: pointer;
     width: 30%;
     height: 42%;
     margin: 0;
@@ -75,23 +76,33 @@
     
 }
 
-.addConteudoMidiaJogos-img{
+.caixaImagem-img-img{
 
-    cursor: pointer;
-    
-    
+    cursor: pointer;    
     width: 95%;
     height: 85%;
     margin: 2% 2%;
   
 }
+.opacity{
+    
+    width: 22%;
+    height: 29%;
+    position:absolute;
+    opacity: 0;
+    
+}
+.opacity:hover{
+    width: 22%;
+    height: 30.5%;
+    opacity: 0.7;
+
+}
 .addConteudoMidiaJogos-titulo{
 
     height: 12%;    
     text-align: center;    
-    word-break: break-all;
-    
-    
+    word-break: break-all; 
 }
 .addConteudoMidiaJogos-titulo-a{
     text-decoration: none;
@@ -140,7 +151,7 @@
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.301);
-
+    z-index: 99;
 }
 #bigVideo{
     text-align: center;

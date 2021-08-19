@@ -28,7 +28,9 @@
                     <% for (const midias of midiaJogo){%>
                         <% if(midias.tipo == 'IMAGEM'){%>
                             <div class="addConteudoMidiaJogos" onclick="showModalImagem('<%=midias.path%>')">
-                                <img src="<%=midias.path%>" alt="" class="addConteudoMidiaJogos-img"/>
+                                <img src="/img/iconImg.png" alt="" class="opacity"/>
+                                <img src="<%=midias.path%>" alt="" class="caixaImagem-img-img"/> 
+                                
                                 <div class="addConteudoMidiaJogos-titulo">
                                     <a href="<%= midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
                                 </div>
@@ -36,7 +38,9 @@
                         <% } %>
                         <% if(midias.tipo == 'VIDEO'){%>
                             <div class="addConteudoMidiaJogos" onclick="showModal('<%=midias.path%>')">
-                                <img src="http://i3.ytimg.com/vi/<%=midias.path%>/hqdefault.jpg" alt="" class="addConteudoMidiaJogos-img"/>
+                                <img src="/img/play.png" alt="" class="opacity"/>
+                                <img src="http://i3.ytimg.com/vi/<%=midias.path%>/hqdefault.jpg" class="caixaImagem-img-img"/> 
+                                
                                 <div class="addConteudoMidiaJogos-titulo">
                                     <a href="<%=midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
                                 </div>
