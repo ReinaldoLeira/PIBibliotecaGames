@@ -9,20 +9,21 @@ router.get('/',admController.login)
 router.post('/',admController.logar)
 router.get('/logout',admController.logout)
 
-//user
+//user CADASTRAR && LISTAR && ANALISE && MIDIA
 router.get('/painel', authAdm,admController.painel)
 router.get('/painel/user/0', authAdm,admController.painelUser0)
 router.get('/painel/user/1', authAdm,admController.painelUser1)
 router.get('/painel/user/2', authAdm,admController.painelUser2)
 router.get('/painel/user/3', authAdm,admController.painelUser3)
-//user > editar e deletar e bloquear
+//user >Listar, editar , deletar e bloquear
 router.post('/editar/usuario', authAdm, comandos.Atualizar )
 router.post('/editar/deletar',authAdm,  comandos.Deletar)
 router.post('/editar/bloquear', authAdm, comandos.Bloquear)
 router.post('/editar/desbloquear', authAdm, comandos.Desbloquear)
 //analise > deletar
 router.post('/analise/deletar', authAdm, comandos.analiseDeletar)
-
+//midia> deletar
+router.post('/midia/deletar', authAdm, comandos.midiaDeletar)
 //jogo
 router.get('/painel/jogo', authAdm,admController.painelJogo)
 //jogo-cadastrar

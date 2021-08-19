@@ -127,5 +127,17 @@ module.exports.analiseDeletar = async(req,res) =>{
     }catch(e){
         res.status(400).send({message: e.message, status:400})
     }
+}
+
+module.exports.midiaDeletar = async(req,res) =>{
+    const idBody = req.body.id
+    try {
+        await models.Midia.destroy({
+            where : { id : idBody}
+        })
+        return res.status(200).send({message: 'DELETADO'})
+    }catch(e){
+        res.status(400).send({message: e.message, status:400})
+    }
 
 }
