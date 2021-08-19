@@ -54,7 +54,10 @@ router.get('/painel/sistema', authAdm,admController.painelSistema)
 router.post('/painel/sistema', authAdm,admController.criarNoticia)
 router.get('/painel/sistema/0', authAdm,admController.painelSistema0)
 router.get('/painel/sistema/1', authAdm,admController.painelSistema1)
+// Visualizar admins e mudar role
 router.get('/painel/sistema/2', authAdm,admController.painelSistema2)
+router.get('/painel/sistema/2/elevar/:id', authAdm,admController.elevar)
+router.get('/painel/sistema/2/rebaixar/:id', authAdm,admController.rebaixar)
 router.get('/painel/sistema/3', authAdm,admController.painelSistema3)
 
 module.exports = router;

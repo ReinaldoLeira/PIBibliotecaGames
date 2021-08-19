@@ -299,8 +299,30 @@ module.exports.painelSistema2 = async (req, res) => {
         ]
     })
 
-    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'sistema', opcoes: opSistema, extra:'', userAdmin})
+    const userNorm = await db.User.findAll({
+        where: { role: 'USER'},
+        attributes: ['id', 'email','role'],
+        include: [
+            {model: db.Perfil, attributes: ['usuario']}
+        ]
+    })
+    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'sistema', opcoes: opSistema, extra:'', userAdmin, userNorm})
 }
+module.exports.elevar = async (req, res) => {
+    await db.User.update(
+        {role: 'ADMIN'},
+        {where: {id:req.params.id}
+    })            
+res.redirect('/gamepadm/painel/sistema/2')
+}
+module.exports.rebaixar = async (req, res) => {
+    await db.User.update(
+        {role: 'USER'},
+        {where: {id:req.params.id}
+    })            
+res.redirect('/gamepadm/painel/sistema/2')
+}
+
 module.exports.painelSistema3 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '3', aba: 'sistema', opcoes: opSistema, extra:''})
 }
