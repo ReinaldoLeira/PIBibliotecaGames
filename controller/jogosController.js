@@ -88,7 +88,7 @@ module.exports.noti = async (req, res) =>{
     console.log(noticias)
 };
 
-
-
-
-
+module.exports.duvidas = async (req, res) =>{
+    
+    res.render('./jogos/duvidas', {usuario: req.session.usuario})
+}

@@ -22,13 +22,23 @@
     font-size: 20em;
 }
 .article{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
-.teste{
+.texto{
+    font-size: 0.7em;
+    line-height: 1.5;
+}
+.imagem{
     text-align: center;
 }
 .capa{
     width: auto;
     height: 500px;
+}
+hr{
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom-color: #5df1ff;   
 }

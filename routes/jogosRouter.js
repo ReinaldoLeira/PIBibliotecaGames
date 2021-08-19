@@ -19,6 +19,8 @@ router.get('/cadastra', jogosController.cadastra)
 
 router.post('/cadastrar', jogosController.cadastrar)
 
+router.get('/duvidas', jogosController.duvidas)
+
 router.get('/noticias', jogosController.noticias)
 
 router.get('/noticias/:id', jogosController.noti)

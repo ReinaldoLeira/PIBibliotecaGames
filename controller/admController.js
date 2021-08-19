@@ -212,6 +212,7 @@ module.exports.painelSistema0 =  (req, res) => {
 }
  module.exports.criarNoticia = async (req, res) => {    
     const noticia = req.body
+    const usuarioLogado = req.session.usuario
 
     const novaNoticia = await db.Noticia.create({
         titulo: noticia.titulo,     
@@ -219,7 +220,7 @@ module.exports.painelSistema0 =  (req, res) => {
         autor: noticia.autor,     
         descricao: noticia.descricao,
         capa: noticia.capa,     
-        idPerfis: 1
+        idPerfis: usuarioLogado.id
     });
     
     console.log(novaNoticia)
