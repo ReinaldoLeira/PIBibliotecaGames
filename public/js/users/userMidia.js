@@ -16,7 +16,8 @@ async function carregarConteudo(){
         conteudo.innerHTML += `
         <div class="caixaImagem" onclick="showModalImagem('${img.path}')">
             <div class="caixaImagem-img">
-                    <img src="${img.path}" alt="">
+                <img src="/img/iconImg.png" alt="" class="opacity"/>
+                <img src="${img.path}" alt="" class="caixaImagem-img-img"/> 
             </div>
             <div class="caixaImagemTitulo">
                 <form action="/users/midias/deletar/${img.id}" method="POST">
@@ -52,8 +53,11 @@ aba2.onclick = () =>{
             `           
             <div class='caixaImagem caixaVideo ' onclick="showModal('${video.path}')">
                 <div class="caixaImagem-img">
-                    <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt=""/>                        
+                    <img src="/img/play.png" alt="" class="opacity"/>
+                    <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt="" class="caixaImagem-img-img"/>  
+                    
                 </div>
+                
                 <div class="caixaImagemTitulo">
                     <form action="/users/midias/deletar/${video.id}" method="POST">         
                         <p class="tituloSendMidia-caixaImagem">${video.titulo}</p>
@@ -111,8 +115,8 @@ aba1.onclick = () => {
             conteudo.innerHTML +=`
             <div class="caixaImagem" id="caixaImagem">
                         <div class="caixaImagem-img"><a href="${img.path}">
-                                <img src="${img.path}" alt="">
-                                </a>
+                            <img src="/img/iconImg.png" alt="" class="opacity"/>
+                            <img src="${img.path}" alt="" class="caixaImagem-img-img"/>  
                         </div>
                         <div class="caixaImagemTitulo">
                                 <form action="/users/midias/deletar/${img.id}" method="POST"> 
