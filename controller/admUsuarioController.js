@@ -96,11 +96,6 @@ module.exports.Desbloquear = async (req,res) => {
         res.status(400).send({message: e.message, status:400})        
     }
 }
-
-
-
-
-
 module.exports.Deletar = async (req,res) => {
     const body = req.body
     console.log(body)
