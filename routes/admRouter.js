@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const admController = require('../controller/admController')
 const authAdm = require('../middlewares/authAdm');
+const validarJogo = require('../middlewares/validarJogo');
 const comandos  = require ('../controller/admUsuarioController')
 
 //login
@@ -28,12 +29,12 @@ router.post('/midia/deletar', authAdm, comandos.midiaDeletar)
 router.get('/painel/jogo', authAdm,admController.painelJogo)
 //jogo-cadastrar
 router.get('/painel/jogo/0', authAdm,admController.painelJogo0)
-router.post('/painel/jogo/0', authAdm,admController.criarJogo)
+router.post('/painel/jogo/0', validarJogo, authAdm,admController.criarJogo)
 //jogo-listar
 router.get('/painel/jogo/1', authAdm,admController.painelJogo1)
 router.get('/painel/jogo/1/pesquisar', authAdm,admController.procurarJogo)
 router.get('/painel/jogo/1/edit/:id', authAdm,admController.editarJogo)
-router.post('/painel/jogo/1/edit/:id', authAdm,admController.salvarJogo)
+router.post('/painel/jogo/1/edit/:id', validarJogo, authAdm,admController.salvarJogo)
 router.get('/painel/jogo/1/deletar/:id', authAdm,admController.deletarJogo)
 //jogo-genero
 router.get('/painel/jogo/2', authAdm,admController.painelJogo2)
