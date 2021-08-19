@@ -103,12 +103,15 @@ module.exports.Desbloquear = async (req,res) => {
 
 module.exports.Deletar = async (req,res) => {
     const body = req.body
+    console.log(body)
     
     try {
+            
         await models.Perfil.destroy({
-            include: ['User', 'Noticia', 'Posts', 'Biblioteca', 'Analises', 'Midia']  ,
+            include: ['Biblioteca','User', 'Noticia', 'Posts', 'Analises', 'Midia']  ,
             where: { id: body.id}
         })
+       
         return res.status(200).send({message: 'DELETADO'})
     } catch (e) {
         res.status(400).send({message: e.message, status:400})
