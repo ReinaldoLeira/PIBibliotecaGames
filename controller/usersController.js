@@ -133,9 +133,7 @@ module.exports.analise = (async(req, res) => {
 module.exports.criarAnalise = (async(req,res,next)=> {
     const usuario = req.session.usuario
     const formBody = req.body
-    console.log(formBody)
-
-    
+        
         if(formBody.nota > 5){
             throw new Error('não pode mais que 5')
         }
@@ -149,9 +147,6 @@ module.exports.criarAnalise = (async(req,res,next)=> {
             idPerfis: usuario.id,        
         })
         res.redirect('/users/analise')
-    
-   
-
 })
 
 module.exports.sair = async (req, res) => {

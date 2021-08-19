@@ -1,8 +1,6 @@
 const models = require('../models');
 const bcrypt = require('bcrypt');
 
-
-
 module.exports.index = async (req, res) => { 
     const top =  await models.Jogo.findAll() 
     const noticias = await models.Noticia.findAll()
@@ -11,8 +9,6 @@ module.exports.index = async (req, res) => {
         jogos: top,
         noticias: noticias
     })};
-
-
 //controllers Registrar
 module.exports.registrar = (req, res) => { res.render('./home/cadastrar', { usuario: ''})};
 
@@ -86,6 +82,9 @@ module.exports.logar = (async(req, res) => {
             throw new Error('senha errada')
         }
         const findPerfil = await models.Perfil.findOne({ where: { id : findUser.id} })
+        if(findPerfil.blocked == '1'){
+            throw new Error('Usuario Bloqueado')
+        }
         req.session.usuario = findPerfil 
         return res.status(200).send({message: 'usuario Logado'}) 
         }catch (e) {
