@@ -3,7 +3,7 @@ const models = require('../models')
 module.exports.Atualizar = async (req,res) => {
     const body = req.body
     const adm = req.session.usuario
-    console.log(body)
+    
 
     try {
         if (body.email !== '' ){
@@ -98,7 +98,7 @@ module.exports.Desbloquear = async (req,res) => {
 }
 module.exports.Deletar = async (req,res) => {
     const body = req.body
-    console.log(body)
+   
     
     try {
             
@@ -109,6 +109,22 @@ module.exports.Deletar = async (req,res) => {
        
         return res.status(200).send({message: 'DELETADO'})
     } catch (e) {
+        res.status(400).send({message: e.message, status:400})
+    }
+
+}
+
+
+//analise deletar
+
+module.exports.analiseDeletar = async(req,res) =>{
+    const idBody = req.body.id
+    try {
+        await models.Analise.destroy({
+            where : { id : idBody}
+        })
+        return res.status(200).send({message: 'DELETADO'})
+    }catch(e){
         res.status(400).send({message: e.message, status:400})
     }
 

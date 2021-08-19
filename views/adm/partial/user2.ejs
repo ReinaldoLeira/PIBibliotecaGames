@@ -1,2 +1,34 @@
+<link rel="stylesheet" href="/css/adm/admAnalise.css">
 
-user2
+
+
+<p><label>Procurar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
+                <section class="fundoBranco h-50 fundoAnalise">
+                    <table class="tablePainelAdmin">
+                        <tr>
+                            <th>Id</th>
+                            <th>jogo</th>
+                            <th>Usuario</th>
+                            <th>conteudo</th>
+                            <th>Ações</th>
+                        </tr>  
+                        <% for (let analise of analises) { %>
+                            <tr>
+                                <td><%= analise.id%></td>
+                                <td><%= analise.Jogo.nome%></td>
+                                <td><%=analise.Perfil.usuario%></td>
+                                <td><%=analise.analise%></td>
+                                <td>                              
+                                    <button onclick="CertezaDeletar('<%=analise.id%>','<%=analise.id%>')"><img src="/img/adm/deletar.png" alt="Deletar"></button>
+                                </td>
+                            </tr>
+                        <% } %>
+                </table>
+                </section>
+                
+                <div id="modalUser">
+                    
+                </div>
+
+<script src="/js/adm/admUsuario/admAnalises.js"></script>
+

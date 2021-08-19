@@ -20,6 +20,8 @@ router.post('/editar/usuario', authAdm, comandos.Atualizar )
 router.post('/editar/deletar',authAdm,  comandos.Deletar)
 router.post('/editar/bloquear', authAdm, comandos.Bloquear)
 router.post('/editar/desbloquear', authAdm, comandos.Desbloquear)
+//analise > deletar
+router.post('/analise/deletar', authAdm, comandos.analiseDeletar)
 
 //jogo
 router.get('/painel/jogo', authAdm,admController.painelJogo)

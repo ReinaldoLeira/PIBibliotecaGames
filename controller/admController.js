@@ -49,7 +49,7 @@ module.exports.logout = async (req, res) => {
 
 //user
 module.exports.painel = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '', aba: 'user', opcoes: opUser, extra:''})
+    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '', aba: 'user', opcoes: opUser, extra:'', analises : ''})
 }
 module.exports.painelUser0 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '0', aba: 'user', opcoes: opUser, extra:'', error:{
@@ -60,12 +60,18 @@ module.exports.painelUser1 = async (req, res) => {
     const todosUsuarios = await db.User.findAll({
         include: 'Perfil'
     })
-    console.log(todosUsuarios)
+    
 
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '1', aba: 'user', opcoes: opUser, extra:'', listaUsers: todosUsuarios})
 }
-module.exports.painelUser2 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'user', opcoes: opUser, extra:''})
+module.exports.painelUser2 = async (req, res) => {
+
+    const srcAnalises = await db.Analise.findAll(
+        {
+            include: ['Perfil', 'Jogo']
+        })
+        
+    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'user', opcoes: opUser, extra:'' , analises : srcAnalises})
 }
 module.exports.painelUser3 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '3', aba: 'user', opcoes: opUser, extra:''})
