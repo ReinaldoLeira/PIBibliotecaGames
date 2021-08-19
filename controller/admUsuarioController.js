@@ -3,7 +3,7 @@ const models = require('../models')
 module.exports.Atualizar = async (req,res) => {
     const body = req.body
     const adm = req.session.usuario
-    console.log(body)
+    
 
     try {
         if (body.email !== '' ){
@@ -96,21 +96,47 @@ module.exports.Desbloquear = async (req,res) => {
         res.status(400).send({message: e.message, status:400})        
     }
 }
-
-
-
-
-
 module.exports.Deletar = async (req,res) => {
     const body = req.body
+   
     
     try {
+            
         await models.Perfil.destroy({
-            include: ['User', 'Noticia', 'Posts', 'Biblioteca', 'Analises', 'Midia']  ,
+            include: ['Biblioteca','User', 'Noticia', 'Posts', 'Analises', 'Midia']  ,
             where: { id: body.id}
         })
+       
         return res.status(200).send({message: 'DELETADO'})
     } catch (e) {
+        res.status(400).send({message: e.message, status:400})
+    }
+
+}
+
+
+//analise deletar
+
+module.exports.analiseDeletar = async(req,res) =>{
+    const idBody = req.body.id
+    try {
+        await models.Analise.destroy({
+            where : { id : idBody}
+        })
+        return res.status(200).send({message: 'DELETADO'})
+    }catch(e){
+        res.status(400).send({message: e.message, status:400})
+    }
+}
+
+module.exports.midiaDeletar = async(req,res) =>{
+    const idBody = req.body.id
+    try {
+        await models.Midia.destroy({
+            where : { id : idBody}
+        })
+        return res.status(200).send({message: 'DELETADO'})
+    }catch(e){
         res.status(400).send({message: e.message, status:400})
     }
 

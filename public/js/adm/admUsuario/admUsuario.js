@@ -42,13 +42,13 @@ async function fazerRegistro(url, body) {
     }
 
     if (result.status == 200){
-      return window.location.href = 'http://localhost:3000/login'
+      return location.reload()
     }
 }
-const inputSubimit = document.querySelector('.cad-submit')
+c
 
-inputSubimit.onclick = (e) => {
-    e.preventdefault()
+function CadastrarUsuario() {
+    
     try{ 
     let url = 'http://localhost:3000/registrar'
     let email = document.getElementById('email').value

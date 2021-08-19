@@ -8,12 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
-        targetKey: 'id'
-      }),
-      this.hasMany(models.Noticia, {
-        foreignKey: 'idPerfis',
-        targetKey: 'id'
-      })
+        targetKey: 'id',
+        onDelete: 'cascade'
+      })      
     }
   };
   User.init({
@@ -28,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     role: DataTypes.ENUM('ADMIN', 'USER'),
     idPerfis: {
       type: DataTypes.BIGINT,
+      onDelete: 'CASCADE',
       references: {
         model: 'perfis'
       }
@@ -36,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'Users'
   });
   return User;
 };

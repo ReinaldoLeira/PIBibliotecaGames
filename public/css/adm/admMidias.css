@@ -1,0 +1,150 @@
+@font-face {
+
+    font-family: 'Press Start 2P';
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+html{
+
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+    font-size: 6.25%;
+    
+}
+
+
+#modalUser{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+   
+    display: none;
+    
+}
+#cxEditar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.cxEditar{
+    width: 30%;
+    height: 60%;
+    background-color: white;
+    margin: auto;
+}
+.cxEditar h1{
+    font-size: 20rem;
+    text-align: center;
+}
+.cxEditar form{
+
+    width: 60%;
+    height: 60%; 
+    
+    margin: auto;       
+}
+.Iputs{
+    
+    width: 100%;
+    height: 25%;
+    margin: auto;
+    text-align: center;  
+    
+}
+.Iputs label { 
+    width: 100%;
+    
+    font-size: 10rem;    
+}
+.Iputs input{
+
+    display: block;
+    
+    width: 100%;
+    height: 50%;
+}
+.Iputs select{
+    width: 30%;
+    height: 50%;
+    display: block;
+    margin: auto;
+    font-family: 'Press Start 2P';
+}
+.Iputs label { 
+    width: 100%;    
+    font-size: 17rem;    
+}
+.enviar{
+    font-size: 20rem;
+    color: green;
+    cursor: pointer;
+    display: block;
+    margin: 5% auto 0;
+    width: 40%;
+    height: 10%;
+    border: 2px green solid;
+    font-family: 'Press Start 2P';
+
+}
+.cancelar{
+    font-size: 12rem;
+    color: red;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 30%;
+    height: 8%;
+    margin-top: 2%;
+    border: 2px red solid;
+    font-family: 'Press Start 2P';
+}
+
+/*modal ctz?*/
+
+#bloquearCtz{
+    width: 20%;
+    height: 20%;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    border: 10px yellow double;
+    border-radius: 5%;
+}
+
+#bloquearCtz h1{
+    font-size: 12rem;
+    margin-top: 5%;
+}
+.confirmar {
+    cursor: pointer;
+    width: 50%;
+    height: 30%;
+    margin-top: 5%;
+    border-radius: 10%;
+    font-family: 'Press Start 2P';
+}
+.confirmar:hover{
+    color:yellowgreen;
+}
+.cancelar2 {
+    font-size: 8rem;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    width: 30%;
+    height: 20%;
+    margin-top: 2%;
+    border-radius: 10%;
+    font-family: 'Press Start 2P';
+
+}
+.cancelar2:hover{
+    color: red;
+}
+.fundoAnalise{
+    height: 95%;
+    overflow: auto; 
+}

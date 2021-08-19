@@ -129,9 +129,6 @@ async function Deletar(value){
     }
 
 }
-
-
-
 async function fazerFetch(url,body) {
     let result = await fetch(url,{
         method:'POST',
@@ -143,9 +140,13 @@ async function fazerFetch(url,body) {
     
     if (result.status == 400) {
         modalUser.innerHTML =
-        ` <div class="cxEditar">
-            <h1>${loginBOdy.message}</h1>
-        </div>`
+        ` 
+        <div id="bloquearCtz">
+            <h1><h1>${loginBOdy.message}</h1></h1>
+            
+            <button class="cancelar2" onclick="cancelar()">Cancelar</button> 
+        </div>
+        `
     }
     if (result.status == 200){
         return location.reload()
