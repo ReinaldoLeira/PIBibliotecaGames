@@ -3,6 +3,7 @@ const app = require('../app');
 const router = express.Router();
 const jogosController = require('../controller/jogosController')
 const auth = require('../middlewares/auth');
+const validarJogo = require('../middlewares/validarJogo');
 
 
 router.get('/analise/:id', jogosController.analise2)
@@ -18,7 +19,7 @@ router.get('/pesquisar',jogosController.procurar)
 
 router.get('/cadastra', auth, jogosController.cadastra)
 
-router.post('/cadastrar', auth, jogosController.cadastrar)
+router.post('/cadastrar', validarJogo, auth, jogosController.cadastrar)
 
 router.get('/noticias', jogosController.noticias)
 

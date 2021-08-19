@@ -83,8 +83,9 @@ module.exports.painelJogo0 = async (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '0', aba: 'jogo', opcoes: opJogo, extra:'', plataformas, generos})
 }
 module.exports.criarJogo = async (req, res) => {   
-    await jogosServices.criarJogoDB(req.body, req.session.user.id)
-    res.redirect('/gamepadm/painel/jogo/0')
+    const novoJogo = await jogosServices.criarJogoDB(req.body, req.session.user.id)
+    const endereco = `/gamepadm/painel/jogo/1/edit/${novoJogo.id}`
+    res.redirect(endereco)
 }
 
 
