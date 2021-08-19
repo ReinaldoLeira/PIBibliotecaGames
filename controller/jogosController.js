@@ -69,7 +69,10 @@ module.exports.cadastra = async (req, res) => {
 }
 
 module.exports.cadastrar = async (req, res) => {
-    const jogoNovo = await jogosServices.criarJogoDB(req.body)
+    const user = await db.User.findOne({
+        where: {id: req.session.usuario.id}
+    })
+    const jogoNovo = await jogosServices.criarJogoDB(req.body, user.id)
     res.redirect('/jogos/perfil/'+jogoNovo.id)    
 }
 module.exports.noticias = async (req, res) => {

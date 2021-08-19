@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
-        targetKey: 'id'
+        targetKey: 'id',
+        onDelete: 'cascade'
       }),
       this.belongsToMany(models.Jogo, {
         through: 'bibliotecasJogos',
@@ -37,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Biblioteca',
+    tableName: 'Bibliotecas', 
   });
   return Biblioteca;
 };

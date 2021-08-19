@@ -1,1 +1,36 @@
-user3
+<link rel="stylesheet" href="/css/adm/admMidias.css">
+
+
+
+<p><label>Procurar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>
+                <section class="fundoBranco h-50 fundoAnalise">
+                    <table class="tablePainelAdmin">
+                        <tr>
+                            <th>Id</th>
+                            <th>jogo</th>
+                            <th>Usuario</th>
+                            <th>titulo</th>
+                            <th>tipo</th>
+                            <th>Ações</th>
+                        </tr>  
+                        <% for (let midia of midias) { %>
+                            <tr>
+                                <td><%= midia.id%></td>
+                                <td><%= midia.Jogo.nome%></td>
+                                <td><%= midia.Perfil.usuario%></td>
+                                <td><%= midia.titulo%></td>
+                                <td><%= midia.tipo%></td>
+                                <td>                              
+                                    <button onclick="CertezaDeletar('<%=midia.id%>','<%=midia.id%>')"><img src="/img/adm/deletar.png" alt="Deletar"></button>
+                                </td>
+                            </tr>
+                        <% } %>
+                </table>
+                </section>
+                
+                <div id="modalUser">
+                    
+                </div>
+
+<script src="/js/adm/admUsuario/admMidias.js"></script>
+

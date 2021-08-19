@@ -1,47 +1,31 @@
 <link rel="stylesheet" href="/css/users/cadastrar.css">
 
-
-
-<form action="/registrar" method="POST" class="fundoBranco centralizarPainelAdmin">
-
-    <div>
-
-        <label for="email" class="fonteGeral">E-mail: </label>
-        <input type="email" name="email" id="" class="inputRegistrar" required value="<%= error.content.email ? error.content.email : ' ' %>" >
-        <p class="colorVermelha"> <%= error.email ? error.email: '' %></p>
-    </div>
-
-    <div>
-
-        <label for="nick" class="fonteGeral">Usuário: </label>
-        <input type="text" name="nick" id="" class="inputRegistrar" required value="<%= error.content.nick ? error.content.nick : ' ' %>" >
-        <p class="colorVermelha"><%= error.nick ? error.nick: '' %></p>
-
-    </div>
-
-    <div>
-
-        <label for="senha" class="fonteGeral">Senha: </label>
-        <input type="password" name="senha" id="" class="inputRegistrar" required> 
-
-    </div>
+<div id="error">
     
-    <div>
-
-        <label for="resenha" class="fonteGeral">Re-senha </label>
-        <input type="password" name="resenha" id="" class="inputRegistrar" required>
-        <p class="colorVermelha"><%= error.resenha ? error.resenha: '' %></p>
-    </div>
-
-    <div>
-
-        <input type="checkbox" name="checkBox" id="" class="checkBox" required>
-        <label name="checkBox" class="inputCheck">“Eu li e concordo com os <a href=""> termos de uso </a>"</label>
-
-    </div>
-    
-    <div>
-        <input type="submit" value="Criar Conta" class="cad-submit">
-    </div>
-    
+</div>
+<div class="fundoBranco centralizarPainelAdmin">
+    <form>
+        <div>
+            <label for="email" class="fonteGeral">E-mail: </label>
+            <input type="email" name="email" id="email" class="inputRegistrar" required >
+        </div>
+        <div>
+            <label for="usuario" class="fonteGeral">Usuário: </label>
+            <input type="text" name="usuario" id="usuario" class="inputRegistrar" required >      
+        </div>
+        <div>
+            <label for="senha" class="fonteGeral">Senha: </label>
+            <input type="password" name="senha" id="senha" class="inputRegistrar" required> 
+        </div>
+        <div>
+            <label for="resenha" class="fonteGeral">Re-senha </label>
+            <input type="password" name="resenha" id="resenha" class="inputRegistrar" required>
+        </div>  
 </form>
+<div>
+    <input type="submit" value="Criar Conta" class="cad-submit"  onclick="CadastrarUsuario()">
+</div>
+
+</div>
+
+<script src="/js/adm/admUsuario/admUsuario.js"></script>

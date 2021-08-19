@@ -15,6 +15,9 @@
         <%- include('../home/header.ejs') %>
     </header>
     <container class="pai containerMidiaJogos">
+        <div id="showModal">
+
+        </div>
         <main class="mainMidiaJogos pai coluna"> 
             <section class="fundoBranco" id="tituloMidiaJogos">
                 <h1><a href="/jogos/perfil/<%=jogo.id%>"><%= jogo.nome %></a></h1>
@@ -24,16 +27,20 @@
                 
                     <% for (const midias of midiaJogo){%>
                         <% if(midias.tipo == 'IMAGEM'){%>
-                            <div class="addConteudoMidiaJogos">
-                                <img src="<%=midias.path%>" alt="" class="addConteudoMidiaJogos-img"/>
+                            <div class="addConteudoMidiaJogos" onclick="showModalImagem('<%=midias.path%>')">
+                                <img src="/img/iconImg.png" alt="" class="opacity"/>
+                                <img src="<%=midias.path%>" alt="" class="caixaImagem-img-img"/> 
+                                
                                 <div class="addConteudoMidiaJogos-titulo">
                                     <a href="<%= midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
                                 </div>
                             </div>
                         <% } %>
                         <% if(midias.tipo == 'VIDEO'){%>
-                            <div class="addConteudoMidiaJogos">
-                                <img src="/img/video.png" alt="" class="addConteudoMidiaJogos-img"/>
+                            <div class="addConteudoMidiaJogos" onclick="showModal('<%=midias.path%>')">
+                                <img src="/img/play.png" alt="" class="opacity"/>
+                                <img src="http://i3.ytimg.com/vi/<%=midias.path%>/hqdefault.jpg" class="caixaImagem-img-img"/> 
+                                
                                 <div class="addConteudoMidiaJogos-titulo">
                                     <a href="<%=midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
                                 </div>
@@ -53,6 +60,7 @@
     <footer>
         <%- include('../home/footer.ejs') %>
     </footer>
+    <script src="/js/jogos/midiasJogo.js"></script>
 </body>
 
 </html>

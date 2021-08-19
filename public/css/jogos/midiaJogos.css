@@ -1,6 +1,14 @@
+@font-face {
+
+    font-family:"PressStart2P";
+    src: url(/font/PressStart2P-Regular.ttf);
+}
+
+
 *{
     text-decoration: none;
 }
+
 .mainMidiaJogos{            
     flex-grow: 1;
     display: flex;
@@ -37,7 +45,7 @@
     flex-grow: 1;  
     flex-wrap: wrap;  
     overflow: auto;
-   
+   justify-content: space-between;
     height: auto;
     min-height: 700px;
 }
@@ -49,7 +57,7 @@
 
 .addConteudoMidiaJogos {
     display: block;
-    width: 25%;
+    width: 29%;
     height: 40%;
     box-sizing: border-box;
     background-color: white;
@@ -58,23 +66,43 @@
     margin: 0 2%;
 }
 
-.addConteudoMidiaJogos-img{
 
+.addConteudoMidiaJogos:hover{
     cursor: pointer;
-
+    width: 30%;
+    height: 42%;
+    margin: 0;
+    border: 4px rgb(223, 210, 25) solid;
     
+}
+
+.caixaImagem-img-img{
+
+    cursor: pointer;    
     width: 95%;
     height: 85%;
     margin: 2% 2%;
   
 }
+.opacity{
+    
+    width: 22%;
+    height: 29%;
+    position:absolute;
+    opacity: 0;
+    
+}
+.opacity:hover{
+    width: 22%;
+    height: 30.5%;
+    opacity: 0.7;
+
+}
 .addConteudoMidiaJogos-titulo{
 
     height: 12%;    
     text-align: center;    
-    word-break: break-all;
-    
-    
+    word-break: break-all; 
 }
 .addConteudoMidiaJogos-titulo-a{
     text-decoration: none;
@@ -88,4 +116,73 @@
     padding: 0;
     margin: 1%;
     color: black;
+}
+
+.cxPlay{
+    
+    position: absolute;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 3%;
+
+}
+.play{
+    width: 100px;
+    height: 100px;
+        
+    
+}
+
+
+
+
+
+/* modal de showModal*/
+
+#showModal{
+    display: none;
+    position: fixed;
+    
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.301);
+    z-index: 99;
+}
+#bigVideo{
+    text-align: center;
+    
+    width: 40vw;
+    height: 43vh;
+    position: fixed;
+    margin: 12% 30%;
+
+}
+
+#bigVideo iframe {
+    border: 15px yellow double;
+}
+.iframe{
+    width: 100%;
+    height: 100%;
+    border: 15px yellow double;
+
+}
+#fecharAba{
+    font-family: "PressStart2P";
+    width: 40%;
+    height: 5%;
+    background-color: yellow;
+}
+
+#fecharAba:hover{
+
+    font-family: "PressStart2P";
+    cursor: pointer;
+    background-color: red;
+    color: white;
 }

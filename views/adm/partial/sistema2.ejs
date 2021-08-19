@@ -1,1 +1,38 @@
-sistema2
+<!--<p><label>Procurar Usuário</label> <input class="inputPainelAdmin" type="text" name="pesquisarUser" id="pesquisaUser"><input class="inputPainelAdmin" type="submit" value="Pesquisar"></p>-->
+<section class="fundoBranco h-50">
+    <table class="tablePainelAdmin">
+        <tr>
+            <th>Id</th>
+            <th>Nick</th>
+            <th>email</th>
+            <th>Ações</th>
+        </tr>                        
+        <%  for(let user of userNorm){ %>
+        <tr>
+            <td><%= user.id  %></td>
+            <td><%= user.Perfil.usuario %></td>
+            <td><%= user.email %></td>
+            <td><a href="/gamepadm/painel/sistema/2/elevar/<%=user.id%>"><img src="/img/adm/plus.png" alt="Elevar"></a><a href="/gamepadm/painel/sistema/2/rebaixar/<%=user.id%>"><img src="/img/adm/bloquear.png" alt="Rebaixar"></a> </td>
+        </tr>
+        <%  }   %>                 
+    </table>
+</section>
+    <p><label>Usuários Administradores</label></p>
+<section class="fundoBranco h-30">
+    <table class="tablePainelAdmin">
+        <tr>
+            <th>Id</th>
+            <th>Nick</th>
+            <th>email</th>
+            <th>Ações</th>
+        </tr>                        
+        <%  for(let user of userAdmin){ %>
+        <tr>
+            <td><%= user.id  %></td>
+            <td><%= user.Perfil.usuario %></td>
+            <td><%= user.email %></td>
+            <td><a href="/gamepadm/painel/sistema/2/elevar/<%=user.id%>"><img src="/img/adm/plus.png" alt="Elevar"></a><a href="/gamepadm/painel/sistema/2/rebaixar/<%=user.id%>"><img src="/img/adm/bloquear.png" alt="Rebaixar"></a> </td>
+        </tr>
+        <%  }   %>                 
+    </table>
+</section>

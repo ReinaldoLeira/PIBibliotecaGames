@@ -17,16 +17,16 @@
 
     <container class="pai">
         <main class="fundoBranco pai coluna mainProcurarJogos">
-            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><div id="cadastraProcurarJogos">Cadastrar Jogo</div></a> <div id="jogosEncontrados"></div></div> 
+            <div class="pai" id="cadastradosProcurarJogos"><a href="/jogos/cadastra"><%if(usuario){%> <div id="cadastraProcurarJogos">Cadastrar Jogo</div><% } %></a>  <div id="jogosEncontrados"></div></div> 
             <div class="pai jogosProcuraJogos" id="exibirJogos">
                                 
             </div>
             <div><ul class="pai paginasProcurarJogos" id="paginacaoProcurarJogos">
-                <li><a href="#" id="pl">L</a></li>
-                <li><a href="#" class="ativo" id="p1">1</a></li>
-                <li><a href="#" id="p2">2</a></li>
-                <li><a href="#" id="p3">3</a></li>
-                <li><a href="#" id="pr">R</a></li>                
+                <li><a href="#" class="paginacaoAtiva" id="pl">L</a></li>
+                <li><a href="#" class="ativo paginacaoAtiva" id="p1">1</a></li>
+                <li><a href="#" class="paginacaoAtiva" id="p2">2</a></li>
+                <li><a href="#" class="paginacaoAtiva" id="p3">3</a></li>
+                <li><a href="#" class="paginacaoAtiva" id="pr">R</a></li>                
             </ul>
         </div>
         </main>

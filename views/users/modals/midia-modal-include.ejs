@@ -11,12 +11,12 @@
          <div class="cxImagem">
              <form action="/users/midias" method="POST" name="IMAGEM">
                  <label for="url">Link da Imagem:</label>
-                 <input type="url" name="url"  class="url">
+                 <input type="url" name="url"  class="url" required>
 
                  <label for="titulo-cxImagem" class="labelTitulo">Titulo:</label>
-                 <input type="text" name="titulo" id="titulo-cxImagem" maxlength="30">
+                 <input type="text" name="titulo" id="titulo-cxImagem" maxlength="30" required>
 
-                 <select name="selectJogo" class="selectJogo">
+                 <select name="selectJogo" class="selectJogo" required>
                      
                  </select>
                  <input type="radio" name="tipo"  style="display: none;" value="IMAGEM" checked>
@@ -28,11 +28,11 @@
             <div class="cxVideo">
                 <form action="/users/midias" method="POST" name="VIDEO">
                     <label for="url">Link da video:</label>
-                    <input type="url" name="url" id="" class="url">
+                    <input type="url" name="url" id="" class="url" required>
                     
                     <label for="titulo-cxVideo" class="labelTitulo">Titulo:</label>
-                    <input type="text" name="titulo" id="titulo-cxVideo" maxlength="30">
-                    <select name="selectJogo" class="selectJogo2">
+                    <input type="text" name="titulo" id="titulo-cxVideo" maxlength="30" required>
+                    <select name="selectJogo" class="selectJogo2" required>
                     
                     </select>
                     <input type="radio" name="tipo" id="" style="display: none;" value="VIDEO" checked>

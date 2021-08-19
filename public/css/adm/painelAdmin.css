@@ -69,6 +69,12 @@
     font-weight: 500;
     text-align: center;
     padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logadoAdmin{
+    font-size: 12rem;
 }
 #conteudoPainelAdmin{
     width: 95%;
@@ -103,14 +109,15 @@
     height: 85vh;
     padding: 1%;    
 }
-#mainPainelAdmin label{
-    font-size: 10rem;
-}
+
 #mainPainelAdmin p{
     text-align: center;
 }
 #ativoPainelAdmin{
     background: #0e9aa7;      
+}
+#logOutAdmin{
+    width: 50px;    
 }
 .preencherPainelAdmin{
     flex-grow: 1;       
@@ -136,6 +143,16 @@
     font-size: 8rem;
     padding: 5px;
 }
+.tablePainelAdmin td button{
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    margin-left: 1px;
+}
+
+.tablePainelAdmin td button:hover{
+    box-shadow: 1px 1px 1px #0E9AA7;
+}
 .tablePainelAdmin td a{
     text-decoration: none;
     color: black;
@@ -143,10 +160,11 @@
 .tablePainelAdmin td a:hover{
     box-shadow: 1px 4px 4px #0E9AA7;
 }
-.tablePainelAdmin td a img{
+.tablePainelAdmin td img{
     width: 17rem;
     vertical-align: middle;  
 }
+
 
 .jogo2-3MaxH{
     max-height: 68vh;

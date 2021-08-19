@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
-        targetKey: 'id'
+        targetKey: 'id',
+        onDelete: 'cascade'
       })
     }
   };

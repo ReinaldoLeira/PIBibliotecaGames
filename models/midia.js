@@ -8,11 +8,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.Jogo, {
         foreignKey: 'idJogos',
-        targetKey: 'id'
+        targetKey: 'id',
+        onDelete: 'cascade'
       }),
       this.belongsTo(models.Perfil, {
         foreignKey: 'idPerfis',
-        targetKey: 'id'
+        targetKey: 'id',
+        onDelete: 'cascade'
       })
     }
   };
@@ -26,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     path: DataTypes.STRING(500),
     idPerfis: {
       type: DataTypes.BIGINT,
+      onDelete: 'CASCADE',
       references: {
         model: 'perfis'
       }

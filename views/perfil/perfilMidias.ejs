@@ -11,7 +11,8 @@
         <%- include('../home/header.ejs') %> 
     </header>
 
-
+    <div id="modalVideo">
+    </div>
     
     <div class="paiFlex">
         <main class="caixaMain">
@@ -30,10 +31,11 @@
                 <div class="conteudoImagem">
                     <% for ( const imagem of midias){ %>
                         <%    if ( imagem.tipo == "IMAGEM") { %>
-                            <div class="caixaImagem">
-                                <div class="caixaImagem-img"><a href="<%= imagem.path %>">
-                                        <img src="<%= imagem.path %>" alt="">
-                                        </a>
+                            <div class="caixaImagem" onclick="showModalImagem('<%=imagem.path%>')">
+                                <div class="caixaImagem-img">
+                                    <img src="/img/iconImg.png" alt="" class="opacity"/>
+                                    <img src="<%= imagem.path %>" alt="" class="caixaImagem-img-img"/>
+                                                                  
                                 </div>
                                 <div class="caixaImagemTitulo">
                                     <p class="tituloSendMidia-caixaImagem"><%= imagem.titulo %></p>
@@ -46,16 +48,16 @@
                 <div class="conteudoVideo">
                     <% for (const video of midias) {%>
                         <% if ( video.tipo == 'VIDEO') { %>
-                        <div class="caixaImagem">
-                            <div class="caixaImagem-img">
-                                <a href="<%= video.path %>">
-                                    <img src="/img/video.png" alt="">
-                                </a>
+                            <div class='caixaImagem caixaVideo ' onclick="showModal('<%=video.path%>')">
+                                <div class="caixaImagem-img">
+                                    <img src="/img/play.png" alt="" class="opacity"/>
+                                    <img src="http://i3.ytimg.com/vi/<%=video.path%>/hqdefault.jpg" class="caixaImagem-img-img"/>
+                                                         
+                                </div>
+                                <div class="caixaImagemTitulo">     
+                                        <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>
+                                </div>
                             </div>
-                            <div class="caixaImagemTitulo">  
-                                <p class="tituloSendMidia-caixaImagem"><%=video.titulo%></p>
-                            </div>
-                        </div>
                   <%  } %>
                   <% } %>
                 
