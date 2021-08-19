@@ -8,6 +8,11 @@ const opJogo = ['Cadastrar', 'Listar', 'Gênero', 'Plataforma']
 const opSistema = ['Cadastrar Notícias', 'Listar Notícias', 'Admin', ''] 
 
 module.exports.login = async (req, res) => {    
+    if(typeof(req.session.user)!= "undefined"){
+        if(req.session.user.role == 'ADMIN'){
+            return res.redirect('/gamepadm/painel')
+        }
+    }
     res.render('./adm/loginAdmin', {error: ""})
 }
 module.exports.logar = async (req, res) => {
@@ -272,8 +277,18 @@ module.exports.painelSistema1 = async (req, res) => {
     console.log(noticias)
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '1', aba: 'sistema', opcoes: opSistema, extra:'', noticias})
 }
-module.exports.painelSistema2 = (req, res) => {
-    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'sistema', opcoes: opSistema, extra:''})
+
+// Visualizar admins e mudar role
+module.exports.painelSistema2 = async (req, res) => {
+    const userAdmin = await db.User.findAll({
+        where: { role: 'ADMIN'},
+        attributes: ['id', 'email','role'],
+        include: [
+            {model: db.Perfil, attributes: ['usuario']}
+        ]
+    })
+
+    res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '2', aba: 'sistema', opcoes: opSistema, extra:'', userAdmin})
 }
 module.exports.painelSistema3 = (req, res) => {
     res.render('./adm/painelAdmin', {usuario: req.session.user, selecionado: '3', aba: 'sistema', opcoes: opSistema, extra:''})
