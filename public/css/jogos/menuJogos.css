@@ -7,9 +7,11 @@
 }
 
 .asideMenuJogos li{
+    cursor: pointer;
     height: 10%; 
     list-style: none;                                         
 }
+
 
 .asideMenuJogos ul{
     padding-inline-start: 0px;              
@@ -34,4 +36,166 @@
 .avaliarMenuJogo{    
     text-align: center;
     width: 100%;
+}
+/*Modal de Biblioteca ou Desejo*/
+
+#perfilModal{
+    background-color: rgba(0, 0, 0, 0.37);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: none;
+}
+.caixaSelectPlataforma{
+    margin: auto;
+    width: 30%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.726);
+    border: 2px yellow double;
+    border-radius: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.caixaSelectPlataforma:hover{
+    background-color: white;
+    transition: all;
+    transition-duration: 1s;
+}
+.caixaSelectPlataforma h1{
+    color: #0e9aa7;
+    text-shadow: 0px 1px 0.5px black;
+    margin: 2% auto;
+    font-size: 20rem;
+}
+.caixaSelectPlataforma select {
+    color: #0e9aa7;
+    border: 2px #0e9aa7 solid;
+    margin-top: 3%;
+    width: 50%;
+    height: 15%;
+    cursor: pointer;
+    font-family:"PressStart2P";
+}
+.caixaSelectPlataforma input[type=radio] {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;    
+}
+.caixaSelectPlataforma input[type=radio]:checked{
+    background-color: red;
+}
+#btnEnviar{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    width: 15%;
+    height: 27%;
+    border-radius: 50%;
+}
+#btnEnviar:hover{
+    width: 16%;
+    height: 28%;
+    
+}
+.btnEnviar-img{
+    cursor: pointer;
+    margin-top: 2% ;
+    width: 100%;
+    height: 100%;
+}
+#bck{
+    cursor: pointer;
+    margin-top: 2%;
+    width: 5%;
+    height: 10%;
+}
+#bck:hover{
+    width: 6%;
+    height: 11%;
+}
+
+
+
+.caixaSelectPlataforma div {
+   
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    
+}
+
+/**/
+
+.modalError {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.295);
+}
+
+.caixaError {
+    margin: 10% auto;
+    width: 35%;
+    height: 40%;
+    background-color: white;
+}
+.cxImg{
+    padding-top: 5%;
+    display: flex;
+    height: 50%;
+    background-color: rgb(255, 81, 81);
+    
+    border-bottom: 20px rgba(0, 0, 255, 0) solid;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.imgError{
+    
+    width: 25%;
+    height: 90%;
+}
+
+.messageError {
+    
+    width: 100%;
+    height: 10%;
+    text-align: center;
+
+    font-size: 15rem;
+    padding-top: 5%;
+}
+
+.buttonVoltar{
+    width: 100%;
+    height: 30%;
+    
+    text-align: center;
+}
+
+#buttonVoltar{
+    margin-top: 2vh;
+    cursor: pointer;
+    width: 45%;
+    height: 50%;
+    border-radius: 20px;
+}
+#buttonVoltar:hover{
+    width: 47%;
+    height: 52%;
+    background-color: yellow;
+}
+.bck{
+    width: 30px;
+    height: 50px;
 }

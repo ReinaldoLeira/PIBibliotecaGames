@@ -4,7 +4,9 @@ const { param } = require('express-validator')
 
 module.exports.acharJogo =  async (req,res) => {
 
-    const acharJogo = await models.Jogo.findAll({order : [['nome', 'ASC']]})
+    const acharJogo = await models.Jogo.findAll({
+        include: 'plataforma'
+    },{order : [['nome', 'ASC']]})
     res.send(acharJogo)
 }
 
