@@ -64,6 +64,18 @@
     border: 2px #0e9aa7 solid;
     padding: 0;
     margin: 0 2%;
+        
+}
+.imagemBg{
+    background-image: url('../../img/iconImg.png') ;
+    background-size: 96%;
+    background-repeat: no-repeat;
+}
+
+.videoBg {
+    background-image: url('../../img/play.png') ;
+    background-size: 96%;
+    background-repeat: no-repeat;
 }
 
 
@@ -84,20 +96,10 @@
     margin: 2% 2%;
   
 }
-.opacity{
-    
-    width: 22%;
-    height: 29%;
-    position:absolute;
-    opacity: 0;
-    
+.caixaImagem-img-img:hover{
+    opacity: 0.5;
 }
-.opacity:hover{
-    width: 22%;
-    height: 30.5%;
-    opacity: 0.7;
 
-}
 .addConteudoMidiaJogos-titulo{
 
     height: 12%;    
@@ -132,10 +134,6 @@
         
     
 }
-
-
-
-
 
 /* modal de showModal*/
 

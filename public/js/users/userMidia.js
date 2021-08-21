@@ -16,7 +16,7 @@ async function carregarConteudo(){
         conteudo.innerHTML += `
         <div class="caixaImagem" onclick="showModalImagem('${img.path}')">
             <div class="caixaImagem-img">
-                <img src="/img/iconImg.png" alt="" class="opacity"/>
+                
                 <img src="${img.path}" alt="" class="caixaImagem-img-img"/> 
             </div>
             <div class="caixaImagemTitulo">
@@ -52,8 +52,8 @@ aba2.onclick = () =>{
             conteudo.innerHTML += 
             `           
             <div class='caixaImagem caixaVideo ' onclick="showModal('${video.path}')">
-                <div class="caixaImagem-img">
-                    <img src="/img/play.png" alt="" class="opacity"/>
+                <div class="caixaVideo-img">
+                    
                     <img src="http://i3.ytimg.com/vi/${video.path}/hqdefault.jpg" alt="" class="caixaImagem-img-img"/>  
                     
                 </div>
@@ -115,7 +115,7 @@ aba1.onclick = () => {
             conteudo.innerHTML +=`
             <div class="caixaImagem" id="caixaImagem">
                         <div class="caixaImagem-img"><a href="${img.path}">
-                            <img src="/img/iconImg.png" alt="" class="opacity"/>
+                            
                             <img src="${img.path}" alt="" class="caixaImagem-img-img"/>  
                         </div>
                         <div class="caixaImagemTitulo">
