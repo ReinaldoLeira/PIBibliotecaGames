@@ -84,12 +84,18 @@
     border: 6px rgb(57, 68, 55) solid ;
     padding: 1px;
 
+
 }
 .linkDoPerfil img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
+.linkDoPerfil a{
+    text-align: center;
+    color: white;
+    font-size: 12rem;
+ }
 .tituloEConteudo{
     width: 62%;
     height: 90%;

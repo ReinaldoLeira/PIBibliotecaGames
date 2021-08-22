@@ -24,7 +24,7 @@ async function acharJogo() {
     for (const jogo of body) {
         caixaSelecionarJogo.innerHTML += `
         <div class="inputRadio">
-            <input type="radio" value= "${jogo.id}" name="jogo" id="${jogo.id}" class="radioSelectJogo" required>
+            <input type="radio" value="${jogo.id}" name="jogo" id="${jogo.id}" class="radioSelectJogo" required>
             <label for="${jogo.id}" class="labelRadio">            
                 <img src="${jogo.capa}" alt="">
                 <span class="TituloInputRadio">${jogo.nome}</span>
@@ -114,3 +114,60 @@ async function showJogos () {
     }
  }
 showJogos()
+
+const BtnEnviar = document.getElementById('BtnEnviar')
+BtnEnviar.onclick = () =>{
+    
+    try{
+
+        let url =  'http://localhost:3000/users/meusjogos'
+        let jogo = document.querySelectorAll('.radioSelectJogo')
+        let plataforma = document.querySelector('#plataformaJogo').value
+        let tenho = document.getElementById('tenho').checked
+        let desejo = document.getElementById('desejo').checked
+        
+        function jogoSelecionado(){
+            for (const jogos of jogo) {
+                console.log(jogos)
+                if(jogos.checked == true){
+                    return jogos.value
+                }
+            }
+        }
+        console.log(jogo)
+        function escolha (){
+            if(tenho == true){
+                return 'SIM'
+            }
+            if(desejo == true){
+                return  'DESEJO'
+            }
+        }
+
+        let body = { 
+            'plataforma' : plataforma,
+            'escolha' : escolha(),
+            'jogo' : jogoSelecionado()
+        }
+        console.log(body)
+        conect(url , body)
+        }catch{
+            
+        }
+}
+async function conect(url, body){
+let result = await fetch(url,{
+    method:'POST',
+    body : JSON.stringify(body),
+    headers: {'Content-type': 'application/json'}  
+})
+let loginBOdy = await result.json()
+
+if(result.status == 400){
+    alert('algum campo não foi selecionado')
+}
+    
+if (result.status == 200){
+    return location.reload()
+}
+}

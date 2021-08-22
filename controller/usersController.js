@@ -219,6 +219,7 @@ module.exports.addMeusJogos = async(req, res) => {
         idJogos: formBody.jogo,
         obtido: formBody.escolha
     })
+    console.log(formBody)
         res.status(200).send({criado: 'criado', status: 200})
     } catch (e) {
         res.send(400).send({message : e.message, status: 400})

@@ -13,6 +13,8 @@ html{
 *{
     text-decoration: none;    
     box-sizing: border-box;
+    
+    
 }
 /* ===================================================================== */
 .navbar{
@@ -65,7 +67,10 @@ html{
     color: black;
     text-decoration: none;
 }
-
+.listaInicio a:hover {
+    color: rgba(255, 255, 0, 0.836);
+    text-decoration: none;
+}
 .btn-p{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
