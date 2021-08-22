@@ -38,6 +38,12 @@ body {
     
     box-sizing: border-box;
     width: 70vw;  
+    background-image: url('../../img/plantaescada.png');
+    background-image: url('../../img/plantaescada.png');
+    background-repeat: repeat-y;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-position-y: top;
 }
 .containerPerfil {
     width: 30vw;
@@ -69,11 +75,11 @@ body {
     border: 2px rgb(138, 83, 0) solid;
     border-top: 2px rgb(248, 185, 90) solid;
     border-left: 2px rgb(248, 182, 74) solid;
-    margin: 3vh auto;
+    margin: 10vh auto;
     padding: 15px;
     
-    width: 50%;
-    height: 30vh;
+    width: 40%;
+    height: 25vh;
     box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.5);   
     
     
@@ -109,13 +115,21 @@ body {
 
 .deletButtom {
 
-    
+    cursor: pointer;
     height: 30px;
     width: 30px;
-    background-color: rgb(192, 80, 80);
-    color: white;
+    background-color: white(192, 80, 80);
+    border-radius: 20px;
+    color: rgb(190, 190, 190);
     margin-left: 95%;
     margin-top: 2%;
+   
+}
+.deletButtom:hover{
+    border: 2px red solid;
+    color: black;
+    width: 32px;
+    height: 32px;
 }
 
 
