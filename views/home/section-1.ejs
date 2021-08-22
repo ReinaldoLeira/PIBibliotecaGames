@@ -9,23 +9,28 @@
     <div class="bloco-geral">
         <section class="bloco-1">
             <div>
-                <h3>Jogos em promoção</h3>
-                <div class="promocao">
-                    <% for(let i=0; i<jogos.length && i <=10; i++){ %>
-                        <a href="/jogos/perfil/<%= jogos[i].id %>">
-                            <article><img class="img" src="<%= jogos[i].capa %> "></article>
-                        </a>
+                <h3>Jogos em Destaque</h3>
+                <div class="destaque" id="destaque">
+                    <% for(let i=0; i<jogos.length && i <=4; i++){ %>
+                       
+                        <div class="caixaDestaque" id="caixaDestaque">
+                            <a href="/jogos/perfil/<%= jogos[i].id %>">
+                                <img class="imgDestaque" src="<%= jogos[i].capa %> ">
+                            </a>
+                            <div class="conteudoDestaque">
+                                <h1><%= jogos[i].nome %></h1>
+                                <p><%= jogos[i].desenvolvedor %></p>
+                                <p><%= jogos[i].lancamento %> </p>
+                                <div class="span">
+                                    <p><%= jogos[i].descricao %></p>
+                                </div>
+                            </div>
+                        </div>
+
                     <% } %>
                 </div>
             </div>
-            <div>
-                <h3>Jogos em destaque</h3>
-                <div class="destaque"> 
-                    <a href="">
-                        <article><img src=""></article>
-                    </a>
-                </div>
-            </div>
+    
             <div> 
                 <a class="btn-p" href="/jogos/noticias"><h3>Noticias</h3></a>
                 <div class="column">
@@ -58,6 +63,7 @@
                 </ul>
         </section>
     </div>
+    <script src="/js/index/home.js"></script>
 </body>
 
 </html>

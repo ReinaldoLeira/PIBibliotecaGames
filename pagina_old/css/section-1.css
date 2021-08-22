@@ -27,7 +27,7 @@ html{
 
 .promocao{
     background-color: #0E9AA7;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 1px 5px grey;
     border-radius: 25px;
     height: 200px;
 }
@@ -47,7 +47,7 @@ html{
 
 .bloco-2{
     background-color: #0E9AA7;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 5px 5px rgb(83, 83, 83);
     border-radius: 25px;
     width: 20%;
     margin-top: 45px;

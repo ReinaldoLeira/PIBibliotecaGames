@@ -38,7 +38,7 @@ textarea{
     padding: 10px;
     border-radius: 5px;
     border: 1px solid black;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 5px 5px grey;
     box-sizing: content-box;
     width: 100%;
     height: 120px;

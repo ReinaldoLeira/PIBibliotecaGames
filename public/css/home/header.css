@@ -21,7 +21,7 @@ html{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 2px 1px rgb(0, 0, 0);
     border-radius: 20px;
     width: 98%;
 }

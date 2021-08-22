@@ -48,7 +48,7 @@ aside {
     background: #fff;    
     border: 1px solid #0E9AA7;
     box-sizing: border-box;
-    box-shadow: 0.2vw 1vh 1vh grey;
+    
 
 }
 
@@ -110,7 +110,7 @@ aside {
     height: 18%;
     min-height: 25px;
     width: 18%;
-    box-shadow: 0.3vw 0.5vh 1vh grey;
+    
 }
 
 .inputSubmit{
