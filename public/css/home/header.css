@@ -204,3 +204,26 @@ html{
         width: 9vw;
     }
 }
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: #0E9AA7;
+    border-radius: 10px;
+   
+   
+}
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0,0.25);
+}
+
+::-webkit-scrollbar-thumb{
+    
+    background-color: white;
+ 
+}
+::-webkit-scrollbar-thumb:hover{
+    
+    border-radius: 100px;
+    background-color: white;
+}
