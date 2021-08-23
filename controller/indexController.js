@@ -1,13 +1,21 @@
 const models = require('../models');
 const bcrypt = require('bcrypt');
+const { QueryTypes } = require('sequelize');
 
 module.exports.index = async (req, res) => { 
     const top =  await models.Jogo.findAll() 
     const noticias = await models.Noticia.findAll()
+    const medias = await models.sequelize.query("SELECT AVG(nota) as mediaGeral FROM analises", {type: QueryTypes.SELECT})
+    const mediasJogos = await models.sequelize.query("SELECT jogos.nome, jogos.capa, jogos.id, AVG(nota) AS notas FROM analises LEFT JOIN jogos ON analises.idJogos = jogos.id GROUP BY jogos.nome HAVING notas > :media ", {type: QueryTypes.SELECT, replacements: {media: medias[0].mediaGeral}})
+    
+    console.log(medias)
+    console.log(mediasJogos)
     res.render ('index', {
         usuario: req.session.usuario,
         jogos: top,
-        noticias: noticias
+        noticias: noticias,
+        medias: medias,
+        mediasJogos: mediasJogos
     })};
 //controllers Registrar
 module.exports.registrar = (req, res) => { res.render('./home/cadastrar', { usuario: ''})};

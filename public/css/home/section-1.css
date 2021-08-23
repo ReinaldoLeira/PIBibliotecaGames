@@ -17,23 +17,19 @@ html{
     margin-right: 30px;
     border-radius: 25px;
 }
-.destaque{
+.jogosHome{
     background-color: #0E9AA7;
     
     border-radius: 25px;
     height: auto;
     width: 100%;
-    
     display: flex;
-    justify-content: space-between;
-   
-    
     border: 1px white solid;
     padding: 10px;  
     overflow-x: scroll;
     
 }
-.destaque::-webkit-scrollbar{
+.jogosHome::-webkit-scrollbar{
     position: absolute ;
     height: 20px;
     background-color: #0E9AA7;
@@ -54,6 +50,7 @@ html{
 
 ::-webkit-scrollbar-thumb{
     
+    border-radius: 20px;
     background-color: white;
  
 }
@@ -61,8 +58,9 @@ html{
     
     border-radius: 100px;
     background-color: white;
+
 }
-.caixaDestaque{
+.caixaJogos{
     width: 50%;
     min-width: 700px;
     height: 100%;
@@ -72,35 +70,49 @@ html{
     border-radius: 20px;
     background-color: white;
     margin-right: 1.7%;  
-    
+    padding-bottom: 5px;
 }
-.caixaDestaque a {
+.caixaJogos a {
     
     width: 30%;
     height: 30vh;
 }
+.jogosDestaque{
+    height: 100%;
+    display: flex;
+    border: 2px silver solid;
+    border-radius: 20px;
+    background-color: white;
+    margin-right: 10px;  
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.jogosDestaque a {
+    height: 30vh;
+    width: 210px;
+}
 
-.imgDestaque{
+.imgJogos{
     width: 100%;
     height: 100%;
     margin: 2px;
     border-radius: 20px;
 }
-.imgDestaque:hover{
+.imgJogos:hover{
     background-color: white;
     opacity: 0.5;
 }
 
-.conteudoDestaque{
+.conteudoJogos{
     
     width: 70%;
 
 }
-.conteudoDestaque h1{
+.conteudoJogos h1{
     margin-left: 5%;
     font-size: 15rem;
 }
-.conteudoDestaque p{
+.conteudoJogos p{
     margin-left: 5%;
     font-size: 10rem;
 }
@@ -118,8 +130,6 @@ html{
    
 }
 
-
-/* height: auto; sera colocado no lugar do 200px quando tiver conteudo no destaque */
 
 .noticia p{
     overflow: hidden;
@@ -170,17 +180,10 @@ html{
     text-align: center;
     border: 1px solid #0E9AA7;
     border-radius: 50px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }    
 
-.top-num{
-    margin-right: 10px;
-}
-.lista{
-    padding-left:10px;
-    padding-top: 10px;
-}
 .top-10{
     background-color: white;
     border-radius: 30px;
@@ -188,13 +191,18 @@ html{
     height: 97%;
     padding: 5px;
 }
-.top-10 ul{
-    list-style-type: none;
-    padding: 0;
+
+.lista{
+    padding-left:10px;
+    padding-top: 20px;
 }
 
 .link{
     color: black;
     display: flex;
     text-decoration: none;
+}
+
+.top-num{
+    margin-right: 10px;
 }
