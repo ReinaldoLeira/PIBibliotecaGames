@@ -19,12 +19,14 @@
                 </div>
             </div>
             <div>
-                <h3>Jogos em destaque</h3>
-                <div class="destaque"> 
-                    <a href="">
-                        <article><img src=""></article>
-                    </a>
-                </div>
+                <% for(let i=0; i<mediasJogos.length; i++){ %>
+                    <h3>Jogos em destaque</h3>
+                    <div class="destaque"> 
+                        <a href="/jogos/perfil/<%= mediasJogos[i].id %>">
+                            <article><img class="img" src="<%= mediasJogos[i].capa %> "></article>
+                        </a>
+                    </div>
+                <% } %> 
             </div>
             <div> 
                 <a class="btn-p" href="/jogos/noticias"><h3>Noticias</h3></a>
