@@ -131,6 +131,109 @@
     
 }
 
+/*modal fazer analise*/
+
+.contentAnalise{
+    width: 30%;
+    height: 40%;
+    background-color: #0e9aa7f3;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 20rem;
+    border: 3px solid #0b818bf3;
+    border-radius: 10px 10px 20px 20px;
+}
+.contentAnalise form{
+    background-color: rgba(70, 70, 70, 0.884);
+    width: 80%;
+    height: 75%;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    color: rgb(27, 27, 27);
+    border-radius: 20px;
+    border: 2px solid black;
+
+}
+.contentAnalise div{
+    width: 90%;
+    margin: 2% auto;
+}
+
+.contentAnalise input{
+    display: block;
+    font-family: "PressStart2P";
+    height: 65%;
+    border-radius: 10px;
+}
+.contentAnalise label{
+    margin: 0 auto;
+}
+.titulo{
+    text-align: center;
+}
+#titulo{
+    background-color: rgb(150, 168, 151);
+    margin-top: 2%;
+    width: 100%;
+}
+#textAnalise{    
+    font-family: "PressStart2P";
+    font-size: 10rem;
+    width: 100%;
+    
+    height: 12vh;
+    resize: none;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    background-color: rgb(150, 168, 151);
+}
+.nota{
+    display: flex;
+    width: 80%;
+}
+.nota input{
+    display: none;
+}
+.nota label{
+    margin-left: 5%;
+    cursor: pointer;
+}
+.nota input:checked + label {
+    color: yellow;
+}
+.btns{
+    
+    height: 10%;
+    margin: 0 auto;
+    display: flex;
+}
+.btns button{
+    background-color: rgb(77, 77, 77);
+}
+.btns button:hover{
+    background-color: rgb(17, 17, 17);
+    color: white;
+    border: 3px rgb(241, 241, 241) solid;
+}
+
+#btnSend{
+    cursor: pointer;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: none;
+    font-family: "PressStart2P";
+}
+#btnSair{
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 0 auto;
+    border: none;
+    font-family: "PressStart2P";
+}
+
 /**/
 
 .modalError {

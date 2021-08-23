@@ -73,7 +73,7 @@ function Enviar(valor){
 
         fezerFetch('http://localhost:3000/users/meusjogos' , body)
         }catch{
-            
+            alert('Erro')
         }
 
 }
@@ -113,6 +113,78 @@ async function fezerFetch(url, body) {
     }
 
     if (result.status == 200){
-      return window.location.href = 'http://localhost:3000/users/meusjogos'
+      return location.reload()
     }
     }
+
+function fazerAnalise(value){
+    perfilModal.style.display='flex'
+
+    perfilModal.innerHTML= 
+    `
+    <div class="contentAnalise">
+            <form>
+                <div class="titulo">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" id="titulo">
+                </div>
+                <div>
+                    <textarea name="analise" id="textAnalise" cols="30" rows="10" placeholder="maximo 300 caracters" maxlength="300" required></textarea>
+                    </textarea>
+                </div>
+                <label for="">nota:</label>
+                <div class="nota">
+                    <input type="radio" name="nota" id="1" class="nota" value='1'>
+                    <label for="1">1</label>
+                    <input type="radio" name="nota" id="2" class="nota" value='2'> 
+                    <label for="2">2</label>
+                    <input type="radio" name="nota" id="3" class="nota" value='3'>
+                    <label for="3">3</label>
+                    <input type="radio" name="nota" id="4" class="nota" value='4'>
+                    <label for="4">4</label>
+                    <input type="radio" name="nota" id="5" class="nota" value='5'>
+                    <label for="5">5</label>
+                </div>
+            </form>
+            <div class="btns">
+                <button id="btnSend" onclick="btnSend(${value})">Enviar</button>
+                <button id="btnSair">Sair</button>
+            </div>
+    </div>
+    
+    `
+    const sair = document.getElementById('btnSair')
+
+    sair.onclick = () =>{
+        perfilModal.style.display= 'none'
+        perfilModal.innerHTML= ''
+    }
+
+}
+function btnSend(value) {
+    const notas = document.querySelectorAll('.nota')
+    let url = 'http://localhost:3000/users/analise'
+    let titulo = document.getElementById('titulo').value
+    let analise = document.getElementById('textAnalise').value
+    let idJogo = value
+    let nota = retorno();
+
+    function retorno(){
+        for (const i of notas) {
+            if(i.checked == true){
+                return i.value
+            }
+        }
+    }
+
+    let body = {
+        'titulo' : titulo,
+        'analise' : analise,
+        'idJogo' : idJogo,
+        'nota' : nota
+        
+    }
+    fezerFetch(url, body)
+    
+
+}
