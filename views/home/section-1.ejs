@@ -9,10 +9,10 @@
     <div class="bloco-geral">
         <section class="bloco-1">
             <div>
-                <h3>Jogos</h3>
-                <div class="jogosHome" id="jogosHome">
+                
+                <div class="jogosHome caixaUm" id="jogosHome">
                     <% for(let i=0; i<jogos.length && i <=4; i++){ %>
-                        <div class="caixaJogos" id="caixaJogos">
+                        <div class="caixaJogos aparecer" id="caixaJogos">
                             <a href="/jogos/perfil/<%= jogos[i].id %>">
                                 <img class="imgJogos" src="<%= jogos[i].capa %> ">
                             </a>

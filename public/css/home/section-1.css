@@ -17,16 +17,20 @@ html{
     margin-right: 30px;
     border-radius: 25px;
 }
+.bloco-1 .jogot{
+    text-align: center;
+}
 .jogosHome{
     background-color: #0E9AA7;
     
     border-radius: 25px;
     height: auto;
     width: 100%;
+    
     display: flex;
     border: 1px white solid;
     padding: 10px;  
-    overflow-x: scroll;
+    overflow-x: auto;
     
 }
 .jogosHome::-webkit-scrollbar{
@@ -61,21 +65,31 @@ html{
 
 }
 .caixaJogos{
-    width: 50%;
+    width: 40%;
     min-width: 700px;
-    height: 100%;
-   
-    display: flex;
+    height: 33vh;
+    position: absolute;
+    display: none;
     border: 2px silver solid;
     border-radius: 20px;
     background-color: white;
-    margin-right: 1.7%;  
+      
     padding-bottom: 5px;
+
+    transition: opacity 800ms;
 }
 .caixaJogos a {
     
-    width: 30%;
-    height: 30vh;
+    width: 33%;
+    height: 32vh;
+}
+.caixaUm{
+    height: 35.2vh;
+    width: 53%;
+    margin: 2% auto 0;
+}
+.aparecer{
+    display: flex;
 }
 .jogosDestaque{
     height: 100%;
