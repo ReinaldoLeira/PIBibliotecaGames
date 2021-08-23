@@ -13,12 +13,12 @@
         <%- include('../home/header.ejs') %> 
     </header>
     <div>
-        <% noticias.forEach(noticias => { %>  
+        <% noticias.forEach(noticias => { %>
             <div class="linha">
                 <div class="noticia">
                     <a class="btn-p" href="/jogos/noticias/<%= noticias.id %>">
                         <h4><%= noticias.titulo %></h4>
-                        <p><%= noticias.descricao %></p>
+                        <p class="teste"><%= noticias.descricao %></p>
                     </div>
                     <div><img class="img" src="<%= noticias.capa %>" ></div>
                 </a>
