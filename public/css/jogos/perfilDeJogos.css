@@ -16,7 +16,11 @@
 }
 
 .h-33PerfilDeJogos{
-    height: 33vh;
+    height: 300px;
+    min-height: 270px;
+    font-size: 7rem;
+    display: block;
+    box-sizing: border-box;
 } 
    
 #tituloPerfilDeJogos{
@@ -84,12 +88,18 @@
     border: 6px rgb(57, 68, 55) solid ;
     padding: 1px;
 
+
 }
 .linkDoPerfil img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
+.linkDoPerfil a{
+    text-align: center;
+    color: white;
+    font-size: 12rem;
+ }
 .tituloEConteudo{
     width: 62%;
     height: 90%;
@@ -182,3 +192,85 @@
     text-align: center;
     padding-top: 13vh;
 } */
+
+.addConteudoMidiaJogos{
+    display: block;
+    width: 100%;
+    
+    height: 97%;
+    box-sizing: border-box;
+    background-color: white;
+    border: 2px #0e9aa7 solid;
+    padding: 0;
+    margin: 0 2%;
+}
+.imagemBg{
+    background-image: url('../../img/iconImg.png') ;
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+}
+
+.videoBg {
+    background-image: url('../../img/play.png') ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.addConteudoMidiaJogos:hover{
+    cursor: pointer;
+   
+    margin: 0;
+    border: 4px rgb(223, 210, 25) solid;
+    
+}
+
+.caixaImagem-img-img{
+
+    cursor: pointer;    
+    width: 95%;
+    height: 80%;
+    
+    margin: 2% 2%;
+  
+}
+.caixaImagem-img-img:hover{
+    opacity: 0.5;
+}
+
+.addConteudoMidiaJogos-titulo{
+
+    height: 12%;    
+    text-align: center;    
+    word-break: break-all; 
+}
+.addConteudoMidiaJogos-titulo-a{
+    text-decoration: none;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+}
+.addConteudoMidiaJogos-titulo p {
+    font-size: 10rem;
+    margin-top: none;
+    padding: 0;
+    margin: 1%;
+    color: black;
+}
+
+.cxPlay{
+    
+    position: absolute;
+    display: flex;
+    margin-left: 8%;
+    margin-top: 3%;
+
+}
+.play{
+    width: 100px;
+    height: 100px;
+        
+    
+}
+#galeriaImagensMidiaJogos{
+    height: 250px;
+}

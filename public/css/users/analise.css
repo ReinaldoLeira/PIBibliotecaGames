@@ -13,6 +13,7 @@ html{
 }
 
 body{
+    
 
     margin: 0;
     border: 0;
@@ -34,6 +35,12 @@ body{
 
     width: 100%;
     height: auto;
+    background-image: url('../../img/trilho.png');
+    
+    background-repeat: repeat-y;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-position-y: top;
     
     
 }
@@ -46,8 +53,6 @@ body{
 
 .analise{
 
-    
-    
     background-color: white;
     width: 50vw;
     min-width: 300px;
@@ -90,7 +95,7 @@ body{
 
 .tituloA{
 
-    background-color: rgb(137, 167, 131);
+    background-color: rgb(223, 223, 223);
     display: flex;
     flex-direction: row;
     height: 15%;
@@ -112,7 +117,7 @@ body{
 .spanA{
 
     margin: auto;
-    background-color: rgb(137, 167, 131);
+    background-color: rgb(202, 202, 202);
     
     height: 75%;
     
@@ -134,13 +139,22 @@ body{
     font-size: 6em;
     text-align: left;
     
+    
 }
 
 .deletButtom{
-    
-    width: 5vw;
+    cursor: pointer;
+    border: none;
+    width: 4vw;
     height: 23px;
-    background-color: rgb(207, 108, 108);
+    margin-top: 1px;
+}
+.deletButtom:hover{
+    
+    border: 1px black solid;
+    border-radius: 10px;
+    transition: all;
+    transition-duration: 0,5s;
 }
 
 
@@ -211,6 +225,7 @@ body{
     width: 200px;
     height: 30px;
     margin-left: 30%;
+    font-family: 'Press Start 2P'
 }
 
 .cxRadio{
@@ -240,6 +255,11 @@ body{
     background-color: white;
     border: 2px rgb(62, 141, 134) solid;
     border-radius: 5px;
+    font-family: 'Press Start 2P';
+}
+.analiseSubmit:hover{
+    border: 3px rgb(0, 255, 0) solid;
+    color: rgb(0, 255, 0);
 }
 
 .avaliarAdd{

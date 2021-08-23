@@ -17,7 +17,7 @@ html{
 .cabecalho{
     background-color: #0E9AA7;
     justify-content: space-between;
-    box-shadow: 10px 5px 5px grey;
+    
     display: flex;
     align-items: center;
     border-radius: 25px;

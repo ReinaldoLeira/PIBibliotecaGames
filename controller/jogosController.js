@@ -41,8 +41,12 @@ module.exports.perfil = async (req, res) => {
     }) 
     const analiseJogo = await db.Analise.findAll({
         include:'Perfil', where: {idJogos: jogo.id}, order: [['createdAt', 'DESC']]
+    })
+    const midiaJogos = await db.Midia.findAll({
+        where: { idJogos: jogo.id }, 
+        order: [['createdAt', 'DESC']]
     })    
-    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analiseJogo: analiseJogo})
+    res.render('./jogos/perfilDeJogos',{usuario: req.session.usuario, jogo, analiseJogo: analiseJogo, midiaJogo: midiaJogos})
 }
 
 module.exports.listar = async (req, res) => {    

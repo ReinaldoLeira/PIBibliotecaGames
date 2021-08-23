@@ -38,13 +38,16 @@
                 </section>
             </section>
             <section class="fundoBranco h-33PerfilDeJogos pai">
-
+                <h1>Avaliações</h1>
                 <div class="caixaAnalisesJogo">
                         <%if(analiseJogo.length > 0 ){ %>
                            <% for(const analises of analiseJogo){%>
                                 <div class="conteudoCadaANalise">
                                     <div class="linkDoPerfil">
-                                        <a href="http://localhost:3000/perfil/<%=analises.Perfil.id%>"><img src="<%=analises.Perfil.foto%>" alt=""></a>
+                                        <a href="http://localhost:3000/perfil/<%=analises.Perfil.usuario%>">
+                                        <img src="<%=analises.Perfil.foto%>" alt="">
+                                        <p><%=analises.Perfil.usuario%></p>
+                                    </a>
                                     </div>
                                     <div class="tituloEConteudo">
                                         <div class="tituloDaCaixaAnalise">
@@ -62,9 +65,39 @@
               
             </section>
             <section class="fundoBranco h-33PerfilDeJogos">
-                Avaliações
+                <h1>Midias</h1>
+                <section class="fundoBranco pai" id="galeriaImagensMidiaJogos">
+                
+                    <% for (const midias of midiaJogo){%>
+                        <% if(midias.tipo == 'IMAGEM'){%>
+                            <div class="addConteudoMidiaJogos imagemBg">
+                                
+                                <img src="<%=midias.path%>" alt="" class="caixaImagem-img-img"/> 
+                                
+                                <div class="addConteudoMidiaJogos-titulo">
+                                    <a href="<%= midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if(midias.tipo == 'VIDEO'){%>
+                            <div class="addConteudoMidiaJogos videoBg">
+                                
+                                <img src="http://i3.ytimg.com/vi/<%=midias.path%>/hqdefault.jpg" class="caixaImagem-img-img"/> 
+                                
+                                <div class="addConteudoMidiaJogos-titulo">
+                                    <a href="<%=midias.path%>" class="addConteudoMidiaJogos-titulo-a"><p><%=midias.titulo%></p></a>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% } %>
+                
+               
+
+            </section>
                 
             </section>
+            
+            
         </main>
         <aside class="fundoVerde">
             <%- include('../jogos/menuJogos.ejs') %>

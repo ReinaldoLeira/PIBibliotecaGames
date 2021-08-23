@@ -20,12 +20,19 @@
     <ul>
         <a href="/jogos/analise/<%=jogo.id%>"><li class="fundoBranco">Análises</li></a>
         <a href="/jogos/midia/<%=jogo.id%>"><li class="fundoBranco">Mídias</li></a>
-        <%if(usuario){%> <a href="/users/meusJogos"><li class="fundoBranco">Adicionar à Biblioteca</li></a> <% } %> 
-        <%if(usuario){%> <a href="/users/meusJogos"><li class="fundoBranco">Adicionar à Lista de Desejos</li></a> <% } %> 
+        <%if(usuario){%> <li class="fundoBranco" onclick="selecionarPlataforma('<%=jogo.id%>' , 'SIM' )">Adicionar à Biblioteca</li> <% } %> 
+        <%if(usuario){%> <li class="fundoBranco" onclick="selecionarPlataforma('<%=jogo.id%>' , 'DESEJO' )">Adicionar à Lista de Desejos</li> <% } %> 
         <%if(usuario){%> <a href="/jogos/cadastra"><li class="fundoBranco">Cadastrar Novo Jogo</li></a> <% } %> 
     </ul>
     
     </container>
+
+    <div id="perfilModal">
+                
+    </div>
+    <div class="modalError">
+        
+    </div>
 </body>
 <script src="/js/jogos/menuJogos.js"></script>
 </html>

@@ -1,6 +1,6 @@
 <div id="modal">
     <div class="boxModal">       
-        <form action="/users/meusjogos" method="POST" class="formModal">
+        <form class="formModal">
 
             <div class="contentJogo">
                 <div class="labelJogo">
@@ -24,7 +24,7 @@
                         <p>Plataforma</p>
                     </div>
                     <div class="selectComOpcoes">
-                        <select name="plataforma" id="plataformaJogo">
+                        <select name="plataforma" id="plataformaJogo" required>
                             
                             
                         </select>
@@ -39,9 +39,8 @@
                         <label for="desejo" class='labelDesejo' id="" title="Lista de DESEJO"></label>
                        </div>
                     </div>
-                    
                     <div class="enviarJogo">
-                        <input type="submit" value="Enviar">
+                        <p id='BtnEnviar'>Salvar</p>
 
                     </div>
                     <div class="voltar"><img src="/img/back.png" alt="" class="imgVoltar"><img src="/img/close.png" alt="" class="close2"></div>

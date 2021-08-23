@@ -13,6 +13,8 @@ html{
 *{
     text-decoration: none;    
     box-sizing: border-box;
+    
+    
 }
 /* ===================================================================== */
 .navbar{
@@ -21,7 +23,7 @@ html{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 2px 1px rgb(0, 0, 0);
     border-radius: 20px;
     width: 98%;
 }
@@ -65,7 +67,10 @@ html{
     color: black;
     text-decoration: none;
 }
-
+.listaInicio a:hover {
+    color: rgba(255, 255, 0, 0.836);
+    text-decoration: none;
+}
 .btn-p{
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
@@ -198,4 +203,27 @@ html{
     .divPesquisar {
         width: 9vw;
     }
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: #0E9AA7;
+    border-radius: 10px;
+   
+   
+}
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0,0.25);
+}
+
+::-webkit-scrollbar-thumb{
+    
+    background-color: white;
+ 
+}
+::-webkit-scrollbar-thumb:hover{
+    
+    border-radius: 100px;
+    background-color: white;
 }

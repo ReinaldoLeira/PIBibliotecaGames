@@ -6,7 +6,7 @@ module.exports.showPerfil = async (req, res) => {
     const usuario = req.session.usuario
     const idParams = req.params.id
     const perfil = await models.Perfil.findOne({
-        where: { id : idParams }
+        where: { usuario : idParams }
     })
     
    if(perfil) {
@@ -19,7 +19,7 @@ module.exports.showPosts = async (req, res) => {
         const usuario = req.session.usuario
         const idParams = req.params.id
         const perfil = await models.Perfil.findOne({
-            where: { id : idParams }
+            where: { usuario : idParams }
         })
         const perfilPosts = await models.Post.findAll({
             where : { idPerfis : perfil.id }
@@ -42,7 +42,7 @@ module.exports.showAnalise = async (req, res)=> {
         const usuario = req.session.usuario
         const params = req.params.id
         const perfil = await models.Perfil.findOne({
-            where: { id : params }
+            where: { usuario : params }
         })
         const perfilAnalises = await models.Analise.findAll({
             include : 'Jogo',
@@ -61,7 +61,7 @@ module.exports.showMidias = async (req, res) => {
         const params = req.params.id
         
         const perfil = await models.Perfil.findOne({
-            where: { id : params }
+            where: { usuario : params }
         })
         const midias = await models.Midia.findAll({
             where: { idPerfis: perfil.id}
@@ -80,7 +80,7 @@ module.exports.showBiblioteca = async (req, res) => {
     const params = req.params.id
 
     const perfil = await models.Perfil.findOne({
-            where: { id : params }
+            where: { usuario : params }
     })
     const biblioteca = await models.Biblioteca.findOne({where: {idPerfis: perfil.id}})
     const perfilMeusJogos = await models.BibliotecaJogo.findAll({

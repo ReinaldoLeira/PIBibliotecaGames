@@ -2,6 +2,7 @@
 
 html{
     box-sizing: border-box;
+    line-height: 12px;
 }
 
 .bloco-geral{
@@ -16,34 +17,110 @@ html{
     margin-right: 30px;
     border-radius: 25px;
 }
-.promocao{
+.destaque{
     background-color: #0E9AA7;
-    box-shadow: 10px 5px 5px grey;
+    
     border-radius: 25px;
     height: auto;
     width: 100%;
-    flex-wrap: wrap;
+    
     display: flex;
-    align-items: center;
-    padding-left: 10px;
+    justify-content: space-between;
+   
+    
+    border: 1px white solid;
+    padding: 10px;  
+    overflow-x: scroll;
+    
 }
-.img{
-    width: 100px;
-    height: 170px;
-    margin: 10px;
-    border-radius: 15px;
+.destaque::-webkit-scrollbar{
+    position: absolute ;
+    height: 20px;
+    background-color: #0E9AA7;
+    border-radius: 10px;
+
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: #0E9AA7;
+    border-radius: 10px;
+   
+   
+}
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0,0.25);
 }
 
-/* height: auto; sera colocado no lugar do 200px quando tiver conteudo no destaque */
-.destaque{
-    background-color: #0E9AA7;
-    box-shadow: 10px 5px 5px grey;
-    border-radius: 25px;
-    height: 200px; 
-    display: flex;
-    align-items: center;
-    width: 100%;
+::-webkit-scrollbar-thumb{
+    
+    background-color: white;
+ 
 }
+::-webkit-scrollbar-thumb:hover{
+    
+    border-radius: 100px;
+    background-color: white;
+}
+.caixaDestaque{
+    width: 50%;
+    min-width: 700px;
+    height: 100%;
+   
+    display: flex;
+    border: 2px silver solid;
+    border-radius: 20px;
+    background-color: white;
+    margin-right: 1.7%;  
+    
+}
+.caixaDestaque a {
+    
+    width: 30%;
+    height: 30vh;
+}
+
+.imgDestaque{
+    width: 100%;
+    height: 100%;
+    margin: 2px;
+    border-radius: 20px;
+}
+.imgDestaque:hover{
+    background-color: white;
+    opacity: 0.5;
+}
+
+.conteudoDestaque{
+    
+    width: 70%;
+
+}
+.conteudoDestaque h1{
+    margin-left: 5%;
+    font-size: 15rem;
+}
+.conteudoDestaque p{
+    margin-left: 5%;
+    font-size: 10rem;
+}
+.span{
+    
+    width: 90%;
+    height: 65%;
+    padding: 10px;
+    text-align: center;
+    text-justify: auto;
+    margin: auto;
+}
+.span p{
+    margin: 0;
+   
+}
+
+
+/* height: auto; sera colocado no lugar do 200px quando tiver conteudo no destaque */
+
 .noticia p{
     overflow: hidden;
     max-height: 10ch;
@@ -82,7 +159,7 @@ html{
 }
 .bloco-2{
     background-color: #0E9AA7;
-    box-shadow: 10px 5px 5px grey;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
     border-radius: 25px;
     width: 20%;
     margin-top: 45px;

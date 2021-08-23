@@ -404,10 +404,16 @@ body {
     display: flex;
     align-items: center;
 }
-.enviarJogo input{
+.enviarJogo p{
+    cursor: pointer;
     margin: auto;
     width: 30%;
     height: 100%;
+    text-align: center;
+    font-size: 15rem;
+    padding-top: 2.2%;
+   
+    
 
     background-color: rgb(82, 187, 82);
     border: 3px green solid;

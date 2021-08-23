@@ -110,6 +110,11 @@ html{
     height: 100%;
     border-radius: 50%;
 }
+.linkDoPerfil a{
+   text-align: center;
+   color: white;
+   font-size: 12rem;
+}
 .tituloEConteudo{
     width: 72%;
     height: 90%;

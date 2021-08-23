@@ -34,6 +34,12 @@ body{
 
     width: 100%;
     height: auto;
+    background-image: url('../../img/trilho.png');
+    
+    background-repeat: repeat-y;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-position-y: top;
     
     
 }

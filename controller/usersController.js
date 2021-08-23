@@ -211,17 +211,18 @@ module.exports.addMeusJogos = async(req, res) => {
     const usuario = req.session.usuario
     console.log(formBody)
 
-    const acharBiblioteca = await models.Biblioteca.findOne({where: { idPerfis : usuario.id}})
-    const criarMinhaBiblioteca = await models.BibliotecaJogo.create({
+    try {
+        const acharBiblioteca = await models.Biblioteca.findOne({where: { idPerfis : usuario.id}})
+        await models.BibliotecaJogo.create({
         plataforma: formBody.plataforma,
         idBibliotecas: acharBiblioteca.id,
         idJogos: formBody.jogo,
         obtido: formBody.escolha
     })
-    if (criarMinhaBiblioteca){
-        res.redirect ('/users/meusjogos')
-    }else{
-        res.redirect('/users/meusJogos')
+    console.log(formBody)
+        res.status(200).send({criado: 'criado', status: 200})
+    } catch (e) {
+        res.send(400).send({message : e.message, status: 400})
     }
     
 }
@@ -231,18 +232,15 @@ module.exports.deletarMeuJogo = async (req,res) => {
     const {id} = req.params
     
     
-    try {
+   
         const acharBiblioteca = await models.Biblioteca.findOne({where : { id : usuario.id}})
         const deletarBiblioteca = await models.BibliotecaJogo.destroy ({where: { id: id, idBibliotecas: acharBiblioteca.id }})
         if(deletarBiblioteca){
-            res.status(200).send('foi')
+            res.redirect('/users/meusJogos')
         }else{
-            throw new Error('Não foi')
+            
         }      
-    }catch (e){
-        res.status(400).send({message : e.message, status:400})
-    }
-
+    
 
 }
 
@@ -252,3 +250,6 @@ module.exports.formAnalise = (req, res) => {res.render('./users/form-analise', {
 
 
 module.exports.usuario =  (req, res) => {res.render('./users/usuario', {usuario: req.session.usuario})};
+
+
+//adicionar aos favoritos
