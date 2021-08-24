@@ -1,3 +1,6 @@
+*{
+    line-height: 15rem;
+}
 .coluna{
     flex-direction: column;  
 }
@@ -21,4 +24,53 @@
     flex-grow: 1;
     display: flex;
 }
+#quemSomosPai{
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+}
 
+.cQuemSomos{
+   
+    margin-right: 10px;
+    width: 27vw;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+}
+.imgQuemSomos{
+    width: 40%;
+    height: 40%;
+    border-radius: 100%;
+    margin: 2% auto;
+    border: 10px rgba(240, 240, 240, 0.61) double;
+    background-color: #0E9AA7;
+    box-shadow: 0px 0px 1px black;
+    
+}
+.imgQuemSomos img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.texto{
+    width: 60%;
+    margin: 2% auto;
+    text-align: center;
+    
+}
+.texto h1{
+    font-size: 11rem;
+    color: #0E9AA7;
+    text-shadow: 0px 0px 1px white;
+    
+}
+.texto h2{
+    font-size: 10rem;
+    color: rgb(107, 107, 107);
+}
+#Julio{
+    margin-top: 100px;
+}
