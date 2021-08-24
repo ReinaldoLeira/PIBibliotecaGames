@@ -71,12 +71,36 @@ hr{
     padding-bottom: 2px;
 }
 
+.faqTitulo2{
+    padding-bottom: 5px;
+    font-size: 12px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.faqTitulo2:hover{
+    background-color: rgb(200, 200, 200)
+}
+
+.faqDuvidas2{
+    font-size: 10em;
+    background: #fff;
+    display: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
 
 .displayBlock{
+    display: block;
+}
+.displayBlock2{
     display: block;
 }
 
 .arrow{
     width: 20px;
     height: 20px;
+}
+.espacamento{
+    padding-bottom: 40px;
 }
