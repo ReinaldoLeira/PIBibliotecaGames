@@ -13,34 +13,42 @@
         <%- include('../home/header.ejs') %> 
     </header>
     <main class="main">
-        <div class="flex">
-            <div class="pesquisarDuvida">
-                <h2>Procure por uma duvida</h2>
-                <div class="pesquisa-duvida">
-                    <input type="search" class="txt-pesquisas" placeholder="Duvidas...." />
-                </div>
+        <div class="pesquisarDuvida">
+            <span>Procure por uma duvida</span>
+            <div class="pesquisa-duvida">
+                <input type="search" class="txt-pesquisas" placeholder="Duvidas...." />
             </div>
-            <hr>
+        </div>
+
+        <hr>
+
+        <div class="w40">
             <div class="faqTitulo">
-                <span>Como cadastrar um jogo?</span>
-                <span>botão</span><!-- before -->
+                <span>Como avaliar um jogo?</span>
+                <img class="btn" src="/img/arrow.png">
             </div>
             <div class="faqDuvidas">
                 <p> 
-                    <li><strong>Primeiro</strong></li>
-                    <li>Faca o login</li> 
+                    <strong>1º</strong> Faca o login
                 </p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
+                <p>
+                    <strong>2º</strong> Escolha um jogo para a analisar
+                </p>
+                <p>
+                    <strong>3º</strong> Clique em "Adicionar Analise" no menu lateral
+                </p>
+                <p>
+                    <strong>4º</strong> Coloque um titulo, uma descrição e uma nota e envie
+                </p>
+                <p>
+                    <strong>5º</strong> Analise feita.
+                </p>
             </div>
-
         </div>
     </main>
     <footer>
         <%- include('../home/footer.ejs') %> 
     </footer>
+    <script src="/js/index/duvidas.js"></script>
 </body>
 </html>

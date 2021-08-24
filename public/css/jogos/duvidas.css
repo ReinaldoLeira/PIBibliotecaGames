@@ -52,13 +52,28 @@ hr{
     font-size: 10em;
     margin-top: 25px;
 }
+
+
+
 .faqTitulo{
+    padding-bottom: 5px;
     font-size: 12px;
+    text-align: center;
 }
 .faqDuvidas{
     font-size: 10em;
+    background: #fff;
+    display: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
-li{
-    list-style: none;
-    padding-top: 5px;
+
+
+.displayBlock{
+    display: block;
+}
+
+.btn{
+    width: 20px;
+    height: 20px;
 }
