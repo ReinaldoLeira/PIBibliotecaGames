@@ -95,7 +95,7 @@ module.exports.sendPosts = (async(req,res,next)=> {
             titulo : formBody.tituloPost,
             idPerfis : usuarioLogado.id
         })
-        res.status(200).send({criado:'criado'})
+        res.status(200).send({criado:'criado', status:200})
     }catch (e) {
         res.status(400).send({message : e.message, status:400})
     }
@@ -133,7 +133,7 @@ module.exports.analise = (async(req, res) => {
 module.exports.criarAnalise = (async(req,res,next)=> {
     const usuario = req.session.usuario
     const formBody = req.body
-        
+    try {
         if(formBody.nota > 5){
             throw new Error('não pode mais que 5')
         }
@@ -146,7 +146,10 @@ module.exports.criarAnalise = (async(req,res,next)=> {
             blocked: '0',
             idPerfis: usuario.id,        
         })
-        res.redirect('/users/analise')
+        res.status(200).send({criado: 'criado', status: 200})
+    } catch (e) {
+        res.send(400).send({message : e.message, status: 400})
+    }
 })
 
 module.exports.sair = async (req, res) => {

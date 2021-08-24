@@ -1,17 +1,4 @@
-const avaliarAdd = document.querySelector('.avaliarAdd')
-const containerPai = document.querySelector('.containerPai')
 
-avaliarAdd.onclick = () => {
-
-    containerPai.style.display = 'block';
-
-}
-
-const closeButtom = document.querySelector('.imgModal')
-closeButtom.onclick = () => { 
-    containerPai.style.display = 'none'
-
-}
 const selectJogo = document.querySelector('#selecJogo')
 
 async function acharJogo() {
@@ -46,7 +33,7 @@ async function modalAnalise() {
                 <div class="titulo-Analise">
                     <div class="tituloA">
                         <p> ${analises.titulo}</p>
-                        <div class="nota">
+                        <div class="notaTitulo">
                             <p>Nota:${analises.nota}</p>
                         </div>
                     </div>
@@ -64,3 +51,6 @@ async function modalAnalise() {
     }
 }
 modalAnalise()
+
+
+
