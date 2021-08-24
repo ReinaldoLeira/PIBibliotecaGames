@@ -11,8 +11,8 @@
             <div>
                 
                 <div class="jogosHome caixaUm" id="jogosHome">
-                    <% for(let i=0; i<jogos.length && i <=4; i++){ %>
-                        <div class="caixaJogos aparecer" id="caixaJogos">
+                    <% for(let i=0; i<jogos.length && i <=12; i++){ %>
+                        <div class="caixaJogos" id="caixaJogos">
                             <a href="/jogos/perfil/<%= jogos[i].id %>">
                                 <img class="imgJogos" src="<%= jogos[i].capa %> ">
                             </a>
@@ -56,14 +56,13 @@
         </section>
         <section class="bloco-2">
             <div class="top-10"> 
-                <h3>Top 10 da semana</h3>
-                <% for(let i=0; i<jogos.length && i<=10; i++){ %>
+                <% for(let i=0; i<jogos.length && i <=12; i++){ %>
                     <div class="lista">
                         <a class="link" href="/jogos/perfil/<%= jogos[i].id %> ">
                             <p class="top-num">
-                                <%= jogos[i].id %>
+                               
                             </p>
-                            <p>
+                            <p class="listaJogo">
                                 <%= jogos[i].nome %>
                             </p>
                         </a>

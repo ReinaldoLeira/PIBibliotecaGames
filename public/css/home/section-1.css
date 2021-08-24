@@ -91,6 +91,11 @@ html{
 .aparecer{
     display: flex;
 }
+.amareloLista {
+    color:yellow;
+    font-size: 17rem;
+    text-shadow: 1px 1px 1px black;
+}
 .jogosDestaque{
     height: 100%;
     display: flex;
