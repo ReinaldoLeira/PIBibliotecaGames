@@ -1,33 +1,29 @@
 
 <form class="pai coluna fundoBranco jogoForm MaxH100 jogo0Form" action="/gamepadm/painel/jogo/0" method="POST">
-    <label for="nomeJogo">Nome do Jogo:</label>
+    <label for="nomeJogo">Nome do Jogo:</label> <div id="erroNome" class="errosCadastroJogos"></div> 
     <input type="text" id="nomeJogo"name="nome" autocomplete="off" placeholder="Nome" maxlength="120" required/>    
-    <label for="publisherJogo">Desenvolvedora:</label>
+    <label for="publisherJogo">Desenvolvedora:</label> <div id="erroPublisher" class="errosCadastroJogos"></div>
     <input type="text" id="publisherJogo"name="desenvolvedor" autocomplete="off" placeholder="Desenvolvedora" maxlength="120" required/>
-    <label for="dataJogo">Data de Lançamento:</label>
+    <label for="dataJogo">Data de Lançamento:</label> <div id="erroData" class="errosCadastroJogos"></div>
     <input type="text" id="dataJogo"name="lancamento" autocomplete="off" placeholder="Lançamento" maxlength="10" required/>    
-    <label for="sinopseJogo">Sinopse:</label>
+    <label for="sinopseJogo">Sinopse:</label> <div id="erroSinopse" class="errosCadastroJogos"></div>
     <textarea  id="sinopseJogo" name="descricao" autocomplete="off" required placeholder="Sinopse" maxlength="500"></textarea>
-    <label for="imgJogo">URL de Imagem do Jogo:</label>
+    <label for="imgJogo">URL de Imagem do Jogo:</label> <div id="erroImgJogo" class="errosCadastroJogos"></div>
     <input type="text" id="imgJogo"name="capa" autocomplete="off" placeholder="URL" maxlength="500" required/>
-    <label>Plataformas:</label>
+    <label>Plataformas:</label> <div id="erroPlataformas" class="errosCadastroJogos"></div>
     <div class="pai wrap">
         <%for(let plataforma of plataformas){%>
-        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>" />
+        <div> <input type="checkbox" id="plat<%= plataforma.nome %>" name="idPlataformas" value="<%= plataforma.id %>" class="checkboxPlataformas" />
         <label class="labelCheckbox" for="plat<%= plataforma.nome %>"><%= plataforma.nome %> </label></div>
         <%}%>
     </div>
-    <label>Gêneros:</label>
+    <label>Gêneros:</label> <div id="erroGeneros" class="errosCadastroJogos"></div>
     <div class="pai wrap">
         <%for(let genero of generos){%>
-        <div> <input type="checkbox" id="gen<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>"/>
+        <div> <input type="checkbox" id="gen<%= genero.nome %>" name="idGeneros" value="<%= genero.id %>" class="checkboxGeneros"/>
         <label class="labelCheckbox" for="gen<%= genero.nome %>"><%= genero.nome %> </label></div>
         <%}%>
         </div>    
-    <input  class="submitPainelAdmin" type="submit" value="Cadastrar"/>
+    <input  class="submitPainelAdmin" type="submit" value="Cadastrar" id="salvarJogo"/>
 </form> 
-<script>
-    document.querySelector('textarea').onkeyup = () => {
-        document.querySelector('textarea').style.height = (document.querySelector('textarea').scrollHeight) + 'px'
-    }
-</script>
+<script src="/js/adm/cadastraEditaJogo.js" ></script>

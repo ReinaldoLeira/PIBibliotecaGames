@@ -119,6 +119,9 @@
 #logOutAdmin{
     width: 50px;    
 }
+.errosCadastroJogos{
+    color: red;
+}
 .preencherPainelAdmin{
     flex-grow: 1;       
 }
@@ -192,8 +195,15 @@
     max-width: 50%;   
     min-width: 50%; 
     min-height: 15rem;
+    max-height: 100px;
     resize: none;
     overflow: hidden;
+}
+#sinopseJogo{
+    min-height: 100px;
+}
+#salvarJogo:hover{
+    cursor: pointer;
 }
 
 .jogoForm input[type = checkbox], .labelCheckbox {
