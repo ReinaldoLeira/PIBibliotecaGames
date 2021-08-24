@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
 
-let abrirDiv = document.querySelector('.faqTitulo');
-let classe = document.querySelector('.faqDuvidas');
-abrirDiv.onclick = function(){
+const abrirDiv = document.querySelector('.faqTitulo');
+const classe = document.querySelector('.faqDuvidas');
+abrirDiv.onclick = () => {
     classe.classList.toggle('displayBlock')
 }
 
