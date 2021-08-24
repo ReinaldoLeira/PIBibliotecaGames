@@ -1,5 +1,4 @@
 .main{
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -53,13 +52,17 @@ hr{
     margin-top: 25px;
 }
 
-
-
 .faqTitulo{
     padding-bottom: 5px;
     font-size: 12px;
-    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
+.faqTitulo:hover{
+    background-color: rgb(200, 200, 200)
+}
+
 .faqDuvidas{
     font-size: 10em;
     background: #fff;
@@ -73,7 +76,7 @@ hr{
     display: block;
 }
 
-.btn{
+.arrow{
     width: 20px;
     height: 20px;
 }
